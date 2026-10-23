@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tá Chegando — O comércio que circula, perto de você</title>
+<meta name="description" content="Plataforma que aproxima vendedores ambulantes e consumidores: veja quando o vendedor está chegando e solicite uma parada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#topo">Tá <span>Chegando</span></a>
+  <nav>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#ambulantes">Para ambulantes</a>
+    <a href="#rede-de-apoio">Rede de Apoio</a>
+    <a class="btn" href="#ambulantes">Quero participar</a>
+  </nav>
+</div></header>
+
+<main id="topo">
+<section class="hero"><div class="wrap grid">
+  <div>
+    <span class="badge">Disponível em breve</span>
+    <h1>O comércio que circula faz parte da vida da sua cidade.</h1>
+    <p>Saiba quando o seu vendedor ambulante favorito está chegando, descubra o que seu bairro tem a oferecer e peça para ele parar na sua porta.</p>
+    <div class="acoes">
+      <a class="btn" href="#ambulantes">Sou vendedor ambulante</a>
+      <a class="btn sec" href="#rede-de-apoio">Quero apoiar ambulantes</a>
+    </div>
+  </div>
+  <img src="img/foto-1.jpg" alt="Vendedor e cliente olhando o aplicativo no celular ao lado de uma caminhonete com frutas" width="1408" height="768">
+</div></section>
+
+<section id="como-funciona"><div class="wrap">
+  <span class="eyebrow">Como funciona</span>
+  <h2>Quem vende e quem compra, mais perto um do outro</h2>
+  <div class="cols">
+    <div class="card"><div class="n">1</div><h3>Acompanhe o trajeto</h3><p>Veja por onde o vendedor está passando e receba um alerta quando ele estiver chegando.</p></div>
+    <div class="card"><div class="n">2</div><h3>Solicite uma parada</h3><p>Avise o vendedor que você quer comprar. Ele sabe onde há interesse antes de sair.</p></div>
+    <div class="card"><div class="n">3</div><h3>Descubra o bairro</h3><p>Conheça os vendedores e produtos que circulam perto de você.</p></div>
+  </div>
+  <p style="margin-top:28px;color:var(--texto-suave)">Valorizando o trabalho de quem leva produtos de porta em porta há gerações, com tecnologia simples de usar.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <span class="eyebrow">Galeria</span>
+  <h2>O Tá Chegando no dia a dia</h2>
+  <div class="galeria">
+    <img loading="lazy" src="img/foto-2.jpg" alt="Vendedor com clientes reunidos ao redor de uma caminhonete de frutas" width="1408" height="768">
+    <img loading="lazy" src="img/foto-3.jpg" alt="Moradora com o celular na mão enquanto um vendedor atende em um caminhão" width="1408" height="768">
+    <img loading="lazy" src="img/foto-4.jpg" alt="Mulher acompanhando o trajeto do vendedor no aplicativo" width="1408" height="768">
+    <img loading="lazy" src="img/foto-5.jpg" alt="Vendedor de ovos mostrando o aplicativo no celular" width="1408" height="768">
+    <img loading="lazy" src="img/foto-7.jpg" alt="Casal em casa olhando o aplicativo no celular" width="1408" height="768">
+  </div>
+</div></section>
+
+<section id="ambulantes"><div class="wrap">
+  <span class="eyebrow">Para quem vende</span>
+  <h2>Seja nosso parceiro</h2>
+  <p style="max-width:40em;color:var(--texto-suave)">Saia sabendo onde existe interesse na sua rota. Deixe seus dados e entraremos em contato. Tem uma frota? O app ajuda a organizar o seu negócio.</p>
+  <div class="forms">
+    <form data-tipo="ambulante" novalidate>
+      <h3>Cadastro de ambulante</h3><p>Leva menos de um minuto.</p>
+      <label for="a-nome">Nome</label><input id="a-nome" name="nome" required autocomplete="name">
+      <label for="a-produto">Produto que vende</label><input id="a-produto" name="produto" required>
+      <label for="a-tel">Telefone com DDD</label><input id="a-tel" name="telefone" type="tel" required autocomplete="tel" inputmode="tel">
+      <label for="a-cidade">Cidade e bairro de atuação</label><input id="a-cidade" name="cidade">
+      <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Enviar</button>
+      <div class="msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div></section>
+
+<section id="rede-de-apoio" class="alt"><div class="wrap">
+  <span class="eyebrow">Rede de Apoio</span>
+  <h2>Sua empresa pode apoiar quem circula pela cidade</h2>
+  <p style="max-width:40em;color:var(--texto-suave)">Empresas podem se cadastrar para integrar a Rede de Apoio aos ambulantes. Preencha o formulário e conversaremos sobre como participar.</p>
+  <div class="forms">
+    <form data-tipo="rede_apoio" novalidate>
+      <h3>Cadastro de empresa</h3><p>Entraremos em contato.</p>
+      <label for="r-empresa">Nome da empresa</label><input id="r-empresa" name="empresa" required autocomplete="organization">
+      <label for="r-cnpj">CNPJ</label><input id="r-cnpj" name="cnpj" inputmode="numeric">
+      <label for="r-resp">Nome do responsável</label><input id="r-resp" name="responsavel" required autocomplete="name">
+      <label for="r-email">E-mail</label><input id="r-email" name="email" type="email" required autocomplete="email">
+      <label for="r-tel">Telefone com DDD</label><input id="r-tel" name="telefone" type="tel" required autocomplete="tel" inputmode="tel">
+      <label for="r-apoio">Como sua empresa pode apoiar?</label><textarea id="r-apoio" name="apoio" rows="3"></textarea>
+      <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Enviar</button>
+      <div class="msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <strong>Tá Chegando</strong> — o aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo. Todos os direitos reservados. CNPJ 66.543.238/0001-71.
+</div></footer>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

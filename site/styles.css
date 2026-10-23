@@ -1,0 +1,54 @@
+/* Paleta PROVISÓRIA: o brand book define azul + laranja, mas ainda sem tons oficiais. Trocar só aqui. */
+:root{
+  --azul:#1f4fd8; --azul-escuro:#12307f; --azul-claro:#e8efff;
+  --laranja:#ff7a1a; --laranja-escuro:#c85a00;
+  --texto:#14202e; --texto-suave:#4a5868; --fundo:#fff; --fundo-alt:#f5f8fc; --borda:#d9e1ec;
+  --raio:16px; --max:1120px;
+  --fonte:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--fonte);color:var(--texto);background:var(--fundo);line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--azul)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(2rem,5vw,3.4rem)} h2{font-size:clamp(1.6rem,3.5vw,2.3rem)} h3{font-size:1.2rem}
+section{padding:72px 0}
+.alt{background:var(--fundo-alt)}
+.eyebrow{color:var(--laranja-escuro);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+.btn{display:inline-block;background:var(--laranja);color:#1b1000;font-weight:800;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;font:inherit;font-weight:800;cursor:pointer}
+.btn:hover{background:#ff8e3d}
+.btn.sec{background:transparent;color:#fff;border:2px solid #fff}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--borda);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:900;font-size:1.3rem;color:var(--azul);text-decoration:none}
+.logo span{color:var(--laranja)}
+nav{display:flex;gap:20px;align-items:center}
+nav a{text-decoration:none;color:var(--texto);font-weight:700;font-size:.95rem}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+.hero{background:var(--azul-escuro);color:#fff;padding:72px 0}
+.hero .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero p{font-size:1.15rem;color:#dbe5ff;max-width:34em}
+.hero img{border-radius:var(--raio);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;align-items:center}
+.badge{display:inline-block;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:999px;font-weight:700;font-size:.9rem}
+@media(max-width:860px){.hero .grid{grid-template-columns:1fr}}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:32px}
+.card{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:28px}
+.card .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--azul-claro);color:var(--azul);font-weight:900;margin-bottom:12px}
+.card p{margin:0;color:var(--texto-suave)}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:32px}
+.galeria img{border-radius:var(--raio);aspect-ratio:16/9;object-fit:cover;width:100%;height:auto}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:32px}
+form{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:28px}
+form h3{margin-bottom:4px} form>p{margin:0 0 16px;color:var(--texto-suave)}
+label{display:block;font-weight:700;margin:14px 0 4px;font-size:.95rem}
+input,select,textarea{width:100%;font:inherit;padding:12px;border:1px solid #9aa8ba;border-radius:10px;background:#fff;color:var(--texto)}
+form .btn{margin-top:20px;width:100%}
+.msg{margin-top:12px;font-weight:700;min-height:1.4em}
+.msg.ok{color:#0a6b34}.msg.erro{color:#b3261e}
+.hp{position:absolute;left:-9999px}
+footer{background:#0e1b3d;color:#c7d3ee;padding:40px 0;font-size:.9rem}
+footer a{color:#fff}
