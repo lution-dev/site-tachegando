@@ -3,104 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tá Chegando — O comércio que circula, perto de você</title>
-<meta name="description" content="Plataforma que aproxima vendedores ambulantes e consumidores: veja quando o vendedor está chegando e solicite uma parada.">
+<title>Tá Chegando — Quem vende circula. Quem procura descobre.</title>
+<meta name="description" content="O Tá Chegando ajuda vendedores ambulantes e quem procura por eles a se encontrar. Crie sua conta e prepare seu cadastro para o app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%230b1f5c%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23ff6a13%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="wrap">
-  <a class="logo" href="#topo">Tá <span>Chegando</span></a>
-  <nav>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#topo">Tá <i>Chegando</i></a>
+  <nav aria-label="Principal">
     <a href="#como-funciona">Como funciona</a>
-    <a href="#ambulantes">Para ambulantes</a>
+    <a href="#painel">Para vendedores</a>
     <a href="#rede-de-apoio">Rede de Apoio</a>
-    <a class="btn" href="#ambulantes">Quero participar</a>
+    <a href="#perguntas">Perguntas</a>
+    <a class="btn btn-line btn-sm" href="entrar.html">Entrar</a>
+    <a class="btn btn-or btn-sm" href="entrar.html?modo=criar">Criar conta</a>
   </nav>
 </div></header>
 
 <main id="topo">
 <section class="hero"><div class="wrap grid">
   <div>
-    <span class="badge">Disponível em breve</span>
-    <h1>O comércio que circula faz parte da vida da sua cidade.</h1>
-    <p>Saiba quando o seu vendedor ambulante favorito está chegando, descubra o que seu bairro tem a oferecer e peça para ele parar na sua porta.</p>
+    <span class="soon">App em breve</span>
+    <h1 style="margin-top:18px">Quem vende <em>circula.</em> <span class="sub">Quem procura descobre.</span></h1>
+    <p class="lead">O vendedor que você procura pode estar passando por aí. O Tá Chegando ajuda os dois a se encontrar.</p>
     <div class="acoes">
-      <a class="btn" href="#ambulantes">Sou vendedor ambulante</a>
-      <a class="btn sec" href="#rede-de-apoio">Quero apoiar ambulantes</a>
+      <a class="btn btn-or" href="entrar.html?modo=criar">Sou vendedor — criar conta</a>
+      <a class="btn btn-line" href="#como-funciona">Ver como funciona</a>
+    </div>
+    <p class="nota">Exemplo ilustrativo ao lado. Localização e disponibilidade dos vendedores podem variar.</p>
+  </div>
+
+  <div class="mapa" role="img" aria-label="Ilustração de um mapa: um vendedor percorre uma rota até a casa de quem pediu uma parada">
+    <span class="tag">EXEMPLO ILUSTRATIVO</span>
+    <svg viewBox="0 0 520 530" aria-hidden="true">
+      <rect width="520" height="530" fill="#dfe7ff"/>
+      <g fill="#f4f7ff" stroke="#0b1f5c" stroke-width="0">
+        <rect x="20" y="60" width="110" height="90" rx="14"/><rect x="160" y="60" width="150" height="90" rx="14"/><rect x="340" y="60" width="160" height="90" rx="14"/>
+        <rect x="20" y="180" width="110" height="110" rx="14"/><rect x="160" y="180" width="150" height="110" rx="14"/><rect x="340" y="180" width="160" height="110" rx="14"/>
+        <rect x="20" y="320" width="110" height="90" rx="14"/><rect x="160" y="320" width="150" height="90" rx="14"/><rect x="340" y="320" width="160" height="90" rx="14"/>
+      </g>
+      <g fill="#bcd0ff"><rect x="175" y="195" width="50" height="40" rx="8"/><rect x="360" y="75" width="40" height="50" rx="8"/><rect x="40" y="335" width="60" height="40" rx="8"/></g>
+      <path id="rota" class="rota" d="M30 395 L145 395 L145 165 L325 165 L325 305 L420 305" fill="none" stroke="#ff6a13" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- casa de destino -->
+      <g transform="translate(420 305)">
+        <circle class="pulso" r="22" fill="#2150f5" opacity=".5"/>
+        <circle class="pulso" r="22" fill="#2150f5" opacity=".5" style="animation-delay:1s"/>
+        <circle r="22" fill="#2150f5" stroke="#0b1f5c" stroke-width="3"/>
+        <path d="M-9 2 L0 -8 L9 2 M-6 0 V9 H6 V0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <!-- vendedor -->
+      <g>
+        <circle r="19" fill="#0b1f5c" stroke="#fff" stroke-width="3"/>
+        <circle r="6" fill="#ff6a13"/>
+        <animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#rota"/></animateMotion>
+      </g>
+    </svg>
+    <div class="aviso">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1b0b00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+      <div><b>Tá chegando</b><small>Vendedor de frutas · cerca de 3 min</small></div>
+      <span class="pedir">Pedir parada</span>
     </div>
   </div>
-  <img src="img/foto-1.jpg" alt="Vendedor e cliente olhando o aplicativo no celular ao lado de uma caminhonete com frutas" width="1408" height="768">
+</div></section>
+
+<div class="ticker-wrap" aria-label="Quem circula por aí: frutas e verduras, ovos, pão, doces, queijo, artesanato, flores, roupas, picolé, afiador de facas, gás e muito mais">
+  <div class="ticker" aria-hidden="true"><div class="faixa">
+    <span>Frutas e verduras</span><span>Ovos</span><span>Pão</span><span>Doces</span><span>Queijo</span><span>Artesanato</span><span>Flores</span><span>Roupas</span><span>Picolé</span><span>Afiador de facas</span><span>Gás</span><span>E muito mais</span>
+    <span>Frutas e verduras</span><span>Ovos</span><span>Pão</span><span>Doces</span><span>Queijo</span><span>Artesanato</span><span>Flores</span><span>Roupas</span><span>Picolé</span><span>Afiador de facas</span><span>Gás</span><span>E muito mais</span>
+  </div></div>
+</div>
+
+<section class="manifesto"><div class="wrap">
+  <span class="eyebrow">Por que existimos</span>
+  <p class="big">Todo dia tem gente passando pela rua com algo pra vender. E tem gente procurando.</p>
+  <p class="big dest">O comércio está em movimento, mas nem sempre a informação acompanha.</p>
+  <p class="peq">O Tá Chegando entra pra aproximar esses caminhos, sem tirar de ninguém a autonomia de quem trabalha.</p>
 </div></section>
 
 <section id="como-funciona"><div class="wrap">
   <span class="eyebrow">Como funciona</span>
-  <h2>Quem vende e quem compra, mais perto um do outro</h2>
-  <div class="cols">
-    <div class="card"><div class="n">1</div><h3>Acompanhe o trajeto</h3><p>Veja por onde o vendedor está passando e receba um alerta quando ele estiver chegando.</p></div>
-    <div class="card"><div class="n">2</div><h3>Solicite uma parada</h3><p>Avise o vendedor que você quer comprar. Ele sabe onde há interesse antes de sair.</p></div>
-    <div class="card"><div class="n">3</div><h3>Descubra o bairro</h3><p>Conheça os vendedores e produtos que circulam perto de você.</p></div>
+  <h2>Dois lados, um encontro.</h2>
+  <div class="abas" role="tablist" aria-label="Escolha seu lado">
+    <button role="tab" aria-selected="true" aria-controls="aba-vende">Para quem vende</button>
+    <button role="tab" aria-selected="false" aria-controls="aba-procura">Para quem procura</button>
   </div>
-  <p style="margin-top:28px;color:var(--texto-suave)">Valorizando o trabalho de quem leva produtos de porta em porta há gerações, com tecnologia simples de usar.</p>
+  <div id="aba-vende" class="painel-aba" role="tabpanel">
+    <ol class="passos">
+      <li><h3>Crie sua conta</h3><p>Entre no painel e conte o que você vende e por onde costuma passar.</p></li>
+      <li><h3>Cadastre sua rota</h3><p>Dias, regiões e meio de transporte: a pé, de bike, moto, carro ou como for.</p></li>
+      <li><h3>Baixe o app</h3><p>Quando estiver disponível, é por ele que você acompanha tudo no dia a dia.</p></li>
+    </ol>
+  </div>
+  <div id="aba-procura" class="painel-aba" role="tabpanel" hidden>
+    <ol class="passos">
+      <li><h3>Veja quem circula por perto</h3><p>Descubra os vendedores que passam pela sua região.</p></li>
+      <li><h3>Acompanhe a aproximação</h3><p>Saiba quando o vendedor está chegando e se programe.</p></li>
+      <li><h3>Peça uma parada</h3><p>Sinalize seu interesse. A decisão de parar é do vendedor.</p></li>
+    </ol>
+  </div>
+  <p class="apoio-txt">Os detalhes de cada passo seguem o que estiver disponível no aplicativo.</p>
 </div></section>
 
-<section class="alt"><div class="wrap">
-  <span class="eyebrow">Galeria</span>
-  <h2>O Tá Chegando no dia a dia</h2>
-  <div class="galeria">
-    <img loading="lazy" src="img/foto-2.jpg" alt="Vendedor com clientes reunidos ao redor de uma caminhonete de frutas" width="1408" height="768">
-    <img loading="lazy" src="img/foto-3.jpg" alt="Moradora com o celular na mão enquanto um vendedor atende em um caminhão" width="1408" height="768">
-    <img loading="lazy" src="img/foto-4.jpg" alt="Mulher acompanhando o trajeto do vendedor no aplicativo" width="1408" height="768">
-    <img loading="lazy" src="img/foto-5.jpg" alt="Vendedor de ovos mostrando o aplicativo no celular" width="1408" height="768">
-    <img loading="lazy" src="img/foto-7.jpg" alt="Casal em casa olhando o aplicativo no celular" width="1408" height="768">
-  </div>
-</div></section>
-
-<section id="ambulantes"><div class="wrap">
-  <span class="eyebrow">Para quem vende</span>
-  <h2>Seja nosso parceiro</h2>
-  <p style="max-width:40em;color:var(--texto-suave)">Saia sabendo onde existe interesse na sua rota. Deixe seus dados e entraremos em contato. Tem uma frota? O app ajuda a organizar o seu negócio.</p>
-  <div class="forms">
-    <form data-tipo="ambulante" novalidate>
-      <h3>Cadastro de ambulante</h3><p>Leva menos de um minuto.</p>
-      <label for="a-nome">Nome</label><input id="a-nome" name="nome" required autocomplete="name">
-      <label for="a-produto">Produto que vende</label><input id="a-produto" name="produto" required>
-      <label for="a-tel">Telefone com DDD</label><input id="a-tel" name="telefone" type="tel" required autocomplete="tel" inputmode="tel">
-      <label for="a-cidade">Cidade e bairro de atuação</label><input id="a-cidade" name="cidade">
-      <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" type="submit">Enviar</button>
-      <div class="msg" role="status" aria-live="polite"></div>
-    </form>
+<section style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">O que você encontra</span>
+  <h2>Menos incerteza na rua.</h2>
+  <div class="bento">
+    <article class="cx a rv"><div class="mini"><span class="ponto"></span><span>Vendedor de pão · chegando</span><span class="barra" aria-hidden="true"><i></i></span></div><h3>Veja quem está chegando</h3><p>Acompanhe a aproximação do vendedor e se programe, sem correria.</p></article>
+    <article class="cx b rv"><div class="mini"><span class="chip" style="border:0;background:var(--laranja);color:#1b0b00">Pedir parada</span><span>Rua das Flores, 120</span></div><h3>Peça uma parada</h3><p>Sinalize que você quer comprar. O vendedor vê onde existe interesse.</p></article>
+    <article class="cx c rv"><div class="chips" aria-hidden="true"><span class="chip">Ovos</span><span class="chip">Queijo</span><span class="chip">Artesanato</span><span class="chip">Flores</span><span class="chip">Doces</span><span class="chip">+ o que você ainda não conhecia</span></div><h3>Descubra o que tem por perto</h3><p>Vendedores e produtos que passam pelo seu bairro e que você talvez nem conhecesse.</p></article>
+    <article class="cx d rv"><div class="letra" aria-hidden="true">Aa</div><h3>Simples pra qualquer um</h3><p>Letras grandes, poucos passos, sem complicação, pra qualquer idade.</p></article>
   </div>
 </div></section>
 
-<section id="rede-de-apoio" class="alt"><div class="wrap">
-  <span class="eyebrow">Rede de Apoio</span>
-  <h2>Sua empresa pode apoiar quem circula pela cidade</h2>
-  <p style="max-width:40em;color:var(--texto-suave)">Empresas podem se cadastrar para integrar a Rede de Apoio aos ambulantes. Preencha o formulário e conversaremos sobre como participar.</p>
-  <div class="forms">
-    <form data-tipo="rede_apoio" novalidate>
-      <h3>Cadastro de empresa</h3><p>Entraremos em contato.</p>
-      <label for="r-empresa">Nome da empresa</label><input id="r-empresa" name="empresa" required autocomplete="organization">
-      <label for="r-cnpj">CNPJ</label><input id="r-cnpj" name="cnpj" inputmode="numeric">
-      <label for="r-resp">Nome do responsável</label><input id="r-resp" name="responsavel" required autocomplete="name">
-      <label for="r-email">E-mail</label><input id="r-email" name="email" type="email" required autocomplete="email">
-      <label for="r-tel">Telefone com DDD</label><input id="r-tel" name="telefone" type="tel" required autocomplete="tel" inputmode="tel">
-      <label for="r-apoio">Como sua empresa pode apoiar?</label><textarea id="r-apoio" name="apoio" rows="3"></textarea>
-      <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" type="submit">Enviar</button>
-      <div class="msg" role="status" aria-live="polite"></div>
-    </form>
+<section id="painel" class="sec-painel" style="background:var(--creme-2)"><div class="wrap grid">
+  <div>
+    <span class="eyebrow">Para vendedores</span>
+    <h2>Seu painel, do seu jeito.</h2>
+    <p class="lead">Crie sua conta, preencha seu perfil e acompanhe tudo em um só lugar. O resto você acessa pelo app.</p>
+    <ol class="etapas">
+      <li><b>1</b><div><h3 style="margin:0">Crie sua conta</h3><p style="margin:0;color:var(--suave)">Só e-mail e senha.</p></div></li>
+      <li><b>2</b><div><h3 style="margin:0">Complete seu cadastro</h3><p style="margin:0;color:var(--suave)">Leva poucos minutos, direto no painel.</p></div></li>
+      <li><b>3</b><div><h3 style="margin:0">Acompanhe pelo painel e, em breve, pelo app</h3><p style="margin:0;color:var(--suave)">Indicadores entram conforme o app for liberado.</p></div></li>
+    </ol>
+    <div class="acoes"><a class="btn btn-or" href="entrar.html?modo=criar">Criar conta</a><a class="btn btn-line" href="entrar.html">Já tenho conta</a></div>
   </div>
+  <div class="prev rv" role="img" aria-label="Prévia ilustrativa do painel, ainda sem dados reais">
+    <span class="soon selo">Prévia · protótipo</span>
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="lin"><div class="kpi"><small>Paradas pedidas</small><b>—</b></div><div class="kpi"><small>Regiões</small><b>—</b></div><div class="kpi"><small>Rotas</small><b>—</b></div></div>
+    <div class="grafico"><svg viewBox="0 0 300 120" preserveAspectRatio="none"><path d="M0 100 C40 90 60 40 100 55 S170 100 210 50 S270 20 300 30" fill="none" stroke="#2150f5" stroke-width="4" stroke-dasharray="4 8" stroke-linecap="round"/></svg></div>
+    <p style="font-size:.8rem;color:var(--suave);margin:12px 0 0">Sem dados ainda. Os números aparecem quando você usar o app.</p>
+  </div>
+</div></section>
+
+<section id="rede-de-apoio" class="apoio"><div class="wrap grid">
+  <div>
+    <span class="eyebrow">Rede de Apoio</span>
+    <h2>Seu conhecimento pode apoiar quem trabalha em movimento.</h2>
+    <p class="lead">A Rede de Apoio é uma iniciativa em desenvolvimento para aproximar vendedores de profissionais e organizações que possam ajudar em necessidades práticas do negócio.</p>
+    <div class="chips"><span class="chip">Contabilidade</span><span class="chip">Orientação financeira</span><span class="chip">Design</span><span class="chip">Comunicação</span><span class="chip">Assessoria jurídica</span><span class="chip">e outras áreas</span></div>
+    <p class="aviso-p">A participação depende de definição e formalização. Cadastrar-se não garante inclusão imediata na rede.</p>
+    <a class="btn btn-ink" href="entrar.html?modo=criar&tipo=apoio">Quero fazer parte da Rede de Apoio</a>
+  </div>
+  <div class="quote rv">Quem vende está <span>circulando.</span><br>Quem sabe pode <span>apoiar.</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyebrow">No que a gente acredita</span>
+  <h2>Do jeito que a gente faz.</h2>
+  <div class="princ">
+    <div><h3>Quem vende é protagonista</h3><p>A rota, o produto e o trabalho são seus. A gente só ajuda a encontrar.</p></div>
+    <div><h3>Só prometemos o que dá pra cumprir</h3><p>Sem "venda garantida". Informação clara sobre o que o app faz e o que não faz.</p></div>
+    <div><h3>Simples de verdade</h3><p>Linguagem direta, sem jargão e sem complicar.</p></div>
+  </div>
+</div></section>
+
+<section id="perguntas" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow">Perguntas frequentes</span>
+  <h2>Ficou com dúvida?</h2>
+  <div class="faq">
+    <details><summary>O app já está disponível?</summary><p>Ainda não. Estamos preparando o lançamento. Criando sua conta no painel, você já deixa seu cadastro pronto.</p></details>
+    <details><summary>Quem pode participar?</summary><p>Vendedores ambulantes móveis, ou seja, quem vende ou presta serviço em movimento: a pé, de bike, moto, carro ou outro meio. Pontos fixos não fazem parte deste recorte.</p></details>
+    <details><summary>O Tá Chegando é um serviço de entrega?</summary><p>Não. A proposta é facilitar o encontro entre quem vende em movimento e quem procura.</p></details>
+    <details><summary>Como a localização é usada?</summary><p>Vamos informar com clareza o que é exibido, para quem e em quais condições, conforme o funcionamento confirmado do aplicativo.</p></details>
+    <details><summary>E a Rede de Apoio?</summary><p>É uma iniciativa em desenvolvimento. Você pode cadastrar seu interesse e acompanhar as novidades.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Quem está por perto?</h2>
+  <p>Você já está na rua. Agora deixe que encontrem você.</p>
+  <div class="acoes"><a class="btn btn-or" href="entrar.html?modo=criar">Criar conta</a><span class="soon" style="background:#fff;color:var(--ink)">App em breve</span></div>
 </div></section>
 </main>
 
-<footer><div class="wrap">
-  <strong>Tá Chegando</strong> — o aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo. Todos os direitos reservados. CNPJ 66.543.238/0001-71.
+<footer class="rod"><div class="wrap">
+  <div><strong>Tá Chegando</strong> · O aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo. Todos os direitos reservados. CNPJ 66.543.238/0001-71.</div>
+  <div><a href="entrar.html">Entrar</a></div>
 </div></footer>
-<script src="config.js"></script>
-<script src="script.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
