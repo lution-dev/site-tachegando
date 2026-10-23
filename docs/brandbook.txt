@@ -1,0 +1,394 @@
+
+TÁ CHEGANDO
+Brand BookInstitucional
+Identidade, posicionamento e expressão da marca
+Versão textual consolidada para validação institucional
+Outubro de 2026
+
+Como utilizar este documento
+Este brand book reúne os fundamentos estratégicos e as diretrizes de expressão do Tá Chegando. Orienta profissionais, equipes e parceiros responsáveis pela gestão, comunicação e desenvolvimento da marca, garantindo consistência entre suas diferentes aplicações.
+Informações sobre funcionalidades, disponibilidade e condições do serviço devem ser confirmadas pelas áreas responsáveis antes de sua divulgação.
+Sumário
+01    Apresentação da marca
+02    Fundamentos da marca
+03    Públicos e proposta de valor
+04    Posicionamento e diferenciação
+05    Personalidade e universo da marca
+06    Identidade verbal e comunicação
+07    Identidade e expressão visual
+08    Gestão e aplicação da marca
+
+CAPÍTULO 01
+Apresentação da marca
+1.1. Quem somos
+O Tá Chegando é uma plataforma digital criada para aproximar vendedores ambulantes móveis e consumidores. Por meio de informações de localização e da possibilidade de solicitar paradas, busca facilitar a descoberta de vendedores durante seus trajetos.
+A proposta valoriza uma dinâmica comercial que já existe nas cidades, ampliando as possibilidades de encontro entre quem circula para vender e quem deseja comprar.
+CAPÍTULO 02
+Fundamentos da marca
+Os fundamentos do Tá Chegando orientam decisões, experiências e comunicações da marca. Eles devem permanecer coerentes ao longo do tempo, mesmo quando mudarem as campanhas, os canais ou as equipes.
+2.1. Essência
+O comércio que circula faz parte da vida das cidades — e merece ser visto, encontrado e valorizado.
+2.2. Propósito
+Valorizar o comércio ambulante em movimento, ampliando as oportunidades de encontro entre vendedores e consumidores.
+2.3. Missão
+Conectar vendedores ambulantes móveis e consumidores por meio de uma plataforma digital que utiliza informações de localização para facilitar a descoberta de vendedores durante suas rotas e a solicitação de paradas.
+2.4. Visão
+Ser referência na conexão entre vendedores ambulantes móveis e consumidores, tornando mais simples encontrar o comércio em movimento nas cidades.
+2.5. Valores
+Respeito a quem trabalha
+Reconhecemos os vendedores ambulantes como profissionais com autonomia, experiência e conhecimento sobre suas atividades.
+Na prática: apresentamos os vendedores como protagonistas de suas atividades, respeitando sua autonomia e sem atribuir à plataforma o mérito por seu trabalho.
+Confiança e transparência
+Construímos relações com informações claras e compromissos que podemos sustentar.
+Na prática: comunicamos com precisão as funcionalidades, condições e limitações do serviço. Não prometemos vendas ou resultados que não controlamos.
+Simplicidade que inclui
+Buscamos tornar a comunicação compreensível para pessoas com diferentes idades, experiências e níveis de familiaridade com a tecnologia.
+Na prática: usamos linguagem acessível e explicações diretas, sem jargões ou complexidade desnecessária.
+Utilidade real
+A tecnologia deve responder a necessidades concretas de quem utiliza a plataforma.
+Na prática: priorizamos soluções que contribuam para a experiência de vendedores e consumidores, em vez de recursos que apenas transmitam uma aparência de inovação.
+Escuta e evolução
+As experiências dos nossos públicos orientam o desenvolvimento da marca e do serviço.
+Na prática: levamos em conta dúvidas, dificuldades, sugestões e comportamentos reais ao avaliar melhorias.
+CAPÍTULO 03
+Públicos e proposta de valor
+O Tá Chegando reúne dois públicos centrais: vendedores ambulantes móveis e consumidores. O valor da plataforma está na conexão entre vendedores em circulação e pessoas interessadas em encontrá-los na mesma região. A Rede de Apoio constitui uma iniciativa complementar, ainda em desenvolvimento.
+3.1. Vendedores ambulantes móveis
+São profissionais que comercializam produtos ou oferecem serviços durante seus trajetos. A circulação faz parte da atividade comercial, seja a pé, de bicicleta, moto, carro ou outro meio de transporte.
+O que caracteriza esse público é o comércio em movimento, independentemente do produto ou veículo utilizado. Estabelecimentos que operam permanentemente em pontos fixos e profissionais que apenas se deslocam para cumprir atendimentos agendados não fazem parte desse recorte.
+Proposta de valor para vendedores
+O Tá Chegando busca tornar os vendedores ambulantes móveis mais fáceis de encontrar durante suas rotas e facilitar o contato com consumidores interessados, incluindo a possibilidade de solicitar paradas.
+3.2. Consumidores
+São pessoas interessadas em encontrar vendedores ambulantes que circulam por uma região. Podem estar procurando algo específico, tentando encontrar um vendedor conhecido ou abertas a descobrir produtos e vendedores durante a rotina.
+As situações de interesse podem incluir:
+•  Busca específica: procurar determinado produto ou tipo de vendedor.
+•  Descoberta na região: saber quais vendedores circulam por um local de interesse.
+•  Reencontro: tentar encontrar um vendedor de quem a pessoa já costuma comprar.
+•  Descoberta espontânea: conhecer vendedores ou produtos sem ter iniciado uma busca específica.
+Proposta de valor para consumidores
+O Tá Chegando busca facilitar a descoberta de vendedores ambulantes móveis na região, permitindo que consumidores acompanhem sua aproximação e solicitem uma parada quando houver interesse.
+3.3. Rede de Apoio
+A Rede de Apoio é uma iniciativa em desenvolvimento para aproximar vendedores ambulantes móveis de profissionais e organizações que possam contribuir para suas atividades.
+A proposta contempla serviços como contabilidade, orientação financeira, design, comunicação e assessoria jurídica, entre outras especialidades. Sua implementação depende da definição e formalização das participações.
+Direção de valor para a Rede de Apoio
+Facilitar a conexão entre vendedores ambulantes móveis e profissionais que possam apoiá-los em necessidades práticas de seus negócios.
+3.4. Divulgação e recomendação
+Vendedores, consumidores e apoiadores podem contribuir para a divulgação do Tá Chegando, recomendando a plataforma a outras pessoas. Essa participação não pressupõe a existência de programas formais de indicação, benefícios ou embaixadores.
+CAPÍTULO 04
+Posicionamento e diferenciação
+4.1. Território da marca
+O encontro com o comércio em movimento.
+O território reúne duas ideias centrais: a circulação, que faz parte da atividade dos vendedores ambulantes móveis, e o encontro, que representa a conexão que o Tá Chegando busca facilitar entre quem vende e quem procura.
+4.2. Posicionamento
+O Tá Chegando se posiciona como uma plataforma de conexão entre vendedores ambulantes móveis e consumidores, voltada à descoberta e ao encontro durante as rotas de venda.
+Sua proposta parte da circulação que já faz parte do comércio ambulante, utilizando informações de localização para aproximar quem se desloca para vender de quem deseja comprar.
+4.3. Promessa
+Tornar mais fácil encontrar quem vende em movimento.
+4.4. Significado cultural
+Queremos tornar o comércio ambulante que circula pelas cidades mais fácil de encontrar e contribuir para que sua diversidade, seu valor e sua presença no cotidiano sejam reconhecidos.
+4.5. Bases de diferenciação
+Foco no comércio ambulante em circulação
+O Tá Chegando direciona sua proposta a profissionais que se deslocam durante suas atividades comerciais, independentemente do produto vendido ou do meio de transporte utilizado. Esse recorte orienta o desenvolvimento da marca e a experiência que ela busca oferecer.
+Conexão durante as rotas de venda
+A plataforma busca facilitar a descoberta de vendedores em circulação e permitir que consumidores manifestem interesse por meio de solicitações de parada. A proposta considera os trajetos que já fazem parte da rotina comercial, aproximando vendedores e consumidores sem substituir suas relações de compra e venda.
+4.6. Como falar de outras soluções
+Na comparação com outras soluções, o Tá Chegando deve comunicar seus benefícios e características com clareza, utilizando diferenças verificáveis e evitando alegações de pioneirismo, exclusividade ou superioridade sem comprovação.
+CAPÍTULO 05
+Personalidade e universo da marca
+A personalidade do Tá Chegando orienta como a marca se apresenta, se relaciona com as pessoas e conta suas histórias. Ela deve aparecer de maneira coerente na comunicação e nas decisões da empresa.
+5.1. Personalidade
+O Tá Chegando é uma marca próxima, prática, viva e curiosa, confiável e respeitosa. Reconhece o valor do comércio ambulante móvel e se relaciona com as pessoas de maneira simples.
+Próxima
+Conversa com naturalidade e de igual para igual. Evita intimidade forçada.
+Prática
+Prioriza clareza, utilidade e informações que ajudem as pessoas. Evita linguagem vaga ou tecnicismos desnecessários.
+Viva e curiosa
+Demonstra interesse pelas pessoas, suas rotinas e descobertas. Evita agitação artificial e excesso de estímulos.
+Confiável
+Apresenta possibilidades e condições com responsabilidade. Evita exageros, arrogância e promessas sem sustentação.
+Respeitosa
+Reconhece a autonomia, a experiência e a diversidade dos públicos. Evita paternalismo, caricaturas e estereótipos.
+5.2. Referências de personalidade
+Pessoa do cotidiano — referência principal
+Proximidade, identificação com a vida cotidiana e relações de igual para igual, valorizando situações reais de compra e venda.
+Explorador — influência secundária
+Curiosidade, descoberta e circulação pelos trajetos cotidianos, sem associação a aventura ou turismo.
+5.3. Tensão narrativa
+O comércio está em movimento, mas nem sempre a informação acompanha esse movimento.
+5.4. Perspectivas do universo da marca
+A cidade que se encontra
+Relações e descobertas que surgem nos bairros, nos trajetos e nos espaços de circulação.
+O comércio que movimenta as ruas
+A diversidade de vendedores, produtos, serviços e rotinas do comércio ambulante móvel.
+Descobrir o que já está por perto
+A curiosidade de encontrar vendedores e produtos que fazem parte do cotidiano.
+5.5. Princípios de representação e narrativa
+A realidade vem antes da encenação
+Priorizamos situações reconhecíveis, pessoas reais e representações autênticas. Histórias, depoimentos e resultados devem ser verdadeiros e verificáveis. Não utilizamos imagens geradas por inteligência artificial para simular vendedores ou situações reais.
+O vendedor é protagonista
+Reconhecemos a autonomia, a experiência e o conhecimento de quem trabalha. O vendedor participa da história; não é apenas um elemento visual de uma campanha.
+O movimento faz parte do trabalho
+Representamos diferentes formas de deslocamento e circulação. Não restringimos o comércio ambulante a carrinhos ou pontos estacionados.
+A tecnologia apoia a história
+Apresentamos a tecnologia como um meio de facilitar a conexão entre vendedores e consumidores, sem transformar seus recursos na única dimensão da narrativa nem exagerar suas capacidades.
+Brasilidade sem caricatura
+Representamos a diversidade brasileira sem reduzi-la a um perfil regional, econômico, cultural ou visual. Evitamos figurinos artificiais e o uso de gírias como caricatura.
+Comunidade se constrói com participação real
+Pertencimento e comunidade dependem de experiências concretas. Cadastros, seguidores ou intenções de parceria, por si só, não comprovam a existência de uma rede consolidada.
+5.6. Manifesto da marca
+Todos os dias, vendedores circulam pelas ruas e bairros, seguem suas rotas e reencontram clientes. Há também quem espere sua passagem, procure um produto ou descubra algo que nem sabia estar por perto.
+Essa relação comercial já faz parte da vida das cidades. É construída por pessoas que conhecem seu trabalho, seus caminhos e seus clientes.
+Mas o movimento nem sempre é acompanhado pela informação. Quem vende está circulando; quem procura nem sempre sabe onde encontrar.
+O Tá Chegando existe para aproximar esses caminhos, tornando mais fácil o encontro entre vendedores ambulantes móveis e consumidores.
+A tecnologia entra para facilitar uma relação que já existe, sem substituir a autonomia de quem trabalha.
+Porque o comércio está em movimento. E encontrar quem vende pode ser mais simples.
+Tá Chegando.
+CAPÍTULO 06
+Identidade verbal e comunicação
+A identidade verbal orienta como o Tá Chegando se expressa em textos, falas e mensagens. A voz permanece reconhecível, enquanto a linguagem se adapta ao público, ao canal e à situação.
+6.1. Nossa voz
+O Tá Chegando se comunica de maneira próxima, natural, clara e respeitosa, combinando objetividade com a espontaneidade do português brasileiro cotidiano. O tom se adapta ao público e à situação, preservando uma voz reconhecível em todos os canais.
+6.2. Princípios da linguagem
+Naturalidade
+Usamos construções que soam naturais na conversa cotidiana. Evitamos frases artificiais ou excessivamente formais.
+Clareza
+Apresentamos primeiro a informação principal. Explicamos termos ou ações quando isso ajuda a compreensão.
+Proximidade
+Convidamos, explicamos e orientamos sem pressionar. Falamos de igual para igual, sem presumir intimidade.
+Movimento
+Falamos de circulação e descoberta quando isso for pertinente à mensagem, sem recorrer a referências a movimento de forma automática.
+Responsabilidade
+Descrevemos benefícios, condições e limitações com precisão. Não prometemos resultados ou funcionalidades sem confirmação.
+6.3. Como o tom varia
+Contexto
+Tom
+Exemplo
+Conteúdos leves e de descoberta
+Espontâneo e curioso
+“Bora conhecer o Tá Chegando?”
+Informações e orientações
+Direto e organizado
+“Veja como funciona o cadastro para vendedores.”
+Atendimento ou assunto sensível
+Respeitoso, preciso e acolhedor
+“Vamos verificar sua solicitação e orientar os próximos passos.”
+
+Expressões como “bora”, “tá”, “pra” e “por aí” podem ser usadas quando soarem naturais e ajudarem a mensagem. Não são obrigatórias. A marca evita o excesso de gírias e busca ser compreensível para pessoas de diferentes idades, regiões e níveis de familiaridade digital.
+6.4. Vocabulário da marca
+Termo
+Orientação
+Vendedor
+Termo principal para quem comercializa produtos ou oferece serviços em movimento.
+Vendedor ambulante móvel
+Expressão específica, adequada a definições institucionais.
+Consumidor
+Pessoa interessada em descobrir ou encontrar vendedores.
+Cliente
+Pessoa na relação de compra com um vendedor.
+Em movimento / circulando
+Expressões que destacam a natureza itinerante da atividade.
+Por perto / na região / por aí
+Indicam proximidade geográfica de acordo com as informações disponíveis, sem sugerir presença ou atendimento garantidos.
+Descobrir / encontrar
+Verbos que comunicam os benefícios centrais de forma simples.
+Solicitação de parada
+Ação de pedir que um vendedor passe ou pare em determinado local. Na comunicação cotidiana, pode-se dizer “pedir uma parada”, conforme o funcionamento do aplicativo.
+Localização e compartilhamento
+Comunicamos com clareza quais informações de localização são exibidas, para quem e em quais condições, de acordo com o funcionamento confirmado do aplicativo.
+
+O nome Tá Chegando deve manter sua grafia e acentuação. Em comunicações diretas, priorizamos o tratamento por “você”, com naturalidade e sem intimidade forçada.
+“Delivery” e “entrega” não definem a proposta principal da marca. “Rastreamento” só deve ser utilizado quando a comunicação explicar, com precisão, o que é compartilhado. Evitamos expressões como “único”, “pioneiro”, “revolucionário” e “o melhor” sem comprovação. “Rede” e “comunidade” não devem sugerir recursos ou experiências que ainda não existam.
+6.5. A linguagem na prática
+Situação
+Preferimos
+Evitamos
+Falar com vendedores
+“Você vende em movimento? Conheça o Tá Chegando.”
+“Cadastre-se e dobre suas vendas.”
+Despertar curiosidade
+“O vendedor que você procura pode estar passando por aí.”
+“Encontre qualquer vendedor a qualquer hora.”
+Explicar uma funcionalidade
+“Solicite uma parada para sinalizar seu interesse ao vendedor.”
+“Peça uma parada e tenha atendimento garantido.”
+
+Os exemplos de funcionalidades devem corresponder às ações efetivamente disponíveis no aplicativo antes de serem utilizados em comunicações públicas.
+6.6. Hierarquia e referências de comunicação
+Elemento
+Função
+Essência
+Convicção central que orienta a marca.
+Posicionamento
+Espaço que a marca pretende ocupar na percepção dos públicos.
+Promessa
+Benefício central que a marca busca entregar.
+Slogan
+Assinatura verbal institucional, após validação.
+Mensagem por público
+Benefício ou convite pertinente a cada grupo.
+Conceito de campanha
+Direção criativa para ações e períodos específicos.
+Chamada para ação
+Indicação de um próximo passo concreto.
+
+Slogan — proposta para validação institucional
+Quem vende circula. Quem procura descobre.
+Conceito de campanha preservado
+Quem está por perto?
+Mensagem integrada
+Tem gente vendendo pelas ruas. Tem gente procurando. O Tá Chegando ajuda os dois a se encontrar.
+Para vendedores
+Você já está na rua. Agora deixe que encontrem você.
+Para consumidores
+O vendedor que você procura pode estar passando por aí.
+Para a Rede de Apoio
+Seu conhecimento pode apoiar quem trabalha em movimento.
+O slogan está selecionado como proposta para validação institucional. O conceito de campanha e as mensagens são referências de comunicação e não limitam a criação de novas campanhas.
+6.7. Exemplos de aplicação
+Conteúdo para vendedores
+Você já tem suas rotas e sua maneira de trabalhar. O Tá Chegando foi pensado para ajudar consumidores a encontrar você durante seus trajetos.
+Conteúdo para consumidores
+Procurando aquele vendedor que costuma passar pelo seu bairro? Conheça o Tá Chegando.
+Mensagem sobre disponibilidade
+A localização e a disponibilidade dos vendedores podem variar. Confira as informações apresentadas no aplicativo.
+6.8. Chamadas para ação
+As chamadas para ação devem indicar claramente o próximo passo e corresponder a uma ação disponível no canal utilizado.
+Objetivo
+Exemplo
+Apresentar a marca
+“Conheça o Tá Chegando.”
+Orientar vendedores
+“Saiba como funciona para vendedores.”
+Apresentar a Rede de Apoio
+“Conheça a Rede de Apoio.”
+Consultar o serviço
+“Veja as informações no aplicativo.”
+
+As chamadas são exemplos de linguagem. Sua utilização depende da existência do destino e da ação correspondente.
+6.9. Aplicação por ponto de contato
+Redes sociais e vídeos
+Utilizar linguagem natural, perguntas e situações cotidianas para despertar interesse e apresentar a utilidade da plataforma.
+Materiais de rua
+Priorizar mensagens curtas, benefícios facilmente identificáveis e chamadas diretas, considerando o tempo limitado de leitura.
+Site e apresentações
+Apresentar a proposta de maneira objetiva, distinguindo as informações e os benefícios destinados a vendedores, consumidores e demais públicos.
+Tutoriais e orientações de uso
+Utilizar instruções diretas, ações organizadas em sequência e termos coerentes com os apresentados no aplicativo.
+Atendimento
+Adotar linguagem respeitosa, clara e acolhedora. Reconhecer dúvidas e dificuldades sem minimizar problemas ou prometer soluções que não estejam confirmadas.
+CAPÍTULO 07
+Identidade e expressão visual
+A identidade visual do Tá Chegando deve traduzir a relação entre pessoas, comércio ambulante e movimento, expressando proximidade, vitalidade e confiança de maneira clara e reconhecível.
+7.1. Território visual
+A cidade em movimento, vista por quem a vive.
+O reconhecimento da marca resulta da consistência entre imagens, composições, grafismos e experiências — não apenas de um símbolo.
+7.2. Fundamentos visuais
+Vida real
+Representar pessoas, produtos, rotinas e diferentes realidades brasileiras de forma autêntica, sem idealização.
+Movimento e localização
+Explorar conceitos de trajetos, circulação, aproximação e descoberta. Mapas, pinos e outros elementos de localização podem servir como referências, sem determinar obrigatoriamente a linguagem visual.
+Tecnologia acessível
+Priorizar clareza, legibilidade e compreensão nas experiências digitais e físicas.
+7.3. Princípios de expressão
+•  Reconhecimento: manter características visuais consistentes em diferentes contextos.
+•  Simplicidade: criar composições claras e hierarquias de informação bem definidas.
+•  Vitalidade: transmitir energia e curiosidade sem excesso de estímulos.
+•  Proximidade: representar os públicos de forma natural e acessível.
+•  Flexibilidade: preservar unidade entre materiais institucionais, comerciais e culturais.
+•  Acessibilidade: considerar contraste, legibilidade e diferentes necessidades de leitura.
+7.4. Identificação visual da marca
+O nome institucional é Tá Chegando, com grafia e acentuação preservadas.
+A identidade visual deve ser reconhecível em diferentes formatos e aplicações, representando o comércio ambulante móvel sem restringir a marca a um produto, veículo ou atividade específica.
+Sua construção deve evitar associações predominantes a pontos comerciais fixos ou a serviços convencionais de delivery.
+7.5. Direção cromática
+Azul e laranja constituem a base cromática da Tá Chegando. A combinação deve contribuir para uma identidade reconhecível, expressando confiança, proximidade e vitalidade.
+A definição de tonalidades, cores de apoio e aplicações será desenvolvida na construção da identidade visual, considerando contraste, legibilidade e consistência entre os diferentes meios.
+7.6. Direção tipográfica
+A tipografia deve combinar personalidade, legibilidade e versatilidade, contribuindo para o reconhecimento da marca e a clareza da comunicação em diferentes meios.
+7.7. Fotografia e vídeo
+Pessoas e situações reais
+Priorizar registros autênticos de vendedores, consumidores, produtos, trajetos e cotidiano, respeitando a autonomia e a diversidade das pessoas retratadas.
+Diversidade comercial
+Representar diferentes produtos e atividades, sem limitar as imagens à alimentação, a uma faixa etária ou a um meio de transporte.
+Movimento com propósito
+Representar a circulação de vendedores em situações reais, utilizando trajetos, deslocamentos e interações cotidianas sem depender de efeitos artificiais de movimento.
+Autenticidade e uso responsável
+Não simular depoimentos ou resultados. Respeitar autorizações de uso de imagem e voz, direitos autorais e condições de licença.
+7.8. Grafismos, ilustrações e ícones
+Grafismos, ilustrações e ícones devem integrar uma linguagem visual coerente com a personalidade e o posicionamento da marca.
+Elementos relacionados a movimento, localização e circulação podem servir como referências, sem limitar a identidade a representações literais ou repetitivas.
+As representações devem respeitar a diversidade dos públicos e evitar caricaturas ou estereótipos.
+7.9. Aplicações digitais e físicas
+A identidade visual deve manter unidade entre aplicações digitais e físicas, respeitando as características e necessidades de cada meio. Consistência não significa repetir a mesma composição em todos os formatos.
+Aplicação
+Diretriz
+Aplicativo e site
+Reconhecimento, clareza visual, legibilidade e facilidade de navegação.
+Redes sociais e vídeos
+Unidade visual com flexibilidade para diferentes formatos e conteúdos.
+Materiais impressos e de rua
+Hierarquia clara, leitura rápida e identificação da marca à distância.
+Vestuário e aplicações físicas
+Reconhecimento e adaptação às condições de reprodução.
+QR codes e materiais de acesso
+Integração visual sem prejudicar leitura, identificação e funcionalidade.
+
+CAPÍTULO 08
+Gestão e aplicação da marca
+8.1. O papel do brand book
+O Tá Chegando possui uma identidade institucional única, aplicada às diferentes jornadas de seus públicos. Este brand book orienta a gestão e a expressão da marca, permitindo adaptações de linguagem, formato e comunicação sem comprometer seus fundamentos.
+8.2. O que deve permanecer consistente
+•  Fundamentos: essência, propósito, missão, visão e valores.
+•  Posicionamento: território, proposta central e diferenciação.
+•  Públicos: vendedores, consumidores e relações complementares da marca.
+•  Personalidade: atributos, comportamentos e formas de representação.
+•  Identidade verbal: voz, linguagem, vocabulário e mensagens.
+•  Identidade visual: elementos e princípios do sistema gráfico.
+•  Experiência: coerência entre o que a marca comunica e o que oferece.
+8.3. Responsabilidade pela marca
+A gestão da marca envolve diferentes áreas, com responsabilidades definidas conforme suas funções. Essas atribuições devem ser preservadas independentemente dos profissionais que ocupem os cargos.
+Área
+Responsabilidade
+Direção institucional
+Decisões estratégicas que afetam a identidade e o posicionamento, conforme as atribuições formalmente estabelecidas.
+Gestão de marca e marketing
+Preservação da consistência estratégica e orientação da comunicação.
+Comunicação e criação
+Desenvolvimento de conteúdos e materiais alinhados às diretrizes.
+Produto e tecnologia
+Confirmação das informações sobre funcionalidades, disponibilidade e limitações técnicas.
+Parceiros e fornecedores
+Aplicação da marca conforme as diretrizes e o escopo autorizado.
+
+8.4. Aprovação de materiais e informações
+Aplicações de rotina
+Devem seguir as diretrizes vigentes e os procedimentos internos de revisão e aprovação.
+Campanhas e iniciativas relevantes
+Devem ser avaliadas considerando objetivo, público, mensagem e alinhamento ao posicionamento da marca.
+Alterações institucionais
+Mudanças nos fundamentos, posicionamento, slogan ou identidade visual exigem aprovação pela instância responsável e registro da decisão.
+Informações sobre produtos e condições comerciais
+Funcionalidades, disponibilidade, preços e condições do serviço devem ser confirmados pelas áreas responsáveis antes de sua divulgação.
+8.5. Critérios de aplicação
+Antes de aprovar ou divulgar uma aplicação da marca, considerar:
+•  Coerência: está alinhada ao posicionamento e à personalidade?
+•  Relevância: faz sentido para o público?
+•  Clareza: a informação é compreensível?
+•  Autenticidade: a representação corresponde à realidade?
+•  Responsabilidade: as promessas têm sustentação?
+•  Consistência: linguagem e identidade visual seguem as diretrizes?
+•  Acessibilidade: a aplicação considera diferentes necessidades de leitura e interação?
+8.6. Integridade das informações
+A comunicação deve corresponder ao funcionamento real do serviço. Planos, previsões e documentos técnicos não comprovam, por si só, que uma funcionalidade esteja disponível.
+Dados, resultados e condições comerciais devem possuir origem, contexto e confirmação adequados. A marca não deve prometer vendas, cobertura, precisão ou resultados que não possa sustentar.
+8.7. Utilização por terceiros
+Agências, profissionais criativos, parceiros e fornecedores devem utilizar materiais oficiais atualizados e respeitar as diretrizes aplicáveis. O acesso aos arquivos da marca não autoriza alterações na identidade institucional ou comunicações em nome da empresa fora do escopo aprovado.
+8.8. Gestão de arquivos oficiais
+•  Brand book institucional: fundamentos e diretrizes da marca.
+•  Arquivos de identidade visual: elementos gráficos e versões técnicas aprovadas.
+•  Modelos e materiais oficiais: aplicações para peças recorrentes.
+•  Registro de alterações: histórico de decisões e versões.
+Os arquivos oficiais devem estar identificados, atualizados e acessíveis aos profissionais autorizados. As versões editáveis devem permanecer sob controle, e os documentos distribuídos devem corresponder às versões vigentes.
+8.9. Atualizações e versões
+A marca pode evoluir sem que toda mudança operacional represente uma alteração de sua identidade. Novas campanhas, canais e funcionalidades podem exigir adaptações sem modificar os fundamentos institucionais.
+Alterações relevantes devem registrar o elemento modificado, a justificativa, a data, a versão, a aprovação e as aplicações afetadas. Versões anteriores devem permanecer arquivadas e identificadas.
