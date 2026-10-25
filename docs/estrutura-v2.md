@@ -3,7 +3,7 @@
 Substitui a proposta de `copy-e-estrutura.md` e o primeiro rascunho em `site/`, que foram feitos antes de alinhar direção. **Nada de design ou código até esta estrutura ser aprovada.**
 
 ## Decisões já tomadas
-- O app **já existe**; o que falta é o **lançamento oficial** (por falta de investimento). O site pode falar do produto como real, mas cada funcionalidade citada precisa estar na lista de confirmação abaixo (brand book 8.4 e 8.6).
+- O app **já existe e funciona**; o que falta é o **lançamento oficial**. O site descreve o produto no presente, sem link de loja nem data, e convida para cadastro e aviso de lançamento. Textos de funcionalidade estão marcados [confirmar] em `copy-v2.md`.
 - Consumidor: **aviso de lançamento** (lista de interessados).
 - Rede de Apoio: aceita **empresas e profissionais autônomos**.
 - Vendedor e Rede de Apoio: cadastro **dentro do painel**, após criar conta. Protótipo agora, depois ligado ao BD do app real.
