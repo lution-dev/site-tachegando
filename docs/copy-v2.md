@@ -36,7 +36,7 @@ Todo dia tem gente passando pela rua com algo pra vender. E tem gente procurando
 O Tá Chegando existe para aproximar esses caminhos, sem tirar de ninguém a autonomia de quem trabalha.
 
 **Seção "Quem circula por aí":**
-Título: Tem de tudo passando por aí.
+Título: Tem muita coisa passando por aí.
 Texto: Frutas, ovos, pão, queijo, doces, artesanato, flores, roupas, picolé, afiador de facas, gás e muito mais. A pé, de bike, de moto, de carro ou de carrinho.
 (Mosaico de fotos reais.)
 
@@ -67,12 +67,12 @@ Botões: **Criar conta** · **Quero ser avisado**
 **CTA:** **Criar minha conta** · secundário: **Já tenho conta**
 
 **Faixa "Para quem é":**
-Para quem vende em movimento: a pé, de bicicleta, moto, carro, caminhonete ou carrinho, com qualquer produto ou serviço. Pontos fixos e atendimentos agendados não fazem parte deste recorte.
+Para quem vende em movimento: a pé, de bicicleta, moto, carro, caminhonete ou carrinho, com qualquer produto ou serviço. A rota é o que importa. (O Tá Chegando é feito para quem circula; lojas e pontos fixos ficam de fora.)
 
 **Como funciona (3 passos):**
 1. **Crie sua conta.** É rápido: e-mail e senha.
 2. **Conte o que você vende.** Produtos, meio de transporte, cidade e dias em que você circula.
-3. **Use o app na sua rota.** Quem estiver por perto pode ver que você está circulando e pedir uma parada. **[confirmar]**
+3. **Use o app na sua rota.** Quem procura vê que você está circulando por perto e pode pedir uma parada. **[confirmar]**
 
 **O que você ganha (4 blocos curtos):**
 - **Mais fácil de encontrar.** Quem procura sabe onde você passa. **[confirmar]**
@@ -81,18 +81,17 @@ Para quem vende em movimento: a pé, de bicicleta, moto, carro, caminhonete ou c
 - **Um painel só seu.** Cadastro e, depois, seus números num só lugar.
 
 **O que o Tá Chegando não faz (transparência):**
-Não promete vendas, não cobra comissão por você vender e não decide por você. *(Retirar a frase de comissão se o modelo de cobrança for diferente.)* **[confirmar]**
+Não promete vendas e não decide por você. Quem escolhe a rota, o produto e quando parar é você.
 
 **Conteúdo para quem tem frota:**
 Tem mais de um vendedor trabalhando com você? Fale com a gente e conte como é sua operação. → botão **Falar com a equipe**
 
 **Perguntas frequentes:**
-- *Preciso ter smartphone?* Sim, o app funciona no celular. **[confirmar]**
 - *Quem vê minha localização?* Você vê no app exatamente o que é exibido, para quem e em que condições. **[confirmar]**
 - *Posso escolher quando aparecer?* **[confirmar]**
 - *Tem custo para participar?* As condições do serviço serão informadas no lançamento oficial.
 - *Posso vender qualquer coisa?* Produtos e serviços em movimento, respeitando as regras do app. **[confirmar]**
-- *Em quais cidades funciona?* A cobertura vai crescer com o uso. Confira no app.
+- *Tem vendedor na minha cidade?* A presença de vendedores varia de lugar para lugar. Confira as informações no app.
 
 **CTA final:** Você já tem a rota. Falta ser encontrado. → **Criar minha conta**
 
@@ -156,7 +155,7 @@ Empresas e profissionais autônomos que queiram oferecer seu conhecimento a vend
 A participação depende da definição e da formalização das condições. Cadastrar-se não garante inclusão imediata na rede, e o site não promete resultados para quem participa.
 
 **Por que apoiar:**
-Quem trabalha em movimento conhece a rua, os clientes e o produto. Muitas vezes falta apoio em coisas práticas: organizar as contas, divulgar o trabalho, entender a lei. É aí que você entra.
+Quem trabalha em movimento já conhece a rua, os clientes e o produto. Ter alguém por perto para ajudar nas contas, na divulgação ou na parte jurídica faz diferença. É aí que você entra.
 
 **Perguntas frequentes:**
 - *Preciso ter CNPJ?* Não. Profissionais autônomos também podem participar.
