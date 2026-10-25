@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Painel — Tá Chegando</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body style="display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px;background:var(--creme)">
+<main><h1 style="color:var(--azul)">Seu painel está a caminho.</h1><p class="lead" style="margin:0 auto 20px">Conta criada. O cadastro dentro do painel é a próxima etapa do site.</p>
+<p id="quem" style="color:var(--suave)"></p><button class="btn az" id="sair">Sair da conta</button></main>
+<script src="js/data.js"></script>
+<script>var u=TC.usuarioAtual();if(!u)location.replace("entrar.html");else document.getElementById("quem").textContent=u.email+" · "+(u.tipo==="vendedor"?"Vendedor":"Rede de Apoio");
+document.getElementById("sair").onclick=function(){TC.sair();location.href="index.html"};</script></body></html>

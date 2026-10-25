@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entrar — Tá Chegando</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306175c'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff7a00'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="proto"><b>Protótipo:</b> as contas ficam só neste navegador, ainda sem conexão com o app.</div>
+<main class="auth">
+  <aside class="lado-a">
+    <a class="logo" href="index.html">Tá <i>Chegando</i></a>
+    <div>
+      <h2>Quem vende <em>circula.</em><br>Quem procura descobre.</h2>
+      <p>Crie sua conta, complete seu cadastro e deixe tudo pronto para o lançamento.</p>
+    </div>
+    <span></span>
+  </aside>
+  <div class="form"><div class="caixa">
+    <h1 id="titulo">Entrar</h1>
+    <p class="apoio" id="apoio">Acesse seu painel.</p>
+    <div class="tabs2" role="tablist" aria-label="Entrar ou criar conta">
+      <button type="button" role="tab" id="t-entrar" aria-selected="true">Entrar</button>
+      <button type="button" role="tab" id="t-criar" aria-selected="false">Criar conta</button>
+    </div>
+    <form id="f" novalidate>
+      <div id="bloco-tipo" hidden>
+        <span class="rot">Você é…</span>
+        <div class="tipos">
+          <label><input type="radio" name="tipo" value="vendedor" checked><span>Vendedor<small>Vendo em movimento</small></span></label>
+          <label><input type="radio" name="tipo" value="apoio"><span>Rede de Apoio<small>Empresa ou profissional</small></span></label>
+        </div>
+      </div>
+      <label for="email">E-mail</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" autocomplete="current-password" minlength="6" required>
+      <div class="msg" id="msg" role="alert"></div>
+      <button class="btn or cheio" id="enviar" type="submit">Entrar</button>
+      <p class="legal" id="legal" hidden>Ao criar a conta, você concorda com os <a href="termos.html">Termos</a> e a <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </form>
+    <a class="volta" href="index.html">← Voltar ao site</a>
+  </div></div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
