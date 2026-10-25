@@ -41,6 +41,11 @@ window.TC = (function () {
         return publico(u);
       });
     },
+    registrarInteresse: function (dados) {
+      // PROTÓTIPO: guarda só neste navegador. Trocar por envio ao BD real.
+      var l = read("tc_interesses", []); l.push(Object.assign({ em: new Date().toISOString() }, dados));
+      write("tc_interesses", l); return Promise.resolve();
+    },
     sair: function () { try { localStorage.removeItem(K_SESSION); } catch (e) {} },
     salvarPerfil: function (perfil) {
       var email = read(K_SESSION, null), users = read(K_USERS, {});
