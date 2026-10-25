@@ -14,7 +14,7 @@ body.b{--f:"Nunito",system-ui,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{font-family:var(--f);color:#fff;background:var(--azul-esc);-webkit-font-smoothing:antialiased}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--azul-esc) url(img/hero.jpg) center/cover no-repeat}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--azul-esc) url(img/hero.jpg) 68% center/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,23,92,.96) 0%,rgba(6,23,92,.86) 36%,rgba(6,23,92,.25) 68%,rgba(6,23,92,0) 100%)}
 .hero>*{position:relative}
 header{display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,5vw,64px);gap:16px}
@@ -44,7 +44,7 @@ h1 em{font-style:normal;color:var(--laranja)}
 :focus-visible{outline:3px solid #fff;outline-offset:3px}
 @media(max-width:900px){
   nav a:not(.btn){display:none}
-  .hero{background-position:75% 0;background-size:auto 52%}
+  .hero{background-position:72% top;background-size:auto 55%}
   .hero::before{background:linear-gradient(180deg,rgba(6,23,92,0) 0%,rgba(6,23,92,0) 22%,rgba(6,23,92,.92) 52%,rgba(6,23,92,1) 100%)}
   .conteudo{justify-content:flex-end;padding-top:260px}
   .caminhos{grid-template-columns:1fr}
