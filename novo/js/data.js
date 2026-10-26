@@ -15,7 +15,7 @@ window.TC = (function () {
     },
     apoio: {
       email: "apoio@tachegando.demo", senha: "demo123", tipo: "apoio",
-      perfil: { tipoApoio: "Profissional autônomo", nome: "Ana Lima Contabilidade", responsavel: "Ana Lima", documento: "", areas: ["Contabilidade", "Orientação financeira"], apoio: "Posso ajudar vendedores a organizar as contas do mês e a entender as obrigações do dia a dia.", cidade: "Recife", telefone: "(81) 98888-7777" }
+      perfil: { nome: "Lima Contabilidade Ltda", cnpj: "11.222.333/0001-81", site: "www.limacontabilidade.com.br", responsavel: "Ana Lima", areas: ["Contabilidade", "Orientação financeira"], apoio: "Podemos ajudar vendedores a organizar as contas do mês e a entender as obrigações do dia a dia.", cidade: "Recife", telefone: "(81) 98888-7777", status: "em_verificacao" }
     }
   };
   var EXEMPLO = { // pré-preenchimento do cadastro de contas novas
