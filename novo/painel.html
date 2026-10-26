@@ -1,9 +1,29 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Painel — Tá Chegando</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
-<body style="display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px;background:var(--creme)">
-<main><h1 style="color:var(--azul)">Seu painel está a caminho.</h1><p class="lead" style="margin:0 auto 20px">Conta criada. O cadastro dentro do painel é a próxima etapa do site.</p>
-<p id="quem" style="color:var(--suave)"></p><button class="btn az" id="sair">Sair da conta</button></main>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel — Tá Chegando</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306175c'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff7a00'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="painel">
+<div class="proto"><b>Protótipo:</b> seus dados ficam salvos só neste navegador, ainda sem conexão com o app.</div>
+<div class="pn">
+  <aside class="pn-lat">
+    <a class="logo" href="index.html">Tá <i>Chegando</i></a>
+    <button data-v="inicio" aria-current="page">Início</button>
+    <button data-v="perfil">Meu cadastro</button>
+    <button data-v="metricas">Métricas <small>em breve</small></button>
+    <div class="quem" id="quem"></div>
+    <button class="sai" id="sair">Sair da conta</button>
+  </aside>
+  <main class="pn-main" id="conteudo" tabindex="-1"></main>
+</div>
 <script src="js/data.js"></script>
-<script>var u=TC.usuarioAtual();if(!u)location.replace("entrar.html");else document.getElementById("quem").textContent=u.email+" · "+(u.tipo==="vendedor"?"Vendedor":"Rede de Apoio");
-document.getElementById("sair").onclick=function(){TC.sair();location.href="index.html"};</script></body></html>
+<script src="js/painel.js"></script>
+</body>
+</html>
