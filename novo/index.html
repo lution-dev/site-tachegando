@@ -12,10 +12,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section class="hero">
+<a class="skip" href="#principal">Pular para o conteúdo</a>
+<section aria-label="Abertura" class="hero">
   <header class="top">
     <a class="logo" href="index.html"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a>
-    <nav aria-label="Principal">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="nav-principal" aria-label="Principal">
       <a href="vendedores.html">Vendedores</a><a href="consumidores.html">Consumidores</a><a href="rede-de-apoio.html">Rede de Apoio</a>
       <a class="btn ln sm" href="entrar.html">Entrar</a><a class="btn or sm" href="entrar.html?modo=criar">Criar conta</a>
     </nav>
@@ -33,7 +35,7 @@
   <span class="nota">Foto provisória</span>
 </section>
 
-<main>
+<main id="principal">
 <section class="oquee"><div class="wrap grid">
   <div>
     <span class="eyebrow">O que é o Tá Chegando</span>
@@ -109,8 +111,9 @@
 
 <footer class="rod"><div class="wrap">
   <div><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="40" style="margin-bottom:12px"><br>O aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo.<br>Todos os direitos reservados. CNPJ 66.543.238/0001-71.</div>
-  <div><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a></div>
+  <div class="rod-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><button type="button" class="anim-btn" aria-pressed="false">Pausar animações</button></div>
 </div></footer>
 <script src="site.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

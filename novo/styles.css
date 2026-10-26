@@ -386,3 +386,38 @@ footer.rod img{display:block;height:40px;width:auto}
 .hero.v-hero h1{font-size:clamp(2.2rem,4.6vw,4.1rem);max-width:15em}
 .logo img{height:52px}
 @media(max-width:900px){.logo img{height:44px}}
+
+/* ===== UX / acessibilidade ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:#fff;color:var(--azul-esc);font-weight:800;padding:12px 18px;border-radius:12px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.skip:focus{top:12px}
+.manifesto .w{opacity:.58}
+.menu-btn{display:none;background:transparent;border:2px solid rgba(255,255,255,.7);border-radius:12px;width:48px;height:48px;padding:0;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.menu-btn span{display:block;width:22px;height:2.5px;background:#fff;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media(max-width:900px){
+  header.top{position:relative;z-index:40}
+  .menu-btn{display:flex}
+  header.top nav{display:none;position:absolute;left:12px;right:12px;top:calc(100% - 4px);flex-direction:column;align-items:stretch;gap:2px;background:var(--azul-esc);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:10px;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+  header.top nav.aberto{display:flex}
+  header.top nav a:not(.btn){display:block!important;padding:14px 16px;border-radius:12px;font-size:1.05rem}
+  header.top nav a:not(.btn):hover,header.top nav a[aria-current]{background:rgba(255,255,255,.1)}
+  header.top nav .btn{margin-top:6px;padding:14px 20px;text-align:center}
+}
+header.top nav .btn.sm{min-height:46px}
+.rod-links{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
+footer.rod a{display:inline-block;padding:13px 4px}
+.anim-btn{font:inherit;font-weight:700;font-size:.9rem;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);border-radius:99px;padding:10px 16px;cursor:pointer;min-height:44px}
+.anim-btn:hover{background:rgba(255,255,255,.12)}
+.faixa{position:relative}
+.faixa-btn{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--azul-esc);border-color:var(--azul-esc);font-size:.82rem;padding:8px 14px;min-height:40px;z-index:2}
+.faixa.az .faixa-btn{background:var(--laranja);border-color:var(--laranja);color:#1a0a00}
+@media(max-width:700px){.faixa-btn{display:none}}
+.sem-anim *,.sem-anim *::before,.sem-anim *::after{animation-play-state:paused!important;transition:none!important}
+.senha-w{position:relative}
+.senha-w input{padding-right:100px}
+.ver-senha{position:absolute;right:8px;top:50%;transform:translateY(-50%);font:inherit;font-weight:800;font-size:.9rem;background:transparent;border:0;color:var(--azul);cursor:pointer;padding:10px 12px;min-height:44px}
+.dica{font-size:.88rem;color:var(--suave);margin:6px 0 0}
+.etapa-txt{font-weight:800;color:var(--suave);font-size:.95rem;margin:-4px 0 6px}

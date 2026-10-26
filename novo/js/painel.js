@@ -45,7 +45,7 @@
     var p = JSON.parse(JSON.stringify(user.perfil || {})), i = 0;
     function pinta() {
       var ultimo = i === PASSOS.length - 1;
-      el.innerHTML = '<span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1>' +
+      el.innerHTML = '<span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p class="etapa-txt">Passo ' + (i + 1) + ' de ' + PASSOS.length + '</p>' +
         '<div class="etapas-i" role="img" aria-label="Passo ' + (i + 1) + ' de ' + PASSOS.length + '">' + PASSOS.map(function (_, k) { return '<i class="' + (k <= i ? "on" : "") + '"></i>'; }).join("") + '</div>' +
         '<form id="pf" novalidate>' + PASSOS[i].h(p) + '<div class="msg" role="alert" id="pm"></div>' +
         '<div class="nav-b">' + (i > 0 ? '<button type="button" class="btn ln-d" id="volta">Voltar</button>' : '<span></span>') +
