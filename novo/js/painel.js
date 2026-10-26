@@ -155,12 +155,21 @@
       ? '<div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Região</dt><dd>' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
       : '<div><dt>Tipo</dt><dd>' + esc(p.tipoApoio) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div>';
     var cad = '<article class="pn-bc cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit">Editar cadastro</button></article>';
+    var indica = '<article class="pn-bc indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece alguém que poderia apoiar?") + '</h2><p>' + (ehVend ? "Mande o Tá Chegando para essa pessoa conhecer." : "Mande o Tá Chegando para essa pessoa conhecer a Rede de Apoio.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';
     var kp = ehVend ? ["Paradas pedidas", "Regiões com interesse", "Rotas"] : ["Vendedores na rede", "Conexões", "Áreas"];
     var kpis = '<div class="pn-kpis">' + kp.map(function (k) { return '<article class="pn-bc kpi"><small>' + k + '</small><b>—</b>' + SPARK + '</article>'; }).join("") + '</div>';
     el.innerHTML = '<section class="pn-ban" aria-label="Boas-vindas"' + FOTO + '><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Painel da Rede de Apoio") + '</span><h1>Oi, ' + nome + '!</h1><p>' + (ehVend ? "Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota." : "Seu cadastro está pronto. Avisaremos você conforme a Rede de Apoio avançar.") + '</p><div class="pn-chips">' + chips + '</div></section>' +
-      '<div class="pn-bento">' + rota + baixe + prox + cad + kpis + '</div><p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';
+      '<div class="pn-bento">' + rota + baixe + prox + cad + indica + kpis + '</div><p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';
     document.getElementById("edit").onclick = function () { ir("perfil"); };
     colocaPins();
+    var link = location.origin + (ehVend ? "/vendedores" : "/rede-de-apoio"), msg = (ehVend ? "Conhece o Tá Chegando? Ajuda quem vende na rua a ser encontrado: " : "Conhece a Rede de Apoio do Tá Chegando? ") + link;
+    document.getElementById("zap").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+    document.getElementById("copia").onclick = function () {
+      var ok = document.getElementById("copia-ok");
+      function feito() { ok.textContent = "Link copiado!"; setTimeout(function () { ok.textContent = ""; }, 2500); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(feito, function () { ok.textContent = "Copie o link: " + link; });
+      else ok.textContent = "Copie o link: " + link;
+    };
   }
   function metricas() {
     el.innerHTML = '<section class="pn-ban curto" aria-label="Métricas"' + FOTO + '><span class="eyebrow">Métricas</span><h1>Seus números</h1><p>Indicadores do seu uso do app.</p></section>' +

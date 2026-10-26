@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /painel
+Disallow: /entrar
+
+Sitemap: https://tachegandoapp.com.br/sitemap.xml
