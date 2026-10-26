@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Padrão de componentes — proposta para aprovação</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --laranja:#FC4200;--navy:#01172E;--navy2:#2E3A4F;--branco:#FDFDFE;
+  /* TOKENS DE VIDRO (proposta) */
+  --vidro-claro-bg:rgba(255,255,255,.14);--vidro-claro-borda:rgba(255,255,255,.38);
+  --vidro-escuro-bg:rgba(1,23,46,.46);--vidro-escuro-borda:rgba(255,255,255,.22);
+  --blur:14px;--blur-forte:22px;
+  --sombra-vidro:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.25);
+  --fh:"Poppins",sans-serif;--f:"Nunito Sans",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f);background:#EEF1F5;color:var(--navy);padding:40px 32px 80px}
+h1,h2,h3{font-family:var(--fh);margin:0}
+.topo{max-width:1300px;margin:0 auto 36px}
+.topo h1{font-size:2.2rem}.topo p{color:#46506F;max-width:46em}
+section{max-width:1300px;margin:0 auto 56px}
+section>h2{font-size:1.5rem;margin-bottom:6px}
+section>p{color:#46506F;margin:0 0 20px;max-width:52em}
+.foto{border-radius:28px;padding:32px;background:linear-gradient(90deg,rgba(1,23,46,.85),rgba(1,23,46,.35)),url(../novo/img/hero.jpg) 60% center/cover}
+.foto.clara{background:linear-gradient(90deg,rgba(1,23,46,.55),rgba(1,23,46,0)),url(../novo/img/hero-consumidores.jpg) center/cover}
+.grade{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
+.leg{font-size:.82rem;color:#fff;opacity:.9;margin-top:8px;font-weight:600}
+/* ===== componentes ===== */
+.vidro{background:var(--vidro-claro-bg);border:1.5px solid var(--vidro-claro-borda);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:var(--sombra-vidro);color:#fff}
+.vidro-escuro{background:var(--vidro-escuro-bg);border:1.5px solid var(--vidro-escuro-borda);backdrop-filter:blur(var(--blur-forte));-webkit-backdrop-filter:blur(var(--blur-forte));box-shadow:var(--sombra-vidro);color:#fff}
+.selo{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:99px;font-family:var(--fh);font-weight:600;font-size:.9rem}
+.btn-icone{width:48px;height:48px;border-radius:14px;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
+.btn-icone i{display:block;width:22px;height:2.5px;background:#fff;border-radius:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:14px;font-family:var(--f);font-weight:800;font-size:1rem;cursor:pointer;text-decoration:none;border:1.5px solid transparent}
+.btn-prim{background:var(--laranja);color:#1a0a00;border-color:var(--laranja)}
+.btn-vidro{color:#fff}
+.chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:99px;font-weight:700;font-size:.95rem}
+.cartao{width:250px;padding:18px;border-radius:20px}
+.cartao b{display:block;font-family:var(--fh);font-size:1.15rem}
+.cartao span{display:block;font-size:.92rem;line-height:1.35;margin-top:4px}
+.campo{width:260px;height:48px;border-radius:14px;padding:0 14px;display:flex;align-items:center;color:#E9EDF3;font-size:1rem}
+.antes{background:#fff;border:2px solid #cfd6e2;border-radius:16px;padding:16px;display:flex;gap:18px;align-items:center;margin-top:12px}
+.antes .btn-icone{border:2px solid rgba(255,255,255,.7);background:transparent;backdrop-filter:none;box-shadow:none}
+table.tab{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:.93rem}
+table.tab th,table.tab td{padding:10px 14px;text-align:left;border-bottom:1px solid #e3e8f0;vertical-align:top}
+table.tab th{background:var(--navy);color:#fff;font-family:var(--fh);font-weight:600}
+code{background:#e9edf3;padding:1px 6px;border-radius:6px;font-size:.88em}
+/* ===== telefones ===== */
+.fones{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.fone{width:330px}
+.fone h3{font-size:1.1rem;margin-bottom:2px}.fone p{color:#46506F;font-size:.9rem;margin:0 0 10px;min-height:2.7em}
+.tela{position:relative;width:330px;height:640px;border-radius:34px;overflow:hidden;border:6px solid #0a1018;background:linear-gradient(180deg,rgba(1,23,46,.05) 8%,rgba(1,23,46,.55) 52%,rgba(1,23,46,.92) 100%),url(../novo/img/hero.jpg) 72% center/cover no-repeat,var(--navy);color:#fff}
+.tela .cab{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:16px}
+.tela .cab img{height:40px}
+.tela .conteudo{position:absolute;left:18px;right:18px;bottom:20px}
+.tela .conteudo h4{font-family:var(--fh);font-size:1.9rem;line-height:1.05;margin:12px 0 8px}
+.tela .conteudo h4 em{font-style:normal;color:var(--laranja)}
+.tela .conteudo p{font-size:.92rem;margin:0 0 12px;color:#E9EDF3}
+.tela .conteudo .btn{width:100%}
+/* A: tela cheia com vidro + blur */
+.mA{position:absolute;inset:0;background:rgba(1,23,46,.56);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);display:flex;flex-direction:column;padding:16px 20px 22px;z-index:5}
+.mA .cab2{display:flex;justify-content:space-between;align-items:center;margin:0 -4px 22px 0}
+.mA .cab2 img{height:40px}
+.mA a.l{font-family:var(--fh);font-weight:700;font-size:1.7rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.mA a.l small{font-family:var(--f);font-weight:700;font-size:.8rem;color:#FFB08F;margin-top:2px}
+.mA .base{margin-top:auto;display:grid;gap:10px}
+.mA .base .btn{width:100%}
+/* B: cartão de vidro + resto desfocado */
+.mB-scrim{position:absolute;inset:0;background:rgba(1,23,46,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(7px);z-index:4}
+.mB{position:absolute;left:12px;right:12px;top:72px;z-index:6;border-radius:24px;padding:10px}
+.mB a.l{display:block;padding:14px 16px;border-radius:14px;color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem}
+.mB a.l.at{background:rgba(255,255,255,.14)}
+.mB .btn{width:100%;margin-top:6px}
+/* C: folha inferior */
+.mC{position:absolute;left:0;right:0;bottom:0;z-index:6;border-radius:28px 28px 0 0;padding:12px 18px 22px;border-bottom:0}
+.mC .alca{width:44px;height:5px;border-radius:3px;background:rgba(255,255,255,.5);margin:0 auto 12px}
+.mC a.l{display:flex;justify-content:space-between;padding:15px 4px;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;border-bottom:1px solid rgba(255,255,255,.14)}
+.mC .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.rec{display:inline-block;background:var(--laranja);color:#1a0a00;font-weight:800;font-size:.75rem;padding:3px 10px;border-radius:99px;margin-left:8px;vertical-align:middle;font-family:var(--f)}
+</style>
+</head>
+<body>
+<div class="topo">
+  <h1>Padrão de componentes e menu do celular</h1>
+  <p>Proposta visual para aprovação. Nada disso está no site ainda. Primeiro o padrão de vidro (glassmorphism) aplicado de forma igual em todos os componentes, depois três opções de menu para o celular.</p>
+</div>
+
+<section>
+  <h2>1. O problema hoje</h2>
+  <p>O selo "Lançamento em breve" tem vidro (fundo translúcido, desfoque e borda), mas o botão do menu tem só contorno e os outros componentes seguem regras diferentes entre si.</p>
+  <div class="foto">
+    <div class="grade">
+      <div><span class="selo vidro">Lançamento em breve</span><div class="leg">Selo: vidro</div></div>
+      <div><span class="btn-icone" style="border:2px solid rgba(255,255,255,.7)"><i></i><i></i><i></i></span><div class="leg">Botão do menu: só contorno</div></div>
+      <div><a class="btn" style="border:2px solid #fff;color:#fff">Já tenho conta</a><div class="leg">Botão secundário: só contorno</div></div>
+      <div><span class="chip" style="border:2px solid #fff;color:#fff">Ovos</span><div class="leg">Chip: só contorno</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. Proposta: um único padrão de vidro, em duas variações</h2>
+  <p><b>Vidro claro</b> sobre fotos escuras ou médias. <b>Vidro escuro</b> sobre fotos claras (céu, areia) e sobre painéis, para o texto sempre ter contraste. Mesmos raio, borda, desfoque e sombra em tudo.</p>
+  <table class="tab">
+    <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+    <tr><td><code>--vidro-claro</code></td><td>fundo branco 14%, borda branca 38%, blur 14 px, brilho interno no topo</td><td>Selo, botão ícone, botão secundário, chips, cartões sobre foto</td></tr>
+    <tr><td><code>--vidro-escuro</code></td><td>fundo azul profundo 46%, borda branca 22%, blur 22 px</td><td>Menu, painéis, e componentes sobre foto clara</td></tr>
+    <tr><td>Raios</td><td>chip e selo 99 px · botão 14 px · cartão 20 px · painel 24 px</td><td>Sempre os mesmos</td></tr>
+    <tr><td>Alturas</td><td>botão 48 px · selo e chip 40 px</td><td>Alvo de toque confortável</td></tr>
+  </table>
+  <div style="height:16px"></div>
+  <div class="foto">
+    <div class="grade">
+      <div><span class="selo vidro">Lançamento em breve</span><div class="leg">Selo</div></div>
+      <div><span class="btn-icone vidro"><i></i><i></i><i></i></span><div class="leg">Botão ícone (menu)</div></div>
+      <div><a class="btn btn-vidro vidro">Já tenho conta</a><div class="leg">Botão secundário</div></div>
+      <div><a class="btn btn-prim">Criar conta</a><div class="leg">Botão primário (sólido, único laranja)</div></div>
+      <div><span class="chip vidro">Ovos</span> <span class="chip vidro">Queijo</span><div class="leg">Chips</div></div>
+      <div><div class="campo vidro">E-mail</div><div class="leg">Campo sobre foto</div></div>
+      <div><div class="cartao vidro"><b>Eu procuro</b><span>O vendedor que você procura pode estar passando por aí.</span></div><div class="leg">Cartão de vidro</div></div>
+    </div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="foto clara">
+    <div class="grade">
+      <div><span class="selo vidro-escuro">Para quem procura</span><div class="leg">Selo, vidro escuro (foto clara)</div></div>
+      <div><span class="btn-icone vidro-escuro"><i></i><i></i><i></i></span><div class="leg">Botão ícone, vidro escuro</div></div>
+      <div><a class="btn btn-vidro vidro-escuro">Entrar</a><div class="leg">Botão secundário, vidro escuro</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Menu do celular: três opções</h2>
+  <p>Em todas, o botão do menu passa a ser de vidro e o resto da página fica visivelmente em segundo plano (desfoque e escurecimento), em vez de tudo parecer a mesma coisa.</p>
+  <div class="fones">
+    <div class="fone"><h3>A. Tela cheia com vidro<span class="rec">Recomendo</span></h3><p>Cobre a tela toda, com desfoque forte da foto atrás. Links grandes e fáceis de tocar, ações no rodapé ao alcance do polegar.</p>
+      <div class="tela">
+        <div class="cab"><img src="../novo/img/logo-horizontal-escuro.svg" alt=""><span class="btn-icone vidro"><i></i><i></i><i></i></span></div>
+        <div class="conteudo"><span class="selo vidro">Lançamento em breve</span><h4>Você já está na rua. Agora deixe que <em>encontrem você.</em></h4></div>
+        <div class="mA">
+          <div class="cab2"><img src="../novo/img/logo-horizontal-escuro.svg" alt=""><span class="btn-icone vidro"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></span></div>
+          <a class="l" href="#">Vendedores <small>Para quem vende</small></a>
+          <a class="l" href="#">Consumidores <small>Para quem procura</small></a>
+          <a class="l" href="#">Rede de Apoio</a>
+          <div class="base"><a class="btn btn-vidro vidro">Entrar</a><a class="btn btn-prim">Criar conta</a></div>
+        </div>
+      </div></div>
+    <div class="fone"><h3>B. Cartão de vidro</h3><p>Cartão flutuante sob o cabeçalho. A página atrás fica desfocada e escurecida. Mais leve, mostra mais do conteúdo.</p>
+      <div class="tela">
+        <div class="cab" style="z-index:7"><img src="../novo/img/logo-horizontal-escuro.svg" alt=""><span class="btn-icone vidro"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></span></div>
+        <div class="conteudo"><span class="selo vidro">Lançamento em breve</span><h4>Você já está na rua. Agora deixe que <em>encontrem você.</em></h4><p>O Tá Chegando ajuda consumidores a encontrar você durante a rota.</p><a class="btn btn-prim">Criar minha conta</a></div>
+        <div class="mB-scrim"></div>
+        <div class="mB vidro-escuro"><a class="l at" href="#">Vendedores</a><a class="l" href="#">Consumidores</a><a class="l" href="#">Rede de Apoio</a><a class="btn btn-vidro vidro" style="margin-top:8px">Entrar</a><a class="btn btn-prim">Criar conta</a></div>
+      </div></div>
+    <div class="fone"><h3>C. Folha inferior</h3><p>Sobe de baixo, perto do polegar. O topo da página continua visível e desfocado. Boa para poucas opções.</p>
+      <div class="tela">
+        <div class="cab" style="z-index:7"><img src="../novo/img/logo-horizontal-escuro.svg" alt=""><span class="btn-icone vidro"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></span></div>
+        <div class="conteudo"><span class="selo vidro">Lançamento em breve</span><h4>Você já está na rua. Agora deixe que <em>encontrem você.</em></h4></div>
+        <div class="mB-scrim" style="background:rgba(1,23,46,.35);backdrop-filter:blur(5px)"></div>
+        <div class="mC vidro-escuro"><div class="alca"></div><a class="l" href="#">Vendedores <span>→</span></a><a class="l" href="#">Consumidores <span>→</span></a><a class="l" href="#" style="border:0">Rede de Apoio <span>→</span></a><div class="duo"><a class="btn btn-vidro vidro">Entrar</a><a class="btn btn-prim">Criar conta</a></div></div>
+      </div></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. Componentes que viram biblioteca (se aprovado)</h2>
+  <table class="tab">
+    <tr><th>Componente</th><th>Variações</th><th>Hoje</th></tr>
+    <tr><td>Botão</td><td>primário (sólido laranja), vidro, vidro escuro, contorno sobre fundo claro</td><td>4 estilos diferentes sem regra única</td></tr>
+    <tr><td>Botão ícone</td><td>vidro, vidro escuro</td><td>só contorno</td></tr>
+    <tr><td>Selo e chip</td><td>vidro, vidro escuro, sólido (claro)</td><td>selo de vidro, chip com contorno</td></tr>
+    <tr><td>Cartão</td><td>vidro, sólido claro, sólido escuro, sólido laranja</td><td>vários, cada página com o seu</td></tr>
+    <tr><td>Campo de formulário</td><td>claro (padrão), vidro (sobre foto)</td><td>só claro</td></tr>
+    <tr><td>Menu</td><td>tela cheia (A) ou a opção escolhida</td><td>lista simples</td></tr>
+  </table>
+  <p style="margin-top:14px">Na prática: um único arquivo de estilos de componentes (<code>componentes.css</code>) com esses tokens, usado por todas as páginas, e a documentação em <code>docs/design-system.md</code>.</p>
+</section>
+</body>
+</html>
