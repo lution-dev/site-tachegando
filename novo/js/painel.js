@@ -15,7 +15,9 @@
   var MEIO = ["A pé", "Bicicleta", "Moto", "Carro ou caminhonete", "Carrinho", "Outro"];
   var DIAS = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
   var AREAS = ["Contabilidade", "Orientação financeira", "Design", "Comunicação", "Assessoria jurídica", "Outra"];
-  var FOTO = ehVend ? '' : ' style="--foto:url(img/hero-apoio.jpg)"';
+  var FOTO = ehVend ? '' : ' style="--foto:url(img/hero-apoio.webp)"';
+  var DIST = ["Perto", "Normal", "Mais longe"];
+  var DISTDICA = { "Perto": "Avisa clientes bem próximos.", "Normal": "Bom para a maioria das rotas.", "Mais longe": "Avisa clientes um pouco mais distantes." };
   var TIPOS = ["Empresa", "Profissional autônomo"];
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -30,9 +32,10 @@
   // cada validação devolve uma lista de [campo, mensagem]
   var PASSOS = ehVend ? [
     { t: "Quem é você",
-      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + '<p class="nota-m">Usamos só para falar sobre o seu cadastro.</p>'; },
-      l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.telefone = f.telefone.value.trim();
+      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name") + campo("negocio", "Nome do seu negócio", p.negocio, "placeholder=\"Ex.: Frutas do João\"") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + '<p class="nota-m">Usamos só para falar sobre o seu cadastro.</p>'; },
+      l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.negocio = f.negocio.value.trim(); p.telefone = f.telefone.value.trim();
         if (!p.nome) e.push(["nome", "Digite o seu nome."]);
+        if (!p.negocio) e.push(["negocio", "Digite o nome do seu negócio."]);
         if (!p.telefone) e.push(["telefone", "Digite seu telefone com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Telefone incompleto. Use DDD + número, como (13) 99999-9999."]);
         return e; } },
     { t: "O que você vende",
@@ -45,9 +48,13 @@
         if (!p.meio) e.push(["meio", "Escolha como você se desloca."]);
         return e; } },
     { t: "Sua rota",
-      h: function (p) { return campo("cidade", "Cidade", p.cidade, "") + campo("bairros", "Bairros onde você costuma passar", p.bairros, 'placeholder="Ex.: Centro, Vila Nova"') + '<span class="rot l">Dias em que você circula</span>' + opc("dias", DIAS, p.dias); },
-      l: function (f, p) { var e = []; p.cidade = f.cidade.value.trim(); p.bairros = f.bairros.value.trim(); p.dias = marcados(f, "dias");
+      h: function (p) { return campo("rota", "Nome da rota", p.rota, "placeholder=\"Ex.: Centro\"") + campo("cidade", "Cidade", p.cidade, "") + campo("bairros", "Bairros onde você costuma passar", p.bairros, 'placeholder="Ex.: Centro, Vila Nova"') +
+          '<span class="rot l">Dias em que você circula</span>' + opc("dias", DIAS, p.dias) +
+          '<span class="rot l">Avisar clientes até qual distância da rota?</span>' + opc("distancia", DIST, p.distancia ? [p.distancia] : ["Normal"], "radio") + '<p class="nota-m" id="dist-dica">' + (DISTDICA[p.distancia || "Normal"]) + '</p>'; },
+      l: function (f, p) { var e = []; p.rota = f.rota.value.trim(); p.cidade = f.cidade.value.trim(); p.bairros = f.bairros.value.trim(); p.dias = marcados(f, "dias"); p.distancia = marcados(f, "distancia")[0] || "Normal";
+        if (!p.rota) e.push(["rota", "Dê um nome para a sua rota."]);
         if (!p.cidade) e.push(["cidade", "Digite a sua cidade."]);
+        if (!p.dias.length) e.push(["dias", "Marque pelo menos um dia."]);
         return e; } }
   ] : [
     { t: "Você é…", h: function (p) { return '<span class="rot l">Escolha o seu tipo</span>' + opc("tipoApoio", TIPOS, p.tipoApoio ? [p.tipoApoio] : [], "radio"); },
@@ -66,7 +73,7 @@
         return e; } }
   ];
 
-  function completo() { var p = user.perfil; return !!p && (ehVend ? p.vende && p.vende.length && p.cidade : p.areas && p.areas.length && p.telefone); }
+  function completo() { var p = user.perfil; return !!p && (ehVend ? p.vende && p.vende.length && p.cidade && p.negocio : p.areas && p.areas.length && p.telefone); }
   function rascunho() { try { return JSON.parse(sessionStorage.getItem(CH_RASC)); } catch (e) { return null; } }
   function guarda(p, i) { try { sessionStorage.setItem(CH_RASC, JSON.stringify(Object.assign({}, p, { _i: i }))); } catch (e) {} }
   function limpaRascunho() { try { sessionStorage.removeItem(CH_RASC); } catch (e) {} }
@@ -98,6 +105,8 @@
       foco.focus({ preventScroll: true });
       var f = document.getElementById("pf");
       TCForm.ativaMascara(f); TCForm.limpaAoDigitar(f);
+      var dd = document.getElementById("dist-dica");
+      if (dd) f.addEventListener("change", function (e) { if (e.target.name === "distancia") dd.textContent = DISTDICA[e.target.value]; });
       var ow = document.getElementById("outro-w");
       if (ow) f.addEventListener("change", function (e) { if (e.target.name === "vende") ow.hidden = !f.querySelector('input[name="vende"][value="Outro"]').checked; });
       f.addEventListener("change", function () { PASSOS[i].l(f, p); guarda(p, i); });
@@ -145,18 +154,18 @@
     var tags = function (arr) { return '<span class="pn-tags">' + arr.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</span>"; };
     var chips = '<span class="pn-chip"><span class="ok">' + CHECK.replace('width="14" height="14"', 'width="12" height="12"') + '</span>Cadastro completo</span><span class="pn-chip">' + esc(p.cidade) + '</span>' + (ehVend ? '<span class="pn-chip">' + esc(p.meio) + '</span>' : '<span class="pn-chip">' + esc(p.tipoApoio) + '</span>');
     var dias = ehVend ? '<div class="pn-dias">' + DIAS.map(function (d) { return '<span class="' + ((p.dias || []).indexOf(d) > -1 ? "" : "off") + '">' + d + "</span>"; }).join("") + "</div>" : "";
-    var rota = '<article class="pn-bc rota"><h2>' + (ehVend ? "Sua rota" : "Onde posso apoiar") + '</h2><p class="sub">' + (ehVend ? "Onde você costuma passar, e em quais dias." : "As áreas em que você atua, em " + esc(p.cidade) + ".") + '</p>' +
+    var rota = '<article class="pn-bc rota"><h2>' + (ehVend ? esc(p.rota || "Sua rota") : "Onde posso apoiar") + '</h2><p class="sub">' + (ehVend ? "Onde você costuma passar, e em quais dias." : "As áreas em que você atua, em " + esc(p.cidade) + ".") + '</p>' +
       '<svg class="pn-rmap" id="rmap" viewBox="0 0 600 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M30 140 C120 140 130 50 230 60 S340 150 410 110 S520 40 570 60" fill="none" stroke="#FC4200" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/><g font-family="Poppins" font-weight="700" font-size="14" fill="#fff" text-anchor="middle"></g></svg>' + dias + '</article>';
     var baixe = ehVend
       ? '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em breve</span></div><div><p class="big">O app será liberado no lançamento oficial.</p><p style="margin-top:8px">Você será avisado.</p></div></article>'
       : '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em desenvolvimento</span></div><div><p class="big">A Rede de Apoio ainda está sendo formada.</p><p style="margin-top:8px">A participação depende de definição e formalização. Avisaremos você.</p></div></article>';
     var prox = '<article class="pn-bc prox"><h2>Seus próximos passos</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>' + (ehVend ? "Usar o app na sua rota" : "Acompanhar as novidades da rede") + '<small>' + (ehVend ? "No lançamento" : "Conforme a rede avançar") + '</small></div></li></ul></article>';
     var info = ehVend
-      ? '<div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Região</dt><dd>' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
+      ? '<div><dt>Negócio</dt><dd>' + esc(p.negocio) + '</dd></div><div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Rota</dt><dd>' + esc(p.rota) + ' · ' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Avisar clientes</dt><dd>' + esc(p.distancia || "Normal") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
       : '<div><dt>Tipo</dt><dd>' + esc(p.tipoApoio) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div>';
     var cad = '<article class="pn-bc cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit">Editar cadastro</button></article>';
     var indica = '<article class="pn-bc indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece alguém que poderia apoiar?") + '</h2><p>' + (ehVend ? "Mande o Tá Chegando para essa pessoa conhecer." : "Mande o Tá Chegando para essa pessoa conhecer a Rede de Apoio.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';
-    var kp = ehVend ? ["Paradas pedidas", "Regiões com interesse", "Rotas"] : ["Vendedores na rede", "Conexões", "Áreas"];
+    var kp = ehVend ? ["Clientes esperando", "Regiões com clientes", "Rotas"] : ["Vendedores na rede", "Conexões", "Áreas"];
     var kpis = '<div class="pn-kpis">' + kp.map(function (k) { return '<article class="pn-bc kpi"><small>' + k + '</small><b>—</b>' + SPARK + '</article>'; }).join("") + '</div>';
     el.innerHTML = '<section class="pn-ban" aria-label="Boas-vindas"' + FOTO + '><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Painel da Rede de Apoio") + '</span><h1>Oi, ' + nome + '!</h1><p>' + (ehVend ? "Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota." : "Seu cadastro está pronto. Avisaremos você conforme a Rede de Apoio avançar.") + '</p><div class="pn-chips">' + chips + '</div></section>' +
       '<div class="pn-bento">' + rota + baixe + prox + cad + indica + kpis + '</div><p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';

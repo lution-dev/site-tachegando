@@ -143,3 +143,12 @@
 .rota-div .p1{left:25%;top:34%}.rota-div .p2{left:50%;top:55%}.rota-div .p3{left:80%;top:38%}
 @media(max-width:700px){.rota-div{height:60px}.rota-div .p{width:20px;height:20px;border-width:4px}}
 .bento .ic svg,.areas .ic svg{width:30px;height:30px}
+
+@media(max-width:900px){.hero{background-image:var(--bgm,url(/img/hero-m.webp))}}
+
+/* alvos de toque mínimos (44 px) */
+.faq summary{min-height:44px;align-items:center}
+.volta{display:inline-flex;align-items:center;min-height:44px}
+.aviso-form .chk{min-height:44px;align-items:center}
+.aviso-form .chk input{width:24px;height:24px}
+.legal a,.aviso-form .chk a{padding:10px 0;display:inline-block}

@@ -19,27 +19,28 @@
 <meta property="og:image:alt" content="Tá Chegando: quem vende circula, quem procura descobre.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="img/simbolo.svg">
-<link rel="preload" as="image" href="img/hero-consumidores.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-consumidores-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-consumidores.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="componentes.css">
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero v-hero foto-clara" style="--bg:url(img/hero-consumidores.jpg);--pos:center">
+<section aria-label="Abertura" class="hero v-hero foto-clara" style="--bg:url(img/hero-consumidores.webp);--bgm:url(img/hero-consumidores-m.webp);--pos:center">
   <header class="top"><a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 <nav id="nav-principal" aria-label="Principal"><a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores" aria-current="page">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a><a class="btn ln sm" href="/entrar">Entrar</a><a class="btn or sm" href="/entrar?modo=criar">Criar conta</a></nav></header>
   <div class="conteudo">
     <span class="selo">Lançamento em breve</span>
     <h1>O vendedor que você procura pode estar <em>passando por aí.</em></h1>
-    <p class="sub">Descubra quem circula perto de você, acompanhe a aproximação e peça uma parada. O Tá Chegando será lançado em breve.</p>
+    <p class="sub">Descubra quem circula perto de você, acompanhe a aproximação e ative o aviso de chegada. O Tá Chegando será lançado em breve.</p>
     <div class="acoes"><a class="btn or" href="#aviso">Quero ser avisado</a><a class="btn ln" href="#como">Ver como funciona</a></div>
     <div class="passos-h" tabindex="0" role="group" aria-label="Passo a passo">
       <div><b>1</b><span>Veja quem circula por perto</span></div>
       <div><b>2</b><span>Acompanhe quem está chegando</span></div>
-      <div><b>3</b><span>Peça uma parada</span></div>
+      <div><b>3</b><span>Me avise quando chegar</span></div>
     </div>
   </div>
 </section>
@@ -52,10 +53,10 @@
   <span class="eyebrow">Quando ele é útil</span>
   <h2>Quatro situações em que o Tá Chegando ajuda.</h2>
   <div class="bento">
-    <article class="b1"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-busca"/></svg></span><h3>Procurando algo específico</h3><p>Quer ovos, queijo ou flores? Veja quem circula por perto vendendo.</p></article>
-    <article class="b2"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-conexao"/></svg></span><h3>Aquele vendedor de sempre</h3><p>Ele passa quando você não está olhando? Fica mais fácil reencontrar.</p></article>
-    <article class="b3"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-localizacao"/></svg></span><h3>Curioso com o bairro</h3><p>Quem passa por aqui? O que vende? Descubra o que já está por perto.</p></article>
-    <article class="b4"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-alerta"/></svg></span><h3>Em casa, esperando</h3><p>Acompanhe a aproximação e, se quiser, peça uma parada. Quem decide é o vendedor.</p></article>
+    <article class="b1"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-busca"/></svg></span><h3>Procurando algo específico</h3><p>Busque por produto ou escolha uma categoria, como comida, hortifruti, bebidas ou doces.</p></article>
+    <article class="b2"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-conexao"/></svg></span><h3>Aquele vendedor de sempre</h3><p>Salve nos favoritos e ative o aviso. Fica mais fácil reencontrar.</p></article>
+    <article class="b3"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-localizacao"/></svg></span><h3>Curioso com o bairro</h3><p>Veja no mapa quem circula por perto e o que cada um vende.</p></article>
+    <article class="b4"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-alerta"/></svg></span><h3>Em casa, esperando</h3><p>Ative o aviso e saiba quando o vendedor estiver perto. A rota continua sendo dele.</p></article>
   </div>
 </div></section>
 
@@ -77,7 +78,7 @@
         <g transform="translate(228 280)"><circle class="pulso" r="16" fill="#2E3A4F" opacity=".5"/><circle r="15" fill="#2E3A4F" stroke="#fff" stroke-width="3"/><path d="M-6 1 L0 -5 L6 1 M-4 0 V6 H4 V0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
         <g><circle r="14" fill="#01172E" stroke="#fff" stroke-width="3"/><circle r="5" fill="#FC4200"/><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#r"/></animateMotion></g>
       </svg>
-      <div class="card"><b>Tá chegando</b><small>Um vendedor está se aproximando.</small><span>Pedir uma parada</span></div>
+      <div class="card"><b>Tá chegando</b><small>Um vendedor está se aproximando.</small><span>Me avise quando chegar</span></div>
     </div>
   </div>
 </div></section>
@@ -104,8 +105,8 @@
   <span class="eyebrow" style="color:#FF8A5B">Sem letra miúda</span>
   <h2>O que você precisa saber.</h2>
   <div class="duas">
-    <div class="col faz"><h3>Como funciona</h3><ul><li>Pedir uma parada mostra seu interesse. O vendedor decide se para.</li><li>A localização e a disponibilidade dos vendedores podem variar.</li></ul></div>
-    <div class="col nao"><h3>O que não somos</h3><ul><li>Não somos um serviço de entrega.</li><li>Não garantimos que o vendedor vai parar.</li></ul></div>
+    <div class="col faz"><h3>Como funciona</h3><ul><li>O aviso serve para você saber quando ele estiver perto. A rota continua sendo do vendedor.</li><li>A localização e a disponibilidade dos vendedores podem variar.</li></ul></div>
+    <div class="col nao"><h3>O que não somos</h3><ul><li>Não somos um serviço de entrega.</li><li>Não garantimos que o vendedor vai passar.</li></ul></div>
   </div>
 </div></section>
 
@@ -115,7 +116,7 @@
   <div class="lista">
     <details><summary>Quando o app será lançado?</summary><p>Em breve. Deixe seu contato e avisamos.</p></details>
     <details><summary>Vai ter vendedor no meu bairro?</summary><p>Varia de lugar para lugar. No app você vê quem está circulando perto de você.</p></details>
-    <details><summary>Pedir uma parada garante que o vendedor vai parar?</summary><p>Não. O pedido mostra seu interesse. A decisão é do vendedor.</p></details>
+    <details><summary>O aviso garante que o vendedor vai passar?</summary><p>Não. O aviso mostra seu interesse e avisa quando ele estiver perto. A rota é do vendedor.</p></details>
     <details><summary>É um app de entrega?</summary><p>Não. A ideia é ajudar você a encontrar quem vende em movimento.</p></details>
     <details><summary>Vou pagar para usar?</summary><p>As condições serão informadas com clareza antes do lançamento oficial.</p></details>
     <details><summary>O que vocês fazem com meu contato?</summary><p>Usamos só para avisar do lançamento. Detalhes na <a href="/privacidade">Política de Privacidade</a>.</p></details>

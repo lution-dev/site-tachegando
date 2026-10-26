@@ -19,10 +19,11 @@
 <meta property="og:image:alt" content="Tá Chegando: quem vende circula, quem procura descobre.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="img/simbolo.svg">
-<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="componentes.css">
 </head>
@@ -40,7 +41,7 @@
   <div class="conteudo">
     <span class="selo">Lançamento em breve</span>
     <h1>Quem vende <em>circula.</em> Quem procura descobre.</h1>
-    <p class="sub">Quem procura vê quem está circulando por perto e pede uma parada. Quem vende deixa a rota ao alcance de quem procura.</p>
+    <p class="sub">Quem procura vê quem está circulando por perto e ativa o aviso de chegada. Quem vende vê onde tem clientes perto da rota.</p>
     <div class="caminhos">
       <a class="caminho v" href="/vendedores"><b>Eu vendo</b><span>Você já está na rua. Agora deixe que encontrem você.</span><em>Criar minha conta →</em></a>
       <a class="caminho" href="/consumidores"><b>Eu procuro</b><span>O vendedor que você procura pode estar passando por aí.</span><em>Quero ser avisado →</em></a>
@@ -54,13 +55,13 @@
   <div>
     <span class="eyebrow">O que é o Tá Chegando</span>
     <h2>O comércio que circula faz parte da vida da cidade.</h2>
-    <p class="lead">O Tá Chegando é uma plataforma que aproxima vendedores ambulantes e consumidores. Com informações de localização, quem procura descobre quem está circulando por perto e pode pedir uma parada. Quem vende continua dono da sua rota e do seu trabalho.</p>
+    <p class="lead">O Tá Chegando é uma plataforma que aproxima vendedores ambulantes e consumidores. Com informações de localização, quem procura descobre quem está circulando por perto e pode ativar o aviso de chegada. Quem vende vê onde tem clientes e continua dono da sua rota e do seu trabalho.</p>
   </div>
   <div class="bloco">
     <ul>
       <li>Você descobre quem circula perto de você.</li>
       <li>Você acompanha quando o vendedor está chegando.</li>
-      <li>Você pede uma parada. Quem decide parar é o vendedor.</li>
+      <li>Você ativa o aviso de chegada. A rota continua sendo do vendedor.</li>
     </ul>
   </div>
 </div></section>
@@ -79,9 +80,9 @@
     <p class="lead">A pé, de bike, de moto, de carro ou de carrinho. Frutas, doces, artesanato, serviços e muito mais.</p>
   </div>
   <div class="grade">
-    <figure class="a"><img loading="lazy" src="img/foto-36.jpg" alt="Carrinhos de vendedores em uma praça à beira da baía" width="1400" height="903"><figcaption>Carrinhos na orla</figcaption></figure>
-    <figure class="b"><img loading="lazy" src="img/foto-20.jpg" alt="Doces e quitutes empilhados em uma banca" width="1354" height="1000"><figcaption>Doces e quitutes</figcaption></figure>
-    <figure class="c"><img loading="lazy" src="img/foto-135.jpg" alt="Mãos pesando limões em uma balança, em uma banca de rua" width="1400" height="933"><figcaption>Frutas e verduras</figcaption></figure>
+    <figure class="a"><img loading="lazy" src="img/foto-36.webp" alt="Carrinhos de vendedores em uma praça à beira da baía" width="1400" height="903"><figcaption>Carrinhos na orla</figcaption></figure>
+    <figure class="b"><img loading="lazy" src="img/foto-20.webp" alt="Doces e quitutes empilhados em uma banca" width="1354" height="1000"><figcaption>Doces e quitutes</figcaption></figure>
+    <figure class="c"><img loading="lazy" src="img/foto-135.webp" alt="Mãos pesando limões em uma balança, em uma banca de rua" width="1400" height="933"><figcaption>Frutas e verduras</figcaption></figure>
   </div>
   <div class="tags" aria-label="Exemplos do que circula"><span>Ovos</span><span>Pão</span><span>Queijo</span><span>Flores</span><span>Roupas</span><span>Picolé</span><span>Afiador de facas</span><span>Gás</span><span>e muito mais</span></div>
 </div></section>
@@ -98,7 +99,7 @@
     </div>
     <div class="lado p">
       <h3>Para quem procura</h3>
-      <ol><li>Veja quem circula perto de você.</li><li>Acompanhe quem está chegando.</li><li>Peça uma parada, se tiver interesse.</li></ol>
+      <ol><li>Veja quem circula perto de você.</li><li>Acompanhe quem está chegando.</li><li>Ative o aviso de chegada.</li></ol>
       <a class="btn az" href="/consumidores">Quero ser avisado</a>
     </div>
   </div>

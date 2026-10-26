@@ -19,16 +19,17 @@
 <meta property="og:image:alt" content="Tá Chegando: quem vende circula, quem procura descobre.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="img/simbolo.svg">
-<link rel="preload" as="image" href="img/hero-vendedores.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-vendedores-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-vendedores.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="componentes.css">
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-vendedores.jpg);--pos:60% center">
+<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-vendedores.webp);--bgm:url(img/hero-vendedores-m.webp);--pos:60% center">
   <header class="top">
     <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
@@ -64,7 +65,7 @@
     <p class="nota-s">O Tá Chegando é feito para quem circula. Lojas e pontos fixos ficam de fora.</p>
     <a class="btn az" href="/entrar?modo=criar" style="margin-top:22px">Criar minha conta</a>
   </div>
-  <div class="foto"><img loading="lazy" src="img/foto-36.jpg" alt="Carrinhos de vendedores em uma praça à beira da baía" width="1400" height="903"></div>
+  <div class="foto"><img loading="lazy" src="img/foto-36.webp" alt="Carrinhos de vendedores em uma praça à beira da baía" width="1400" height="903"></div>
 </div></section>
 
 <section class="beneficios"><div class="wrap">
@@ -72,8 +73,8 @@
   <h2>Mais fácil de encontrar. Do seu jeito.</h2>
   <div class="bento">
     <article class="b1"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-localizacao"/></svg></span><h3>Mais fácil de encontrar</h3><p>Quem procura sabe onde você passa.</p></article>
-    <article class="b2"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-parada"/></svg></span><h3>Pedidos de parada</h3><p>Você vê onde há interesse e decide se para.</p></article>
-    <article class="b3"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-rota"/></svg></span><h3>Sua rota, suas regras</h3><p>Você escolhe o que mostrar e quando usar o app.</p></article>
+    <article class="b2"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-consumidor"/></svg></span><h3>Onde tem clientes</h3><p>Veja onde há clientes esperando perto da sua rota e decida se vale o desvio.</p></article>
+    <article class="b3"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-rota"/></svg></span><h3>Sua rota, suas regras</h3><p>Grave a rota pelo GPS ou marque no mapa. Você escolhe os dias e até que distância da rota quer avisar clientes.</p></article>
     <article class="b4"><span class="ic"><svg width="26" height="26" aria-hidden="true"><use href="/img/icones.svg#i-painel"/></svg></span><h3>Um painel só seu</h3><p>Seu cadastro agora e, depois, seus números num lugar só.</p></article>
   </div>
 </div></section>
@@ -82,7 +83,7 @@
   <div>
     <span class="eyebrow" style="color:#FF8A5B">No dia a dia</span>
     <h2>Quem procura vê que você está chegando.</h2>
-    <p class="lead">Quando alguém por perto tem interesse, pode pedir uma parada. Você vê de onde veio o pedido e decide se para.</p>
+    <p class="lead">Quem procura ativa o aviso de chegada. Você vê onde tem clientes perto da rota e decide por onde passar.</p>
     <a class="btn or" href="/entrar?modo=criar" style="margin-top:18px">Criar minha conta</a>
     <p class="legenda">Ilustração. A localização e a disponibilidade podem variar. Confira as informações apresentadas no aplicativo.</p>
   </div>
@@ -105,7 +106,7 @@
   <span class="eyebrow" style="color:#FF8A5B">Sem letra miúda</span>
   <h2>Claro desde o começo.</h2>
   <div class="duas">
-    <div class="col faz"><h3>O que o Tá Chegando faz</h3><ul><li>Ajuda quem procura a encontrar você.</li><li>Mostra onde há interesse em uma parada.</li><li>Dá a você um painel para cuidar do seu cadastro.</li></ul></div>
+    <div class="col faz"><h3>O que o Tá Chegando faz</h3><ul><li>Ajuda quem procura a encontrar você.</li><li>Mostra onde tem clientes perto da sua rota.</li><li>Deixa você gravar suas rotas e escolher os dias.</li><li>Não cobra taxa por venda.</li></ul></div>
     <div class="col nao"><h3>O que o Tá Chegando não faz</h3><ul><li>Não promete vendas.</li><li>Não decide por você.</li><li>Não muda o seu jeito de trabalhar.</li></ul></div>
   </div>
 </div></section>

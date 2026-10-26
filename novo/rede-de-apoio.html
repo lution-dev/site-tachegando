@@ -19,16 +19,17 @@
 <meta property="og:image:alt" content="Tá Chegando: quem vende circula, quem procura descobre.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="img/simbolo.svg">
-<link rel="preload" as="image" href="img/hero-apoio.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-apoio-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-apoio.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="componentes.css">
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-apoio.jpg);--pos:center">
+<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-apoio.webp);--bgm:url(img/hero-apoio-m.webp);--pos:center">
   <header class="top"><a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 <nav id="nav-principal" aria-label="Principal"><a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio" aria-current="page">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a><a class="btn ln sm" href="/entrar">Entrar</a><a class="btn or sm" href="/entrar?modo=criar">Criar conta</a></nav></header>
   <div class="conteudo">
@@ -55,7 +56,7 @@
     <p class="lead">A Rede de Apoio aproxima vendedores ambulantes de empresas e profissionais que podem ajudar em necessidades práticas do negócio. Quem trabalha em movimento já conhece a rua, os clientes e o produto. O que ajuda é ter quem apoie no resto.</p>
     <a class="btn az" href="/entrar?modo=criar&amp;tipo=apoio" style="margin-top:22px">Cadastrar meu interesse</a>
   </div>
-  <div class="foto"><img loading="lazy" src="img/foto-41.jpg" alt="Silhueta de um carrinho de vendedor à beira da baía ao pôr do sol" width="1400" height="855"></div>
+  <div class="foto"><img loading="lazy" src="img/foto-41.webp" alt="Silhueta de um carrinho de vendedor à beira da baía ao pôr do sol" width="1400" height="855"></div>
 </div></section>
 
 <section class="areas-s beneficios"><div class="wrap">

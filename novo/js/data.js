@@ -11,7 +11,7 @@ window.TC = (function () {
   var DEMO = {
     vendedor: {
       email: "vendedor@tachegando.demo", senha: "demo123", tipo: "vendedor",
-      perfil: { nome: "Maria Souza", telefone: "(13) 99876-5432", vende: ["Ovos", "Pão", "Queijo"], meio: "Bicicleta", cidade: "Santos", bairros: "Gonzaga, Boqueirão, Embaré", dias: ["Seg", "Qua", "Sex", "Sáb"] }
+      perfil: { nome: "Maria Souza", negocio: "Ovos e Pães da Maria", telefone: "(13) 99876-5432", vende: ["Ovos", "Pão", "Queijo"], meio: "Bicicleta", cidade: "Santos", rota: "Gonzaga e Embaré", bairros: "Gonzaga, Boqueirão, Embaré", dias: ["Seg", "Qua", "Sex", "Sáb"], distancia: "Normal" }
     },
     apoio: {
       email: "apoio@tachegando.demo", senha: "demo123", tipo: "apoio",
