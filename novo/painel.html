@@ -12,18 +12,27 @@
 <link rel="stylesheet" href="componentes.css">
 </head>
 <body class="painel">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <div class="proto" role="region" aria-label="Aviso de protótipo"><b>Protótipo:</b> tudo já vem preenchido. É só seguir, ou mudar o que quiser.</div>
-<div class="pn">
-  <aside class="pn-lat">
-    <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a>
-    <button data-v="inicio" aria-current="page">Início</button>
-    <button data-v="perfil">Meu cadastro</button>
-    <button data-v="metricas">Métricas <small>em breve</small></button>
-    <div class="quem" id="quem"></div>
-    <button class="sai" id="sair">Sair da conta</button>
+<div class="pn-app pn">
+  <aside class="pn-lat" aria-label="Menu do painel">
+    <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="46"></a>
+    <button class="pn-item" data-v="inicio" aria-current="page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Início</button>
+    <button class="pn-item" data-v="perfil"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Meu cadastro</button>
+    <button class="pn-item" data-v="metricas"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Métricas<small>em breve</small></button>
+    <div class="pn-quem" id="quem"></div>
+    <button class="pn-sair" id="sair">Sair da conta</button>
   </aside>
-  <main class="pn-main" id="conteudo" tabindex="-1"></main>
+  <main class="pn-main" id="conteudo" tabindex="-1">
+    <div class="pn-topm"><a class="logo" href="/"><img src="img/logo-horizontal.svg" alt="Tá Chegando" height="40"></a><button type="button" id="sair-m">Sair</button></div>
+    <div id="tela"></div>
+  </main>
 </div>
+<nav class="pn-tabs" aria-label="Painel">
+  <button data-v="inicio" aria-current="page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Início</button>
+  <button data-v="perfil"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Cadastro</button>
+  <button data-v="metricas"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Métricas</button>
+</nav>
 <script src="js/data.js"></script>
 <script src="js/form.js"></script>
 <script src="js/painel.js"></script>

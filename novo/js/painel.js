@@ -1,16 +1,21 @@
 (function () {
   var user = TC.usuarioAtual();
   if (!user) { location.replace("/entrar"); return; }
-  var el = document.getElementById("conteudo");
+  var el = document.getElementById("tela"), foco = document.getElementById("conteudo");
   var ehVend = user.tipo === "vendedor";
   var CH_RASC = "tc_rascunho_" + user.email;
-  document.getElementById("quem").textContent = user.email + " · " + (ehVend ? "Vendedor" : "Rede de Apoio");
-  document.getElementById("sair").onclick = function () { TC.sair(); location.href = "/"; };
+  function cartaoUsuario() {
+    var n = (user.perfil && user.perfil.nome) || "Sua conta";
+    document.getElementById("quem").innerHTML = "<b>" + esc(n) + "</b>" + (ehVend ? "Vendedor" : "Rede de Apoio") + " · " + esc(user.email);
+  }
+  function sair() { TC.sair(); location.href = "/"; }
+  document.getElementById("sair").onclick = sair; document.getElementById("sair-m").onclick = sair;
 
   var VENDE = ["Frutas e verduras", "Ovos", "Pão", "Doces", "Queijo", "Artesanato", "Flores", "Roupas", "Picolé", "Serviços", "Outro"];
   var MEIO = ["A pé", "Bicicleta", "Moto", "Carro ou caminhonete", "Carrinho", "Outro"];
   var DIAS = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
   var AREAS = ["Contabilidade", "Orientação financeira", "Design", "Comunicação", "Assessoria jurídica", "Outra"];
+  var FOTO = ehVend ? '' : ' style="--foto:url(img/hero-apoio.jpg)"';
   var TIPOS = ["Empresa", "Profissional autônomo"];
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -83,13 +88,14 @@
     var preenchido = !user.perfil;
     function pinta() {
       var ultimo = i === PASSOS.length - 1;
-      el.innerHTML = '<span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p class="etapa-txt">Passo ' + (i + 1) + ' de ' + PASSOS.length + '</p>' +
-        '<div class="etapas-i" role="img" aria-label="Passo ' + (i + 1) + ' de ' + PASSOS.length + '">' + PASSOS.map(function (_, k) { return '<i class="' + (k <= i ? "on" : "") + '"></i>'; }).join("") + '</div>' +
+      var pins = PASSOS.map(function (_, k) { return '<i class="' + (k < i ? "on" : k === i ? "at" : "") + '">' + (k < i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>' : (k + 1)) + '</i>' + (k < PASSOS.length - 1 ? '<s class="' + (k < i ? "on" : "") + '"></s>' : ""); }).join("");
+      el.innerHTML = '<section class="pn-ban curto" aria-label="Cadastro"' + FOTO + '><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>Passo ' + (i + 1) + ' de ' + PASSOS.length + '</p></section>' +
+        '<div class="pn-pins" role="img" aria-label="Passo ' + (i + 1) + ' de ' + PASSOS.length + '">' + pins + '</div>' +
         (preenchido && i === 0 ? '<p class="rascunho-nota">Protótipo: já deixamos tudo preenchido. É só continuar, ou mudar o que quiser.</p>' : '') +
         '<form id="pf" novalidate>' + PASSOS[i].h(p) +
         '<div class="nav-b">' + (i > 0 ? '<button type="button" class="btn ln-d" id="volta">Voltar</button>' : '<span></span>') +
         '<button class="btn or" type="submit" id="prox">' + (ultimo ? "Salvar cadastro" : "Continuar") + '</button></div></form>';
-      el.focus({ preventScroll: true });
+      foco.focus({ preventScroll: true });
       var f = document.getElementById("pf");
       TCForm.ativaMascara(f); TCForm.limpaAoDigitar(f);
       var ow = document.getElementById("outro-w");
@@ -110,33 +116,63 @@
     pinta();
   }
 
+  var CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+  var SPARK = '<svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#FC4200" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg>';
+  function lista(t) { return String(t || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean); }
+  function pontosDaRota() {
+    var p = user.perfil || {};
+    var l = ehVend ? lista(p.bairros) : (p.areas || []);
+    if (!l.length) l = ehVend ? [p.cidade || "Sua cidade"] : [p.cidade || "Sua cidade"];
+    return l.slice(0, 5);
+  }
+  // posiciona os pins ao longo da linha pontilhada
+  function colocaPins() {
+    var svg = document.getElementById("rmap"); if (!svg) return;
+    var path = svg.querySelector("path"), g = svg.querySelector("g"), pts = pontosDaRota(), len = path.getTotalLength(), ns = "http://www.w3.org/2000/svg";
+    pts.forEach(function (nome, k) {
+      var t = pts.length === 1 ? 0.5 : 0.1 + 0.8 * k / (pts.length - 1), pt = path.getPointAtLength(len * t);
+      var gi = document.createElementNS(ns, "g"); gi.setAttribute("transform", "translate(" + pt.x.toFixed(1) + " " + pt.y.toFixed(1) + ")");
+      var c1 = document.createElementNS(ns, "circle"); c1.setAttribute("r", 14); c1.setAttribute("fill", "#FC4200");
+      var c2 = document.createElementNS(ns, "circle"); c2.setAttribute("r", 5); c2.setAttribute("fill", "#fff");
+      var tx = document.createElementNS(ns, "text"); tx.textContent = nome; tx.setAttribute("y", k % 2 ? 40 : -24);
+      gi.appendChild(c1); gi.appendChild(c2); gi.appendChild(tx); g.appendChild(gi);
+    });
+  }
   function inicio() {
     var p = user.perfil || {};
     var nome = esc((p.nome || "").split(" ")[0] || "por aqui");
-    var vende = (p.vende || []).map(function (x) { return x === "Outro" && p.vendeOutro ? "Outro: " + p.vendeOutro : x; }).join(", ");
-    var linhas = ehVend
-      ? '<dt>Vende</dt><dd>' + esc(vende) + '</dd><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd><dt>Região</dt><dd>' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd><dt>Dias</dt><dd>' + esc((p.dias || []).join(", ") || "Não informado") + '</dd><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd>'
-      : '<dt>Tipo</dt><dd>' + esc(p.tipoApoio) + '</dd><dt>Áreas</dt><dd>' + esc((p.areas || []).join(", ")) + '</dd><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd>';
+    var vende = (p.vende || []).map(function (x) { return x === "Outro" && p.vendeOutro ? "Outro: " + p.vendeOutro : x; });
+    var tags = function (arr) { return '<span class="pn-tags">' + arr.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</span>"; };
+    var chips = '<span class="pn-chip"><span class="ok">' + CHECK.replace('width="14" height="14"', 'width="12" height="12"') + '</span>Cadastro completo</span><span class="pn-chip">' + esc(p.cidade) + '</span>' + (ehVend ? '<span class="pn-chip">' + esc(p.meio) + '</span>' : '<span class="pn-chip">' + esc(p.tipoApoio) + '</span>');
+    var dias = ehVend ? '<div class="pn-dias">' + DIAS.map(function (d) { return '<span class="' + ((p.dias || []).indexOf(d) > -1 ? "" : "off") + '">' + d + "</span>"; }).join("") + "</div>" : "";
+    var rota = '<article class="pn-bc rota"><h2>' + (ehVend ? "Sua rota" : "Onde posso apoiar") + '</h2><p class="sub">' + (ehVend ? "Onde você costuma passar, e em quais dias." : "As áreas em que você atua, em " + esc(p.cidade) + ".") + '</p>' +
+      '<svg class="pn-rmap" id="rmap" viewBox="0 0 600 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M30 140 C120 140 130 50 230 60 S340 150 410 110 S520 40 570 60" fill="none" stroke="#FC4200" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/><g font-family="Poppins" font-weight="700" font-size="14" fill="#fff" text-anchor="middle"></g></svg>' + dias + '</article>';
+    var baixe = ehVend
+      ? '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em breve</span></div><div><p class="big">O app será liberado no lançamento oficial.</p><p style="margin-top:8px">Você será avisado.</p></div></article>'
+      : '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em desenvolvimento</span></div><div><p class="big">A Rede de Apoio ainda está sendo formada.</p><p style="margin-top:8px">A participação depende de definição e formalização. Avisaremos você.</p></div></article>';
+    var prox = '<article class="pn-bc prox"><h2>Seus próximos passos</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>' + (ehVend ? "Usar o app na sua rota" : "Acompanhar as novidades da rede") + '<small>' + (ehVend ? "No lançamento" : "Conforme a rede avançar") + '</small></div></li></ul></article>';
+    var info = ehVend
+      ? '<div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Região</dt><dd>' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
+      : '<div><dt>Tipo</dt><dd>' + esc(p.tipoApoio) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div>';
+    var cad = '<article class="pn-bc cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit">Editar cadastro</button></article>';
     var kp = ehVend ? ["Paradas pedidas", "Regiões com interesse", "Rotas"] : ["Vendedores na rede", "Conexões", "Áreas"];
-    el.innerHTML = '<span class="eyebrow">Início</span><h1>Oi, ' + nome + '!</h1>' +
-      '<p class="lead">' + (ehVend ? "Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota." : "Seu cadastro está pronto. Avisaremos você conforme a Rede de Apoio avançar.") + '</p>' +
-      '<div class="cards">' +
-      '<section class="card2"><h3>Seus próximos passos</h3><ul class="passos-l"><li class="ok"><i>✓</i>Conta criada</li><li class="ok"><i>✓</i>Cadastro completo</li><li><i>3</i>' + (ehVend ? "Usar o app na sua rota (no lançamento)" : "Acompanhar as novidades da rede") + '</li></ul></section>' +
-      '<section class="card2 dest"><h3>' + (ehVend ? "Baixe o app" : "Rede de Apoio") + '</h3><p>' + (ehVend ? "O app será liberado no lançamento oficial. Você será avisado." : "A rede está em desenvolvimento. A participação depende de definição e formalização.") + '</p><span class="soon" style="background:#01172E;color:#fff;display:inline-block;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">' + (ehVend ? "Em breve" : "Em desenvolvimento") + '</span></section>' +
-      '<section class="card2"><h3>Seu cadastro</h3><dl class="resumo">' + linhas + '</dl><p style="margin-top:16px"><button class="btn az sm" id="edit">Editar cadastro</button></p></section></div>' +
-      '<div class="kpis">' + kp.map(function (k) { return '<div><small>' + k + '</small><b>—</b></div>'; }).join("") + '</div>' +
-      '<p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';
+    var kpis = '<div class="pn-kpis">' + kp.map(function (k) { return '<article class="pn-bc kpi"><small>' + k + '</small><b>—</b>' + SPARK + '</article>'; }).join("") + '</div>';
+    el.innerHTML = '<section class="pn-ban" aria-label="Boas-vindas"' + FOTO + '><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Painel da Rede de Apoio") + '</span><h1>Oi, ' + nome + '!</h1><p>' + (ehVend ? "Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota." : "Seu cadastro está pronto. Avisaremos você conforme a Rede de Apoio avançar.") + '</p><div class="pn-chips">' + chips + '</div></section>' +
+      '<div class="pn-bento">' + rota + baixe + prox + cad + kpis + '</div><p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';
     document.getElementById("edit").onclick = function () { ir("perfil"); };
+    colocaPins();
   }
   function metricas() {
-    el.innerHTML = '<span class="eyebrow">Métricas</span><h1>Seus números</h1><div class="card2 vazio"><h3>Ainda sem números por aqui</h3><p>Eles aparecem quando você usar o app. Hoje este painel é um protótipo, sem dados reais.</p></div>';
-    el.focus({ preventScroll: true });
+    el.innerHTML = '<section class="pn-ban curto" aria-label="Métricas"' + FOTO + '><span class="eyebrow">Métricas</span><h1>Seus números</h1><p>Indicadores do seu uso do app.</p></section>' +
+      '<div class="pn-bento"><article class="pn-bc vazio"><h2>Ainda sem números por aqui</h2><p>Eles aparecem quando você usar o app. Hoje este painel é um protótipo, sem dados reais.</p>' + SPARK.replace('width="86" height="34"', 'width="160" height="64"') + '</article></div>';
+    foco.focus({ preventScroll: true });
   }
   function ir(v) {
-    document.querySelectorAll(".pn-lat [data-v]").forEach(function (b) { if (b.dataset.v === v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+    cartaoUsuario();
+    document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     if (!completo()) { cadastro(false); return; }
-    if (v === "perfil") cadastro(true); else if (v === "metricas") metricas(); else { inicio(); el.focus({ preventScroll: true }); }
+    if (v === "perfil") cadastro(true); else if (v === "metricas") metricas(); else { inicio(); foco.focus({ preventScroll: true }); }
   }
-  document.querySelectorAll(".pn-lat [data-v]").forEach(function (b) { b.onclick = function () { ir(b.dataset.v); }; });
+  document.querySelectorAll("[data-v]").forEach(function (b) { b.onclick = function () { ir(b.dataset.v); window.scrollTo(0, 0); }; });
   ir("inicio");
 })();
