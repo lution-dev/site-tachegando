@@ -3,5 +3,7 @@
   "framework": null,
   "buildCommand": null,
   "installCommand": null,
-  "outputDirectory": "novo"
+  "outputDirectory": "novo",
+  "cleanUrls": true,
+  "trailingSlash": false
 }

@@ -1,10 +1,10 @@
 (function () {
   var user = TC.usuarioAtual();
-  if (!user) { location.replace("entrar.html"); return; }
+  if (!user) { location.replace("/entrar"); return; }
   var el = document.getElementById("conteudo");
   var ehVend = user.tipo === "vendedor";
   document.getElementById("quem").textContent = user.email + " · " + (ehVend ? "Vendedor" : "Rede de Apoio");
-  document.getElementById("sair").onclick = function () { TC.sair(); location.href = "index.html"; };
+  document.getElementById("sair").onclick = function () { TC.sair(); location.href = "/"; };
 
   var VENDE = ["Frutas e verduras", "Ovos", "Pão", "Doces", "Queijo", "Artesanato", "Flores", "Roupas", "Picolé", "Serviços", "Outro"];
   var MEIO = ["A pé", "Bicicleta", "Moto", "Carro ou caminhonete", "Carrinho", "Outro"];

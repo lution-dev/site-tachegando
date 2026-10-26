@@ -15,20 +15,19 @@
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
 <section aria-label="Abertura" class="hero v-hero foto-clara" style="--bg:url(img/hero-consumidores.jpg);--pos:center">
-  <header class="top"><a class="logo" href="index.html"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-<nav id="nav-principal" aria-label="Principal"><a href="vendedores.html">Vendedores<small>Para quem vende</small></a><a href="consumidores.html" aria-current="page">Consumidores<small>Para quem procura</small></a><a href="rede-de-apoio.html">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a><a class="btn ln sm" href="entrar.html">Entrar</a><a class="btn or sm" href="entrar.html?modo=criar">Criar conta</a></nav></header>
+  <header class="top"><a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="nav-principal" aria-label="Principal"><a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores" aria-current="page">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a><a class="btn ln sm" href="/entrar">Entrar</a><a class="btn or sm" href="/entrar?modo=criar">Criar conta</a></nav></header>
   <div class="conteudo">
-    <span class="selo">Para quem procura · Lançamento em breve</span>
+    <span class="selo">Lançamento em breve</span>
     <h1>O vendedor que você procura pode estar <em>passando por aí.</em></h1>
     <p class="sub">Descubra quem circula perto de você, acompanhe a aproximação e peça uma parada. O Tá Chegando será lançado em breve.</p>
     <div class="acoes"><a class="btn or" href="#aviso">Quero ser avisado</a><a class="btn ln" href="#como">Ver como funciona</a></div>
-    <div class="passos-h">
+    <div class="passos-h" tabindex="0" role="group" aria-label="Passo a passo">
       <div><b>1</b><span>Veja quem circula por perto</span></div>
       <div><b>2</b><span>Acompanhe quem está chegando</span></div>
       <div><b>3</b><span>Peça uma parada</span></div>
     </div>
   </div>
-  <span class="nota">Foto provisória</span>
 </section>
 <div class="faixa az" role="region" aria-label="Exemplos"><span class="sr">Frutas, ovos, queijo, pão, doces, flores, artesanato e muito mais</span><div class="trilho" aria-hidden="true">
   <span>Frutas</span><span>Ovos</span><span>Queijo</span><span>Pão</span><span>Doces</span><span>Flores</span><span>Artesanato</span><span>E muito mais</span>
@@ -81,7 +80,7 @@
     <label for="a-contato">E-mail ou WhatsApp</label><input id="a-contato" name="contato" type="text" autocomplete="email" required>
     <label for="a-local">Bairro e cidade (opcional)</label><input id="a-local" name="local" type="text" autocomplete="address-level2">
     <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="chk"><input type="checkbox" name="ok" required><span>Aceito receber o aviso de lançamento. Posso cancelar quando quiser. Veja a <a href="privacidade.html">Política de Privacidade</a>.</span></label>
+    <label class="chk"><input type="checkbox" name="ok" required><span>Aceito receber o aviso de lançamento. Posso cancelar quando quiser. Veja a <a href="/privacidade">Política de Privacidade</a>.</span></label>
     <div class="msg" id="a-msg" role="status" aria-live="polite"></div>
     <button class="btn or cheio" type="submit">Quero ser avisado</button>
   </form>
@@ -105,7 +104,7 @@
     <details><summary>Pedir uma parada garante que o vendedor vai parar?</summary><p>Não. O pedido mostra seu interesse. A decisão é do vendedor.</p></details>
     <details><summary>É um app de entrega?</summary><p>Não. A ideia é ajudar você a encontrar quem vende em movimento.</p></details>
     <details><summary>Vou pagar para usar?</summary><p>As condições serão informadas no lançamento oficial.</p></details>
-    <details><summary>O que vocês fazem com meu contato?</summary><p>Usamos só para avisar do lançamento. Detalhes na <a href="privacidade.html">Política de Privacidade</a>.</p></details>
+    <details><summary>O que vocês fazem com meu contato?</summary><p>Usamos só para avisar do lançamento. Detalhes na <a href="/privacidade">Política de Privacidade</a>.</p></details>
   </div>
 </div></section>
 
@@ -117,7 +116,7 @@
 </main>
 <footer class="rod"><div class="wrap">
   <div><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="40" style="margin-bottom:12px"><br>O aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo.<br>Todos os direitos reservados. CNPJ 66.543.238/0001-71.</div>
-  <div class="rod-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><button type="button" class="anim-btn" aria-pressed="false">Pausar animações</button></div>
+  <div class="rod-links"><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a><button type="button" class="anim-btn" aria-pressed="false">Pausar animações</button></div>
 </div></footer>
 <script src="js/data.js"></script>
 <script src="js/aviso.js"></script>

@@ -1,5 +1,5 @@
 (function () {
-  if (TC.usuarioAtual()) { location.replace("painel.html"); return; }
+  if (TC.usuarioAtual()) { location.replace("/painel"); return; }
   var q = new URLSearchParams(location.search);
   var criar = q.get("modo") === "criar";
   var f = document.getElementById("f"), msg = document.getElementById("msg");
@@ -27,7 +27,7 @@
     if (!/^\S+@\S+\.\S+$/.test(email)) { msg.textContent = "Digite um e-mail válido."; return; }
     if (senha.length < 6) { msg.textContent = "A senha precisa ter pelo menos 6 caracteres."; return; }
     var p = criar ? TC.criarConta(email, senha, f.tipo.value) : TC.entrar(email, senha);
-    p.then(function () { location.href = "painel.html"; })
+    p.then(function () { location.href = "/painel"; })
      .catch(function (err) {
        msg.textContent = err.message === "E-mail ou senha incorretos."
          ? "Não achamos essa combinação de e-mail e senha. Quer tentar de novo?"
