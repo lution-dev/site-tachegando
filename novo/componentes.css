@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Tá Chegando — componentes (carregado depois de styles.css)
+   Regra única: tudo que fica SOBRE FOTO usa vidro (glassmorphism).
+   Duas variações: vidro claro (padrão) e vidro escuro (.foto-clara, menu).
+   ========================================================================== */
+:root{
+  --vidro-bg:rgba(255,255,255,.14);
+  --vidro-borda:rgba(255,255,255,.38);
+  --vidro-blur:14px;
+  --vidro-sombra:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.25);
+  --vidro-esc-bg:rgba(1,23,46,.46);
+  --vidro-esc-borda:rgba(255,255,255,.22);
+  --vidro-esc-blur:22px;
+  --h-botao:48px;--h-botao-sm:44px;--h-selo:40px;
+  --r-pilula:99px;--r-botao:14px;--r-cartao:20px;--r-painel:24px;
+}
+/* ---- vidro: classes utilitárias ---- */
+.vidro{background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);-webkit-backdrop-filter:blur(var(--vidro-blur));backdrop-filter:blur(var(--vidro-blur));box-shadow:var(--vidro-sombra);color:#fff}
+.vidro-escuro{background:var(--vidro-esc-bg);border:1.5px solid var(--vidro-esc-borda);-webkit-backdrop-filter:blur(var(--vidro-esc-blur));backdrop-filter:blur(var(--vidro-esc-blur));box-shadow:var(--vidro-sombra);color:#fff}
+
+/* ---- aplicado a tudo que fica sobre foto ---- */
+.hero .selo,
+.hero .menu-btn,
+.hero header.top nav .btn.ln,
+.hero .acoes .btn.ln,
+.hero .caminho:not(.v),
+.hero .passos-h div,
+.hero .nota{
+  background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);
+  -webkit-backdrop-filter:blur(var(--vidro-blur));backdrop-filter:blur(var(--vidro-blur));
+  box-shadow:var(--vidro-sombra);color:#fff;
+}
+.hero.foto-clara .selo,
+.hero.foto-clara .menu-btn,
+.hero.foto-clara header.top nav .btn.ln,
+.hero.foto-clara .acoes .btn.ln,
+.hero.foto-clara .caminho:not(.v),
+.hero.foto-clara .passos-h div,
+.hero.foto-clara .nota,
+.mosaico figcaption{
+  background:var(--vidro-esc-bg);border:1.5px solid var(--vidro-esc-borda);
+  -webkit-backdrop-filter:blur(var(--vidro-esc-blur));backdrop-filter:blur(var(--vidro-esc-blur));
+  box-shadow:var(--vidro-sombra);color:#fff;
+}
+.hero .btn.ln:hover,.hero .caminho:not(.v):hover{background:rgba(255,255,255,.24)}
+.hero.foto-clara .btn.ln:hover{background:rgba(1,23,46,.62)}
+
+/* ---- medidas padronizadas ---- */
+.btn{min-height:var(--h-botao);border-radius:var(--r-botao);padding-top:0;padding-bottom:0}
+.btn.sm{min-height:var(--h-botao-sm);border-radius:var(--r-botao)}
+.hero .selo{display:inline-flex;align-items:center;min-height:var(--h-selo);padding:0 16px;border-radius:var(--r-pilula);margin-bottom:22px}
+.hero .menu-btn{width:var(--h-botao);height:var(--h-botao);border-radius:var(--r-botao)}
+.hero .caminho,.hero .passos-h div{border-radius:var(--r-cartao)}
+.hero .nota{border-radius:var(--r-pilula);padding:5px 12px}
+.mosaico figcaption{border-radius:var(--r-pilula);padding:5px 14px;font-weight:800}
+
+/* ---- menu do celular: tela cheia com vidro (opção A) ---- */
+@media(max-width:900px){
+  header.top{position:relative;z-index:40}
+  header.top .logo,header.top .menu-btn{position:relative;z-index:62}
+  header.top .menu-btn{display:flex;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);box-shadow:var(--vidro-sombra);-webkit-backdrop-filter:blur(var(--vidro-blur));backdrop-filter:blur(var(--vidro-blur))}
+  header.top nav{
+    display:none;position:fixed;inset:0;z-index:60;
+    flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;
+    padding:96px 22px max(22px,env(safe-area-inset-bottom));
+    background:rgba(1,23,46,.58);
+    -webkit-backdrop-filter:blur(20px) saturate(1.2);backdrop-filter:blur(20px) saturate(1.2);
+    border:0;border-radius:0;box-shadow:none;overflow-y:auto;
+  }
+  header.top nav.aberto{display:flex}
+  header.top nav a:not(.btn){
+    display:flex!important;flex-direction:column;align-items:flex-start;gap:2px;
+    padding:16px 0;border-radius:0;border-bottom:1px solid rgba(255,255,255,.2);
+    font-family:var(--fh);font-weight:700;font-size:1.75rem;color:#fff;letter-spacing:-.01em;
+  }
+  header.top nav a:not(.btn) small{display:block;font-family:var(--f);font-weight:700;font-size:.85rem;color:#FFB08F;letter-spacing:0}
+  header.top nav a:not(.btn):hover,header.top nav a[aria-current]{background:transparent;color:#FF8A5B}
+  header.top nav .btn{width:100%;margin-top:0}
+  header.top nav .btn.ln{margin-top:auto;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);color:#fff;box-shadow:var(--vidro-sombra)}
+  header.top nav .btn.ln + .btn{margin-top:10px}
+  html.menu-aberto,html.menu-aberto body{overflow:hidden}
+}
+@media(min-width:901px){header.top nav a small{display:none}}
+@media(prefers-reduced-transparency:reduce){
+  .hero .selo,.hero .menu-btn,.hero .caminho:not(.v),.hero .passos-h div,.hero .nota,.vidro,.vidro-escuro,.mosaico figcaption{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(1,23,46,.82)}
+  header.top nav{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(1,23,46,.97)}
+}
