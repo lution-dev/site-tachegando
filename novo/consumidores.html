@@ -76,11 +76,11 @@
   </div>
   <form class="aviso-form" id="aviso-f" novalidate>
     <h3>Quero ser avisado</h3>
-    <label for="a-nome">Nome</label><input id="a-nome" name="nome" type="text" autocomplete="name" required>
-    <label for="a-contato">E-mail ou WhatsApp</label><input id="a-contato" name="contato" type="text" autocomplete="email" required>
-    <label for="a-local">Bairro e cidade (opcional)</label><input id="a-local" name="local" type="text" autocomplete="address-level2">
+    <label for="a-nome">Nome</label><input id="a-nome" name="nome" type="text" autocomplete="name" required value="Ana Souza">
+    <label for="a-contato">E-mail ou WhatsApp</label><input id="a-contato" name="contato" type="text" autocomplete="email" required value="ana.souza@exemplo.com">
+    <label for="a-local">Bairro e cidade (opcional)</label><input id="a-local" name="local" type="text" autocomplete="address-level2" value="Gonzaga, Santos">
     <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="chk"><input type="checkbox" name="ok" required><span>Aceito receber o aviso de lançamento. Posso cancelar quando quiser. Veja a <a href="/privacidade">Política de Privacidade</a>.</span></label>
+    <label class="chk"><input type="checkbox" id="a-ok" name="ok" required checked><span>Aceito receber o aviso de lançamento. Posso cancelar quando quiser. Veja a <a href="/privacidade">Política de Privacidade</a>.</span></label>
     <div class="msg" id="a-msg" role="status" aria-live="polite"></div>
     <button class="btn or cheio" type="submit">Quero ser avisado</button>
   </form>
@@ -119,6 +119,7 @@
   <div class="rod-links"><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a><button type="button" class="anim-btn" aria-pressed="false">Pausar animações</button></div>
 </div></footer>
 <script src="js/data.js"></script>
+<script src="js/form.js"></script>
 <script src="js/aviso.js"></script>
 <script src="js/ui.js"></script>
 </body>
