@@ -109,3 +109,37 @@
   .bento .ic{margin-bottom:10px}
   .manifesto{padding-bottom:56px}
 }
+
+/* ===== grafismos da identidade: padrões, ícones, divisor de rota ===== */
+.com-padrao{position:relative;isolation:isolate}
+.com-padrao::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-size:320px 320px;
+  -webkit-mask-image:linear-gradient(90deg,#000 0,rgba(0,0,0,.55) 12%,transparent 26%,transparent 74%,rgba(0,0,0,.55) 88%,#000 100%);
+  mask-image:linear-gradient(90deg,#000 0,rgba(0,0,0,.55) 12%,transparent 26%,transparent 74%,rgba(0,0,0,.55) 88%,#000 100%)}
+.pat-escuro::before{background-image:url(/img/padrao-escuro.svg);opacity:.55}
+.pat-laranja::before{background-image:url(/img/padrao-laranja.svg);opacity:.5}
+@media(max-width:700px){.com-padrao::before{-webkit-mask-image:linear-gradient(180deg,#000 0,transparent 18%,transparent 82%,#000 100%);mask-image:linear-gradient(180deg,#000 0,transparent 18%,transparent 82%,#000 100%);opacity:.45}}
+.com-padrao>.wrap{position:relative}
+/* ícones dos cartões */
+.bento .ic,.areas .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center}
+.bento .ic svg,.areas .ic svg{stroke:currentColor;fill:none}
+.bento .b1 .ic{background:var(--laranja);color:#1a0a00}
+.bento .b2 .ic{background:var(--azul-esc);color:#fff}
+.bento .b3 .ic{background:var(--laranja);color:#1a0a00}
+.bento .b4 .ic{background:var(--azul-cl);color:var(--azul-esc)}
+.areas .ic{margin-bottom:6px}
+.areas article:nth-child(3n+1) .ic{background:var(--laranja);color:#1a0a00}
+.areas article:nth-child(3n+2) .ic{background:var(--azul-esc);color:#fff}
+.areas article:nth-child(3n) .ic{background:var(--azul-cl);color:var(--azul-esc)}
+/* faixas em movimento: pin no lugar do ponto */
+.faixa .trilho span::after{content:"";display:inline-block;width:16px;height:22px;margin-left:44px;vertical-align:-3px;color:inherit;
+  background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-22 -24 44 56'%3E%3Cpath d='M0 -22C-13 -22 -22 -13 -22 -2C-22 12 0 30 0 30C0 30 22 12 22 -2C22 -13 13 -22 0 -22ZM0 -9a7 7 0 110 14 7 7 0 010-14Z' fill-rule='evenodd'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-22 -24 44 56'%3E%3Cpath d='M0 -22C-13 -22 -22 -13 -22 -2C-22 12 0 30 0 30C0 30 22 12 22 -2C22 -13 13 -22 0 -22ZM0 -9a7 7 0 110 14 7 7 0 010-14Z' fill-rule='evenodd'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.9}
+.faixa:not(.az) .trilho span::after{color:var(--azul-esc)}
+.faixa.az .trilho span::after{color:var(--laranja)}
+/* divisor de rota */
+.rota-div{position:relative;height:90px;margin:0;overflow:hidden;background:#fff}
+.rota-div svg{position:absolute;inset:0;width:100%;height:100%}
+.rota-div .p{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--laranja);border:5px solid #fff;box-shadow:0 0 0 3px var(--laranja);transform:translate(-50%,-50%)}
+.rota-div .p1{left:25%;top:34%}.rota-div .p2{left:50%;top:55%}.rota-div .p3{left:80%;top:38%}
+@media(max-width:700px){.rota-div{height:60px}.rota-div .p{width:20px;height:20px;border-width:4px}}
+.bento .ic svg,.areas .ic svg{width:30px;height:30px}

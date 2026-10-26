@@ -40,3 +40,8 @@ Fallback: com `prefers-reduced-transparency`, o vidro vira fundo azul sólido.
 
 ## Acessibilidade
 Contraste AA verificado com axe nas 7 páginas (0 violações), alvos de toque de 44 px ou mais, link "Pular para o conteúdo", botão "Pausar animações". Detalhes em `docs/ux-auditoria.md`.
+
+## Grafismos e ícones (do deck da marca)
+- **Padrões** (`novo/img/padrao-escuro.svg`, `padrao-laranja.svg`, `padrao-claro.svg`): rotas pontilhadas, pins e pontos de encontro, em ladrilho de 320 px. Uso: classe `com-padrao` + `pat-escuro` ou `pat-laranja` na seção. O padrão aparece só nas laterais (e nas bordas, no celular), com o miolo limpo, para não competir com o texto ("presença gráfica discreta", deck p. 15).
+- **Ícones** (`novo/img/icones.svg`, sprite de 15 símbolos, traço 2,2 e pontas arredondadas): localização, busca, conexão, rota, vendedor, consumidor, parada, alerta, painel, apoio, contabilidade, design, comunicação, jurídico, finanças. Uso: `<svg><use href="/img/icones.svg#i-localizacao"/></svg>`, em quadrado `.ic` de 52 px. Herdam a cor (`currentColor`).
+- **Pin como separador** nas faixas em movimento e **divisor de rota** (`.rota-div`) na home.
