@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel — proposta visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../novo/styles.css">
+<link rel="stylesheet" href="../novo/componentes.css">
+<style>
+body{background:#EEF1F6;margin:0}
+.app{display:grid;grid-template-columns:272px 1fr;gap:20px;padding:16px;min-height:100vh}
+/* barra lateral: painel arredondado, mesma linguagem do menu e dos cartões */
+.lat{position:sticky;top:16px;height:calc(100vh - 32px);border-radius:28px;background:var(--azul-esc);color:#fff;padding:22px 16px;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.lat::after{content:"";position:absolute;inset:auto -40px -40px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(252,66,0,.35),rgba(252,66,0,0));pointer-events:none}
+.lat .logo img{height:46px}
+.lat .logo{padding:0 8px 18px}
+.lat .item{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:16px;color:#C9D0DD;font-weight:700;text-decoration:none;position:relative}
+.lat .item svg{flex:none}
+.lat .item.at{background:var(--laranja);color:#1a0a00}
+.lat .item small{margin-left:auto;font-size:.65rem;background:rgba(255,255,255,.14);padding:2px 8px;border-radius:99px;color:#fff}
+.lat .quem{margin-top:auto;padding:14px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.85rem;color:#C9D0DD;position:relative;z-index:1}
+.lat .quem b{display:block;color:#fff;font-family:var(--fh)}
+.lat .sair{margin-top:8px;padding:12px 14px;border-radius:14px;color:#C9D0DD;font-weight:700;background:transparent;border:0;text-align:left;position:relative;z-index:1}
+/* banner de boas-vindas = abertura do site, em versão compacta */
+.main{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ban{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:34px 36px 30px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--azul-esc) url(../novo/img/hero.jpg) 70% 40%/cover}
+.ban::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,23,46,.95) 0%,rgba(1,23,46,.8) 40%,rgba(1,23,46,.2) 80%,rgba(1,23,46,.05) 100%)}
+.ban>*{position:relative}
+.ban .eyebrow{color:#FF8A5B;margin-bottom:6px}
+.ban h1{font-family:var(--fh);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.04;margin:0 0 8px;letter-spacing:-.02em;color:#fff}
+.ban p{margin:0 0 16px;color:#E9EDF3;max-width:34em}
+.ban .chips{display:flex;gap:10px;flex-wrap:wrap}
+.chipv{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:99px;font-family:var(--fh);font-weight:600;font-size:.9rem;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:var(--vidro-sombra);color:#fff}
+.chipv .ok{width:20px;height:20px;border-radius:50%;background:var(--laranja);display:grid;place-items:center}
+/* bento: mesma gramática do site (blocos coloridos, sem contornos pesados) */
+.bento2{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bc{border-radius:28px;padding:26px;position:relative;overflow:hidden}
+.bc h3{font-family:var(--fh);font-size:1.25rem;margin:0 0 4px;letter-spacing:-.01em}
+.bc p{margin:0}
+.bc.rota{grid-column:span 7;background:var(--azul-esc);color:#fff;min-height:300px}
+.bc.rota h3{color:#fff}.bc.rota .sub{color:#AEB8C9;font-size:.95rem}
+.bc.baixe{grid-column:span 5;background:var(--laranja);color:#1a0a00;display:flex;flex-direction:column;justify-content:space-between}
+.bc.baixe .big{font-family:var(--fh);font-weight:700;font-size:1.75rem;line-height:1.1;letter-spacing:-.02em}
+.bc.proximos{grid-column:span 5;background:#fff;box-shadow:0 1px 0 rgba(1,23,46,.06),0 12px 30px -18px rgba(1,23,46,.25)}
+.bc.cad{grid-column:span 7;background:#fff;box-shadow:0 1px 0 rgba(1,23,46,.06),0 12px 30px -18px rgba(1,23,46,.25)}
+.bc.kpi{grid-column:span 4;background:var(--azul);color:#fff;min-height:130px}
+.bc.kpi small{display:block;color:#C9D0DD;font-weight:700}
+.bc.kpi b{font-family:var(--fh);font-size:2.2rem}
+.bc.kpi svg{position:absolute;right:16px;bottom:16px;opacity:.9}
+.rota svg.rmap{position:absolute;left:0;right:0;top:70px;bottom:62px;width:100%;height:calc(100% - 132px)}
+.rota .dias{position:absolute;left:26px;bottom:22px;display:flex;gap:8px;flex-wrap:wrap;z-index:1}
+.rota .dias span{padding:6px 14px;border-radius:99px;font-weight:800;font-size:.85rem;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);color:#fff}
+.rota .dias span.off{opacity:.45}
+.tl{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.tl li{display:flex;gap:14px;align-items:flex-start;padding-bottom:20px;position:relative;font-weight:700;color:var(--azul-esc)}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:13px;top:30px;bottom:2px;border-left:3px dotted #C9D0DD}
+.tl li:last-child::before{display:none}
+.tl li.ok::before{border-color:var(--laranja)}
+.tl .p{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--laranja);color:#fff;font-size:.85rem;font-weight:800}
+.tl li.prox .p{background:#fff;border:3px solid var(--laranja);box-shadow:0 0 0 6px rgba(252,66,0,.15)}
+.tl small{display:block;font-weight:600;color:var(--suave)}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;margin-top:14px}
+.info dt{font-weight:800;color:var(--suave);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.info dd{margin:2px 0 0;font-weight:700;color:var(--azul-esc)}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{padding:5px 13px;border-radius:99px;background:#E9EDF3;color:var(--azul-esc);font-weight:700;font-size:.9rem}
+.bc .btn{margin-top:16px}
+/* app mobile: barra de abas de vidro */
+.tabs{display:none}
+.topm{display:none}
+@media(max-width:860px){
+  body{padding-bottom:96px}
+  .app{display:block;padding:10px}
+  .lat{display:none}
+  .topm{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 12px}
+  .topm img{height:40px}
+  .topm .av{width:44px;height:44px;border-radius:14px;background:var(--azul-esc);color:#fff;display:grid;place-items:center;font-family:var(--fh);font-weight:700}
+  .ban{padding:24px 20px 20px;min-height:260px;border-radius:24px}
+  .ban::before{background:linear-gradient(180deg,rgba(1,23,46,.2),rgba(1,23,46,.92) 70%)}
+  .bento2{grid-template-columns:1fr}
+  .bc,.bc.rota,.bc.baixe,.bc.proximos,.bc.cad,.bc.kpi{grid-column:auto;border-radius:24px}
+  .bc.rota{min-height:300px}
+  .kpis{display:grid;grid-template-columns:1fr;gap:12px}
+  .tabs{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;padding:8px;border-radius:24px;background:rgba(1,23,46,.72);-webkit-backdrop-filter:blur(20px) saturate(1.2);backdrop-filter:blur(20px) saturate(1.2);border:1.5px solid rgba(255,255,255,.22);box-shadow:var(--vidro-sombra)}
+  .tabs a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px;border-radius:16px;color:#C9D0DD;font-weight:700;font-size:.78rem;text-decoration:none}
+  .tabs a.at{background:var(--laranja);color:#1a0a00}
+  .info{grid-template-columns:1fr 1fr}
+}
+.kpis{display:contents}
+@media(max-width:860px){.kpis{display:grid}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="lat" aria-label="Menu do painel">
+    <a class="logo" href="#"><img src="../novo/img/logo-horizontal-escuro.svg" alt="Tá Chegando"></a>
+    <a class="item at" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Início</a>
+    <a class="item" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Meu cadastro</a>
+    <a class="item" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Métricas<small>em breve</small></a>
+    <div class="quem"><b>Maria Souza</b>Vendedora · vendedor@tachegando.demo</div>
+    <button class="sair">Sair da conta</button>
+  </aside>
+
+  <div class="main">
+    <div class="topm"><img src="../novo/img/logo-horizontal.svg" alt="Tá Chegando"><span class="av">M</span></div>
+    <section class="ban" aria-label="Boas-vindas">
+      <span class="eyebrow">Painel do vendedor</span>
+      <h1>Oi, Maria!</h1>
+      <p>Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota.</p>
+      <div class="chips"><span class="chipv"><span class="ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Cadastro completo</span><span class="chipv">Santos</span><span class="chipv">Bicicleta</span></div>
+    </section>
+
+    <div class="bento2">
+      <article class="bc rota">
+        <h3>Sua rota</h3><p class="sub">Onde você costuma passar, e em quais dias.</p>
+        <svg class="rmap" viewBox="0 0 600 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path d="M30 140 C120 140 130 50 230 60 S340 150 410 110 S520 40 570 60" fill="none" stroke="#FC4200" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/>
+          <g font-family="Poppins" font-weight="700" font-size="14" fill="#fff" text-anchor="middle">
+            <g transform="translate(120 112)"><circle r="14" fill="#FC4200"/><circle r="5" fill="#fff"/><text y="-26">Gonzaga</text></g>
+            <g transform="translate(300 118)"><circle r="14" fill="#FC4200"/><circle r="5" fill="#fff"/><text y="-26">Boqueirão</text></g>
+            <g transform="translate(490 62)"><circle r="14" fill="#FC4200"/><circle r="5" fill="#fff"/><text y="-26">Embaré</text></g>
+          </g>
+        </svg>
+        <div class="dias"><span>Seg</span><span class="off">Ter</span><span>Qua</span><span class="off">Qui</span><span>Sex</span><span>Sáb</span><span class="off">Dom</span></div>
+      </article>
+
+      <article class="bc baixe">
+        <div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em breve</span></div>
+        <div><p class="big">O app será liberado no lançamento oficial.</p><p style="margin-top:8px">Você será avisado.</p></div>
+      </article>
+
+      <article class="bc proximos">
+        <h3 style="color:var(--azul-esc)">Seus próximos passos</h3>
+        <ul class="tl">
+          <li class="ok"><span class="p"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div>Conta criada</div></li>
+          <li class="ok"><span class="p"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div>Cadastro completo</div></li>
+          <li class="prox"><span class="p"></span><div>Usar o app na sua rota<small>No lançamento</small></div></li>
+        </ul>
+      </article>
+
+      <article class="bc cad">
+        <h3 style="color:var(--azul-esc)">Seu cadastro</h3>
+        <dl class="info">
+          <div><dt>Vende</dt><dd class="tags"><span>Ovos</span><span>Pão</span><span>Queijo</span></dd></div>
+          <div><dt>Desloca-se</dt><dd>Bicicleta</dd></div>
+          <div><dt>Região</dt><dd>Santos · Gonzaga, Boqueirão, Embaré</dd></div>
+          <div><dt>Telefone</dt><dd>(13) 99876-5432</dd></div>
+        </dl>
+        <a class="btn az" href="#">Editar cadastro</a>
+      </article>
+
+      <div class="kpis">
+        <article class="bc kpi"><small>Paradas pedidas</small><b>—</b><svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#FC4200" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg></article>
+        <article class="bc kpi"><small>Regiões com interesse</small><b>—</b><svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#FC4200" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg></article>
+        <article class="bc kpi"><small>Rotas</small><b>—</b><svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#FC4200" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg></article>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="tabs" aria-label="Painel">
+  <a class="at" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Início</a>
+  <a href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Cadastro</a>
+  <a href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Métricas</a>
+</nav>
+</body>
+</html>
