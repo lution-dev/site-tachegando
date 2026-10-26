@@ -343,3 +343,28 @@ body.painel{background:var(--creme)}
 .pn .msg{min-height:1.4em}
 @media(max-width:860px){.pn{grid-template-columns:1fr}.pn-lat{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center}.pn-lat .logo{padding:0 10px 0 4px}.pn-lat .sai{margin:0 0 0 auto}.pn-lat .quem{display:none}}
 .btn.ln-d{border-color:var(--azul-esc);color:var(--azul-esc);background:transparent}.btn.ln-d:hover{background:var(--azul-cl)}
+
+/* ===== documentos legais ===== */
+body.legal header.top{position:static;background:var(--azul-esc)}
+.doc-topo{background:var(--azul-esc);color:#fff;padding:clamp(36px,5vw,72px) 0 clamp(36px,5vw,64px)}
+.doc-topo h1{font-size:clamp(2.2rem,5vw,3.8rem);margin:0 0 12px;line-height:1.05;letter-spacing:-.03em}
+.doc-topo p{color:#dbe5ff;max-width:36em;margin:0}
+.rascunho{background:#fff3e0;border:2px solid var(--laranja);color:#4a2a00;border-radius:16px;padding:14px 18px;margin-bottom:28px;font-weight:600}
+.doc-corpo{padding:clamp(32px,5vw,64px) 0 clamp(56px,7vw,96px)}
+.doc-grid{display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.doc-ind{position:sticky;top:20px;font-size:.95rem}
+.doc-ind b{display:block;color:var(--azul-esc);margin-bottom:10px}
+.doc-ind a{display:block;padding:6px 0;color:var(--suave);text-decoration:none;font-weight:600}
+.doc-ind a:hover{color:var(--azul)}
+.doc-txt{max-width:720px}
+.doc-txt h2{font-size:1.6rem;color:var(--azul);margin:2em 0 .5em;letter-spacing:-.02em}
+.doc-txt h2:first-of-type{margin-top:0}
+.doc-txt p,.doc-txt li{color:var(--texto)}
+.doc-txt ul{padding-left:1.2em;margin:0 0 1em}
+.doc-txt li{margin-bottom:.4em}
+.doc-txt mark{background:#fff0c2;padding:1px 6px;border-radius:6px;color:#4a2a00;font-weight:700}
+.doc-txt table{width:100%;border-collapse:collapse;margin:0 0 1em;font-size:.95rem}
+.doc-txt th,.doc-txt td{border:1px solid #dfe5f7;padding:10px 12px;text-align:left;vertical-align:top}
+.doc-txt th{background:var(--azul-cl);color:var(--azul-esc)}
+@media(max-width:860px){.doc-grid{grid-template-columns:1fr}.doc-ind{position:static}body.legal header.top nav a:not(.btn){display:none}}
+body.legal header.top{padding-inline:max(clamp(20px,5vw,64px),calc((100vw - var(--max))/2 + clamp(20px,5vw,64px)))}
