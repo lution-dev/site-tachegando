@@ -1,3 +1,5 @@
+> **Atenção:** o app não tem "ativar o aviso de chegada". O termo real é "Me avise quando chegar" (aviso de chegada). Termos já ajustados abaixo. Ver `docs/funcionalidades-app.md`.
+
 # Tá Chegando — Copy e estrutura do site
 
 Base: brand book (cap. 3–7). Tudo aqui é **proposta para validação**: o brand book exige que funcionalidades, preços e disponibilidade sejam confirmados pelo produto antes de irem ao ar (cap. 8.4 e 8.6).
@@ -61,13 +63,13 @@ O Tá Chegando entra pra aproximar esses caminhos, sem tirar de ninguém a auton
 **Aba "Para quem procura"**
 1. **Veja quem circula por perto.** Descubra os vendedores da sua região.
 2. **Acompanhe a aproximação.** Saiba quando o vendedor está chegando.
-3. **Peça uma parada.** Sinalize seu interesse. A decisão de parar é do vendedor.
+3. **Me avise quando chegar.** Sinalize seu interesse. A decisão de parar é do vendedor.
 
 > Texto de apoio: "Os detalhes de cada passo seguem o que estiver disponível no aplicativo."
 
 ### 6. O que você encontra
 - **Veja quem está chegando** — Acompanhe a aproximação do vendedor e se programe sem correria.
-- **Peça uma parada** — Sinalize que você quer comprar. O vendedor vê onde existe interesse.
+- **Me avise quando chegar** — Sinalize que você quer comprar. O vendedor vê onde existe interesse.
 - **Descubra o que tem por perto** — Produtos e vendedores que passam pelo seu bairro e que você talvez nem conhecesse.
 - **Simples pra qualquer um** — Letras grandes, poucos passos, sem complicação. Pra qualquer idade.
 

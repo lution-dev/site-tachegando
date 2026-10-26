@@ -1,3 +1,5 @@
+> **Atenção:** o app não tem "pedir uma parada". O termo real é "Me avise quando chegar" (aviso de chegada). Termos já ajustados abaixo. Ver `docs/funcionalidades-app.md`.
+
 # Guia de copy — Tá Chegando (site)
 
 Resumo operacional do brand book (cap. 5 e 6) para quem escreve texto do site. Em dúvida, vale o brand book.
@@ -20,7 +22,7 @@ Próxima, prática, viva e curiosa, confiável e respeitosa. Português brasilei
 | vendedor, vendedor ambulante móvel (definições formais) | camelô, informal, "pequeno empreendedor" como rótulo |
 | consumidor (quem procura), cliente (quem já compra do vendedor) | usuário, lead |
 | em movimento, circulando, por perto, na região, por aí | "garantido", "sempre disponível" |
-| pedir uma parada, solicitação de parada | pedido, encomenda, entrega |
+| ativar o aviso de chegada, solicitação de parada | pedido, encomenda, entrega |
 | descobrir, encontrar | rastrear (só se explicar o que é compartilhado) |
 | Rede de Apoio (como iniciativa em desenvolvimento) | comunidade consolidada, rede de milhares |
 

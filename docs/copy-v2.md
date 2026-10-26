@@ -1,3 +1,5 @@
+> **Atenção:** o app não tem "pedir uma parada". O termo real é "Me avise quando chegar" (aviso de chegada). Termos já ajustados abaixo. Ver `docs/funcionalidades-app.md`.
+
 # Tá Chegando — Copy de todas as páginas (v2, para aprovação)
 
 Base: `estrutura-v2.md` + brand book (cap. 4 a 7). Premissa combinada: **o app já funciona; o lançamento oficial ainda não aconteceu**. Por isso o site fala do produto no presente, sem link de loja nem data, e convida para o cadastro e o aviso de lançamento.
@@ -28,7 +30,7 @@ Regras seguidas: tratar por "você", sem "entrega/delivery", sem "primeiro/únic
 
 **Seção "O que é":**
 Título: O comércio que circula faz parte da vida da cidade.
-Texto: O Tá Chegando é uma plataforma que aproxima vendedores ambulantes e consumidores. Com informações de localização, quem procura descobre quem está circulando por perto e pode pedir uma parada. Quem vende continua dono da sua rota e do seu trabalho.
+Texto: O Tá Chegando é uma plataforma que aproxima vendedores ambulantes e consumidores. Com informações de localização, quem procura descobre quem está circulando por perto e pode ativar o aviso de chegada. Quem vende continua dono da sua rota e do seu trabalho.
 
 **Seção "Por que existimos" (manifesto, destaque grande):**
 Todo dia tem gente passando pela rua com algo pra vender. E tem gente procurando.
@@ -42,7 +44,7 @@ Texto: Frutas, ovos, pão, queijo, doces, artesanato, flores, roupas, picolé, a
 
 **Seção "Como funciona" (duas colunas):**
 - *Para quem vende:* 1. Crie sua conta e faça seu cadastro. 2. Informe o que vende e por onde costuma passar. 3. Use o app durante a rota.
-- *Para quem procura:* 1. Veja quem circula perto de você. 2. Acompanhe a aproximação do vendedor. 3. Peça uma parada.
+- *Para quem procura:* 1. Veja quem circula perto de você. 2. Acompanhe a aproximação do vendedor. 3. Me avise quando chegar.
 Chamada: **Saiba mais** (leva às páginas internas).
 
 **Seção Rede de Apoio (faixa curta):**
@@ -72,11 +74,11 @@ Para quem vende em movimento: a pé, de bicicleta, moto, carro, caminhonete ou c
 **Como funciona (3 passos):**
 1. **Crie sua conta.** É rápido: e-mail e senha.
 2. **Conte o que você vende.** Produtos, meio de transporte, cidade e dias em que você circula.
-3. **Use o app na sua rota.** Quem procura vê que você está circulando por perto e pode pedir uma parada. **[confirmar]**
+3. **Use o app na sua rota.** Quem procura vê que você está circulando por perto e pode ativar o aviso de chegada. **[confirmar]**
 
 **O que você ganha (4 blocos curtos):**
 - **Mais fácil de encontrar.** Quem procura sabe onde você passa. **[confirmar]**
-- **Pedidos de parada.** Você vê onde há interesse e decide se para. **[confirmar]**
+- **Onde tem clientes.** Você vê onde há interesse e decide se para. **[confirmar]**
 - **Sua rota, suas regras.** Você escolhe o que mostrar e quando. **[confirmar]**
 - **Um painel só seu.** Cadastro e, depois, seus números num só lugar.
 
@@ -101,7 +103,7 @@ Tem mais de um vendedor trabalhando com você? Fale com a gente e conte como é 
 
 **H1:** O vendedor que você procura pode estar passando por aí.
 
-**Subtítulo:** Descubra quem circula perto de você, acompanhe a aproximação e peça uma parada. O Tá Chegando será lançado em breve.
+**Subtítulo:** Descubra quem circula perto de você, acompanhe a aproximação e ative o aviso de chegada. O Tá Chegando será lançado em breve.
 
 **Bloco de aviso de lançamento (formulário):**
 Título: Quer ser avisado no lançamento?
@@ -113,7 +115,7 @@ Confirmação: Anotado! Você vai receber um aviso quando o Tá Chegando for lan
 **O que você vai poder fazer (4 blocos):**
 - **Descobrir quem circula.** Veja os vendedores que passam pela sua região. **[confirmar]**
 - **Acompanhar a aproximação.** Saiba quando o vendedor está chegando e se programe. **[confirmar]**
-- **Pedir uma parada.** Sinalize seu interesse. A decisão de parar é do vendedor. **[confirmar]**
+- **Me avise quando chegar.** Sinalize seu interesse. A decisão de parar é do vendedor. **[confirmar]**
 - **Reencontrar quem você já conhece.** Aquele vendedor de sempre, mais fácil de achar. **[confirmar]**
 
 **Quando faz sentido usar (4 situações, curtas):**
@@ -127,7 +129,7 @@ Confirmação: Anotado! Você vai receber um aviso quando o Tá Chegando for lan
 **Perguntas frequentes:**
 - *Quando o app será lançado?* Em breve. Deixe seu contato e avisamos.
 - *É um serviço de entrega?* Não. A proposta é facilitar o encontro com quem vende em movimento.
-- *Pedir uma parada garante que o vendedor vai parar?* Não. O pedido sinaliza seu interesse; a decisão é do vendedor.
+- *Me avise quando chegar garante que o vendedor vai parar?* Não. O pedido sinaliza seu interesse; a decisão é do vendedor.
 - *Vou pagar para usar?* As condições serão informadas no lançamento oficial.
 - *Meus dados estão seguros?* Veja nossa Política de Privacidade.
 

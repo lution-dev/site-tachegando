@@ -1,3 +1,5 @@
+> **Atenção:** o app não tem "pedir uma parada". O termo real é "Me avise quando chegar" (aviso de chegada). Termos já ajustados abaixo. Ver `docs/funcionalidades-app.md`.
+
 # Copy v3 — opções de título e reescrita das páginas mais fracas
 
 Complementa `copy-v2.md` (que segue como base das demais seções) e usa as regras de `guia-de-copy.md`. Aqui você escolhe os títulos e aprova as reescritas de **Consumidores** e **Rede de Apoio**. Trechos com **[confirmar]** dependem de checagem do produto.
@@ -27,11 +29,11 @@ Cada opção tem um tom: **A = direto**, **B = curioso**, **C = caloroso**. A mi
 
 ### Consumidores
 - **A ★** — **O vendedor que você procura pode estar passando por aí.**
-  Descubra quem circula perto de você, acompanhe a aproximação e peça uma parada. O Tá Chegando será lançado em breve.
+  Descubra quem circula perto de você, acompanhe a aproximação e ative o aviso de chegada. O Tá Chegando será lançado em breve.
 - **B** — **Aquele vendedor de sempre, mais fácil de achar.**
   Quem passa no seu bairro, o que vende e quando está chegando. Deixe seu contato e avisamos no lançamento.
 - **C** — **Já perdeu o vendedor por um minuto? A gente ajuda a reencontrar.**
-  O Tá Chegando mostra quem circula por perto e deixa você pedir uma parada.
+  O Tá Chegando mostra quem circula por perto e deixa você ativar o aviso de chegada.
 
 *Por quê:* A também é do brand book e tem o tom certo (curiosidade sem exagero). C é a mais identificável, mas "reencontrar" precisa estar no app **[confirmar]**.
 
@@ -53,7 +55,7 @@ Cada opção tem um tom: **A = direto**, **B = curioso**, **C = caloroso**. A mi
 
 **Título:** *(escolha acima; usada a opção A)* O vendedor que você procura pode estar passando por aí.
 
-**Subtítulo:** Descubra quem circula perto de você, acompanhe a aproximação e peça uma parada.
+**Subtítulo:** Descubra quem circula perto de você, acompanhe a aproximação e ative o aviso de chegada.
 
 **Aviso de lançamento (formulário):**
 - Título: Quer saber quando o Tá Chegando chegar?
@@ -67,22 +69,22 @@ Cada opção tem um tom: **A = direto**, **B = curioso**, **C = caloroso**. A mi
 1. **Procurando algo específico.** Quer ovos, queijo ou flores? Veja quem circula por perto vendendo. **[confirmar]**
 2. **Aquele vendedor de sempre.** Ele passa quando você não está olhando? Fica mais fácil reencontrar. **[confirmar]**
 3. **Curioso com o bairro.** Quem passa por aqui? O que vende? Descubra o que já está por perto. **[confirmar]**
-4. **Em casa, esperando.** Acompanhe a aproximação e, se quiser, peça uma parada. Quem decide é o vendedor. **[confirmar]**
+4. **Em casa, esperando.** Acompanhe a aproximação e, se quiser, ative o aviso de chegada. Quem decide é o vendedor. **[confirmar]**
 
 **Como funciona (3 passos, bem curtos):**
 1. Abra o app e veja quem circula por perto.
 2. Acompanhe quem está chegando.
-3. Peça uma parada, se tiver interesse.
+3. Me avise quando chegar, se tiver interesse.
 
 **Transparência:**
-- Pedir uma parada mostra seu interesse. O vendedor decide se para.
+- Me avise quando chegar mostra seu interesse. O vendedor decide se para.
 - A localização e a disponibilidade dos vendedores podem variar.
 - O Tá Chegando não é um serviço de entrega. É um jeito de encontrar quem já circula.
 
 **Perguntas frequentes:**
 - **Quando o app será lançado?** Em breve. Deixe seu contato e avisamos.
 - **Vai ter vendedor no meu bairro?** Varia de lugar para lugar. No app você vê quem está circulando perto de você.
-- **Pedir uma parada garante que o vendedor vai parar?** Não. O pedido mostra seu interesse. A decisão é do vendedor.
+- **Me avise quando chegar garante que o vendedor vai parar?** Não. O pedido mostra seu interesse. A decisão é do vendedor.
 - **É um app de entrega?** Não. A ideia é ajudar você a encontrar quem vende em movimento.
 - **Vou pagar para usar?** As condições serão informadas no lançamento oficial.
 - **O que vocês fazem com meu contato?** Usamos só para avisar do lançamento. Detalhes na Política de Privacidade.
@@ -150,7 +152,7 @@ A Rede de Apoio ainda está em desenvolvimento. A participação depende de defi
 ## Glossário de uma linha
 - **Vendedor**: quem vende produto ou serviço em movimento. Sempre o sujeito.
 - **Consumidor**: quem procura. **Cliente**: quem já compra de um vendedor.
-- **Pedir uma parada**: sinalizar interesse. Quem decide parar é o vendedor.
+- **Me avise quando chegar**: sinalizar interesse. Quem decide parar é o vendedor.
 - **Por perto / na região**: perto de acordo com o que o app mostra, sem garantir presença.
 - **Rede de Apoio**: iniciativa em desenvolvimento. Nunca "comunidade" nem "rede consolidada".
 - **Lançamento**: o app já funciona; falta o lançamento oficial. Nunca dizer "versão de teste".
