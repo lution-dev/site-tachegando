@@ -1,4 +1,21 @@
 (function () {
+  // barra fixa: reserva o espaço dela e compacta ao rolar
+  var topo = document.querySelector("header.top");
+  if (topo) {
+    var dentroHero = !!topo.closest(".hero");
+    if (!dentroHero) topo.classList.add("solido");
+    var reserva = function () {
+      var rolou = topo.classList.contains("rolou"); topo.classList.remove("rolou");
+      var h = topo.offsetHeight; if (rolou) topo.classList.add("rolou");
+      document.documentElement.style.setProperty("--hdr", h + "px");
+      if (!dentroHero) document.body.style.paddingTop = h + "px";
+    };
+    var rola = function () { topo.classList.toggle("rolou", window.scrollY > 24); };
+    reserva(); rola();
+    window.addEventListener("scroll", rola, { passive: true });
+    window.addEventListener("resize", reserva);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserva);
+  }
   // menu do celular (tela cheia com vidro)
   var b = document.querySelector(".menu-btn"), n = document.getElementById("nav-principal");
   if (b && n) {

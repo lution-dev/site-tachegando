@@ -53,7 +53,6 @@
 
 /* ---- menu do celular: tela cheia com vidro (opção A) ---- */
 @media(max-width:900px){
-  header.top{position:relative;z-index:40}
   header.top .logo,header.top .menu-btn{position:relative;z-index:62}
   header.top .menu-btn{display:flex;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);box-shadow:var(--vidro-sombra);-webkit-backdrop-filter:blur(var(--vidro-blur));backdrop-filter:blur(var(--vidro-blur))}
   header.top nav{
@@ -169,3 +168,25 @@
 /* selo discreto de protótipo (entrar e painel) */
 .proto-tag{position:fixed;right:12px;bottom:12px;z-index:45;background:rgba(1,23,46,.82);color:#fff;font:800 .72rem/1 var(--fh);letter-spacing:.04em;padding:7px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.25);pointer-events:none}
 @media(max-width:860px){body.painel .proto-tag{bottom:92px;right:10px}}
+
+/* ---- barra fixa: transparente no topo, vidro compacto ao rolar ---- */
+:root{--hdr:88px}
+header.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:padding .25s ease}
+header.top::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .25s ease;
+  background:rgba(1,23,46,.72);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px -18px rgba(1,23,46,.7)}
+header.top.rolou{padding-top:10px;padding-bottom:10px}
+header.top.rolou::before,header.top.solido::before{opacity:1}
+header.top.solido::before{background:var(--azul-esc);-webkit-backdrop-filter:none;backdrop-filter:none}
+header.top .logo img{transition:height .25s ease}
+header.top.rolou .logo img{height:34px}
+.hero{padding-top:var(--hdr)}
+body.legal header.top,body.pg header.top{position:fixed;background:transparent}
+@media(max-width:900px){header.top{position:fixed}}
+@media(prefers-reduced-motion:reduce){header.top,header.top::before,header.top .logo img{transition:none}}
+@media(prefers-reduced-transparency:reduce){header.top::before{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--azul-esc)}}
+body.legal{margin-top:0;font-size:18px;color:var(--texto)}
+header.top .logo{display:flex;align-items:center;line-height:0;padding:0}
+nav.doc-ind{top:88px}
+nav.doc-ind a{display:flex;align-items:center;min-height:44px}
+@media(max-width:860px){nav.doc-ind{top:auto}}
