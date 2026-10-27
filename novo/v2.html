@@ -11,6 +11,8 @@
 <link rel="icon" type="image/png" sizes="48x48" href="/v2-assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/v2-assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/v2-assets/icon-180.png">
+<link rel="preload" as="image" href="/v2-assets/fotos/v2-hero-bg-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="/v2-assets/fotos/v2-hero-bg.webp" media="(min-width:901px)" fetchpriority="high">
 <link rel="preload" href="/v2-assets/fonts/Baloo2-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
@@ -33,23 +35,14 @@
 
 <section class="hero" aria-label="Abertura">
   <div class="wrap">
-    <div>
-      <h1>Quem vende <mark>circula.</mark> Quem procura <mark>descobre.</mark></h1>
-      <p class="sub">O pão que passa às quatro, o picolé, o carro de ovos. No Tá Chegando você vê quem está vendendo perto da sua casa e pede pra ser avisado quando ele chegar. Quem vende vê onde tem cliente na rota.</p>
-      <div class="acoes"><a class="btn am" href="/entrar?modo=criar">Criar minha conta</a><a class="btn fa" href="/consumidores">Quero ser avisado</a></div>
-      <p class="ainda"><img src="/v2-assets/simbolo-creme.svg" alt="" width="30" height="30">O app também tá chegando: ainda não está nas lojas. Deixe seu contato que a gente avisa quando sair.</p>
+    <h1>Quem vende <mark>circula.</mark> Quem procura <mark>descobre.</mark></h1>
+    <p class="sub">O pão que passa às quatro, o picolé, o carro de ovos. No Tá Chegando você vê quem está vendendo perto da sua casa e pede pra ser avisado quando ele chegar. Quem vende vê onde tem cliente na rota.</p>
+    <div class="cams">
+      <a class="cam v" href="/vendedores"><b>Eu vendo</b><span>Você já está na rua. Agora deixe que encontrem você.</span><em>Criar minha conta</em></a>
+      <a class="cam" href="/consumidores"><b>Eu procuro</b><span>O vendedor que você procura pode estar passando por aí.</span><em>Quero ser avisado</em></a>
+      <a class="cam" href="/rede-de-apoio"><b>Quero apoiar</b><span>Sua empresa sabe algo que ajuda quem trabalha na rua? Dá pra apoiar.</span><em>Conhecer a Rede</em></a>
     </div>
-    <div class="cena">
-      <figure class="foto-toldo" aria-hidden="true"><img src="/v2-assets/fotos/v2-hero-carro.webp" srcset="/v2-assets/fotos/v2-hero-carro-m.webp 420w, /v2-assets/fotos/v2-hero-carro.webp 640w" sizes="(max-width:1000px) 55vw, 280px" alt="" width="640" height="800"></figure>
-      <div class="fone" role="img" aria-label="Ilustração do aplicativo: um mapa com vendedores por perto e o aviso “Seu vendedor tá chegando”.">
-        <div class="fone-t">
-          <svg class="mapa" viewBox="0 0 300 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="560" fill="#EDE3D3"/><rect x="196" y="60" width="86" height="70" rx="10" fill="#D3DDCB"/><rect x="18" y="360" width="70" height="60" rx="10" fill="#D3DDCB"/><g stroke="#fff" stroke-width="15" stroke-linecap="round" fill="none"><path d="M-10 120 L310 90"/><path d="M-10 250 L310 225"/><path d="M-10 380 L310 352"/><path d="M-10 500 L310 478"/><path d="M60 -10 L40 570"/><path d="M165 -10 L150 570"/><path d="M262 -10 L248 570"/></g></svg>
-          <span class="pin p1" style="--x:22%;--y:14%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p2" style="--x:63%;--y:7%;--t:30px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p3" style="--x:70%;--y:44%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p4" style="--x:30%;--y:64%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span>
-          <span class="eu" aria-hidden="true"></span>
-          <div class="aviso"><span class="av"><img src="/v2-assets/simbolo-petroleo.svg" alt=""></span><div><b>Seu vendedor tá chegando</b><span>Açaí do Seu Zé · perto de você</span></div></div>
-        </div>
-      </div>
-    </div>
+    <p class="ainda"><img src="/v2-assets/simbolo-creme.svg" alt="" width="30" height="30">O app também tá chegando: ainda não está nas lojas. Deixe seu contato que a gente avisa quando sair.</p>
   </div>
 </section>
 <div class="toldo-w" aria-hidden="true"><div class="toldo"></div></div>
@@ -58,21 +51,24 @@
 
 <main id="principal">
 <section class="sec oquee"><div class="wrap">
+  <div class="col">
   <h2 class="rev">Você quer o pão quentinho, mas não sabe se o padeiro já passou.</h2>
   <div class="txt rev">
     <p class="l1">Abra o mapa do Tá Chegando e veja quem está circulando perto de você. Achou o vendedor que queria? É só tocar aqui:</p>
     <span class="botao-app"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Me avise quando chegar</span>
     <p class="l2"><b>Pra quem procura, o app é de graça.</b> E quem vende vê onde tem cliente perto da rota. A rota e os dias de trabalho continuam sendo escolha dele.</p>
   </div>
-</div></section>
-
-<section class="sec caminhos" aria-labelledby="t-caminhos"><div class="wrap">
-  <h2 id="t-caminhos" class="rev">Por onde você quer começar?</h2>
-  <ul class="rotas rev">
-    <li><a href="/vendedores"><span class="ic" aria-hidden="true"><img src="/v2-assets/simbolo-creme.svg" alt=""></span><b>Eu vendo na rua</b><span class="d">Você já está na rua. Agora deixe que encontrem você.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-    <li><a href="/consumidores"><span class="ic" aria-hidden="true"><img src="/v2-assets/simbolo-creme.svg" alt=""></span><b>Eu procuro quem vende</b><span class="d">O vendedor que você procura pode estar passando por aí.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-    <li><a href="/rede-de-apoio"><span class="ic" aria-hidden="true"><img src="/v2-assets/simbolo-petroleo.svg" alt=""></span><b>Tenho uma empresa e quero apoiar</b><span class="d">Sua empresa sabe algo que ajuda quem trabalha na rua? Dá pra apoiar.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-  </ul>
+  </div>
+  <div class="cena rev">
+    <div class="fone" role="img" aria-label="Ilustração do aplicativo: um mapa com vendedores por perto e o aviso “Seu vendedor tá chegando”.">
+      <div class="fone-t">
+        <svg class="mapa" viewBox="0 0 300 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="560" fill="#EDE3D3"/><rect x="196" y="60" width="86" height="70" rx="10" fill="#D3DDCB"/><rect x="18" y="360" width="70" height="60" rx="10" fill="#D3DDCB"/><g stroke="#fff" stroke-width="15" stroke-linecap="round" fill="none"><path d="M-10 120 L310 90"/><path d="M-10 250 L310 225"/><path d="M-10 380 L310 352"/><path d="M-10 500 L310 478"/><path d="M60 -10 L40 570"/><path d="M165 -10 L150 570"/><path d="M262 -10 L248 570"/></g></svg>
+        <span class="pin p1" style="--x:22%;--y:14%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p2" style="--x:63%;--y:7%;--t:30px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p3" style="--x:70%;--y:44%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p4" style="--x:30%;--y:64%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span>
+        <span class="eu" aria-hidden="true"></span>
+        <div class="aviso"><span class="av"><img src="/v2-assets/simbolo-petroleo.svg" alt=""></span><div><b>Seu vendedor tá chegando</b><span>Açaí do Seu Zé · perto de você</span></div></div>
+      </div>
+    </div>
+    </div>
 </div></section>
 
 <div class="toldo-w cr" aria-hidden="true"><div class="toldo"></div></div>
