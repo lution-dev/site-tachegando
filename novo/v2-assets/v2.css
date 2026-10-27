@@ -40,6 +40,9 @@ p{margin:0}
 .marca{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--tomate);font:800 1.7rem/1 var(--fh);letter-spacing:-.02em;white-space:nowrap}
 .marca img{width:38px;height:38px;margin:-4px 0}
 .marca.cr{color:var(--creme)}
+.marca .s-cr{display:none}
+html.menu-aberto .marca .s-to{display:none}
+html.menu-aberto .marca .s-cr{display:block}
 
 /* barra fixa em pílula */
 header.topo{position:fixed;z-index:50;top:12px;left:0;right:0;padding:0 var(--gut);pointer-events:none}
