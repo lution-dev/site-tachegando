@@ -37,8 +37,9 @@ p{margin:0}
 
 /* marca */
 .marca{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--tomate);font:800 1.7rem/1 var(--fh);letter-spacing:-.02em;white-space:nowrap}
-.marca img{height:42px;width:auto;margin:0}
-footer.rod .marca img{height:48px}
+.marca img{height:38px;width:auto;margin:0}
+footer.rod .marca img{height:42px}
+@media(max-width:700px){.marca img{height:32px}}
 .marca.cr{color:var(--creme)}
 .marca .s-cr{display:none}
 html.menu-aberto .marca .s-to{display:none}
