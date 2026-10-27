@@ -156,6 +156,8 @@ section{position:relative}
 /* manifesto */
 .manifesto{background:var(--petroleo);color:var(--creme);overflow:hidden;isolation:isolate}
 .manifesto .wrap{max-width:calc(940px + var(--gut)*2);position:relative;z-index:1}
+.manifesto .dagua{position:absolute;z-index:0;right:-7%;bottom:-24%;width:min(44vw,560px);height:auto;opacity:.07;transform:rotate(-9deg);pointer-events:none}
+@media(max-width:700px){.manifesto .dagua{width:78vw;right:-24%;bottom:-10%;opacity:.06}}
 .manifesto .big{font:800 clamp(2rem,4.8vw,3.6rem)/1.04 var(--fh);letter-spacing:-.02em;margin-bottom:.5em}
 .manifesto .dest{color:var(--amarelo)}
 .manifesto .peq{font-size:1.2rem;color:#D8E0D9;max-width:30em}
