@@ -11,24 +11,22 @@ const LOGO=(c)=>`<img src="${B}/marca/logo/logo-compacta-${c}.svg" style="height
 const H1=(t,s,c='#FFF7EF')=>`<div style="font:800 ${s}px/1.04 'Baloo 2';color:${c}">${t}</div>`;
 const SUB=(t,c='#FFF7EF')=>`<div style="font:700 25px 'Nunito Sans';margin-top:22px;color:${c};opacity:.95">${t}</div>`;
 const SEL=`<div style="display:inline-flex;margin-top:26px;padding:12px 22px;border-radius:99px;background:#F0B34F;color:#29252D;font:800 24px 'Nunito Sans'">Em breve nas lojas</div>`;
+
+const ROTA=(c)=>`<svg style="position:absolute;left:0;top:0;width:1200px;height:630px;z-index:1;opacity:.55" viewBox="0 0 1200 630"><path d="M560 560 C700 470 640 330 770 290 S930 160 1130 90" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 16"/></svg>`;
+const PAGE=(bg,logo,txt,size,toldo,acc,sim)=>`<body style="background:${bg}">${ROTA(acc)}<div style="position:absolute;left:84px;top:76px;z-index:2">${LOGO(logo)}</div>
+<div style="position:absolute;left:84px;top:0;bottom:30px;width:640px;display:flex;align-items:center;z-index:2"><div>${H1(txt,size)}</div></div>
+<div style="position:absolute;right:140px;top:32px;z-index:3">${FONE(278,'transform:rotate(4deg)')}</div>
+<div style="position:absolute;right:76px;top:430px;z-index:2">${PIN('0','0',40,acc)}</div>${TOLDO(toldo)}</body>`;
 const V={
-A:`<body style="background:#BB4938">${'' }<div style="position:absolute;left:80px;top:78px">${LOGO('creme')}</div>
-<div style="position:absolute;left:80px;top:190px;width:620px">${H1('Quem vende circula. Quem procura descobre.',70)}${SUB('O aplicativo que avisa quando o vendedor está chegando.')}</div>
-<div style="position:absolute;right:118px;top:36px;z-index:2">${FONE(268,'transform:rotate(4deg)')}</div>${TOLDO('#F0B34F')}</body>`,
-B:`<body style="background:#173F3C"><div style="position:absolute;left:80px;top:78px">${LOGO('creme')}</div>
-<div style="position:absolute;left:80px;top:190px;width:500px">${H1('Veja quem vende <span style="color:#F0B34F">perto de você.</span>',62)}${SUB('Peça pra ser avisado quando chegar.')}</div>
-<div style="position:absolute;left:610px;top:60px;z-index:1">${CARD(B+'/marca/fotos/v2-moto.webp',300,390,-6,'50% 60%')}</div>
-<div style="position:absolute;left:850px;top:118px;z-index:2">${FONE(236,'transform:rotate(4deg)')}</div>${TOLDO('#BB4938')}</body>`,
-C:`<body style="background:#FFF7EF"><div style="position:absolute;left:80px;top:78px">${LOGO('tomate')}</div>
-<div style="position:absolute;left:80px;top:190px;width:640px">${H1('Tá chegando. E é pra <span style="background:linear-gradient(transparent 62%,#F0B34F 62% 92%,transparent 92%)">todo mundo.</span>',72,'#173F3C')}${SUB('O comércio por perto, mais perto de você.','#29252D')}</div>
-<div style="position:absolute;right:110px;top:40px;z-index:2">${FONE(268,'transform:rotate(-4deg)')}</div><div style="position:absolute;right:420px;top:420px;z-index:1">${PIN('0','0',60)}</div><div style="position:absolute;right:330px;top:90px;z-index:1">${PIN('0','0',44,'#F0B34F')}</div>${TOLDO('#BB4938')}</body>`,
-D:`<body style="background:#BB4938"><div style="position:absolute;left:80px;top:70px">${LOGO('creme')}</div>
-<div style="position:absolute;left:80px;top:170px;width:540px">${H1('Quem vende circula. Quem procura descobre.',62)}${SUB('Aviso de chegada, rota e mapa. Em breve.')}</div>
-<div style="position:absolute;left:598px;top:40px;display:flex;gap:14px;align-items:flex-start;z-index:2"><div style="margin-top:90px">${CARD(B+'/marca/fotos/v2-hero-carro.webp',160,225,-5)}</div>${FONE(244,'transform:rotate(2deg);margin-top:8px')}<div style="margin-top:200px">${CARD(B+'/marca/fotos/v2-triciclo.webp',160,225,5)}</div></div>${TOLDO('#F0B34F')}</body>`};
+ 'og.png':PAGE('#BB4938','creme','Quem vende circula. Quem procura descobre.',76,'#F0B34F','#F0B34F'),
+ 'og-vendedores.png':PAGE('#BB4938','creme','Você já está na rua. Agora deixe que encontrem você.',66,'#F0B34F','#F0B34F'),
+ 'og-consumidores.png':PAGE('#173F3C','creme','O vendedor que você procura pode estar passando por aí.',64,'#F0B34F','#F0B34F'),
+ 'og-rede-de-apoio.png':PAGE('#173F3C','creme','Sua empresa pode ajudar quem vende na rua.',68,'#BB4938','#F0B34F'),
+ 'og-contato.png':PAGE('#BB4938','creme','Fale com a gente.',70,'#F0B34F','#F0B34F')};
 (async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});const p=await b.newPage({viewport:{width:1200,height:630}});
-for(const [k,v] of Object.entries(V)){await p.goto(B+'/404.html');await p.setContent(`<html><body style="margin:0"></body></html>`);
+const OUT=process.argv[2];for(const [k,v] of Object.entries(V)){await p.goto(B+'/404.html');await p.setContent(`<html><body style="margin:0"></body></html>`);
 await p.setContent(`<html><head><style>*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden;position:relative}</style></head>${v}</html>`);
 await p.evaluate(async()=>{await document.fonts.load("800 70px 'Baloo 2'");await document.fonts.load("700 25px 'Nunito Sans'");await document.fonts.ready});
 await p.addStyleTag({url:B+'/fonts.css'});await p.evaluate(async()=>{await document.fonts.load("800 70px 'Baloo 2'");await document.fonts.load("700 25px 'Nunito Sans'");await document.fonts.ready});await p.waitForTimeout(1200);
-await p.screenshot({path:`/tmp/claude-0/ogp/og-${k}.png`});console.log(k)}
+await p.screenshot({path:OUT+'/'+k});console.log(k)}
 await b.close()})()
