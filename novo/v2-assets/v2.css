@@ -94,6 +94,7 @@ header.topo.rolou .topo-in{padding-top:6px;padding-bottom:6px;box-shadow:0 8px 2
 .toldo-w .toldo{top:0;bottom:auto;transform:none}
 .toldo-w.am .toldo{color:var(--amarelo)}
 .toldo-w.cr .toldo{color:var(--creme)}
+.toldo-w.pe .toldo{color:var(--petroleo)}
 
 /* celular ilustrado */
 .fone{position:relative;justify-self:center;width:min(100%,312px);aspect-ratio:9/18.2;border-radius:46px;background:var(--grafite);padding:12px;box-shadow:0 24px 40px -24px rgba(15,25,24,.6);transform:rotate(3deg)}
@@ -248,3 +249,15 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
   html{scroll-behavior:auto}
 }
 @media(prefers-reduced-transparency:reduce){.topo-in{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--creme)}}
+
+/* abertura: foto com barra de toldo atrás do celular */
+.cena{position:relative;justify-self:end;width:min(100%,540px);display:flex;justify-content:flex-end}
+.cena .fone{z-index:1;justify-self:auto}
+.foto-toldo{position:absolute;left:0;top:18%;width:52%;aspect-ratio:4/5;margin:0;z-index:0;transform:rotate(-7deg);filter:drop-shadow(0 20px 26px rgba(60,20,12,.45))}
+.foto-toldo img{width:100%;height:100%;object-fit:cover;border-radius:26px 26px 0 0;-webkit-mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat;mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat}
+/* faixa de foto entre o manifesto e "quem circula" */
+.faixa-foto{margin:0;height:clamp(260px,36vw,540px);overflow:hidden;background:var(--petroleo)}
+.faixa-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+@media(max-width:1000px){.cena{justify-self:center;width:min(100%,420px);margin-top:12px}.foto-toldo{width:56%;top:20%}}
+@media(max-width:700px){.cena .fone{width:min(72%,260px)}.aviso b,.aviso span{white-space:normal}.aviso b{font-size:.84rem}.aviso span{font-size:.72rem}}
+@media(max-width:700px){.faixa-foto{height:240px}.faixa-foto img{object-position:58% 55%}}
