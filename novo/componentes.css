@@ -249,8 +249,8 @@ header.top .menu-btn span{background:#FFF7EF}
   -webkit-mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat;
   mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat}
 .hero .conteudo{position:relative;z-index:1}
-@media(min-width:901px){.hero .conteudo{max-width:min(860px,calc(100vw - min(30vw,380px) - 140px));padding-left:max(clamp(20px,5vw,64px),calc((100vw - 1180px)/2 + 20px))}}
-.hero.curto::after{width:min(22vw,260px);top:calc(var(--hdr) + 20px)}
+@media(min-width:901px){.hero .conteudo{box-sizing:border-box;width:100%;max-width:1180px;margin-inline:auto;padding-left:clamp(20px,5vw,56px);padding-right:calc(min(30vw,380px) + 72px)}.hero.curto .conteudo{padding-right:calc(min(16vw,200px) + 72px)}}
+.hero.curto::after{width:min(16vw,200px);aspect-ratio:1/1;top:auto;bottom:26px}
 @media(max-width:900px){
   .hero::after{background-image:var(--bgm,var(--bg))}
   .hero,.hero.curto{min-height:0;background-image:none!important}
@@ -259,7 +259,6 @@ header.top .menu-btn span{background:#FFF7EF}
   .hero{padding-top:0}
 }
 @media(prefers-reduced-transparency:reduce){header.top{-webkit-backdrop-filter:none;backdrop-filter:none;background:#FFF7EF}}
-.hero.curto::after{width:min(16vw,200px);top:auto;bottom:22px}
 /* Entrar: lado da marca em tomate, sem foto de fundo */
 .auth .lado-a{background:var(--tomate)!important}
 .auth .lado-a::before{display:none}
