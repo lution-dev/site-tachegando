@@ -129,9 +129,13 @@ section{position:relative}
 .sec{padding:clamp(64px,9vw,120px) 0}
 .sec h2{font-size:clamp(2.2rem,5vw,3.9rem);color:var(--petroleo);max-width:14em}
 .lead{font-size:clamp(1.1rem,1.5vw,1.28rem);max-width:34em;margin-top:20px;color:#463F4A}
-.oquee .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:end}
-.oquee .txt{display:grid;gap:18px;font-size:clamp(1.08rem,1.4vw,1.22rem);color:#463F4A;max-width:30em}
-.oquee .txt p:first-child{color:var(--grafite)}
+.oquee .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center}
+.oquee .txt{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:clamp(26px,3vw,40px);border-radius:32px;background:var(--creme-2);color:var(--grafite)}
+.oquee .l1{font-size:clamp(1.15rem,1.6vw,1.38rem);font-weight:700;line-height:1.45}
+.oquee .l2{font-size:1.08rem;line-height:1.55;color:#3D3741}
+.oquee .l2 b{color:var(--tomate-esc)}
+.botao-app{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:99px;background:var(--petroleo);color:var(--creme);font-weight:700;font-size:1.05rem;box-shadow:0 12px 24px -14px rgba(23,63,60,.9);transform:rotate(-2deg)}
+.botao-app svg{width:22px;height:22px;color:var(--amarelo)}
 /* caminhos: lista de placas, sem cartões */
 .caminhos{padding-top:0}
 .caminhos h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
