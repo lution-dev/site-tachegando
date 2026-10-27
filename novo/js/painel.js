@@ -139,7 +139,7 @@
   }
 
   var CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
-  var SPARK = '<svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#FC4200" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg>';
+  var SPARK = '<svg width="86" height="34" viewBox="0 0 86 34" aria-hidden="true"><path d="M2 28 C20 28 22 8 40 12 S66 30 84 6" fill="none" stroke="#BB4938" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg>';
   function lista(t) { return String(t || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean); }
   function pontosDaRota() {
     var p = user.perfil || {};
@@ -192,7 +192,7 @@
     var ph = '<div class="pn-ph"><div class="tx"><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Candidatura da Rede de Apoio") + '</span><h1>Oi, ' + nome + '</h1><p>' + (ehVend ? "Cadastro pronto. Quando o app sair, é nele que você grava a sua rota." : "Recebemos a candidatura da sua empresa. Agora a equipe confere os dados.") + '</p><div class="pn-chips">' + chips + '</div></div><div class="ac"><button class="btn ln-d" id="edit-top" type="button">Editar cadastro</button></div></div>';
     var kpis = kpiLinha();
     var rota = '<article class="pn-cd rota"><h2>' + (ehVend ? esc(p.rota || "Sua rota") : "Onde a empresa apoia") + '</h2><p class="sub">' + (ehVend ? "Por onde você passa e em que dias." : "Áreas em que a empresa atua, em " + esc(p.cidade) + ".") + '</p>' +
-      '<div class="pn-rmap" id="rmap" role="img" aria-label="Pontos: ' + esc(pontosDaRota().join(", ")) + '"><svg viewBox="0 0 600 190" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="' + TRACO + '" fill="none" stroke="#FC4200" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 12" vector-effect="non-scaling-stroke"/></svg></div>' + dias + '</article>';
+      '<div class="pn-rmap" id="rmap" role="img" aria-label="Pontos: ' + esc(pontosDaRota().join(", ")) + '"><svg viewBox="0 0 600 190" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="' + TRACO + '" fill="none" stroke="#BB4938" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 12" vector-effect="non-scaling-stroke"/></svg></div>' + dias + '</article>';
     var passos = ehVend
       ? '<li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>Usar o app na sua rota<small>No lançamento</small></div></li>'
       : '<li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Candidatura enviada</div></li><li class="prox"><span class="p"></span><div>Equipe confere a empresa<small>Em andamento</small></div></li><li class="fut"><span class="p"></span><div>Entrada na Rede de Apoio<small>Depois de aprovada</small></div></li>';

@@ -4,136 +4,164 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tá Chegando | Quem vende circula. Quem procura descobre.</title>
-<meta name="description" content="Tem gente vendendo pela rua e tem gente procurando. O Tá Chegando ajuda os dois a se encontrar. Lançamento em breve.">
-<meta name="theme-color" content="#01172E">
+<meta name="description" content="Tem gente vendendo pela rua e tem gente procurando. O Tá Chegando ajuda os dois a se encontrar. O app ainda não está nas lojas.">
 <link rel="canonical" href="https://tachegandoapp.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tá Chegando">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Tá Chegando | Quem vende circula. Quem procura descobre.">
-<meta property="og:description" content="Tem gente vendendo pela rua e tem gente procurando. O Tá Chegando ajuda os dois a se encontrar. Lançamento em breve.">
+<meta property="og:description" content="Tem gente vendendo pela rua e tem gente procurando. O Tá Chegando ajuda os dois a se encontrar. O app ainda não está nas lojas.">
 <meta property="og:url" content="https://tachegandoapp.com.br/">
 <meta property="og:image" content="https://tachegandoapp.com.br/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tá Chegando: quem vende circula, quem procura descobre.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#BB4938">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="image" href="img/hero-v2-moto-m.webp" media="(max-width:900px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-v2-moto.webp" media="(min-width:901px)" fetchpriority="high">
-<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/marca/fonts/Baloo2-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="componentes.css">
+<link rel="stylesheet" href="/marca/home.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="pin" viewBox="100 150 360 460"><path fill="currentColor" fill-rule="evenodd" d="M150.11 443.68A170 170 0 1 1 409.89 443.68L280 597.5ZM174 334a106 106 0 1 0 212 0a106 106 0 1 0-212 0Z"/><circle fill="currentColor" cx="280" cy="334" r="50"/></symbol></svg>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero">
-  <header class="top">
-    <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="/"><img class="s-to" src="/marca/logo/logo-compacta-tomate.svg" alt="Tá Chegando, página inicial" width="196" height="38"><img class="s-cr" src="/marca/logo/logo-compacta-creme.svg" alt="Tá Chegando, página inicial" width="196" height="38"></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-<nav id="nav-principal" aria-label="Principal">
-      <a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a>
-      <a class="btn ln sm" href="/entrar">Entrar</a><a class="btn or sm" href="/entrar?modo=criar">Criar conta</a>
+    <nav id="nav-principal" aria-label="Principal">
+      <a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Para empresas verificadas</small></a>
+      <a class="btn fp sm" href="/entrar">Entrar</a><a class="btn to sm" href="/entrar?modo=criar">Criar conta</a>
     </nav>
-  </header>
-  <div class="conteudo">
-    <span class="selo">Lançamento em breve</span>
-    <h1>Quem vende <em>circula.</em> Quem procura descobre.</h1>
-    <p class="sub">O pão que passa às quatro, o picolé, o carro de ovos. Com o Tá Chegando você vê quem está por perto e pede pra ser avisado. E quem vende vê onde tem cliente na rota.</p>
-    <div class="caminhos">
-      <a class="caminho v" href="/vendedores"><b>Eu vendo</b><span>Você já está na rua. Agora deixe que encontrem você.</span><em>Criar minha conta →</em></a>
-      <a class="caminho" href="/consumidores"><b>Eu procuro</b><span>O vendedor que você procura pode estar passando por aí.</span><em>Quero ser avisado →</em></a>
-      <a class="caminho" href="/rede-de-apoio"><b>Quero apoiar</b><span>Sua empresa sabe algo que ajuda quem trabalha na rua? Dá pra apoiar.</span><em>Conhecer a Rede →</em></a>
+  </div>
+</header>
+
+<section class="hero" aria-label="Abertura">
+  <div class="wrap">
+    <div>
+      <h1>Quem vende <mark>circula.</mark> Quem procura <mark>descobre.</mark></h1>
+      <p class="sub">O pão que passa às quatro, o picolé, o carro de ovos. No Tá Chegando você vê quem está vendendo perto da sua casa e pede pra ser avisado quando ele chegar. Quem vende vê onde tem cliente na rota.</p>
+      <div class="acoes"><a class="btn am" href="/entrar?modo=criar">Criar minha conta</a><a class="btn fa" href="/consumidores">Quero ser avisado</a></div>
+      <p class="ainda"><img src="/marca/simbolo-creme.svg" alt="" width="30" height="30">O app também tá chegando: ainda não está nas lojas. Deixe seu contato que a gente avisa quando sair.</p>
+    </div>
+    <div class="cena">
+      <figure class="foto-toldo" aria-hidden="true"><img src="/marca/fotos/v2-hero-carro.webp" srcset="/marca/fotos/v2-hero-carro-m.webp 420w, /marca/fotos/v2-hero-carro.webp 640w" sizes="(max-width:1000px) 55vw, 280px" alt="" width="640" height="800"></figure>
+      <div class="fone" role="img" aria-label="Ilustração do aplicativo: um mapa com vendedores por perto e o aviso “Seu vendedor tá chegando”.">
+        <div class="fone-t">
+          <svg class="mapa" viewBox="0 0 300 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="560" fill="#EDE3D3"/><rect x="196" y="60" width="86" height="70" rx="10" fill="#D3DDCB"/><rect x="18" y="360" width="70" height="60" rx="10" fill="#D3DDCB"/><g stroke="#fff" stroke-width="15" stroke-linecap="round" fill="none"><path d="M-10 120 L310 90"/><path d="M-10 250 L310 225"/><path d="M-10 380 L310 352"/><path d="M-10 500 L310 478"/><path d="M60 -10 L40 570"/><path d="M165 -10 L150 570"/><path d="M262 -10 L248 570"/></g></svg>
+          <span class="pin p1" style="--x:22%;--y:14%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p2" style="--x:63%;--y:7%;--t:30px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p3" style="--x:70%;--y:44%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span><span class="pin p4" style="--x:30%;--y:64%;--t:34px"><svg aria-hidden="true" focusable="false"><use href="#pin"/></svg></span>
+          <span class="eu" aria-hidden="true"></span>
+          <div class="aviso"><span class="av"><img src="/marca/simbolo-petroleo.svg" alt=""></span><div><b>Seu vendedor tá chegando</b><span>Açaí do Seu Zé · perto de você</span></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<div class="toldo-w" aria-hidden="true"><div class="toldo"></div></div>
+
+<div class="faixa" role="region" aria-label="Exemplos do que circula"><span class="sr">Frutas, ovos, pão, doces, queijo, picolé, flores, gás, afiador de facas, artesanato, roupas, serviços e muito mais</span><div class="trilho" aria-hidden="true"><span>Frutas</span><span>Ovos</span><span>Pão</span><span>Doces</span><span>Queijo</span><span>Picolé</span><span>Flores</span><span>Gás</span><span>Afiador de facas</span><span>Artesanato</span><span>Roupas</span><span>Serviços</span><span>Frutas</span><span>Ovos</span><span>Pão</span><span>Doces</span><span>Queijo</span><span>Picolé</span><span>Flores</span><span>Gás</span><span>Afiador de facas</span><span>Artesanato</span><span>Roupas</span><span>Serviços</span></div></div>
 
 <main id="principal">
-<section class="oquee"><div class="wrap grid">
-  <div>
-    <span class="eyebrow">O que é o Tá Chegando</span>
-    <h2>Você quer o pão quentinho, mas não sabe se o padeiro já passou.</h2>
-    <p class="lead">O Tá Chegando mostra quem está circulando perto de você, e você pode pedir pra ser avisado quando o vendedor chegar. Do outro lado, quem vende vê onde tem cliente perto da rota. A rota e o trabalho continuam sendo dele.</p>
-  </div>
-  <div class="bloco">
-    <ul>
-      <li>Você vê quem está circulando perto.</li>
-      <li>Dá pra olhar no mapa o vendedor chegando.</li>
-      <li>Se quiser, toca em “Me avise quando chegar”. Quem decide a rota é o vendedor.</li>
-    </ul>
+<section class="sec oquee"><div class="wrap">
+  <h2 class="rev">Você quer o pão quentinho, mas não sabe se o padeiro já passou.</h2>
+  <div class="txt rev">
+    <p class="l1">Abra o mapa do Tá Chegando e veja quem está circulando perto de você. Achou o vendedor que queria? É só tocar aqui:</p>
+    <span class="botao-app"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Me avise quando chegar</span>
+    <p class="l2"><b>Pra quem procura, o app é de graça.</b> E quem vende vê onde tem cliente perto da rota. A rota e os dias de trabalho continuam sendo escolha dele.</p>
   </div>
 </div></section>
 
-<section class="manifesto"><div class="wrap">
-  <span class="eyebrow">Por que existimos</span>
-  <p class="big">Todo dia tem gente passando na rua com algo pra vender. E tem gente procurando.</p>
-  <p class="big dest">O comércio anda, mas a informação nem sempre vai junto.</p>
-  <p class="peq">O Tá Chegando existe pra aproximar essas duas pontas, sem mexer na autonomia de quem trabalha.</p>
+<section class="sec caminhos" aria-labelledby="t-caminhos"><div class="wrap">
+  <h2 id="t-caminhos" class="rev">Por onde você quer começar?</h2>
+  <ul class="rotas rev">
+    <li><a href="/vendedores"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-creme.svg" alt=""></span><b>Eu vendo na rua</b><span class="d">Você já está na rua. Agora deixe que encontrem você.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="/consumidores"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-creme.svg" alt=""></span><b>Eu procuro quem vende</b><span class="d">O vendedor que você procura pode estar passando por aí.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    <li><a href="/rede-de-apoio"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-petroleo.svg" alt=""></span><b>Tenho uma empresa e quero apoiar</b><span class="d">Sua empresa sabe algo que ajuda quem trabalha na rua? Dá pra apoiar.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+  </ul>
 </div></section>
 
-<section class="mosaico"><div class="wrap">
-  <div class="topo">
-    <span class="eyebrow">Quem circula por aí</span>
+<div class="toldo-w cr" aria-hidden="true"><div class="toldo"></div></div>
+<section class="sec manifesto" aria-label="Por que o Tá Chegando existe">
+  <img class="dagua" src="/marca/simbolo-creme.svg" alt="" width="560" height="560" aria-hidden="true">
+  <div class="wrap">
+    <p class="big">Todo dia tem gente passando na rua com algo pra vender. E tem gente procurando.</p>
+    <p class="big dest">O comércio anda, mas a informação nem sempre vai junto.</p>
+    <p class="peq">O Tá Chegando existe pra aproximar essas duas pontas, sem mexer na autonomia de quem trabalha.</p>
+  </div>
+</section>
+
+<div class="toldo-w pe" aria-hidden="true"><div class="toldo"></div></div>
+<figure class="faixa-foto"><img loading="lazy" decoding="async" src="/marca/fotos/v2-faixa-moto.webp" srcset="/marca/fotos/v2-faixa-moto-m.webp 900w, /marca/fotos/v2-faixa-moto.webp 1800w" sizes="100vw" alt="Vendedor de moto, de costas, levando um saco grande na garupa por uma rua arborizada" width="1800" height="818"></figure>
+
+<section class="sec mosaico"><div class="wrap">
+  <div class="topo rev">
     <h2>Sempre passa alguém vendendo alguma coisa.</h2>
-    <p class="lead">Tem quem vá a pé, de bike, de moto, de carro ou empurrando carrinho. Fruta, doce, artesanato, serviço.</p>
+    <p class="lead">Tem quem vá a pé, de bike, de moto, de carro ou empurrando carrinho. Passa fruta, doce, ovo, queijo, flor, o caminhão do gás e até o afiador de facas.</p>
   </div>
   <div class="grade">
-    <figure class="a"><img loading="lazy" src="img/foto-v2-bike-sorvete.webp" alt="Vendedor pedalando uma bicicleta com um isopor vermelho de sorvete" width="1000" height="689"><figcaption>Sorvete de bicicleta</figcaption></figure>
-    <figure class="b"><img loading="lazy" src="img/foto-v2-bike-frutas.webp" alt="Vendedor pedalando um carrinho com potes de frutas, visto só das pernas" width="1000" height="689"><figcaption>Frutas no carrinho</figcaption></figure>
-    <figure class="c"><img loading="lazy" src="img/foto-v2-triciclo-azul.webp" alt="Triciclo de vendedor estacionado na orla, com o mar ao fundo" width="1000" height="645"><figcaption>Triciclo na orla</figcaption></figure>
+    <figure class="f1 rev"><img loading="lazy" decoding="async" src="/marca/fotos/v2-bicicleta.webp" srcset="/marca/fotos/v2-bicicleta-m.webp 760w, /marca/fotos/v2-bicicleta.webp 1100w" sizes="(max-width:700px) 100vw, 45vw" alt="Vendedor pedalando uma bicicleta com um caixote na garupa, numa rua de portas vermelhas e azuis" width="1100" height="1085"><figcaption>De bicicleta</figcaption></figure>
+    <figure class="f2 rev"><img loading="lazy" decoding="async" src="/marca/fotos/v2-moto.webp" srcset="/marca/fotos/v2-moto-m.webp 760w, /marca/fotos/v2-moto.webp 1400w" sizes="(max-width:700px) 100vw, 28vw" alt="Vendedor de moto levando cata-ventos coloridos pela areia da praia" width="1400" height="933"><figcaption>De moto</figcaption></figure>
+    <figure class="f3 rev"><img loading="lazy" decoding="async" src="/marca/fotos/v2-triciclo.webp" srcset="/marca/fotos/v2-triciclo-m.webp 760w, /marca/fotos/v2-triciclo.webp 1400w" sizes="(max-width:700px) 100vw, 28vw" alt="Triciclo de sorvete iluminado na praia, ao pôr do sol" width="1400" height="933"><figcaption>De triciclo</figcaption></figure>
+    <figure class="f4 rev"><img loading="lazy" decoding="async" src="/marca/fotos/v2-bike-frutas.webp" srcset="/marca/fotos/v2-bike-frutas-m.webp 760w, /marca/fotos/v2-bike-frutas.webp 1400w" sizes="(max-width:700px) 100vw, 28vw" alt="Vendedor pedalando um carrinho com potes de frutas, visto só das pernas" width="1400" height="1050"><figcaption>Carrinho de frutas</figcaption></figure>
+    <figure class="f5 rev"><img loading="lazy" decoding="async" src="/marca/fotos/v2-picape.webp" srcset="/marca/fotos/v2-picape-m.webp 760w, /marca/fotos/v2-picape.webp 900w" sizes="(max-width:700px) 100vw, 28vw" alt="Picape azul subindo uma estrada de terra" width="900" height="1350"><figcaption>De picape</figcaption></figure>
   </div>
-  <div class="tags" aria-label="Exemplos do que circula"><span>Ovos</span><span>Pão</span><span>Queijo</span><span>Flores</span><span>Roupas</span><span>Picolé</span><span>Afiador de facas</span><span>Gás</span><span>e muito mais</span></div>
 </div></section>
 
-<div class="rota-div" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 60 C150 60 170 20 300 30 S470 75 600 50 S820 12 960 34 S1130 62 1200 40" fill="none" stroke="#FC4200" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 12"/></svg><span class="p p1"></span><span class="p p2"></span><span class="p p3"></span></div>
-<section class="como" id="como-funciona"><div class="wrap">
-  <span class="eyebrow">Como funciona</span>
-  <h2>Cada lado faz o seu pedaço.</h2>
+<section class="sec como" id="como-funciona"><div class="wrap">
+  <h2 class="rev">Cada lado faz o seu pedaço.</h2>
   <div class="lados">
-    <div class="lado v">
-      <h3>Para quem vende</h3>
-      <ol><li>Faça seu cadastro com e-mail.</li><li>Diga o que você vende e por onde costuma passar.</li><li>Grave sua rota, escolha os dias e use o app enquanto roda.</li></ol>
-      <a class="btn or" href="/vendedores">Saiba como funciona</a>
+    <div class="lado v rev">
+      <h3>Se você vende</h3>
+      <ol><li>Crie sua conta com e-mail e diga o que você vende.</li><li>Grave sua rota com o GPS enquanto anda, ou marque o caminho no mapa.</li><li>Escolha os dias e de que distância o cliente é avisado.</li><li>Na rua, abra “Onde tem clientes” pra ver onde tem gente interessada.</li></ol>
+      <p class="obs">Você não paga taxa por venda.</p>
+      <a class="btn am" href="/vendedores">Ver tudo pra quem vende</a>
     </div>
-    <div class="lado p">
-      <h3>Para quem procura</h3>
-      <ol><li>Veja quem está circulando perto.</li><li>Olhe no mapa quem vem chegando.</li><li>Toque em “Me avise quando chegar”.</li></ol>
-      <a class="btn az" href="/consumidores">Quero ser avisado</a>
+    <div class="lado p rev">
+      <h3>Se você procura</h3>
+      <ol><li>Abra o mapa e veja quem está circulando perto.</li><li>Gostou de alguém? Toque em “Me avise quando chegar”.</li></ol>
+      <p class="obs">Pra você, não custa nada.</p>
+      <a class="btn pe" href="/consumidores">Quero ser avisado</a>
     </div>
   </div>
-  <p class="aviso">A localização e a disponibilidade dos vendedores podem variar. O que vale é o que aparece no aplicativo.</p>
+  <p class="nota">A localização e a disponibilidade dos vendedores podem variar. O que vale é o que aparece no aplicativo.</p>
 </div></section>
 
-<section class="rede"><div class="wrap grid">
-  <div>
+<section class="sec rede"><div class="wrap">
+  <div class="rev">
     <span class="eyebrow">Rede de Apoio</span>
     <h2>Sua empresa entende de contas, de lei, de design? Dá pra ajudar.</h2>
-    <p>Na Rede de Apoio só entram empresas verificadas. A nossa equipe confere cada uma antes.</p>
-    <div class="chips"><span>Contabilidade</span><span>Orientação financeira</span><span>Design</span><span>Comunicação</span><span>Assessoria jurídica</span><span>e outras áreas</span></div>
-    <a class="btn az" href="/rede-de-apoio">Conhecer a Rede de Apoio</a>
+    <p class="l">Contabilidade, orientação financeira, comunicação, assessoria jurídica: quem trabalha na rua também precisa disso. Na Rede de Apoio só entram empresas verificadas. A nossa equipe confere cada uma antes.</p>
+    <a class="btn pe" href="/rede-de-apoio">Conhecer a Rede de Apoio</a>
     <p class="nota2">A Rede de Apoio ainda está sendo montada.</p>
   </div>
-  <div class="cartao"><b>Sua empresa pode apoiar quem trabalha na rua.</b><span>Você escolhe como.</span></div>
+  <img class="simb rev" src="/marca/simbolo-petroleo.svg" alt="" width="260" height="260">
 </div></section>
+<div class="toldo-w am" aria-hidden="true"><div class="toldo"></div></div>
 
-<section class="final"><div class="wrap">
-  <h2>Quem está por perto?</h2>
-  <p>Se você vende, crie sua conta. Se você procura, deixe seu contato que a gente avisa do lançamento.</p>
-  <div class="acoes"><a class="btn or" href="/entrar?modo=criar">Criar conta</a><a class="btn ln" href="/consumidores">Quero ser avisado</a></div>
-</div></section>
+<section class="sec final">
+  <div class="wrap">
+    <h2>Tá chegando. E é pra todo mundo.</h2>
+    <p>Se você vende, crie sua conta. Se você procura, deixe seu contato que a gente avisa quando o app sair.</p>
+    <div class="acoes"><a class="btn am" href="/entrar?modo=criar">Criar conta</a><a class="btn fa" href="/consumidores">Quero ser avisado</a></div>
+  </div>
+</section>
 </main>
 
 <footer class="rod"><div class="wrap">
-  <div><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="40" style="margin-bottom:12px"><br>O aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo.<br>Todos os direitos reservados. CNPJ 66.543.238/0001-71.</div>
-  <div class="rod-links"><a href="/contato">Contato</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a></div>
+  <div>
+    <a class="marca cr" href="/"><img src="/marca/logo/logo-compacta-creme.svg" alt="Tá Chegando, página inicial" width="216" height="42"></a>
+    <p class="tl">O comércio por perto, mais perto de você.</p>
+    <p>O aplicativo é uma criação da Argo Apps, empresa do Grupo Neo Argo.<br>Todos os direitos reservados. CNPJ 66.543.238/0001-71.</p>
+  </div>
+  <nav aria-label="Rodapé"><a href="/contato">Contato</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a></nav>
 </div></footer>
-<script src="site.js"></script>
-<script src="js/ui.js"></script>
+<script src="/marca/home.js"></script>
 </body>
 </html>

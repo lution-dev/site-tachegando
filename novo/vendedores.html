@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Para vendedores | Tá Chegando</title>
 <meta name="description" content="Você já está na rua. Agora deixe que encontrem você. Crie sua conta de vendedor e deixe a rota cadastrada pro lançamento.">
-<meta name="theme-color" content="#01172E">
+<meta name="theme-color" content="#BB4938">
 <link rel="canonical" href="https://tachegandoapp.com.br/vendedores">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tá Chegando">
@@ -23,9 +23,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="image" href="img/hero-v2-bicicleta-m.webp" media="(max-width:900px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-v2-bicicleta.webp" media="(min-width:901px)" fetchpriority="high">
-<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-v2-bicicleta-s-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-v2-bicicleta-s.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/marca/fonts/Baloo2-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
@@ -33,9 +33,9 @@
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-v2-bicicleta.webp);--bgm:url(img/hero-v2-bicicleta-m.webp);--pos:60% center">
+<section aria-label="Abertura" class="hero v-hero" style="--bg:url(img/hero-v2-bicicleta-s.webp);--bgm:url(img/hero-v2-bicicleta-s-m.webp);--pos:60% center">
   <header class="top">
-    <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a>
+    <a class="logo" href="/"><img class="s-to" src="/marca/logo/logo-compacta-tomate.svg" alt="Tá Chegando, página inicial" width="186" height="36"><img class="s-cr" src="/marca/logo/logo-compacta-creme.svg" alt="Tá Chegando, página inicial" width="186" height="36"></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 <nav id="nav-principal" aria-label="Principal">
       <a href="/vendedores" aria-current="page">Vendedores<small>Para quem vende</small></a><a href="/consumidores">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a>
@@ -43,7 +43,6 @@
     </nav>
   </header>
   <div class="conteudo">
-    <span class="selo">Para vendedores</span>
     <h1>Você já está na rua. Agora deixe que <em>encontrem você.</em></h1>
     <p class="sub">Quem procura vendedor passa a ver por onde você anda. A rota, o produto e o jeito de trabalhar continuam sendo seus.</p>
     <div class="acoes"><a class="btn or" href="/entrar?modo=criar">Criar minha conta</a><a class="btn ln" href="/entrar">Já tenho conta</a></div>
@@ -85,7 +84,7 @@
 
 <section class="celular"><div class="wrap grid">
   <div>
-    <span class="eyebrow" style="color:#FF8A5B">No dia a dia</span>
+    <span class="eyebrow" style="color:#F0B34F">No dia a dia</span>
     <h2>O cliente pede aviso. Você decide o caminho.</h2>
     <p class="lead">Quem procura toca em “Me avise quando chegar”. Você vê onde tem clientes perto da rota e escolhe se passa por lá.</p>
     <a class="btn or" href="/entrar?modo=criar" style="margin-top:18px">Criar minha conta</a>
@@ -95,12 +94,12 @@
     <div class="tela">
       <span class="tag">ILUSTRAÇÃO</span>
       <svg viewBox="0 0 270 510" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-        <rect width="270" height="510" fill="#E9EDF3"/>
-        <g fill="#FDFDFE"><rect x="14" y="50" width="70" height="90" rx="10"/><rect x="100" y="50" width="70" height="60" rx="10"/><rect x="186" y="50" width="70" height="90" rx="10"/><rect x="14" y="160" width="70" height="110" rx="10"/><rect x="100" y="130" width="70" height="140" rx="10"/><rect x="186" y="160" width="70" height="110" rx="10"/><rect x="14" y="290" width="70" height="90" rx="10"/><rect x="100" y="290" width="70" height="90" rx="10"/><rect x="186" y="290" width="70" height="90" rx="10"/></g>
-        <g fill="#FC4200"><circle cx="205" cy="205" r="42" opacity=".18"/><circle cx="205" cy="205" r="22" opacity=".22"/><circle cx="58" cy="300" r="34" opacity=".16"/><circle cx="150" cy="372" r="28" opacity=".2"/></g>
-        <path id="r" class="rota-a" d="M20 400 L92 400 L92 150 L178 150 L178 280 L228 280" fill="none" stroke="#FC4200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <g transform="translate(228 280)"><circle class="pulso" r="16" fill="#2E3A4F" opacity=".5"/><circle r="15" fill="#2E3A4F" stroke="#fff" stroke-width="3"/><circle r="5" fill="#FC4200"/></g>
-        <g><circle r="14" fill="#01172E" stroke="#fff" stroke-width="3"/><circle r="5" fill="#FC4200"/><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#r"/></animateMotion></g>
+        <rect width="270" height="510" fill="#F6EBDD"/>
+        <g fill="#FFF7EF"><rect x="14" y="50" width="70" height="90" rx="10"/><rect x="100" y="50" width="70" height="60" rx="10"/><rect x="186" y="50" width="70" height="90" rx="10"/><rect x="14" y="160" width="70" height="110" rx="10"/><rect x="100" y="130" width="70" height="140" rx="10"/><rect x="186" y="160" width="70" height="110" rx="10"/><rect x="14" y="290" width="70" height="90" rx="10"/><rect x="100" y="290" width="70" height="90" rx="10"/><rect x="186" y="290" width="70" height="90" rx="10"/></g>
+        <g fill="#BB4938"><circle cx="205" cy="205" r="42" opacity=".18"/><circle cx="205" cy="205" r="22" opacity=".22"/><circle cx="58" cy="300" r="34" opacity=".16"/><circle cx="150" cy="372" r="28" opacity=".2"/></g>
+        <path id="r" class="rota-a" d="M20 400 L92 400 L92 150 L178 150 L178 280 L228 280" fill="none" stroke="#BB4938" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(228 280)"><circle class="pulso" r="16" fill="#29252D" opacity=".5"/><circle r="15" fill="#29252D" stroke="#fff" stroke-width="3"/><circle r="5" fill="#BB4938"/></g>
+        <g><circle r="14" fill="#173F3C" stroke="#fff" stroke-width="3"/><circle r="5" fill="#BB4938"/><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#r"/></animateMotion></g>
       </svg>
       <div class="card"><b>Clientes perto da rota</b><small>Avisar clientes até qual distância?</small><div class="seg"><i>Perto</i><i class="on">Normal</i><i>Mais longe</i></div><span>Começar minha rota</span></div>
     </div>
@@ -108,7 +107,7 @@
 </div></section>
 
 <section class="transp2"><div class="wrap">
-  <span class="eyebrow" style="color:#FF8A5B">O que esperar</span>
+  <span class="eyebrow" style="color:#F0B34F">O que esperar</span>
   <h2>O que o app faz e o que não faz.</h2>
   <div class="duas">
     <div class="col faz"><h3>Faz</h3><ul><li>Ajuda quem procura vendedor a te achar.</li><li>Mostra onde tem clientes perto da sua rota.</li><li>Grava suas rotas e deixa você escolher os dias.</li><li>Não cobra taxa por venda.</li></ul></div>

@@ -8,7 +8,7 @@
       var rolou = topo.classList.contains("rolou"); topo.classList.remove("rolou");
       var h = topo.offsetHeight; if (rolou) topo.classList.add("rolou");
       document.documentElement.style.setProperty("--hdr", h + "px");
-      if (!dentroHero) document.body.style.paddingTop = h + "px";
+      if (!dentroHero) document.body.style.paddingTop = (h + 24) + "px";
     };
     var rola = function () { topo.classList.toggle("rolou", window.scrollY > 24); };
     reserva(); rola();

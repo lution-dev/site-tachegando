@@ -1,5 +1,5 @@
 /* Tá Chegando, home v2: identidade nova (tomate, petróleo, creme, amarelo, grafite, verde suave) */
-@font-face{font-family:"Baloo 2";font-style:normal;font-weight:800;font-display:swap;src:url(/v2-assets/fonts/Baloo2-800.woff2) format("woff2")}
+@font-face{font-family:"Baloo 2";font-style:normal;font-weight:800;font-display:swap;src:url(/marca/fonts/Baloo2-800.woff2) format("woff2")}
 :root{
   --tomate:#BB4938;--tomate-esc:#A33D2E;--petroleo:#173F3C;--petroleo-esc:#0F2D2B;--creme:#FFF7EF;--creme-2:#F6EBDD;
   --amarelo:#F0B34F;--grafite:#29252D;--verde:#8B9E8F;
@@ -124,7 +124,7 @@ header.topo.rolou .topo-in{padding-top:6px;padding-bottom:6px;box-shadow:0 8px 2
 .faixa .trilho{display:flex;gap:40px;width:max-content;animation:corre 60s linear infinite;font:800 clamp(1.4rem,2.6vw,2.1rem)/1 var(--fh);white-space:nowrap}
 .faixa:hover .trilho{animation-play-state:paused}
 .faixa .trilho span{display:inline-flex;align-items:center;gap:40px}
-.faixa .trilho span::after{content:"";width:14px;height:18px;background:var(--tomate);-webkit-mask:url("/v2-assets/pin.svg") center/contain no-repeat;mask:url("/v2-assets/pin.svg") center/contain no-repeat}
+.faixa .trilho span::after{content:"";width:14px;height:18px;background:var(--tomate);-webkit-mask:url("/marca/pin.svg") center/contain no-repeat;mask:url("/marca/pin.svg") center/contain no-repeat}
 @keyframes corre{to{transform:translateX(-50%)}}
 
 /* seções */

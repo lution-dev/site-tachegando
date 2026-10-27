@@ -5,5 +5,12 @@
   "installCommand": null,
   "outputDirectory": "novo",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/v2",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

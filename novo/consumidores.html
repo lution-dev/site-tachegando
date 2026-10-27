@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Para quem procura | Tá Chegando</title>
 <meta name="description" content="Veja no mapa quem vende perto de você e peça o aviso de chegada. Pra quem procura é grátis. Deixe seu contato e a gente avisa quando o app sair.">
-<meta name="theme-color" content="#01172E">
+<meta name="theme-color" content="#BB4938">
 <link rel="canonical" href="https://tachegandoapp.com.br/consumidores">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tá Chegando">
@@ -23,9 +23,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" as="image" href="img/hero-v2-carrinho-m.webp" media="(max-width:900px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-v2-carrinho.webp" media="(min-width:901px)" fetchpriority="high">
-<link rel="preload" href="/fonts/Poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-v2-carrinho-s-m.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-v2-carrinho-s.webp" media="(min-width:901px)" fetchpriority="high">
+<link rel="preload" href="/marca/fonts/Baloo2-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
@@ -33,11 +33,10 @@
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<section aria-label="Abertura" class="hero v-hero foto-clara" style="--bg:url(img/hero-v2-carrinho.webp);--bgm:url(img/hero-v2-carrinho-m.webp);--pos:center">
-  <header class="top"><a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="44"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<section aria-label="Abertura" class="hero v-hero foto-clara" style="--cor:var(--petroleo);--bg:url(img/hero-v2-carrinho-s.webp);--bgm:url(img/hero-v2-carrinho-s-m.webp);--pos:center">
+  <header class="top"><a class="logo" href="/"><img class="s-to" src="/marca/logo/logo-compacta-tomate.svg" alt="Tá Chegando, página inicial" width="186" height="36"><img class="s-cr" src="/marca/logo/logo-compacta-creme.svg" alt="Tá Chegando, página inicial" width="186" height="36"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 <nav id="nav-principal" aria-label="Principal"><a href="/vendedores">Vendedores<small>Para quem vende</small></a><a href="/consumidores" aria-current="page">Consumidores<small>Para quem procura</small></a><a href="/rede-de-apoio">Rede de Apoio<small>Iniciativa em desenvolvimento</small></a><a class="btn ln sm" href="/entrar">Entrar</a><a class="btn or sm" href="/entrar?modo=criar">Criar conta</a></nav></header>
   <div class="conteudo">
-    <span class="selo">Lançamento em breve</span>
     <h1>O vendedor que você procura pode estar <em>passando por aí.</em></h1>
     <p class="sub">Veja no mapa quem anda vendendo perto de você e ative o aviso de chegada. Pra você o app é de graça. Ele ainda não saiu, mas já dá pra deixar seu contato.</p>
     <div class="acoes"><a class="btn or" href="#aviso">Quero ser avisado</a><a class="btn ln" href="#como">Ver como funciona</a></div>
@@ -66,7 +65,7 @@
 
 <section class="celular"><div class="wrap grid">
   <div>
-    <span class="eyebrow" style="color:#FF8A5B">Aviso de chegada</span>
+    <span class="eyebrow" style="color:#F0B34F">Aviso de chegada</span>
     <h2>Viu que ele vem vindo? Ative o aviso.</h2>
     <p class="lead">Ninguém precisa sair correndo atrás do vendedor. Você vê no mapa que ele está se aproximando e pede o aviso, pra não perder a passagem.</p>
     <a class="btn or" href="#aviso" style="margin-top:18px">Quero ser avisado</a>
@@ -76,11 +75,11 @@
     <div class="tela">
       <span class="tag">ILUSTRAÇÃO</span>
       <svg viewBox="0 0 270 510" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-        <rect width="270" height="510" fill="#E9EDF3"/>
-        <g fill="#FDFDFE"><rect x="14" y="50" width="70" height="90" rx="10"/><rect x="100" y="50" width="70" height="60" rx="10"/><rect x="186" y="50" width="70" height="90" rx="10"/><rect x="14" y="160" width="70" height="110" rx="10"/><rect x="100" y="130" width="70" height="140" rx="10"/><rect x="186" y="160" width="70" height="110" rx="10"/><rect x="14" y="290" width="70" height="90" rx="10"/><rect x="100" y="290" width="70" height="90" rx="10"/><rect x="186" y="290" width="70" height="90" rx="10"/></g>
-        <path id="r" class="rota-a" d="M20 400 L92 400 L92 150 L178 150 L178 280 L228 280" fill="none" stroke="#FC4200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <g transform="translate(228 280)"><circle class="pulso" r="16" fill="#2E3A4F" opacity=".5"/><circle r="15" fill="#2E3A4F" stroke="#fff" stroke-width="3"/><path d="M-6 1 L0 -5 L6 1 M-4 0 V6 H4 V0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-        <g><circle r="14" fill="#01172E" stroke="#fff" stroke-width="3"/><circle r="5" fill="#FC4200"/><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#r"/></animateMotion></g>
+        <rect width="270" height="510" fill="#F6EBDD"/>
+        <g fill="#FFF7EF"><rect x="14" y="50" width="70" height="90" rx="10"/><rect x="100" y="50" width="70" height="60" rx="10"/><rect x="186" y="50" width="70" height="90" rx="10"/><rect x="14" y="160" width="70" height="110" rx="10"/><rect x="100" y="130" width="70" height="140" rx="10"/><rect x="186" y="160" width="70" height="110" rx="10"/><rect x="14" y="290" width="70" height="90" rx="10"/><rect x="100" y="290" width="70" height="90" rx="10"/><rect x="186" y="290" width="70" height="90" rx="10"/></g>
+        <path id="r" class="rota-a" d="M20 400 L92 400 L92 150 L178 150 L178 280 L228 280" fill="none" stroke="#BB4938" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(228 280)"><circle class="pulso" r="16" fill="#29252D" opacity=".5"/><circle r="15" fill="#29252D" stroke="#fff" stroke-width="3"/><path d="M-6 1 L0 -5 L6 1 M-4 0 V6 H4 V0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g><circle r="14" fill="#173F3C" stroke="#fff" stroke-width="3"/><circle r="5" fill="#BB4938"/><animateMotion dur="9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#r"/></animateMotion></g>
       </svg>
       <div class="busca">Buscar profissional ou produto…</div><div class="cats"><i class="on">Comida</i><i>Hortifruti</i><i>Bebidas</i><i>Doces</i></div><div class="card"><b>Um vendedor está se aproximando</b><small>Ative o aviso e veja no mapa.</small><span>Me avise quando chegar</span></div>
     </div>
@@ -106,7 +105,7 @@
 </div></section>
 
 <section class="transp2"><div class="wrap">
-  <span class="eyebrow" style="color:#FF8A5B">Bom saber</span>
+  <span class="eyebrow" style="color:#F0B34F">Bom saber</span>
   <h2>Duas coisas que a gente quer deixar claras.</h2>
   <div class="duas">
     <div class="col faz"><h3>Como o aviso funciona</h3><ul><li>Ele te diz quando o vendedor está perto. Quem decide a rota é o vendedor.</li><li>Onde cada vendedor está, e se ele está por lá naquele dia, pode variar. Vale conferir no app.</li></ul></div>
