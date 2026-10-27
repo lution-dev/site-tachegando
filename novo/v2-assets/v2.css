@@ -162,12 +162,14 @@ section{position:relative}
 
 /* quem circula */
 .mosaico .topo{max-width:38em;margin-bottom:40px}
-.grade{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:22px 18px}
-.grade figure{margin:0}
-.grade .f1{grid-row:1/3}
-.grade img{width:100%;height:100%;object-fit:cover;border-radius:24px;background:var(--creme-2)}
-.grade .f1 img{height:calc(100% - 34px);min-height:420px}
-.grade .f2 img,.grade .f3 img{aspect-ratio:16/10;height:auto}
+.grade{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto;gap:22px 18px}
+.grade figure{margin:0;display:flex;flex-direction:column}
+.grade .f1{grid-row:1/3;position:relative;min-height:420px}
+.grade img{width:100%;object-fit:cover;border-radius:24px;background:var(--creme-2)}
+.grade .f1 img{position:absolute;left:0;top:0;width:100%;height:calc(100% - 34px)}
+.grade .f1 figcaption{position:absolute;left:0;bottom:0;margin:0}
+.grade .f2 img,.grade .f3 img,.grade .f4 img,.grade .f5 img{aspect-ratio:4/3;height:auto}
+.grade .f5 img{object-position:50% 70%}
 .grade figcaption{margin-top:8px;font-weight:700;font-size:.95rem;color:var(--petroleo)}
 
 /* como funciona */
@@ -227,7 +229,7 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
   .hero{padding-top:calc(var(--hdr) + 28px);padding-bottom:64px}
   .hero h1{font-size:clamp(2.7rem,13vw,3.6rem)}
   .hero .acoes .btn{flex:1 1 100%}
-  .grade{grid-template-columns:1fr}.grade .f1{grid-row:auto}.grade .f1 img{min-height:0;height:auto;aspect-ratio:4/3}
+  .grade{grid-template-columns:1fr 1fr;gap:16px 12px}.grade .f1{grid-row:auto;grid-column:1/-1}.grade .f1{min-height:0}.grade .f1 img{position:static;height:auto;aspect-ratio:4/3}.grade .f1 figcaption{position:static;margin-top:8px}
   .rotas a{grid-template-columns:auto 1fr auto;padding:18px 6px;gap:6px 16px}
   .rotas .ic{width:46px;height:46px;grid-row:1/3}.rotas .ic img{width:28px;height:28px}
   .rotas b{grid-column:2}.rotas .d{grid-column:2;font-size:1rem}
