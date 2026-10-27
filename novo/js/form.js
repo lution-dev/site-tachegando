@@ -4,7 +4,7 @@ window.TCForm = (function () {
     var id = input.id + "-erro", e = document.getElementById(id);
     if (!e) {
       e = document.createElement("p"); e.id = id; e.className = "erro-campo"; e.setAttribute("role", "alert");
-      var alvo = input.closest(".senha-w") || input; alvo.insertAdjacentElement("afterend", e);
+      var alvo = input.closest(".senha-w") || (input.type === "checkbox" ? input.closest("label") : null) || input; alvo.insertAdjacentElement("afterend", e);
     }
     return e;
   }

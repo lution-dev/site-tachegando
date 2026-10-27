@@ -152,3 +152,24 @@
 .aviso-form .chk{min-height:44px;align-items:center}
 .aviso-form .chk input{width:24px;height:24px}
 .legal a,.aviso-form .chk a{padding:10px 0;display:inline-block}
+
+/* celular ilustrado: rótulos do app real */
+.fone .seg{display:flex;gap:6px;margin-top:8px}
+.fone .seg i{flex:1;text-align:center;font-style:normal;font-weight:800;font-size:.72rem;padding:6px 4px;border-radius:99px;background:#E9EDF3;color:var(--azul-esc)}
+.fone .seg i.on{background:var(--azul-esc);color:#fff}
+.fone .busca{position:absolute;top:42px;left:12px;right:12px;background:#fff;border-radius:14px;padding:10px 12px;font-size:.78rem;color:var(--suave);font-weight:600;box-shadow:0 4px 14px rgba(1,23,46,.18)}
+.fone .cats{position:absolute;top:92px;left:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap}
+.fone .cats i{font-style:normal;font-weight:800;font-size:.68rem;padding:5px 10px;border-radius:99px;background:#fff;color:var(--azul-esc);box-shadow:0 2px 8px rgba(1,23,46,.14)}
+.fone .cats i.on{background:var(--laranja);color:#1a0a00}
+.fone .card span{display:inline-block}
+
+.hero.curto{min-height:0}
+.hero.curto .conteudo{justify-content:flex-start;padding-top:48px;padding-bottom:56px}
+@media(max-width:900px){.hero.curto .conteudo{padding-top:calc(24svh);padding-bottom:28px}.hero.curto{background-size:auto 46svh}}
+.lista-clara li{background:#fff;border:1.5px solid #DDE2EB;color:var(--azul-esc);-webkit-backdrop-filter:none;backdrop-filter:none}
+.aviso-form select{width:100%;font:inherit;padding:14px;border:2px solid var(--azul-esc);border-radius:12px;background:#fff;color:var(--texto);min-height:48px}
+.rod-links a{padding:13px 4px}
+
+.hero.curto::before{background:linear-gradient(90deg,rgba(1,23,46,.94) 0%,rgba(1,23,46,.72) 55%,rgba(1,23,46,.55) 100%)}
+@media(max-width:900px){.hero.curto::before{background:linear-gradient(180deg,rgba(1,23,46,.55) 0,rgba(1,23,46,.2) 14svh,rgba(1,23,46,.9) 40svh,#01172E 56svh)}}
+.chk + .erro-campo{margin:6px 0 0}

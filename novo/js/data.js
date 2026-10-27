@@ -78,6 +78,10 @@ window.TC = (function () {
       users[email].perfil = perfil; write(K_USERS, users);
       return Promise.resolve(publico(users[email]));
     },
+    registrarContato: function (dados) {
+      var l = read("tc_contatos", []); l.push(Object.assign({ em: new Date().toISOString() }, dados));
+      write("tc_contatos", l); return Promise.resolve();
+    },
     registrarInteresse: function (dados) {
       var l = read("tc_interesses", []); l.push(Object.assign({ em: new Date().toISOString() }, dados));
       write("tc_interesses", l); return Promise.resolve();
