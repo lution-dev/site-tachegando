@@ -52,4 +52,3 @@ Fotos da carrinho de pipoca, mosaico e afins saíram. Mesmo tratamento quente. F
 - Abertura (foto com barra de toldo): v2-hero-carro, https://www.pexels.com/photo/20164912/ (carro com a traseira cheia de laranjas, à noite).
 - Faixa entre manifesto e "quem circula": v2-faixa-moto, https://www.pexels.com/photo/32241920/.
 - Grade: bicicleta, moto, triciclo, carrinho de frutas (https://www.pexels.com/photo/20101548/) e picape. Sorvete aparece só no triciclo.
-- /v2, abertura com foto de fundo (mesmo estilo das páginas antigas): v2-hero-bg, https://www.pexels.com/photo/20164912/ espelhada, com a placa do carro borrada.

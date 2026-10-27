@@ -81,13 +81,11 @@ header.topo.rolou .topo-in{padding-top:6px;padding-bottom:6px;box-shadow:0 8px 2
 @media(min-width:901px){.topo nav a small{display:none}}
 
 /* abertura */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:var(--creme);padding:calc(var(--hdr) + 44px) 0 84px;overflow:hidden;isolation:isolate;
-  background:var(--petroleo) url(/v2-assets/fotos/v2-hero-bg.webp) 70% 55%/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,45,43,.96) 0%,rgba(15,45,43,.88) 34%,rgba(15,45,43,.35) 66%,rgba(15,45,43,.05) 100%)}
-.hero .wrap{position:relative}
-.hero .ainda{display:flex;align-items:flex-start;gap:12px;margin-top:28px;max-width:34em;font-size:1rem;line-height:1.45;font-weight:700}
+.hero{position:relative;background:var(--tomate);color:var(--creme);padding:calc(var(--hdr) + 44px) 0 80px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center}
+.hero .ainda{display:flex;align-items:flex-start;gap:12px;margin-top:26px;max-width:28em;font-size:1rem;line-height:1.45;font-weight:700}
 .hero .ainda img{flex:none;width:30px;height:30px;margin-top:-2px}
-.hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:1.1;max-width:9.6em;margin-bottom:22px}
+.hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:1.1;max-width:11em;margin-bottom:24px}
 .hero h1 mark{display:inline-block;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14' preserveAspectRatio='none'%3E%3Cpath d='M3 9 C 20 3, 34 3, 50 8 S 82 13, 98 7 S 112 4, 117 6' fill='none' stroke='%23F0B34F' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") 0 100%/100% .2em no-repeat;color:inherit;padding:0 .02em .1em;line-height:1}
 .hero .sub{font-size:clamp(1.1rem,1.5vw,1.3rem);max-width:30em}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -225,6 +223,7 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
 .js .rev.on{opacity:1;transform:none}
 
 @media(max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr}
   .fone{width:min(100%,290px);margin-top:12px}
   .oquee .wrap,.rede .wrap{grid-template-columns:1fr}
   .rede .simb{display:none}
@@ -252,39 +251,14 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
 }
 @media(prefers-reduced-transparency:reduce){.topo-in{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--creme)}}
 
+/* abertura: foto com barra de toldo atrás do celular */
+.cena{position:relative;justify-self:end;width:min(100%,540px);display:flex;justify-content:flex-end}
+.cena .fone{z-index:1;justify-self:auto}
+.foto-toldo{position:absolute;left:0;top:18%;width:52%;aspect-ratio:4/5;margin:0;z-index:0;transform:rotate(-7deg);filter:drop-shadow(0 20px 26px rgba(60,20,12,.45))}
+.foto-toldo img{width:100%;height:100%;object-fit:cover;border-radius:26px 26px 0 0;-webkit-mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat;mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat}
 /* faixa de foto entre o manifesto e "quem circula" */
 .faixa-foto{margin:0;height:clamp(260px,36vw,540px);overflow:hidden;background:var(--petroleo)}
 .faixa-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-@media(max-width:1000px){.cena{justify-self:center;width:min(100%,420px);margin-top:12px}}
+@media(max-width:1000px){.cena{justify-self:center;width:min(100%,420px);margin-top:12px}.foto-toldo{width:56%;top:20%}}
 @media(max-width:700px){.cena .fone{width:min(72%,260px)}.aviso b,.aviso span{white-space:normal}.aviso b{font-size:.84rem}.aviso span{font-size:.72rem}}
 @media(max-width:700px){.faixa-foto{height:240px}.faixa-foto img{object-position:58% 55%}}
-
-/* abertura com foto de fundo: caminhos em cartões de vidro */
-.cams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:860px;margin-top:34px}
-.cams .cam{display:flex;flex-direction:column;gap:8px;min-height:0;padding:20px 20px 18px;border-radius:24px;text-decoration:none;color:var(--creme);
-  background:rgba(15,45,43,.5);border:1.5px solid rgba(255,247,239,.35);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);transition:transform .25s,background .25s}
-.cams .cam:hover{transform:translateY(-4px);background:rgba(15,45,43,.7)}
-.cams .cam b{font:800 1.45rem/1.05 var(--fh)}
-.cams .cam span{font-size:.98rem;line-height:1.4;color:#E8EEE9}
-.cams .cam em{margin-top:auto;padding-top:6px;font:700 .98rem var(--f);font-style:normal;color:var(--amarelo)}
-.cams .cam em::after{content:" →"}
-.cams .cam.v{background:var(--tomate);border-color:var(--tomate)}
-.cams .cam.v span{color:var(--creme)}
-.cams .cam.v em{color:var(--creme)}
-.cams .cam.v:hover{background:var(--tomate-esc)}
-/* celular ilustrado agora mora em "O que é" */
-.oquee .wrap{grid-template-columns:1.25fr .75fr}
-.oquee .col{display:grid;gap:28px}
-.oquee .cena{justify-self:center;width:min(100%,300px)}
-.oquee .cena .fone{width:100%}
-@media(max-width:900px){
-  .hero{display:block;min-height:0;padding-top:calc(var(--hdr) + 46svh);background:var(--petroleo) url(/v2-assets/fotos/v2-hero-bg-m.webp) 50% 0/auto 62svh no-repeat}
-  .hero::before{inset:0 0 auto 0;height:62svh;background:linear-gradient(180deg,rgba(15,45,43,.3) 0%,rgba(15,45,43,.05) 28%,rgba(15,45,43,.7) 72%,var(--petroleo) 100%)}
-  .cams{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--gut);margin:26px calc(var(--gut)*-1) 0;padding:2px var(--gut) 10px;scrollbar-width:none;max-width:none}
-  .cams::-webkit-scrollbar{display:none}
-  .cams .cam{flex:0 0 78%;scroll-snap-align:start}
-  .oquee .wrap{grid-template-columns:1fr}
-  .oquee .cena{width:min(100%,280px)}
-}
-@media(prefers-reduced-transparency:reduce){.cams .cam:not(.v){-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(15,45,43,.92)}}
-@media(prefers-reduced-motion:reduce){.cams .cam{transition:none}}
