@@ -52,7 +52,7 @@ input[aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(179,38,30,.25)}
   .auth .form{flex:1;display:block;position:relative;z-index:1;margin-top:-28px;border-radius:28px 28px 0 0;background:#fff;padding:30px clamp(20px,5vw,40px) calc(36px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(1,23,46,.18)}
   .auth .caixa{max-width:440px}
   .auth h1{font-size:1.85rem}
-  .proto-tag{left:auto;right:12px;bottom:auto;top:23px}
+  .proto-tag{position:absolute;left:auto;right:12px;bottom:auto;top:23px}
   .tabs2 button,.demo-box .btn{touch-action:manipulation}
 }
 @media(max-width:420px){
@@ -72,7 +72,7 @@ input[aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(179,38,30,.25)}
   .auth .lado-a h2{font-size:clamp(1.3rem,3.2vw,1.7rem);margin:0}
   .auth .form{margin-top:0;border-radius:0;box-shadow:none;padding:28px clamp(20px,4vw,40px) 32px;display:flex;align-items:center}
   .auth .caixa{margin:auto}
-  .proto-tag{left:16px;right:auto;top:auto;bottom:14px}
+  .proto-tag{position:fixed;left:16px;right:auto;top:auto;bottom:14px}
   .tabs2{margin-top:16px}
   .demo-box .duo{grid-template-columns:1fr 1fr}
   .demo-box .btn{font-size:.85rem;padding:0 8px}

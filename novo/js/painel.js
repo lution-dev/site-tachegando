@@ -205,7 +205,8 @@
   }
   function ir(v) {
     cartaoUsuario();
-    document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+    var atual = completo() ? v : "perfil";
+    document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === atual) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     if (!completo()) { cadastro(false); return; }
     if (v === "perfil") cadastro(true); else if (v === "metricas") metricas(); else { inicio(); foco.focus({ preventScroll: true }); }
   }
