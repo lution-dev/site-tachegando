@@ -1,6 +1,37 @@
+# Tá Chegando. Tudo aberto, menos a área logada.
 User-agent: *
 Allow: /
 Disallow: /painel
 Disallow: /entrar
+
+# Buscadores e assistentes de IA que respondem perguntas com link para a fonte
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# Rastreadores que também treinam modelos. Estão liberados; para bloquear, troque Allow por Disallow.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://tachegandoapp.com.br/sitemap.xml
