@@ -47,3 +47,8 @@ Fotos da carrinho de pipoca, mosaico e afins saíram. Mesmo tratamento quente. F
 | foto-v2-bike-frutas | https://www.pexels.com/photo/20101548/ | Mosaico da Home, Rede de Apoio |
 | foto-v2-triciclo-azul | https://unsplash.com/photos/EjjlvAijLs8 | Mosaico da Home |
 | foto-v2-moto-saco | https://www.pexels.com/photo/32241920/ | Vendedores |
+
+### /v2 (atualização)
+- Abertura (foto com barra de toldo): v2-hero-carro, https://www.pexels.com/photo/20164912/ (carro com a traseira cheia de laranjas, à noite).
+- Faixa entre manifesto e "quem circula": v2-faixa-moto, https://www.pexels.com/photo/32241920/.
+- Grade: bicicleta, moto, triciclo, carrinho de frutas (https://www.pexels.com/photo/20101548/) e picape. Sorvete aparece só no triciclo.
