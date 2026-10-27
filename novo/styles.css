@@ -22,7 +22,7 @@ section{padding:clamp(64px,9vw,120px) 0}
 :focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
 
 /* abertura */
-.hero{padding:0;position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;color:#fff;background:var(--azul-esc) var(--bg,url(img/hero.webp)) var(--pos,68% center)/var(--tam,cover) no-repeat}
+.hero{padding:0;position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;color:#fff;background:var(--azul-esc) var(--bg,url(img/hero-v2-moto.webp)) var(--pos,68% center)/var(--tam,cover) no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,23,46,.96) 0%,rgba(1,23,46,.86) 36%,rgba(1,23,46,.25) 68%,rgba(1,23,46,0) 100%)}
 .hero>*{position:relative}
 header.top{display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,5vw,64px);gap:16px}
@@ -164,7 +164,7 @@ body.pg header.top{position:sticky;top:0;z-index:30;background:var(--azul-esc)}
 .proto{background:#fff;color:var(--azul-esc);text-align:center;font-size:.85rem;padding:8px 16px;border-bottom:1px solid #e3e8f7}
 .proto b{color:var(--laranja-esc)}
 .auth{min-height:calc(100vh - 36px);display:grid;grid-template-columns:1fr 1fr}
-.auth .lado-a{position:relative;color:#fff;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;background:var(--azul-esc) url(img/hero.webp) 68% center/cover no-repeat;overflow:hidden}
+.auth .lado-a{position:relative;color:#fff;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;background:var(--azul-esc) url(img/hero-v2-triciclo.webp) 68% center/cover no-repeat;overflow:hidden}
 .auth .lado-a::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,23,46,.9) 0%,rgba(1,23,46,.7) 50%,rgba(1,23,46,.95) 100%)}
 .auth .lado-a>*{position:relative}
 .auth .lado-a h2{color:#fff;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;margin:0 0 14px}
@@ -314,7 +314,7 @@ body.painel{background:#EEF1F6}
 .pn-main:focus{outline:none}
 .pn-topm,.pn-tabs{display:none}
 /* banner de boas-vindas = abertura do site em versão compacta */
-.pn-ban{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:34px 36px 30px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--azul-esc) var(--foto,url(img/hero.webp)) 70% 40%/cover}
+.pn-ban{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:34px 36px 30px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--azul-esc) var(--foto,url(img/hero-v2-triciclo.webp)) 70% 40%/cover}
 .pn-ban::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,23,46,.95) 0%,rgba(1,23,46,.8) 40%,rgba(1,23,46,.2) 80%,rgba(1,23,46,.05) 100%)}
 .pn-ban>*{position:relative}
 .pn-ban .eyebrow{color:#FF8A5B;margin-bottom:6px}

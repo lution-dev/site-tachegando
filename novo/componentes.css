@@ -135,7 +135,7 @@
 @media(max-width:700px){.rota-div{height:60px}.rota-div .p{width:20px;height:20px;border-width:4px}}
 .bento .ic svg,.areas .ic svg{width:30px;height:30px}
 
-@media(max-width:900px){.hero{background-image:var(--bgm,url(/img/hero-m.webp))}}
+@media(max-width:900px){.hero{background-image:var(--bgm,url(/img/hero-v2-moto-m.webp))}}
 
 /* alvos de toque mínimos (44 px) */
 .faq summary{min-height:44px;align-items:center}

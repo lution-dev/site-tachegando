@@ -31,3 +31,19 @@ Tratamento: tom levemente quente (vermelho +5%, azul −7%, saturação +6%, con
 | v2-triciclo.webp | https://www.pexels.com/photo/14384534/ | Triciclo de sorvete ao pôr do sol, silhueta. |
 | v2-carrinho.webp | https://www.pexels.com/photo/38878094/ (Teresina, PI) | Sorveteiro de máscara, empurrando o carrinho. |
 | v2-picape.webp | https://www.pexels.com/photo/33703931/ | Picape em estrada de terra, de longe. |
+
+## Troca nas páginas antigas (mesmo critério: vendedor circulando)
+
+Fotos da carrinho de pipoca, mosaico e afins saíram. Mesmo tratamento quente. Fontes Pexels e Unsplash (licenças grátis, sem crédito obrigatório; mesma ressalva de autorização de imagem).
+
+| Arquivo (`novo/img`) | Origem | Onde |
+|---|---|---|
+| hero-v2-moto(.webp/-m) | https://www.pexels.com/photo/9190273/ | Abertura da Home (e padrão do CSS) |
+| hero-v2-bicicleta | https://www.pexels.com/photo/19086841/ (Carpina, PE), recorte sem a placa | Abertura de Vendedores |
+| hero-v2-carrinho | https://www.pexels.com/photo/38878094/ (Teresina, PI) | Abertura de Consumidores |
+| hero-v2-triciclo | https://www.pexels.com/photo/14384534/ | Abertura da Rede de Apoio, lado da foto em Entrar |
+| hero-v2-picape | https://www.pexels.com/photo/33703931/ | Abertura de Contato |
+| foto-v2-bike-sorvete | https://unsplash.com/photos/Wlv-ZjAwboM | Mosaico da Home |
+| foto-v2-bike-frutas | https://www.pexels.com/photo/20101548/ | Mosaico da Home, Rede de Apoio |
+| foto-v2-triciclo-azul | https://unsplash.com/photos/EjjlvAijLs8 | Mosaico da Home |
+| foto-v2-moto-saco | https://www.pexels.com/photo/32241920/ | Vendedores |
