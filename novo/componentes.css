@@ -173,3 +173,7 @@
 .hero.curto::before{background:linear-gradient(90deg,rgba(1,23,46,.94) 0%,rgba(1,23,46,.72) 55%,rgba(1,23,46,.55) 100%)}
 @media(max-width:900px){.hero.curto::before{background:linear-gradient(180deg,rgba(1,23,46,.55) 0,rgba(1,23,46,.2) 14svh,rgba(1,23,46,.9) 40svh,#01172E 56svh)}}
 .chk + .erro-campo{margin:6px 0 0}
+
+/* selo discreto de protótipo (entrar e painel) */
+.proto-tag{position:fixed;right:12px;bottom:12px;z-index:45;background:rgba(1,23,46,.82);color:#fff;font:800 .72rem/1 var(--fh);letter-spacing:.04em;padding:7px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.25);pointer-events:none}
+@media(max-width:860px){body.painel .proto-tag{bottom:92px;right:10px}}
