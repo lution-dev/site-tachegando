@@ -20,3 +20,6 @@ Tudo em `novo/`. As metatags e o JSON-LD das 7 páginas públicas são gerados p
 4. **Dados do app:** quando o app estiver nas lojas, adicionar o dado estruturado de aplicativo (MobileApplication) com preço e links. Antes disso não declarei, porque ainda não existe para baixar.
 5. **Testar compartilhamento:** depois do deploy, colar os links no depurador do Facebook/LinkedIn e no WhatsApp; eles guardam a imagem antiga em cache.
 6. **Política de Privacidade e Termos** seguem como rascunho em revisão jurídica.
+
+## Varredura de telas (antes de publicar)
+`docs/varredura-telas.js` e `docs/varredura-entrar.js` (Playwright, com o site local em `localhost:8137`) testam as páginas em 12 larguras (360 a 2560 px) e checam rolagem lateral, título quebrado palavra por palavra, título sob a barra, texto encostando na foto, elementos fora da tela, alvos de toque menores que 43 px, imagens quebradas e erros de JavaScript. Rode depois de qualquer mudança de layout.
