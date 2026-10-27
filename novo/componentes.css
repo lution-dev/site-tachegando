@@ -279,3 +279,27 @@ header.top .menu-btn span{background:#FFF7EF}
 .rede .deco .pin{color:var(--petroleo)!important}
 @media(max-width:700px){.deco{display:none}}
 @media(max-width:900px){.hero.curto{padding-top:calc(var(--hdr) + 14px)}}
+
+/* ===== barra padronizada: mesmas medidas da Home (header.topo) ===== */
+header.top{left:max(var(--gut),calc((100vw - 1180px)/2));right:max(var(--gut),calc((100vw - 1180px)/2));padding:10px 12px 10px 22px}
+header.top.rolou{padding-top:6px;padding-bottom:6px}
+header.top .logo img,header.top.rolou .logo img{height:38px;width:auto}
+header.top nav .btn.sm,header.top nav .btn{min-height:44px;padding:0 20px;font-weight:700;font-size:.95rem}
+@media(max-width:900px){
+  header.top{left:var(--gut);right:var(--gut);padding:8px 8px 8px 18px}
+  header.top.rolou{padding-top:8px;padding-bottom:8px}
+  header.top .logo img,header.top.rolou .logo img{height:32px}
+  header.top nav a:not(.btn){font:800 2rem/1.1 var(--fh);padding:14px 0;border-bottom:1px solid rgba(255,247,239,.2);flex-direction:column;align-items:flex-start;gap:2px}
+  header.top nav a:not(.btn) small{font:700 .9rem var(--f);color:var(--amarelo)}
+  header.top nav{padding:104px 26px max(26px,env(safe-area-inset-bottom))}
+}
+header.top nav{gap:6px}
+body.legal header.top,body.pg header.top{padding:10px 12px 10px 22px}
+body.legal header.top.rolou,body.pg header.top.rolou{padding-top:6px;padding-bottom:6px}
+@media(max-width:900px){body.legal header.top,body.pg header.top{padding:8px 8px 8px 18px}body.legal header.top.rolou,body.pg header.top.rolou{padding-top:8px;padding-bottom:8px}}
+header.top nav .btn{display:inline-flex;align-items:center;justify-content:center;line-height:1.2}
+@media(max-width:900px){header.top nav{gap:0}}
+@media(max-width:900px){header.top.rolou,body.legal header.top.rolou,body.pg header.top.rolou{padding-top:6px;padding-bottom:6px}}
+/* Privacidade e Termos: a faixa de título começa no topo, por trás da barra */
+body.legal .doc-topo{padding-top:calc(var(--hdr,92px) + 12px + clamp(28px,4vw,56px))}
+body.legal header.top,body.pg header.top{background:rgba(255,247,239,.96)}
