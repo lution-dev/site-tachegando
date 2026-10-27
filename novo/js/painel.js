@@ -223,15 +223,18 @@
     return '<div class="pn-kpis" role="group" tabindex="0" aria-label="Números">' + kp.map(function (k) { return '<article class="pn-cd kpi"><small>' + k + '</small><b aria-label="sem dados ainda">&ndash;</b>' + SPARK + '</article>'; }).join("") + '</div>' +
       '<p class="pn-nota">Os números aparecem quando você começar a usar o app.</p>';
   }
+  var NOME_M = ehVend ? "Métricas" : "Candidatura";
+  if (!ehVend) {
+    var bm = document.querySelector('.pn-item[data-v="metricas"]'); bm.querySelector(".tx").textContent = NOME_M; var sm = bm.querySelector("small"); if (sm) sm.remove();
+    var tm = document.querySelector('.pn-tabs [data-v="metricas"]'); tm.lastChild.textContent = NOME_M;
+  } else { var sm2 = document.querySelector('.pn-item[data-v="metricas"] small'); if (sm2) sm2.remove(); }
   function metricas() {
-    el.innerHTML = '<div class="pn-ph curto"><div class="tx"><span class="eyebrow">Métricas</span><h1>Seus números</h1><p>O que o app mostrar sobre o seu uso.</p></div></div>' + kpiLinha() +
-      '<article class="pn-cd vazio"><div><span class="soon">Em breve</span><h2>Ainda não tem número por aqui</h2><p>Quando o app estiver em uso, os números aparecem nesta tela.</p></div>' + SPARK.replace('width="86" height="34"', 'width="160" height="64"') + '</article>';
-    foco.focus({ preventScroll: true });
+    if (ehVend) TCMetricas.vendedor(el, user.perfil || {}, esc, foco); else TCMetricas.apoio(el, user.perfil || {}, esc, foco, CHECK);
   }
   function ir(v) {
     cartaoUsuario();
     var atual = completo() ? v : "perfil";
-    document.getElementById("top-t").textContent = atual === "perfil" ? "Meu cadastro" : atual === "metricas" ? "Métricas" : "Início";
+    document.getElementById("top-t").textContent = atual === "perfil" ? "Meu cadastro" : atual === "metricas" ? NOME_M : "Início";
     document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === atual) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     if (!completo()) { cadastro(false); return; }
     if (v === "perfil") cadastro(true); else if (v === "metricas") metricas(); else { inicio(); foco.focus({ preventScroll: true }); }
