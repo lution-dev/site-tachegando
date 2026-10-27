@@ -96,8 +96,8 @@ body.painel{--lat:264px;--topo:64px;--borda:#EADFD2;--fundo:#FBF3EA;--sup:#5F5A6
 .pn-dias span.off{background:transparent;border-color:#E2D5C5;color:var(--sup)}
 
 /* situacao + linha do tempo (bloco de destaque) */
-.pn-cd.stat{background:var(--azul-esc) url(/img/padrao-escuro.svg) 100% 0/260px 260px no-repeat;border-color:var(--azul-esc);color:#fff;display:flex;flex-direction:column;isolation:isolate}
-.pn-cd.stat::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(180deg,rgba(23,63,60,.78),var(--azul-esc) 60%)}
+.pn-cd.stat{background:var(--azul-esc) url(/marca/simbolo-marca-dagua.svg) 112% 118%/300px 300px no-repeat;border-color:var(--azul-esc);color:#fff;display:flex;flex-direction:column;isolation:isolate}
+.pn-cd.stat::before{display:none}
 .soon{display:inline-flex;align-self:flex-start;align-items:center;min-height:30px;padding:0 13px;border-radius:99px;background:var(--laranja);color:#FFF7EF;font-weight:800;font-size:.78rem;letter-spacing:.02em}
 .pn-cd.stat h2.big{margin:16px 0 0;font-size:clamp(1.4rem,2.1vw,1.7rem);line-height:1.15;color:#fff}
 .pn-cd.stat .txt{margin-top:8px;color:#D8E0D9;font-weight:600;max-width:32em}
@@ -126,13 +126,13 @@ body.painel{--lat:264px;--topo:64px;--borda:#EADFD2;--fundo:#FBF3EA;--sup:#5F5A6
 .pn-cd.indica p{color:#4A444E}
 .pn-acoes{display:flex;gap:10px;flex-wrap:wrap}
 .pn-acoes .btn{flex:1 1 100%;margin:0;white-space:nowrap}
-.pn-cd.indica .pn-acoes{margin-top:auto}
+.pn-cd.indica .pn-acoes{margin-top:4px}
+.pn-grid>.indica{align-self:start}
 .pn-ok{margin:-6px 0 0;font-weight:800;color:#0a6b34}
 .pn-ok:empty{display:none}
 .btn.ln-d{background:transparent}
 
 /* estado vazio */
-.pn-cd.vazio{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px;background:#fff url(/img/padrao-claro.svg) 100% 50%/280px 280px no-repeat}
 .pn-cd.vazio h2{margin:14px 0 6px;font-size:1.4rem}
 .pn-cd.vazio p{color:var(--sup);max-width:30em}
 .pn-cd.vazio svg{flex:none}
@@ -243,8 +243,7 @@ body.painel{--lat:264px;--topo:64px;--borda:#EADFD2;--fundo:#FBF3EA;--sup:#5F5A6
   .pn-rmap .pin b{font-size:.74rem}
   .pn-cd.indica .pn-acoes .btn{flex:1 1 100%}
   .pn-cd.cad .btn{width:100%}
-  .pn-cd.vazio{padding:24px 20px;background-image:none}
-  .pn-cd.vazio svg{display:none}
+    .pn-cd.vazio svg{display:none}
   .pn-main form#pf{padding:22px 18px}
   .pn-tabs{left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));padding:6px;gap:4px;border-radius:24px;background:rgba(23,63,60,.72)}
   .pn-tabs button{min-height:58px;font-size:.78rem;transition:background .2s,color .2s}
