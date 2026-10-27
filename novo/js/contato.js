@@ -7,15 +7,15 @@
     e.preventDefault(); if (f.site.value) return;
     TCForm.limpaTudo(f); aviso("", true);
     var nome = f.nome.value.trim(), contato = f.contato.value.trim(), texto = f.msg.value.trim(), ok = true;
-    if (!nome) { TCForm.erro(f.nome, "Digite o seu nome."); ok = false; }
-    if (!contato) { TCForm.erro(f.contato, "Digite um e-mail ou um WhatsApp."); ok = false; }
-    else if (!TCForm.email(contato) && !TCForm.telefone(contato)) { TCForm.erro(f.contato, "Digite um e-mail válido ou um WhatsApp com DDD, como (13) 99999-9999."); ok = false; }
-    if (texto.length < 5) { TCForm.erro(f.msg, "Escreva a sua mensagem."); ok = false; }
-    if (!f.ok.checked) { TCForm.erro(f.ok, "Marque a caixa para podermos responder."); ok = false; }
+    if (!nome) { TCForm.erro(f.nome, "Falta o seu nome."); ok = false; }
+    if (!contato) { TCForm.erro(f.contato, "Deixe um e-mail ou WhatsApp pra gente responder."); ok = false; }
+    else if (!TCForm.email(contato) && !TCForm.telefone(contato)) { TCForm.erro(f.contato, "Esse contato parece incompleto. Use um e-mail ou um WhatsApp com DDD, tipo (13) 99999-9999."); ok = false; }
+    if (texto.length < 5) { TCForm.erro(f.msg, "Escreva sua mensagem, mesmo que curta."); ok = false; }
+    if (!f.ok.checked) { TCForm.erro(f.ok, "Marque a caixa pra gente poder responder."); ok = false; }
     if (!ok) { TCForm.foco(f); return; }
     TCForm.enviando(btn, true, "Enviando…");
     TC.registrarContato({ nome: nome, contato: contato, assunto: f.assunto.value, msg: texto }).then(function () {
-      TCForm.enviando(btn, false); aviso("Mensagem enviada! Vamos responder pelo contato que você deixou.", true);
-    }).catch(function () { TCForm.enviando(btn, false); aviso("Algo não deu certo agora. Tente de novo em instantes.", false); });
+      TCForm.enviando(btn, false); aviso("Recebemos sua mensagem. A resposta vai pro contato que você deixou.", true);
+    }).catch(function () { TCForm.enviando(btn, false); aviso("Não deu pra enviar agora. Tente de novo daqui a pouco.", false); });
   });
 })();

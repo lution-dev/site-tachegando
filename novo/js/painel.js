@@ -17,7 +17,7 @@
   var AREAS = ["Contabilidade", "Orientação financeira", "Design", "Comunicação", "Assessoria jurídica", "Outra"];
   var FOTO = ehVend ? '' : ' style="--foto:url(img/hero-apoio.webp)"';
   var DIST = ["Perto", "Normal", "Mais longe"];
-  var DISTDICA = { "Perto": "Avisa clientes bem próximos.", "Normal": "Bom para a maioria das rotas.", "Mais longe": "Avisa clientes um pouco mais distantes." };
+  var DISTDICA = { "Perto": "Só avisa quem está bem perto de você.", "Normal": "Serve pra maioria das rotas.", "Mais longe": "Avisa também quem está um pouco mais longe." };
   function cnpjOk(v) {
     var d = String(v).replace(/\D/g, ""); if (d.length !== 14 || /^(\d)\1+$/.test(d)) return false;
     function dv(n) { var s = 0, pos = n - 7; for (var i = n; i >= 1; i--) { s += d[n - i] * pos--; if (pos < 2) pos = 9; } var r = s % 11; return r < 2 ? 0 : 11 - r; }
@@ -36,47 +36,47 @@
 
   // cada validação devolve uma lista de [campo, mensagem]
   var PASSOS = ehVend ? [
-    { t: "Quem é você",
-      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name") + campo("negocio", "Nome do seu negócio", p.negocio, "placeholder=\"Ex.: Frutas do João\"") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + '<p class="nota-m">Usamos só para falar sobre o seu cadastro.</p>'; },
+    { t: "Seus dados",
+      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name") + campo("negocio", "Nome do seu negócio", p.negocio, "placeholder=\"Ex.: Frutas do João\"") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + '<p class="nota-m">Só usamos pra falar do seu cadastro.</p>'; },
       l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.negocio = f.negocio.value.trim(); p.telefone = f.telefone.value.trim();
-        if (!p.nome) e.push(["nome", "Digite o seu nome."]);
-        if (!p.negocio) e.push(["negocio", "Digite o nome do seu negócio."]);
-        if (!p.telefone) e.push(["telefone", "Digite seu telefone com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Telefone incompleto. Use DDD + número, como (13) 99999-9999."]);
+        if (!p.nome) e.push(["nome", "Falta o seu nome."]);
+        if (!p.negocio) e.push(["negocio", "Qual o nome do seu negócio?"]);
+        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (13) 99999-9999."]);
         return e; } },
     { t: "O que você vende",
-      h: function (p) { return '<span class="rot l">Escolha o que você vende (pode marcar vários)</span>' + opc("vende", VENDE, p.vende) +
+      h: function (p) { return '<span class="rot l">O que você vende? Pode marcar mais de um.</span>' + opc("vende", VENDE, p.vende) +
           '<div id="outro-w"' + ((p.vende || []).indexOf("Outro") > -1 ? "" : " hidden") + '>' + campo("vendeOutro", "O que mais você vende?", p.vendeOutro, "") + '</div>' +
-          '<span class="rot l">Como você se desloca?</span>' + opc("meio", MEIO, p.meio ? [p.meio] : [], "radio"); },
+          '<span class="rot l">Como você sai pra vender?</span>' + opc("meio", MEIO, p.meio ? [p.meio] : [], "radio"); },
       l: function (f, p) { var e = []; p.vende = marcados(f, "vende"); p.meio = marcados(f, "meio")[0] || ""; p.vendeOutro = f.vendeOutro ? f.vendeOutro.value.trim() : "";
-        if (!p.vende.length) e.push(["vende", "Marque pelo menos um produto ou serviço."]);
-        if (p.vende.indexOf("Outro") > -1 && !p.vendeOutro) e.push(["vendeOutro", "Conte o que mais você vende."]);
-        if (!p.meio) e.push(["meio", "Escolha como você se desloca."]);
+        if (!p.vende.length) e.push(["vende", "Marque o que você vende, nem que seja uma coisa só."]);
+        if (p.vende.indexOf("Outro") > -1 && !p.vendeOutro) e.push(["vendeOutro", "Escreva o que mais você vende."]);
+        if (!p.meio) e.push(["meio", "Marque como você sai pra vender."]);
         return e; } },
     { t: "Sua rota",
       h: function (p) { return campo("rota", "Nome da rota", p.rota, "placeholder=\"Ex.: Centro\"") + campo("cidade", "Cidade", p.cidade, "") + campo("bairros", "Bairros onde você costuma passar", p.bairros, 'placeholder="Ex.: Centro, Vila Nova"') +
-          '<span class="rot l">Dias em que você circula</span>' + opc("dias", DIAS, p.dias) +
-          '<span class="rot l">Avisar clientes até qual distância da rota?</span>' + opc("distancia", DIST, p.distancia ? [p.distancia] : ["Normal"], "radio") + '<p class="nota-m" id="dist-dica">' + (DISTDICA[p.distancia || "Normal"]) + '</p>'; },
+          '<span class="rot l">Em que dias você sai?</span>' + opc("dias", DIAS, p.dias) +
+          '<span class="rot l">A que distância da rota o cliente é avisado?</span>' + opc("distancia", DIST, p.distancia ? [p.distancia] : ["Normal"], "radio") + '<p class="nota-m" id="dist-dica">' + (DISTDICA[p.distancia || "Normal"]) + '</p>'; },
       l: function (f, p) { var e = []; p.rota = f.rota.value.trim(); p.cidade = f.cidade.value.trim(); p.bairros = f.bairros.value.trim(); p.dias = marcados(f, "dias"); p.distancia = marcados(f, "distancia")[0] || "Normal";
-        if (!p.rota) e.push(["rota", "Dê um nome para a sua rota."]);
-        if (!p.cidade) e.push(["cidade", "Digite a sua cidade."]);
-        if (!p.dias.length) e.push(["dias", "Marque pelo menos um dia."]);
+        if (!p.rota) e.push(["rota", "Dê um nome pra rota. Pode ser o do bairro."]);
+        if (!p.cidade) e.push(["cidade", "Falta a cidade."]);
+        if (!p.dias.length) e.push(["dias", "Marque os dias em que você sai."]);
         return e; } }
   ] : [
     { t: "Sua empresa",
-      h: function (p) { return campo("nome", "Nome da empresa", p.nome, "autocomplete=organization") + campo("cnpj", "CNPJ", p.cnpj, "inputmode=numeric placeholder=\"00.000.000/0000-00\"") + campo("site", "Site ou rede social da empresa", p.site, "placeholder=\"Ex.: www.suaempresa.com.br\"") + '<p class="nota-m">Usamos esses dados para verificar que a empresa existe e está em funcionamento.</p>'; },
+      h: function (p) { return campo("nome", "Nome da empresa", p.nome, "autocomplete=organization") + campo("cnpj", "CNPJ", p.cnpj, "inputmode=numeric placeholder=\"00.000.000/0000-00\"") + campo("site", "Site ou rede social da empresa", p.site, "placeholder=\"Ex.: www.suaempresa.com.br\"") + '<p class="nota-m">Com esses dados, a equipe confere se a empresa existe e está funcionando.</p>'; },
       l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.cnpj = f.cnpj.value.trim(); p.site = f.site.value.trim();
-        if (!p.nome) e.push(["nome", "Digite o nome da empresa."]);
-        if (!p.cnpj) e.push(["cnpj", "Digite o CNPJ da empresa."]); else if (!cnpjOk(p.cnpj)) e.push(["cnpj", "CNPJ inválido. Confira os 14 números."]);
-        if (!p.site) e.push(["site", "Informe o site ou a rede social da empresa."]);
+        if (!p.nome) e.push(["nome", "Falta o nome da empresa."]);
+        if (!p.cnpj) e.push(["cnpj", "Falta o CNPJ."]); else if (!cnpjOk(p.cnpj)) e.push(["cnpj", "Esse CNPJ não bateu. Confira os 14 números."]);
+        if (!p.site) e.push(["site", "Coloque o site ou a rede social da empresa. A equipe usa pra conferir."]);
         return e; } },
-    { t: "Quem fala por ela", h: function (p) { return campo("responsavel", "Nome do responsável", p.responsavel, "autocomplete=name") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + campo("cidade", "Cidade da empresa", p.cidade, ""); },
+    { t: "Contato da empresa", h: function (p) { return campo("responsavel", "Nome do responsável", p.responsavel, "autocomplete=name") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + campo("cidade", "Cidade da empresa", p.cidade, ""); },
       l: function (f, p) { var e = []; p.responsavel = f.responsavel.value.trim(); p.telefone = f.telefone.value.trim(); p.cidade = f.cidade.value.trim();
-        if (!p.responsavel) e.push(["responsavel", "Digite o nome do responsável."]);
-        if (!p.telefone) e.push(["telefone", "Digite seu telefone com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Telefone incompleto. Use DDD + número, como (81) 99999-9999."]);
-        if (!p.cidade) e.push(["cidade", "Digite a cidade da empresa."]);
+        if (!p.responsavel) e.push(["responsavel", "Falta o nome do responsável."]);
+        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (81) 99999-9999."]);
+        if (!p.cidade) e.push(["cidade", "Falta a cidade da empresa."]);
         return e; } },
-    { t: "Como a empresa pode apoiar", h: function (p) { return '<span class="rot l">Áreas em que a empresa atua (pode marcar várias)</span>' + opc("areas", AREAS, p.areas) + '<label class="l" for="apoio">Conte, em poucas palavras, como a empresa pode apoiar vendedores</label><textarea id="apoio" name="apoio" rows="4">' + esc(p.apoio) + '</textarea>'; },
-      l: function (f, p) { p.areas = marcados(f, "areas"); p.apoio = f.apoio.value.trim(); return p.areas.length ? [] : [["areas", "Marque pelo menos uma área."]]; } }
+    { t: "Como a empresa apoia", h: function (p) { return '<span class="rot l">Em que áreas a empresa atua? Pode marcar mais de uma.</span>' + opc("areas", AREAS, p.areas) + '<label class="l" for="apoio">Em poucas palavras, como a empresa pode ajudar vendedores?</label><textarea id="apoio" name="apoio" rows="4">' + esc(p.apoio) + '</textarea>'; },
+      l: function (f, p) { p.areas = marcados(f, "areas"); p.apoio = f.apoio.value.trim(); return p.areas.length ? [] : [["areas", "Marque ao menos uma área."]]; } }
   ];
 
   function completo() { var p = user.perfil; return !!p && (ehVend ? p.vende && p.vende.length && p.cidade && p.negocio : p.areas && p.areas.length && p.telefone && p.cnpj); }
@@ -104,7 +104,7 @@
       var pins = PASSOS.map(function (_, k) { return '<i class="' + (k < i ? "on" : k === i ? "at" : "") + '">' + (k < i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>' : (k + 1)) + '</i>' + (k < PASSOS.length - 1 ? '<s class="' + (k < i ? "on" : "") + '"></s>' : ""); }).join("");
       el.innerHTML = '<section class="pn-ban curto" aria-label="Cadastro"' + FOTO + '><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>Passo ' + (i + 1) + ' de ' + PASSOS.length + '</p></section>' +
         '<div class="pn-pins" role="img" aria-label="Passo ' + (i + 1) + ' de ' + PASSOS.length + '">' + pins + '</div>' +
-        (preenchido && i === 0 ? '<p class="rascunho-nota">Protótipo: já deixamos tudo preenchido. É só continuar, ou mudar o que quiser.</p>' : '') +
+        (preenchido && i === 0 ? '<p class="rascunho-nota">Protótipo: deixamos tudo preenchido de exemplo. Pode seguir assim ou trocar o que quiser.</p>' : '') +
         '<form id="pf" novalidate>' + PASSOS[i].h(p) +
         '<div class="nav-b">' + (i > 0 ? '<button type="button" class="btn ln-d" id="volta">Voltar</button>' : '<span></span>') +
         '<button class="btn or" type="submit" id="prox">' + (ultimo ? "Salvar cadastro" : "Continuar") + '</button></div></form>';
@@ -127,7 +127,7 @@
         var b = document.getElementById("prox"); TCForm.enviando(b, true, "Salvando…");
         if (!ehVend && !p.status) p.status = "em_verificacao";
         TC.salvarPerfil(p).then(function (u) { limpaRascunho(); user = u; ir("inicio"); })
-          .catch(function () { TCForm.enviando(b, false); mostraErros(f, [[Object.keys(f.elements)[0] && "nome", "Algo não deu certo agora. Tente de novo em instantes."]]); });
+          .catch(function () { TCForm.enviando(b, false); mostraErros(f, [[Object.keys(f.elements)[0] && "nome", "Não deu pra salvar agora. Tente de novo daqui a pouco."]]); });
       };
     }
     pinta();
@@ -162,37 +162,37 @@
     var tags = function (arr) { return '<span class="pn-tags">' + arr.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</span>"; };
     var chips = '<span class="pn-chip"><span class="ok">' + CHECK.replace('width="14" height="14"', 'width="12" height="12"') + '</span>Cadastro completo</span><span class="pn-chip">' + esc(p.cidade) + '</span>' + (ehVend ? '<span class="pn-chip">' + esc(p.meio) + '</span>' : '<span class="pn-chip">Em verificação</span>');
     var dias = ehVend ? '<div class="pn-dias">' + DIAS.map(function (d) { return '<span class="' + ((p.dias || []).indexOf(d) > -1 ? "" : "off") + '">' + d + "</span>"; }).join("") + "</div>" : "";
-    var rota = '<article class="pn-bc rota"><h2>' + (ehVend ? esc(p.rota || "Sua rota") : "Onde posso apoiar") + '</h2><p class="sub">' + (ehVend ? "Onde você costuma passar, e em quais dias." : "As áreas em que você atua, em " + esc(p.cidade) + ".") + '</p>' +
+    var rota = '<article class="pn-bc rota"><h2>' + (ehVend ? esc(p.rota || "Sua rota") : "Onde a empresa apoia") + '</h2><p class="sub">' + (ehVend ? "Por onde você passa e em que dias." : "Áreas em que a empresa atua, em " + esc(p.cidade) + ".") + '</p>' +
       '<svg class="pn-rmap" id="rmap" viewBox="0 0 600 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M30 140 C120 140 130 50 230 60 S340 150 410 110 S520 40 570 60" fill="none" stroke="#FC4200" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"/><g font-family="Poppins" font-weight="700" font-size="14" fill="#fff" text-anchor="middle"></g></svg>' + dias + '</article>';
     var baixe = ehVend
-      ? '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em breve</span></div><div><p class="big">O app será liberado no lançamento oficial.</p><p style="margin-top:8px">Você será avisado.</p></div></article>'
-      : '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em verificação</span></div><div><p class="big">Sua empresa está em verificação.</p><p style="margin-top:8px">Nossa equipe confirma que ela existe e está em funcionamento. Entraremos em contato.</p></div></article>';
+      ? '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em breve</span></div><div><p class="big">O app sai no lançamento oficial.</p><p style="margin-top:8px">A gente avisa você.</p></div></article>'
+      : '<article class="pn-bc baixe"><div><span class="soon" style="display:inline-block;background:#01172E;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:.8rem">Em verificação</span></div><div><p class="big">Sua empresa está em verificação.</p><p style="margin-top:8px">Nossa equipe está conferindo se ela existe e está funcionando. Depois a gente entra em contato.</p></div></article>';
     var prox = ehVend
-      ? '<article class="pn-bc prox"><h2>Seus próximos passos</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>Usar o app na sua rota<small>No lançamento</small></div></li></ul></article>'
-      : '<article class="pn-bc prox"><h2>Seus próximos passos</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Candidatura enviada</div></li><li class="prox"><span class="p"></span><div>Verificação pela nossa equipe<small>Em andamento</small></div></li><li><span class="p" style="background:#fff;border:3px solid #C9D0DD"></span><div>Entrada na Rede de Apoio<small>Depois de aprovada</small></div></li></ul></article>';
+      ? '<article class="pn-bc prox"><h2>O que falta</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>Usar o app na sua rota<small>No lançamento</small></div></li></ul></article>'
+      : '<article class="pn-bc prox"><h2>O que falta</h2><ul class="pn-tl"><li class="ok"><span class="p">' + CHECK + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + CHECK + '</span><div>Candidatura enviada</div></li><li class="prox"><span class="p"></span><div>Equipe confere a empresa<small>Em andamento</small></div></li><li><span class="p" style="background:#fff;border:3px solid #C9D0DD"></span><div>Entrada na Rede de Apoio<small>Depois de aprovada</small></div></li></ul></article>';
     var info = ehVend
-      ? '<div><dt>Negócio</dt><dd>' + esc(p.negocio) + '</dd></div><div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Desloca-se</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Rota</dt><dd>' + esc(p.rota) + ' · ' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Avisar clientes</dt><dd>' + esc(p.distancia || "Normal") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
+      ? '<div><dt>Negócio</dt><dd>' + esc(p.negocio) + '</dd></div><div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Vai de</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Rota</dt><dd>' + esc(p.rota) + ' · ' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Avisar clientes</dt><dd>' + esc(p.distancia || "Normal") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
       : '<div><dt>Empresa</dt><dd>' + esc(p.nome) + '</dd></div><div><dt>CNPJ</dt><dd>' + esc(p.cnpj) + '</dd></div><div><dt>Site ou rede</dt><dd>' + esc(p.site) + '</dd></div><div><dt>Responsável</dt><dd>' + esc(p.responsavel) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div><div><dt>Situação</dt><dd>Em verificação</dd></div>';
     var cad = '<article class="pn-bc cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit">Editar cadastro</button></article>';
-    var indica = '<article class="pn-bc indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece alguém que poderia apoiar?") + '</h2><p>' + (ehVend ? "Mande o Tá Chegando para essa pessoa conhecer." : "Mande o Tá Chegando para essa pessoa conhecer a Rede de Apoio.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';
-    var kp = ehVend ? ["Clientes esperando", "Regiões com clientes", "Rotas"] : ["Vendedores na rede", "Conexões", "Áreas"];
-    var kpis = '<div class="pn-kpis">' + kp.map(function (k) { return '<article class="pn-bc kpi"><small>' + k + '</small><b>—</b>' + SPARK + '</article>'; }).join("") + '</div>';
-    el.innerHTML = '<section class="pn-ban" aria-label="Boas-vindas"' + FOTO + '><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Candidatura da Rede de Apoio") + '</span><h1>Oi, ' + nome + '!</h1><p>' + (ehVend ? "Seu cadastro está pronto. Quando o app for lançado, é por ele que você usa a sua rota." : "Recebemos a candidatura da sua empresa. Agora ela passa por uma verificação da nossa equipe.") + '</p><div class="pn-chips">' + chips + '</div></section>' +
-      '<div class="pn-bento">' + rota + baixe + prox + cad + indica + kpis + '</div><p class="nota-m">Ainda sem números por aqui. Eles aparecem quando houver uso real.</p>';
+    var indica = '<article class="pn-bc indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece uma empresa que poderia apoiar?") + '</h2><p>' + (ehVend ? "Manda o Tá Chegando pra ela dar uma olhada." : "Passe a Rede de Apoio pra ela. Quem é indicado passa pela mesma verificação.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';
+    var kp = ehVend ? ["Clientes esperando", "Onde tem clientes", "Rotas"] : ["Vendedores na rede", "Contatos", "Áreas"];
+    var kpis = '<div class="pn-kpis">' + kp.map(function (k) { return '<article class="pn-bc kpi"><small>' + k + '</small><b>-</b>' + SPARK + '</article>'; }).join("") + '</div>';
+    el.innerHTML = '<section class="pn-ban" aria-label="Boas-vindas"' + FOTO + '><span class="eyebrow">' + (ehVend ? "Painel do vendedor" : "Candidatura da Rede de Apoio") + '</span><h1>Oi, ' + nome + '</h1><p>' + (ehVend ? "Cadastro pronto. Quando o app sair, é nele que você grava a sua rota." : "Recebemos a candidatura da sua empresa. Agora a equipe confere os dados.") + '</p><div class="pn-chips">' + chips + '</div></section>' +
+      '<div class="pn-bento">' + rota + baixe + prox + cad + indica + kpis + '</div><p class="nota-m">Ainda não tem número nenhum aqui. Eles aparecem quando o app estiver em uso.</p>';
     document.getElementById("edit").onclick = function () { ir("perfil"); };
     colocaPins();
-    var link = location.origin + (ehVend ? "/vendedores" : "/rede-de-apoio"), msg = (ehVend ? "Conhece o Tá Chegando? Ajuda quem vende na rua a ser encontrado: " : "Conhece a Rede de Apoio do Tá Chegando? ") + link;
+    var link = location.origin + (ehVend ? "/vendedores" : "/rede-de-apoio"), msg = (ehVend ? "Olha o Tá Chegando, um app pra quem vende na rua ser encontrado: " : "Olha a Rede de Apoio do Tá Chegando: ") + link;
     document.getElementById("zap").href = "https://wa.me/?text=" + encodeURIComponent(msg);
     document.getElementById("copia").onclick = function () {
       var ok = document.getElementById("copia-ok");
-      function feito() { ok.textContent = "Link copiado!"; setTimeout(function () { ok.textContent = ""; }, 2500); }
+      function feito() { ok.textContent = "Link copiado."; setTimeout(function () { ok.textContent = ""; }, 2500); }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(feito, function () { ok.textContent = "Copie o link: " + link; });
       else ok.textContent = "Copie o link: " + link;
     };
   }
   function metricas() {
-    el.innerHTML = '<section class="pn-ban curto" aria-label="Métricas"' + FOTO + '><span class="eyebrow">Métricas</span><h1>Seus números</h1><p>Indicadores do seu uso do app.</p></section>' +
-      '<div class="pn-bento"><article class="pn-bc vazio"><h2>Ainda sem números por aqui</h2><p>Eles aparecem quando você usar o app. Hoje este painel é um protótipo, sem dados reais.</p>' + SPARK.replace('width="86" height="34"', 'width="160" height="64"') + '</article></div>';
+    el.innerHTML = '<section class="pn-ban curto" aria-label="Métricas"' + FOTO + '><span class="eyebrow">Métricas</span><h1>Seus números</h1><p>O que o app mostrar sobre o seu uso.</p></section>' +
+      '<div class="pn-bento"><article class="pn-bc vazio"><h2>Nada pra mostrar ainda</h2><p>Quando o app estiver em uso, os números aparecem aqui. Por enquanto o painel é um protótipo e não tem dado real.</p>' + SPARK.replace('width="86" height="34"', 'width="160" height="64"') + '</article></div>';
     foco.focus({ preventScroll: true });
   }
   function ir(v) {
