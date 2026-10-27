@@ -111,14 +111,6 @@
 }
 
 /* ===== grafismos da identidade: padrões, ícones, divisor de rota ===== */
-.com-padrao{position:relative;isolation:isolate}
-.com-padrao::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-size:320px 320px;
-  -webkit-mask-image:linear-gradient(90deg,#000 0,rgba(0,0,0,.55) 12%,transparent 26%,transparent 74%,rgba(0,0,0,.55) 88%,#000 100%);
-  mask-image:linear-gradient(90deg,#000 0,rgba(0,0,0,.55) 12%,transparent 26%,transparent 74%,rgba(0,0,0,.55) 88%,#000 100%)}
-.pat-escuro::before{background-image:url(/img/padrao-escuro.svg);opacity:.55}
-.pat-laranja::before{background-image:url(/img/padrao-laranja.svg);opacity:.5}
-@media(max-width:700px){.com-padrao::before{-webkit-mask-image:linear-gradient(180deg,#000 0,transparent 18%,transparent 82%,#000 100%);mask-image:linear-gradient(180deg,#000 0,transparent 18%,transparent 82%,#000 100%);opacity:.45}}
-.com-padrao>.wrap{position:relative}
 /* ícones dos cartões */
 .bento .ic,.areas .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center}
 .bento .ic svg,.areas .ic svg{stroke:currentColor;fill:none}
