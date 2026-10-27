@@ -13,10 +13,11 @@
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="componentes.css">
+<link rel="stylesheet" href="painel.css">
 </head>
 <body class="painel">
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<span class="proto-tag" role="note">Protótipo</span>
+<span class="proto-tag" role="region" aria-label="Protótipo">Protótipo</span>
 <div class="pn-app pn">
   <aside class="pn-lat" aria-label="Menu do painel">
     <a class="logo" href="/"><img src="img/logo-horizontal-escuro.svg" alt="Tá Chegando" height="46"></a>
@@ -24,10 +25,10 @@
     <button class="pn-item" data-v="perfil"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Meu cadastro</button>
     <button class="pn-item" data-v="metricas"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Métricas<small>em breve</small></button>
     <div class="pn-quem" id="quem"></div>
-    <button class="pn-sair" id="sair">Sair da conta</button>
+    <button class="pn-sair" id="sair" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sair da conta</button>
   </aside>
   <main class="pn-main" id="conteudo" tabindex="-1">
-    <div class="pn-topm"><a class="logo" href="/"><img src="img/logo-horizontal.svg" alt="Tá Chegando" height="40"></a><button type="button" id="sair-m">Sair</button></div>
+    <div class="pn-topm"><a class="logo" href="/"><img src="img/logo-horizontal.svg" alt="Tá Chegando" height="40"></a><button type="button" id="sair-m" aria-label="Sair da conta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sair</button></div>
     <div id="tela"></div>
   </main>
 </div>

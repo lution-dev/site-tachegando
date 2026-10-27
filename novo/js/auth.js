@@ -10,7 +10,7 @@
     criar = c;
     tEntrar.setAttribute("aria-selected", String(!c)); tCriar.setAttribute("aria-selected", String(c));
     document.getElementById("titulo").textContent = c ? "Criar conta" : "Entrar";
-    document.getElementById("apoio").textContent = c ? "Deixamos tudo preenchido de exemplo. É só continuar." : "Entre pra ver o seu painel.";
+    document.getElementById("apoio").textContent = c ? "Escolha seu perfil e comece pelo cadastro." : "Acesse o seu painel.";
     document.getElementById("bloco-tipo").hidden = !c;
     document.getElementById("legal").hidden = !c;
     document.getElementById("demo-box").hidden = c;
@@ -23,6 +23,13 @@
   tCriar.onclick = function () { modo(true); };
   if (q.get("tipo") === "apoio") f.querySelector('input[value="apoio"]').checked = true;
   modo(criar);
+
+  // teclado do celular aberto: mantém o campo e o botão principal à vista
+  var toque = window.matchMedia("(pointer:coarse)");
+  f.addEventListener("focusin", function (e) {
+    if (!toque.matches || !e.target.matches("input[type=email],input[type=password]")) return;
+    setTimeout(function () { e.target.scrollIntoView({ block: "center", behavior: "smooth" }); }, 320);
+  });
 
   function vai(p) { return p.then(function () { location.href = "/painel"; }); }
   document.querySelectorAll("[data-demo]").forEach(function (b) {
