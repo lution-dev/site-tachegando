@@ -275,3 +275,7 @@ header.top .menu-btn span{background:#FFF7EF}
 .faixa.az .trilho span::after{color:var(--amarelo)}
 .hero.v-hero .passos-h div{background:rgba(15,45,43,.22);border-color:rgba(255,247,239,.4)}
 @media(max-width:900px){.hero.curto::after{display:none}}
+/* decoração das seções: pins amarelos suaves só no computador (no celular ficavam soltos nos cantos) */
+.deco .pin{color:var(--amarelo)!important}
+.rede .deco .pin{color:var(--petroleo)!important}
+@media(max-width:700px){.deco{display:none}}
