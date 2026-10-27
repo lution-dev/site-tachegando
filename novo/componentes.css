@@ -279,3 +279,4 @@ header.top .menu-btn span{background:#FFF7EF}
 .deco .pin{color:var(--amarelo)!important}
 .rede .deco .pin{color:var(--petroleo)!important}
 @media(max-width:700px){.deco{display:none}}
+@media(max-width:900px){.hero.curto{padding-top:calc(var(--hdr) + 14px)}}
