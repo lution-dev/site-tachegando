@@ -160,6 +160,27 @@
       d.innerHTML = '<i></i><b title="' + esc(nome) + '">' + esc(nome) + '</b>';
       box.appendChild(d);
     });
+    arruma(box);
+  }
+  // escolhe, ponto a ponto, o lado do rótulo (em cima ou embaixo) que não bate em nada
+  function arruma(box) {
+    var pins = Array.prototype.slice.call(box.querySelectorAll(".pin")), feitos = [];
+    function bate(a, c) { return a.left < c.right + 4 && c.left < a.right + 4 && a.top < c.bottom + 2 && c.top < a.bottom + 2; }
+    var dots = pins.map(function (p) { return p.querySelector("i").getBoundingClientRect(); });
+    pins.forEach(function (p, k) {
+      var b = p.querySelector("b"), ordem = k % 2 ? ["baixo", "cima"] : ["cima", "baixo"], ok = false;
+      [0, 1, 2].forEach(function (nv) {
+        if (ok) return;
+        p.classList.toggle("mini", nv === 1); p.classList.toggle("micro", nv === 2);
+        ordem.forEach(function (lado) {
+          if (ok) return;
+          p.classList.remove("cima", "baixo"); p.classList.add(lado);
+          var r = b.getBoundingClientRect();
+          if (!feitos.some(function (x) { return bate(r, x); }) && !dots.some(function (x, j) { return j !== k && bate(r, x); })) ok = true;
+        });
+      });
+      feitos.push(b.getBoundingClientRect());
+    });
   }
   function inicio() {
     var p = user.perfil || {};

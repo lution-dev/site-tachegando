@@ -42,7 +42,7 @@ body.painel{background:#EEF1F6;font-size:17px}
 .pn-rmap>svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}
 .pn-rmap .pin{position:absolute;width:0;height:0}
 .pn-rmap .pin i{position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,#fff 0 5px,var(--laranja) 5.5px);box-shadow:0 0 0 6px rgba(252,66,0,.22),0 0 0 2px var(--azul-esc)}
-.pn-rmap .pin b{position:absolute;left:0;transform:translateX(-50%);width:max-content;max-width:120px;padding:3px 11px;border-radius:14px;font:700 .8rem/1.3 var(--fh);color:#fff;text-align:center;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pn-rmap .pin b{position:absolute;left:0;transform:translateX(-50%);width:max-content;max-width:124px;padding:3px 10px;overflow-wrap:normal;border-radius:14px;font:700 .8rem/1.3 var(--fh);color:#fff;text-align:center;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .pn-rmap .pin.cima b{bottom:24px}
 .pn-rmap .pin.baixo b{top:24px}
 .pn-rmap .pin.ini b{transform:none;left:-14px;text-align:left}
@@ -152,7 +152,7 @@ body.painel{background:#EEF1F6;font-size:17px}
   .pn-main,#tela{gap:18px}
   .pn-lat{padding:22px 12px 16px}
   .pn-bc.rota,.pn-bc.baixe{grid-column:span 12}
-  .pn-bc.baixe{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}
+  .pn-bc.baixe{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}
   .pn-bc.baixe>div:last-child{max-width:30em}
   .pn-bc.prox,.pn-bc.cad{grid-column:span 12}
   .pn-ban,.pn-ban.curto{padding-left:30px;padding-right:30px}
@@ -190,7 +190,7 @@ body.painel{background:#EEF1F6;font-size:17px}
   .pn-acoes{width:100%}.pn-acoes .btn{flex:1 1 100%}
   .pn-bc.cad .btn{width:100%}
   .pn-rmap{height:180px;min-height:170px;flex:none}
-  .pn-rmap .pin b{max-width:92px;font-size:.74rem}
+  .pn-rmap .pin b{max-width:112px;font-size:.74rem}
   .pn-passos{padding:0 2px}
   .pn-passos li span{display:none}
   .pn-passos li.at span{display:block;margin-right:8px}
@@ -210,6 +210,8 @@ body.painel{background:#EEF1F6;font-size:17px}
   .pn-main form#pf .nav-b>span{display:none}
   .pn-main form#pf .nav-b .btn{width:100%;margin-left:0}
 }
+@media(max-width:480px){.pn-passos li.at span{display:none}}
+@media(min-width:641px) and (max-width:860px){.pn-tabs{left:50%;right:auto;width:min(560px,calc(100% - 28px));transform:translateX(-50%)}}
 @media(max-width:400px){
   .pn-app{padding:0 10px 12px}
   .pn-topm{margin:0 -10px 10px;padding:8px 10px}
@@ -230,13 +232,16 @@ body.painel{background:#EEF1F6;font-size:17px}
   .pn-ban{min-height:0}
   .pn-bc.kpi svg{display:none}
   .pn-topm{position:static;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border:0}
-  body.painel .proto-tag{bottom:auto;top:10px;right:10px}
+  body.painel .proto-tag{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
 @media(min-width:641px) and (max-width:860px){
   .pn-main .gp.dias .opcoes{grid-template-columns:repeat(7,minmax(0,1fr))}
-  .pn-bc.baixe{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}
+  .pn-bc.baixe{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}
   .pn-bc.baixe>div:last-child{max-width:28em}
   .pn-bc.kpi svg{display:block}
 }
 @media(min-width:641px) and (max-width:860px) and (max-height:520px){.pn-bc.kpi svg{display:none}}
 @media(prefers-reduced-transparency:reduce){.pn-topm{-webkit-backdrop-filter:none;backdrop-filter:none;background:#EEF1F6}.pn-rmap .pin b,.pn-quem{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(1,23,46,.9)}}
+
+.pn-rmap .pin.mini b{max-width:78px;-webkit-line-clamp:1;white-space:nowrap;text-overflow:ellipsis;display:block}
+.pn-rmap .pin.micro b{max-width:54px;padding:2px 7px;font-size:.7rem;-webkit-line-clamp:1;white-space:nowrap;text-overflow:ellipsis;display:block}
