@@ -262,3 +262,8 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
 @media(max-width:1000px){.cena{justify-self:center;width:min(100%,420px);margin-top:12px}.foto-toldo{width:56%;top:20%}}
 @media(max-width:700px){.cena .fone{width:min(72%,260px)}.aviso b,.aviso span{white-space:normal}.aviso b{font-size:.84rem}.aviso span{font-size:.72rem}}
 @media(max-width:700px){.faixa-foto{height:230px}.faixa-foto img{object-position:46% 60%}}
+footer.rod .rod-par{margin-top:22px}
+footer.rod .rod-par{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+footer.rod .rod-par span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#E7DFD6}
+footer.rod .rod-par a{display:block}
+footer.rod .rod-par img{height:28px;width:auto;opacity:.9}
