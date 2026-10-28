@@ -20,7 +20,7 @@ Situação: o aplicativo ainda não foi lançado nas lojas e não há data defin
 - Vê no mapa quem está circulando perto, filtra por categoria (comida, hortifruti, bebidas, doces) e toca em "Me avise quando chegar".
 
 ## Rede de Apoio
-- Iniciativa para empresas (contabilidade, orientação financeira, design, comunicação, assessoria jurídica e outras áreas) que queiram ajudar quem trabalha na rua.
+- Iniciativa para empresas (oficina mecânica, seguros, autopeças e borracharia, contabilidade, orientação financeira e crédito, assessoria jurídica, design e comunicação e outras áreas) que queiram ajudar quem trabalha na rua.
 - Nesta fase só entram empresas verificadas pela equipe (CNPJ e site ou rede social). Autônomos e cadastro aberto ficam de fora. Não há promessa de pagamento ou retorno.
 
 ## Páginas

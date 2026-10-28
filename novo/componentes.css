@@ -308,3 +308,4 @@ footer.rod .rod-par{display:flex;flex-direction:row;gap:14px;align-items:center;
 footer.rod .rod-par span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B9C7C2}
 footer.rod .rod-par a{padding:0;display:block}
 footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
+@media(min-width:901px){.areas article:nth-child(8):last-child{grid-column:span 2}}

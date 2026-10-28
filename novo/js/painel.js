@@ -16,7 +16,7 @@
   var VENDE = ["Frutas e verduras", "Ovos", "Pão", "Doces", "Queijo", "Artesanato", "Flores", "Roupas", "Picolé", "Serviços", "Outro"];
   var MEIO = ["A pé", "Bicicleta", "Moto", "Carro ou caminhonete", "Carrinho", "Outro"];
   var DIAS = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
-  var AREAS = ["Contabilidade", "Orientação financeira", "Design", "Comunicação", "Assessoria jurídica", "Outra"];
+  var AREAS = ["Oficina mecânica", "Seguros", "Autopeças e borracharia", "Contabilidade", "Orientação financeira e crédito", "Assessoria jurídica", "Design e comunicação", "Outra"];
   var DIST = ["Perto", "Normal", "Mais longe"];
   var DISTDICA = { "Perto": "Só avisa quem está bem perto de você.", "Normal": "Serve pra maioria das rotas.", "Mais longe": "Avisa também quem está um pouco mais longe." };
   function cnpjOk(v) {
