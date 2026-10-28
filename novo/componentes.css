@@ -304,7 +304,7 @@ header.top nav .btn{display:inline-flex;align-items:center;justify-content:cente
 body.legal .doc-topo{padding-top:calc(var(--hdr,92px) + 12px + clamp(28px,4vw,56px))}
 body.legal header.top,body.pg header.top{background:rgba(255,247,239,.96)}
 /* Parceria no rodapé */
-footer.rod .rod-par{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+footer.rod .rod-par{display:flex;flex-direction:row;gap:14px;align-items:center;flex-basis:100%;padding-top:20px;border-top:1px solid rgba(255,247,239,.16)}
 footer.rod .rod-par span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B9C7C2}
 footer.rod .rod-par a{padding:0;display:block}
-footer.rod .rod-par img{height:28px;width:auto;opacity:.9}
+footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
