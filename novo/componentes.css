@@ -244,13 +244,13 @@ header.top .menu-btn span{background:#FFF7EF}
 .hero .acoes .btn.ln:hover{background:rgba(255,247,239,.14)}
 .hero .passos-h div,.hero.foto-clara .passos-h div,.hero .caminho:not(.v),.hero.foto-clara .caminho:not(.v){background:rgba(255,247,239,.12);border:1.5px solid rgba(255,247,239,.35);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:#FFF7EF}
 .hero.v-hero .passos-h b{background:var(--amarelo);color:var(--grafite)}
-.hero::after{content:"";position:absolute;z-index:0;right:max(28px,calc((100vw - 1180px)/2 + 20px));top:calc(var(--hdr) + 46px);width:min(30vw,380px);aspect-ratio:4/5;
-  background:var(--bg) var(--pos-foto,center)/cover no-repeat;border-radius:28px 28px 0 0;transform:rotate(-4deg);
+.hero::after{content:"";position:absolute;z-index:0;right:max(28px,calc((100vw - 1180px)/2 + 20px));top:calc(50% + var(--hdr)/2);width:min(30vw,380px);aspect-ratio:4/5;
+  background:var(--bg) var(--pos-foto,center)/cover no-repeat;border-radius:28px 28px 0 0;transform:translateY(-50%) rotate(-4deg);
   -webkit-mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat;
   mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat}
 .hero .conteudo{position:relative;z-index:1}
 @media(min-width:901px){.hero .conteudo{box-sizing:border-box;width:100%;max-width:1180px;margin-inline:auto;padding-left:clamp(20px,5vw,56px);padding-right:calc(min(30vw,380px) + 72px)}.hero.curto .conteudo{padding-right:calc(min(16vw,200px) + 72px)}}
-.hero.curto::after{width:min(16vw,200px);aspect-ratio:1/1;top:auto;bottom:26px}
+.hero.curto::after{width:min(16vw,200px);aspect-ratio:1/1;top:auto;bottom:26px;transform:rotate(-4deg)}
 @media(max-width:900px){
   .hero::after{background-image:var(--bgm,var(--bg))}
   .hero,.hero.curto{min-height:0;background-image:none!important}
