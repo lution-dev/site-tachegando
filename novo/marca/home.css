@@ -137,7 +137,7 @@ section{position:relative}
 .oquee .l1{font-size:clamp(1.15rem,1.6vw,1.38rem);font-weight:700;line-height:1.45}
 .oquee .l2{font-size:1.08rem;line-height:1.55;color:#3D3741}
 .oquee .l2 b{color:var(--tomate-esc)}
-.botao-app{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:99px;background:var(--petroleo);color:var(--creme);font-weight:700;font-size:1.05rem;box-shadow:0 12px 24px -14px rgba(23,63,60,.9);transform:rotate(-2deg)}
+.botao-app{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:99px;background:var(--petroleo);color:var(--creme);font-weight:700;font-size:1.05rem;box-shadow:0 12px 24px -14px rgba(23,63,60,.9)}
 .botao-app svg{width:22px;height:22px;color:var(--amarelo)}
 /* caminhos: lista de placas, sem cartões */
 .caminhos{padding-top:0}
