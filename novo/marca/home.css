@@ -258,7 +258,7 @@ footer.rod nav a{display:inline-flex;align-items:center;min-height:44px;color:va
 .foto-toldo img{width:100%;height:100%;object-fit:cover;border-radius:26px 26px 0 0;-webkit-mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat;mask:radial-gradient(circle at 50% 0,#000 0 16px,transparent 16.5px) 0 100%/32px 16px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 15px) no-repeat}
 /* faixa de foto entre o manifesto e "quem circula" */
 .faixa-foto{margin:0;height:clamp(260px,36vw,540px);overflow:hidden;background:var(--petroleo)}
-.faixa-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.faixa-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 @media(max-width:1000px){.cena{justify-self:center;width:min(100%,420px);margin-top:12px}.foto-toldo{width:56%;top:20%}}
 @media(max-width:700px){.cena .fone{width:min(72%,260px)}.aviso b,.aviso span{white-space:normal}.aviso b{font-size:.84rem}.aviso span{font-size:.72rem}}
-@media(max-width:700px){.faixa-foto{height:240px}.faixa-foto img{object-position:58% 55%}}
+@media(max-width:700px){.faixa-foto{height:230px}.faixa-foto img{object-position:46% 60%}}

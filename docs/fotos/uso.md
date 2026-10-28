@@ -55,3 +55,6 @@ Fotos da carrinho de pipoca, mosaico e afins saíram. Mesmo tratamento quente. F
 
 ## Identidade nova em todo o site
 Todas as aberturas usam cor sólida + foto recortada com barra de toldo (sem foto de fundo). Versões `-s` são recortes 4:5 pequenos das fotos acima (Pexels): hero-v2-moto (9190273), bicicleta (19086841), carrinho (38878094), triciclo (14384534), picape (33703931). Home usa o carro com laranjas (20164912) e a faixa de moto (32241920). foto-v2-bike-frutas (20101548) e foto-v2-moto-saco (32241920) aparecem em Rede de Apoio e Vendedores.
+
+## Troca da foto da moto com saco (pedido do cliente)
+Saiu a foto da moto com saco (Pexels 32241920). Entrou o utilitário de três rodas carregado de produtos de limpeza, https://www.pexels.com/photo/12599266/: faixa larga da Home (`marca/fotos/v2-faixa-limpeza`) e seção "Pra quem vende andando" de Vendedores (`img/foto-v2-limpeza`). Sem pessoas na foto. Aparece uma bandeira da Itália no teto do veículo; se incomodar, dá para recortar.
