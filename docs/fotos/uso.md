@@ -58,3 +58,10 @@ Todas as aberturas usam cor sólida + foto recortada com barra de toldo (sem fot
 
 ## Troca da foto da moto com saco (pedido do cliente)
 Saiu a foto da moto com saco (Pexels 32241920). Entrou o utilitário de três rodas carregado de produtos de limpeza, https://www.pexels.com/photo/12599266/: faixa larga da Home (`marca/fotos/v2-faixa-limpeza`) e seção "Pra quem vende andando" de Vendedores (`img/foto-v2-limpeza`). Sem pessoas na foto. Aparece uma bandeira da Itália no teto do veículo; se incomodar, dá para recortar.
+
+## Rede de Apoio (empresas com endereço fixo)
+
+| Arquivo | Origem | Uso |
+|---|---|---|
+| hero-v2-oficina(-s/-s-m) | https://www.pexels.com/photo/5252118/ | Abertura da Rede de Apoio. Placas de marcas na parede apagadas, recorte vertical e girada 4° para ficar nivelada na moldura. |
+| foto-v2-escritorio | https://www.pexels.com/photo/7654131/ | Bloco do meio da Rede de Apoio. Recorte sem as notas de dólar. |
