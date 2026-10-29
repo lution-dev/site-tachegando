@@ -320,3 +320,5 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 @media(max-width:700px){.contato-av{grid-template-columns:1fr}}
 .areas-s .acoes{display:flex;flex-wrap:wrap;gap:12px}
 .contato-av+.nota-s{margin-top:18px}
+.par-v{background:var(--creme-2)}
+.par-v .card-av{background:#fff;text-decoration:none}
