@@ -23,11 +23,15 @@ Situação: o aplicativo ainda não foi lançado nas lojas e não há data defin
 - Iniciativa para empresas (oficina mecânica, seguros, autopeças e borracharia, contabilidade, orientação financeira e crédito, assessoria jurídica, design e comunicação e outras áreas) que queiram ajudar quem trabalha na rua.
 - Nesta fase só entram empresas verificadas pela equipe (CNPJ e site ou rede social). Autônomos e cadastro aberto ficam de fora. Não há promessa de pagamento ou retorno.
 
+## Parceria
+- A AVAASP (Associação dos Vendedores Autônomos e Ambulantes de São Paulo, criada em 2007) é parceira do Tá Chegando. Associação, valores e benefícios são tratados direto com ela.
+
 ## Páginas
 - [Início](https://tachegandoapp.com.br/): o que é o Tá Chegando e por onde começar.
 - [Para vendedores](https://tachegandoapp.com.br/vendedores): como funciona para quem vende, o que o app faz e não faz, perguntas frequentes.
 - [Para quem procura](https://tachegandoapp.com.br/consumidores): como funciona para o consumidor, aviso de lançamento, perguntas frequentes.
 - [Rede de Apoio](https://tachegandoapp.com.br/rede-de-apoio): como a empresa se candidata e como é a verificação.
+- [AVAASP](https://tachegandoapp.com.br/avaasp): quem é a associação parceira e como se associar.
 - [Fale com a gente](https://tachegandoapp.com.br/contato): dúvidas, candidaturas e indicações.
 - [Política de Privacidade](https://tachegandoapp.com.br/privacidade) e [Termos de Uso](https://tachegandoapp.com.br/termos): rascunhos em revisão jurídica.
 

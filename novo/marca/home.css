@@ -267,3 +267,11 @@ footer.rod .rod-par{display:flex;flex-direction:row;gap:14px;align-items:center;
 footer.rod .rod-par span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#E7DFD6}
 footer.rod .rod-par a{display:block}
 footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
+.parceira{background:var(--creme-2);color:var(--grafite)}
+.parceira .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,5vw,64px);align-items:center}
+.parceira .eyebrow{color:var(--tomate-esc,#A33D2E)}
+.parceira h2{color:var(--petroleo)}
+.parceira p.l{font-size:1.15rem;margin:18px 0 28px;max-width:32em}
+.parceira .card-par{background:#fff;border-radius:28px;aspect-ratio:4/3;display:grid;place-items:center;padding:28px}
+.parceira .card-par img{width:min(78%,300px);height:auto}
+@media(max-width:900px){.parceira .wrap{grid-template-columns:1fr}.parceira .card-par{aspect-ratio:auto;padding:28px 20px}}

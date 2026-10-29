@@ -309,3 +309,14 @@ footer.rod .rod-par span{font-size:.78rem;font-weight:700;letter-spacing:.06em;t
 footer.rod .rod-par a{padding:0;display:block}
 footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 @media(min-width:901px){.areas article:nth-child(8):last-child{grid-column:span 2}}
+/* AVAASP */
+.card-av{background:var(--creme-2);border-radius:28px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px}
+.card-av img{width:min(70%,320px);height:auto}
+.card-av p{font:800 1.05rem var(--fh);color:var(--petroleo)}
+.contato-av{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.contato-av li{background:#fff;border:2px solid var(--petroleo);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.contato-av b{font:800 .85rem var(--fh);letter-spacing:.04em;text-transform:uppercase;color:var(--tomate-esc,#A33D2E)}
+.contato-av a,.contato-av span{color:var(--petroleo);font-weight:700;overflow-wrap:anywhere}
+@media(max-width:700px){.contato-av{grid-template-columns:1fr}}
+.areas-s .acoes{display:flex;flex-wrap:wrap;gap:12px}
+.contato-av+.nota-s{margin-top:18px}
