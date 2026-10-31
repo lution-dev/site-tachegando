@@ -65,3 +65,23 @@ Saiu a foto da moto com saco (Pexels 32241920). Entrou o utilitário de três ro
 |---|---|---|
 | hero-v2-oficina(-s/-s-m) | https://www.pexels.com/photo/5252118/ | Abertura da Rede de Apoio. Placas de marcas na parede apagadas, recorte vertical e girada 4° para ficar nivelada na moldura. |
 | foto-v2-escritorio | https://www.pexels.com/photo/7654131/ | Bloco do meio da Rede de Apoio. Recorte sem as notas de dólar. |
+
+
+## Fotos atuais do site (pasta "Fotos" do Drive, enviada pela equipe)
+
+As fotos de banco de imagem listadas acima deixaram de ser usadas em 2026-10-31. Todas as fotos de vendedores do site vieram da pasta "Fotos" enviada pela equipe, em `novo/img` e `novo/marca/fotos`, recortadas e com o arquivo original nomeado conforme o uso. Os arquivos originais ficam no Drive.
+
+| Uso | Arquivo |
+|---|---|
+| Home, abertura | marca/fotos/kombi-frutas |
+| Home, faixa larga | marca/fotos/faixa-limpeza |
+| Home, mosaico | marca/fotos/bike-paes, scooter-sorvete, triciclo-frutas, bike-flores, picape-frutas |
+| Vendedores, abertura e bloco | img/hero-v2-bike-cesta-s, img/foto-v2-vassouras |
+| Vendedores, galeria | img/galeria/triciclo-frutas-2, van-verduras, picape-cestaria, triciclo-cafe |
+| Consumidores, abertura | img/hero-v2-sorvete-s |
+| Consumidores, galeria | img/galeria/brigadeirao, carrinho-doces, salgados, van-ovos, van-queijos |
+| Contato | img/hero-v2-pao-moto-s |
+| AVAASP | img/hero-v2-conserva-s |
+| Painel (banner) | img/hero-v2-amigas-s |
+
+As fotos da Rede de Apoio (oficina e escritório) continuam sendo as do Pexels listadas acima.

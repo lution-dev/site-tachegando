@@ -322,3 +322,16 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .contato-av+.nota-s{margin-top:18px}
 .par-v{background:var(--creme-2)}
 .par-v .card-av{background:#fff;text-decoration:none}
+/* Galerias de fotos */
+.galeria{padding:clamp(56px,7vw,96px) 0;background:var(--creme)}
+.galeria h2{color:var(--petroleo)}
+.galeria .lead{margin-top:14px;max-width:34em}
+.gal{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:16px}
+.gal figure{margin:0}
+.gal img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:22px;background:var(--creme-2)}
+.gal figcaption{margin-top:10px;font:800 1rem var(--fh);color:var(--petroleo)}
+.gal.c4{grid-template-columns:repeat(4,1fr)}
+.gal.c5{grid-template-columns:repeat(6,1fr)}
+.gal.c5 li{grid-column:span 2}
+.gal.c5 li:nth-child(n+4){grid-column:span 3}
+@media(max-width:900px){.gal.c4{grid-template-columns:repeat(2,1fr)}.gal.c5{grid-template-columns:repeat(2,1fr)}.gal.c5 li,.gal.c5 li:nth-child(n+4){grid-column:auto}.gal.c5 li:last-child{grid-column:1/-1}}
