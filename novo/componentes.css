@@ -335,3 +335,4 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .gal.c5 li{grid-column:span 2}
 .gal.c5 li:nth-child(n+4){grid-column:span 3}
 @media(max-width:900px){.gal.c4{grid-template-columns:repeat(2,1fr)}.gal.c5{grid-template-columns:repeat(2,1fr)}.gal.c5 li,.gal.c5 li:nth-child(n+4){grid-column:auto}.gal.c5 li:last-child{grid-column:1/-1}}
+@media(max-width:700px){.card-av{aspect-ratio:auto;padding:26px 20px;gap:12px}.card-av img{width:min(56%,190px)}.card-av p{font-size:.95rem}}

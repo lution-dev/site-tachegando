@@ -275,3 +275,4 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .parceira .card-par{background:#fff;border-radius:28px;aspect-ratio:4/3;display:grid;place-items:center;padding:28px}
 .parceira .card-par img{width:min(78%,300px);height:auto}
 @media(max-width:900px){.parceira .wrap{grid-template-columns:1fr}.parceira .card-par{aspect-ratio:auto;padding:28px 20px}}
+@media(max-width:900px){.grade .f1 img{object-position:50% 0}.parceira .card-par{padding:22px 20px}.parceira .card-par img{width:min(56%,190px)}}

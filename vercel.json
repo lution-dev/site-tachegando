@@ -58,7 +58,7 @@
       ]
     },
     {
-      "source": "/(img|marca)/(.*)",
+      "source": "/(img|marca)/(.*)\\.(webp|png|jpg|jpeg|svg|ico|woff2)",
       "headers": [
         {
           "key": "Cache-Control",
