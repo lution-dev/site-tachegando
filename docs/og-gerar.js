@@ -22,7 +22,8 @@ const V={
  'og-vendedores.png':PAGE('#BB4938','creme','Você já está na rua. Agora deixe que encontrem você.',66,'#F0B34F','#F0B34F'),
  'og-consumidores.png':PAGE('#173F3C','creme','O vendedor que você procura pode estar passando por aí.',64,'#F0B34F','#F0B34F'),
  'og-rede-de-apoio.png':PAGE('#173F3C','creme','Sua empresa pode ajudar quem vende na rua.',68,'#BB4938','#F0B34F'),
- 'og-contato.png':PAGE('#BB4938','creme','Fale com a gente.',70,'#F0B34F','#F0B34F')};
+ 'og-contato.png':PAGE('#BB4938','creme','Fale com a gente.',70,'#F0B34F','#F0B34F'),
+ 'og-avaasp.png':PAGE('#173F3C','creme','A AVAASP é nossa parceira.',72,'#F0B34F','#F0B34F')};
 (async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});const p=await b.newPage({viewport:{width:1200,height:630}});
 const OUT=process.argv[2];for(const [k,v] of Object.entries(V)){await p.goto(B+'/404.html');await p.setContent(`<html><body style="margin:0"></body></html>`);
 await p.setContent(`<html><head><style>*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden;position:relative}</style></head>${v}</html>`);

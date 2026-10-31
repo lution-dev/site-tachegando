@@ -170,7 +170,8 @@
 @media(max-width:860px){body.painel .proto-tag{bottom:92px;right:10px}}
 
 /* ---- barra fixa: transparente no topo, vidro compacto ao rolar ---- */
-:root{--hdr:88px}
+:root{--hdr:66px}
+@media(min-width:901px) and (max-width:1019px){:root{--hdr:80px}}
 header.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:padding .25s ease}
 header.top::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .25s ease;
   background:rgba(23,63,60,.72);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);
