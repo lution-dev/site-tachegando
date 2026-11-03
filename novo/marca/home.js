@@ -26,16 +26,19 @@
   // carrossel de vendedores
   var pista = document.querySelector(".car-pista");
   if (pista) {
-    var bs = document.querySelectorAll(".car-b");
-    function passo() { var li = pista.querySelector("li"); return li ? li.getBoundingClientRect().width + 18 : 300; }
+    var bs = document.querySelectorAll(".car-b"), itens = Array.prototype.slice.call(pista.querySelectorAll("li")), cont = document.querySelector(".car-n");
+    function atual() { var x = pista.scrollLeft + 4, i = 0, base = itens[0].offsetLeft; itens.forEach(function (li, k) { if (li.offsetLeft - base <= x) i = k; }); return i; }
     function atualiza() {
-      var max = pista.scrollWidth - pista.clientWidth - 2;
-      bs[0].disabled = pista.scrollLeft <= 2; bs[1].disabled = pista.scrollLeft >= max;
+      var i = atual(), fim = pista.scrollLeft >= pista.scrollWidth - pista.clientWidth - 2;
+      if (fim) i = itens.length - 1;
+      cont.textContent = (i + 1) + " de " + itens.length; bs[0].disabled = pista.scrollLeft <= 2; bs[1].disabled = fim;
     }
-    bs.forEach(function (b) { b.addEventListener("click", function () {
-      var reduz = matchMedia("(prefers-reduced-motion:reduce)").matches;
-      pista.scrollBy({ left: Number(b.dataset.dir) * passo(), behavior: reduz ? "auto" : "smooth" });
-    }); });
+    function move(d) {
+      var i = Math.max(0, Math.min(itens.length - 1, atual() + d)), reduz = matchMedia("(prefers-reduced-motion:reduce)").matches;
+      pista.scrollTo({ left: itens[i].offsetLeft - itens[0].offsetLeft, behavior: reduz ? "auto" : "smooth" });
+    }
+    bs.forEach(function (b) { b.addEventListener("click", function () { move(Number(b.dataset.dir)); }); });
+    pista.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { e.preventDefault(); move(1); } if (e.key === "ArrowLeft") { e.preventDefault(); move(-1); } });
     pista.addEventListener("scroll", atualiza, { passive: true }); window.addEventListener("resize", atualiza); atualiza();
   }
 })();

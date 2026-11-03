@@ -39,7 +39,7 @@
 <link rel="preload" href="/marca/fonts/Baloo2-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/NunitoSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/marca/home.css?v=20261103">
+<link rel="stylesheet" href="/marca/home.css?v=20261104">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tachegandoapp.com.br/#organizacao","name":"Tá Chegando","url":"https://tachegandoapp.com.br/","slogan":"Quem vende circula. Quem procura descobre.","description":"Aplicativo que conecta quem vende em movimento com quem procura produtos no bairro. Pré-lançamento em São Paulo.","logo":{"@type":"ImageObject","url":"https://tachegandoapp.com.br/icon-512.png","width":512,"height":512},"image":"https://tachegandoapp.com.br/img/og.png","parentOrganization":{"@type":"Organization","name":"Argo Apps","identifier":"CNPJ 66.543.238/0001-71"},"areaServed":{"@type":"Country","name":"Brasil"},"inLanguage":"pt-BR"},{"@type":"WebSite","@id":"https://tachegandoapp.com.br/#site","url":"https://tachegandoapp.com.br/","name":"Tá Chegando","inLanguage":"pt-BR","publisher":{"@id":"https://tachegandoapp.com.br/#organizacao"}},{"@type":"WebPage","@id":"https://tachegandoapp.com.br/#pagina","url":"https://tachegandoapp.com.br/","name":"Tá Chegando | Você vende pelas ruas. Seus clientes podem encontrar você.","description":"O Tá Chegando conecta quem vende em movimento com quem procura produtos no bairro. Pré-lançamento em São Paulo.","inLanguage":"pt-BR","isPartOf":{"@id":"https://tachegandoapp.com.br/#site"},"about":{"@id":"https://tachegandoapp.com.br/#organizacao"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://tachegandoapp.com.br/img/og.png","width":1200,"height":630}}]}</script>
 </head>
@@ -60,12 +60,12 @@
 <section class="hero" aria-label="Abertura">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Pré-lançamento em São Paulo</span>
-      <h1>Você <mark>vende</mark> pelas ruas. Seus clientes podem <mark>encontrar</mark> você.</h1>
+      <span class="pilula">Pré-lançamento em São Paulo</span>
+      <h1>Você vende pelas ruas. <span class="am-t">Seus clientes podem encontrar você.</span></h1>
       <p class="sub">O Tá Chegando conecta quem vende em movimento com quem procura produtos no bairro.</p>
       <div class="acoes"><a class="btn am" href="#como-vendedor">Sou vendedor</a><a class="btn fa" href="#como-comprador">Quero encontrar vendedores</a></div>
     </div>
-    <div class="cena">
+    <div class="cena"><span class="anel" aria-hidden="true"></span><span class="chip c1" aria-hidden="true"><svg><use href="#pin"/></svg>Quem está por perto?</span><span class="chip c2" aria-hidden="true">Encontre quem vende</span>
       <figure class="foto-toldo" aria-hidden="true"><img src="/marca/fotos/kombi-frutas.webp" srcset="/marca/fotos/kombi-frutas-m.webp 420w, /marca/fotos/kombi-frutas.webp 640w" sizes="(max-width:1000px) 55vw, 280px" alt="" width="640" height="800"></figure>
       <div class="fone" role="img" aria-label="Ilustração do aplicativo: um mapa com vendedores por perto e o aviso “Seu vendedor tá chegando”.">
         <div class="fone-t">
@@ -86,11 +86,9 @@
   <div class="rev">
     <span class="eyebrow">Você conhece essa situação</span>
     <h2>O carro do pão passou e você nem ficou sabendo?</h2>
-  </div>
-  <div class="txt rev">
     <p class="l1">Você ouviu o vendedor passar, mas quando saiu ele já tinha ido embora. Com o Tá Chegando, fica mais fácil saber quem está circulando pela região.</p>
-    <p class="l2"><b>Tem coisa que a gente não quer perder quando passa na rua.</b></p>
   </div>
+  <figure class="foto-prob rev"><img loading="lazy" decoding="async" src="/marca/fotos/bike-paes.webp" srcset="/marca/fotos/bike-paes-m.webp 760w, /marca/fotos/bike-paes.webp 1100w" sizes="(max-width:1000px) 90vw, 480px" alt="Vendedor sorrindo ao lado de uma bicicleta vermelha com vitrines de pães" width="1100" height="1085"><figcaption class="selo">Tem coisa que a gente não quer perder quando passa na rua.</figcaption></figure>
 </div></section>
 
 <!-- SEÇÃO 03: solução e diversidade -->
@@ -99,13 +97,13 @@
     <span class="eyebrow">Solução e diversidade</span>
     <h2>Tem muita coisa passando pelo seu bairro.</h2>
     <p class="lead">Do pão às flores, encontre quem vende durante o trajeto. Cada vendedor segue sua própria rota.</p>
-    <ul class="cats" aria-label="Categorias de produtos"><li>Frutas</li><li>Ovos</li><li>Pão</li><li>Doces</li><li>Queijo</li><li>Flores</li><li>Produtos de limpeza</li><li>Mais produtos</li></ul>
   </div>
 </div>
+<div class="faixa-cat" role="list" aria-label="Categorias de produtos"><div class="wrap"><span role="listitem">Frutas</span><span role="listitem">Ovos</span><span role="listitem">Pão</span><span role="listitem">Doces</span><span role="listitem">Queijo</span><span role="listitem">Flores</span><span role="listitem">Produtos de limpeza</span><span role="listitem">Mais produtos</span></div></div>
 <div class="carrossel" role="region" aria-roledescription="carrossel" aria-labelledby="t-carrossel">
   <div class="wrap car-topo">
     <h3 id="t-carrossel">Alguns dos vendedores que circulam por aí</h3>
-    <div class="car-ctl"><button type="button" class="car-b" data-dir="-1" aria-label="Ver imagens anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" class="car-b" data-dir="1" aria-label="Ver mais imagens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    <div class="car-ctl"><span class="car-n" aria-live="polite">1 de 9</span><button type="button" class="car-b" data-dir="-1" aria-label="Ver imagens anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" class="car-b" data-dir="1" aria-label="Ver mais imagens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
   </div>
   <ul class="car-pista" tabindex="0" aria-label="Fotos de vendedores. Deslize para ver mais imagens.">
     <li><figure><img loading="lazy" decoding="async" src="/img/galeria/salgados-m.webp" srcset="/img/galeria/salgados-m.webp 600w, /img/galeria/salgados.webp 1000w" sizes="(max-width:700px) 74vw, 320px" alt="Vendedor de avental vermelho ao lado de um carrinho de salgados" width="600" height="750"><figcaption><span>Com carrinho</span>Carrinho de salgados</figcaption></figure></li>
@@ -125,11 +123,11 @@
 <section class="sec caminhos" id="para-quem" aria-labelledby="t-caminhos"><div class="wrap">
   <span class="eyebrow rev">Para quem é</span>
   <h2 id="t-caminhos" class="rev">O Tá Chegando é pra você?</h2>
-  <ul class="rotas rev">
-    <li><a href="#como-vendedor"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-creme.svg" alt=""></span><b>Você vende pelas ruas?</b><span class="d"><i>Vendedor</i>Divulgue seus produtos durante o trajeto e receba pedidos de parada.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-    <li><a href="#como-comprador"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-creme.svg" alt=""></span><b>Você compra de quem passa?</b><span class="d"><i>Comprador</i>Encontre produtos na sua região e saiba quando o vendedor estiver se aproximando.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-    <li><a href="#rede-de-apoio"><span class="ic" aria-hidden="true"><img src="/marca/simbolo-petroleo.svg" alt=""></span><b>Você quer apoiar quem vende?</b><span class="d"><i>Apoiador</i>Sua experiência pode ajudar quem trabalha nas ruas. Rede de Apoio em desenvolvimento.</span><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-  </ul>
+  <div class="publicos rev">
+    <a class="pub p1" href="#como-vendedor"><span class="n">01 / Vendedor</span><h3>Você vende pelas ruas?</h3><p>Divulgue seus produtos durante o trajeto e receba pedidos de parada.</p><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="pub p2" href="#como-comprador"><span class="n">02 / Comprador</span><h3>Você compra de quem passa?</h3><p>Encontre produtos na sua região e saiba quando o vendedor estiver se aproximando.</p><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="pub p3" href="#rede-de-apoio"><span class="n">03 / Apoiador</span><h3>Você quer apoiar quem vende?</h3><p>Sua experiência pode ajudar quem trabalha nas ruas. Rede de Apoio em desenvolvimento.</p><span class="ir" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
 </div></section>
 
 <!-- SEÇÃO 05: como funciona -->
@@ -142,13 +140,13 @@
       <span class="tag">Sou vendedor</span>
       <h3>Seu negócio continua em movimento.</h3>
       <ol><li>Cadastre os produtos que você vende.</li><li>Compartilhe sua localização durante a rota.</li><li>Receba solicitações de parada e escolha quais atender.</li></ol>
-      <a class="btn am" href="/contato" data-destino="instagram">Acompanhar novidades para vendedores</a>
+      <a class="btn am" href="https://www.instagram.com/tachegandoapp/" data-destino="instagram" target="_blank" rel="noopener noreferrer">Acompanhar novidades para vendedores ↗</a>
     </div>
     <div class="lado p rev" id="como-comprador">
       <span class="tag">Quero comprar</span>
       <h3>Encontre o vendedor na hora certa.</h3>
       <ol><li>Encontre vendedores e produtos na sua região.</li><li>Acompanhe a aproximação do vendedor.</li><li>Solicite uma parada e aguarde a confirmação.</li></ol>
-      <a class="btn pe" href="/contato" data-destino="instagram">Acompanhar novidades para compradores</a>
+      <a class="btn am" href="https://www.instagram.com/tachegandoapp/" data-destino="instagram" target="_blank" rel="noopener noreferrer">Acompanhar novidades para compradores ↗</a>
     </div>
   </div>
   <p class="nota">O vendedor decide se pode atender à solicitação. Os recursos serão confirmados antes do lançamento.</p>
@@ -162,23 +160,25 @@
   </div>
   <div class="inst-grade">
     <article class="inst-c av rev" id="avaasp">
-      <span class="eyebrow">Representação</span>
-      <h3>Uma voz para quem trabalha nas ruas.</h3>
-      <p class="nome">AVAASP — Associação de Vendedores Ambulantes e Artesãos de São Paulo</p>
-      <p>A AVAASP atua na representação de vendedores ambulantes e artesãos em São Paulo.</p>
-      <img class="logo-av" src="/img/avaasp.webp" alt="AVAASP" width="480" height="135">
-      <a class="btn pe" href="/avaasp">Conheça a AVAASP</a>
+      <div class="topo-c branco"><img class="logo-av" src="/img/avaasp.webp" alt="AVAASP" width="480" height="135"><span class="leg">Associação de Vendedores Ambulantes e Artesãos de São Paulo</span></div>
+      <div class="corpo">
+        <span class="eyebrow">Representação</span>
+        <h3>Uma voz para quem trabalha nas ruas.</h3>
+        <p>A AVAASP atua na representação de vendedores ambulantes e artesãos em São Paulo.</p>
+        <a class="btn fp" href="/avaasp">Conheça a AVAASP</a>
+      </div>
     </article>
     <article class="inst-c ra rev" id="rede">
-      <span class="eyebrow">Rede de Apoio — Em desenvolvimento</span>
-      <h3>Seu conhecimento pode fazer diferença.</h3>
-      <ul class="areas" aria-label="Áreas de apoio"><li>Jurídico</li><li>Contabilidade</li><li>Marketing</li><li>Gestão e RH</li></ul>
-      <p>Estamos desenvolvendo uma iniciativa para aproximar vendedores de profissionais e empresas que possam ajudar a cuidar do negócio.</p>
-      <a class="btn pe" href="/rede-de-apoio">Conhecer a Rede de Apoio</a>
+      <div class="topo-c amar"><ul class="areas" aria-label="Áreas de apoio"><li><svg aria-hidden="true" width="26" height="26"><use href="/img/icones.svg#i-juridico"/></svg>Jurídico</li><li><svg aria-hidden="true" width="26" height="26"><use href="/img/icones.svg#i-contabilidade"/></svg>Contabilidade</li><li><svg aria-hidden="true" width="26" height="26"><use href="/img/icones.svg#i-comunicacao"/></svg>Marketing</li><li><svg aria-hidden="true" width="26" height="26"><use href="/img/icones.svg#i-apoio"/></svg>Gestão e RH</li></ul></div>
+      <div class="corpo">
+        <span class="eyebrow">Rede de Apoio — Em desenvolvimento</span>
+        <h3>Seu conhecimento pode fazer diferença.</h3>
+        <p>Estamos desenvolvendo uma iniciativa para aproximar vendedores de profissionais e empresas que possam ajudar a cuidar do negócio.</p>
+        <a class="btn fp" href="/rede-de-apoio">Conhecer a Rede de Apoio</a>
+      </div>
     </article>
   </div>
 </div></section>
-<div class="toldo-w pe" aria-hidden="true"><div class="toldo"></div></div>
 
 <!-- SEÇÃO 07: encerramento -->
 <section class="sec final">
@@ -186,7 +186,7 @@
     <span class="eyebrow">Tá chegando</span>
     <h2>O comércio de rua que você quer, bem na porta da sua casa.</h2>
     <p>Pré-lançamento em São Paulo. Acompanhe as novidades e saiba quando o aplicativo estiver disponível.</p>
-    <div class="acoes"><a class="btn am" href="/contato" data-destino="instagram">Acompanhar o pré-lançamento</a><a class="btn fa" href="#como-funciona">Ver como funciona</a></div>
+    <div class="acoes"><a class="btn am" href="https://www.instagram.com/tachegandoapp/" data-destino="instagram" target="_blank" rel="noopener noreferrer">Acompanhar o pré-lançamento ↗</a><a class="btn fa" href="#como-funciona">Ver como funciona</a></div>
   </div>
 </section>
 </main>
@@ -199,6 +199,6 @@
   </div>
   <nav aria-label="Rodapé"><a href="/contato">Contato</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a></nav>
 </div></footer>
-<script src="/marca/home.js?v=20261103"></script>
+<script src="/marca/home.js?v=20261104"></script>
 </body>
 </html>
