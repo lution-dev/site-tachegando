@@ -26,19 +26,13 @@
   // carrossel de vendedores: rolagem contínua, só roda enquanto está visível
   var pista = document.querySelector(".car-pista"), car = document.querySelector(".carrossel");
   if (pista && car) {
-    var reduz = matchMedia("(prefers-reduced-motion:reduce)").matches, pausa = car.querySelector(".car-pausa");
-    if (reduz) { if (pausa) pausa.hidden = true; }
-    else {
+    var reduz = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    if (!reduz) {
       Array.prototype.slice.call(pista.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); Array.prototype.forEach.call(c.querySelectorAll("img"), function (i) { i.alt = ""; }); pista.appendChild(c); });
       function mede() { pista.style.setProperty("--dur", Math.max(30, Math.round(pista.scrollWidth / 2 / 45)) + "s"); }
       pista.classList.add("auto"); mede(); window.addEventListener("load", mede); window.addEventListener("resize", mede);
       if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { pista.classList.toggle("rodando", es[0].isIntersecting); }, { threshold: 0.05 }).observe(car);
       else pista.classList.add("rodando");
-      if (pausa) pausa.addEventListener("click", function () {
-        var p = pausa.getAttribute("aria-pressed") !== "true";
-        pausa.setAttribute("aria-pressed", String(p)); car.classList.toggle("pausado", p);
-        pausa.setAttribute("aria-label", p ? "Retomar a rolagem automática das fotos" : "Pausar a rolagem automática das fotos");
-      });
     }
   }
 })();
