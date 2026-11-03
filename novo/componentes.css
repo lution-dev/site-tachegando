@@ -337,3 +337,12 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .gal.c5 li:nth-child(n+4){grid-column:span 3}
 @media(max-width:900px){.gal.c4{grid-template-columns:repeat(2,1fr)}.gal.c5{grid-template-columns:repeat(2,1fr)}.gal.c5 li,.gal.c5 li:nth-child(n+4){grid-column:auto}.gal.c5 li:last-child{grid-column:1/-1}}
 @media(max-width:700px){.card-av{aspect-ratio:auto;padding:26px 20px;gap:12px}.card-av img{width:min(56%,190px)}.card-av p{font-size:.95rem}}
+
+/* pinos decorativos só onde sobra margem lateral: abaixo disso eles encostavam em títulos e listas */
+@media(max-width:1399px){.deco .pin{display:none}}
+
+/* celular: os três passos da abertura ficam empilhados e inteiros (antes era uma faixa rolável sem indicação, com o 3º cortado) */
+@media(max-width:700px){
+  .hero .passos-h,.hero.v-hero .passos-h{display:grid;grid-template-columns:1fr;gap:8px;overflow:visible;margin:22px 0 0;padding:0;max-width:none}
+  .hero .passos-h div,.hero.v-hero .passos-h div{flex:none;width:100%;padding:10px 14px}
+}
