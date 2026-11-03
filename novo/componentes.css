@@ -346,3 +346,20 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
   .hero .passos-h,.hero.v-hero .passos-h{display:grid;grid-template-columns:1fr;gap:8px;overflow:visible;margin:22px 0 0;padding:0;max-width:none}
   .hero .passos-h div,.hero.v-hero .passos-h div{flex:none;width:100%;padding:10px 14px}
 }
+
+/* cartões em tons suaves: fundo creme claro, ícone em tinta leve (antes eram blocos preto, tomate, verde e branco) */
+.bento article,.areas article,.areas article:nth-child(3n+1),.areas article:nth-child(3n+2),
+.bento .b1,.bento .b2,.bento .b3,.bento .b4{background:#FBF3E8;color:var(--grafite);border:1px solid rgba(41,37,45,.09)}
+.bento article h3,.areas article h3{color:var(--petroleo)}
+.bento article p,.areas article p,.bento .b1 p,.bento .b3 p,.areas article:nth-child(3n+1) p{color:#4A444F}
+.bento .b1 .ic,.bento .b4 .ic,.areas article:nth-child(3n+1) .ic{background:#F4DDD6;color:#A33D2E}
+.bento .b2 .ic,.areas article:nth-child(3n+2) .ic{background:#DCE7E1;color:var(--petroleo)}
+.bento .b3 .ic,.areas article:nth-child(3n+3) .ic,.areas article .ic{background:#F9E8C6;color:#7A5200}
+.areas article:nth-child(3n+1) .ic{background:#F4DDD6;color:#A33D2E}
+.areas article:nth-child(3n+2) .ic{background:#DCE7E1;color:var(--petroleo)}
+/* "o que faz / o que não faz": dois cartões claros no fundo verde, em vez de verde translúcido e tomate cheio */
+.transp2 .faz{background:#FBF3E8;color:var(--grafite);border:0}
+.transp2 .nao{background:#F4DDD6;color:var(--grafite)}
+.transp2 .col h3{color:var(--petroleo)}
+.transp2 .faz li::before{color:#2C6A55}
+.transp2 .nao li::before{color:#A33D2E}
