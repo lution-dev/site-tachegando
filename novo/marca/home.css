@@ -298,7 +298,7 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .car-pista.auto:hover,.car-pista.auto:focus-within{animation-play-state:paused}
 @keyframes car-corre{to{transform:translateX(-50%)}}
 /* sem JS ou com movimento reduzido: fica parado e dá pra arrastar */
-@media(prefers-reduced-motion:reduce){.carrossel{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:none;mask-image:none}.carrossel::-webkit-scrollbar{display:none}.car-pista{padding-left:var(--gut);padding-right:var(--gut)}}
+@media(prefers-reduced-motion:reduce){.carrossel{-webkit-mask-image:none;mask-image:none}.car-janela{overflow-x:auto}.car-pista{padding-left:var(--gut);padding-right:var(--gut)}}
 @media(max-width:700px){.car-pista li{margin-right:12px}.car-pista figure{border-radius:18px}}
 
 /* 04 para quem é */
@@ -350,3 +350,9 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .faixa-foto img{display:block;width:100%;max-width:1320px;height:auto;aspect-ratio:1800/750;margin:0 auto;border-radius:28px;object-fit:cover;object-position:50% 50%}
 @media(max-width:900px){.faixa-foto img{aspect-ratio:4/3;object-position:74% 50%;border-radius:20px}}
 @media(max-width:700px){.faixa-foto{padding-top:56px}.faixa-foto img{height:auto}}
+
+/* janela do carrossel: no mouse a faixa corre sozinha; no toque dá pra arrastar com o dedo */
+.car-janela{overflow:hidden}
+.car-janela::-webkit-scrollbar{display:none}
+.car-janela.toque{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.car-janela.toque .car-pista{animation:none;will-change:auto}
