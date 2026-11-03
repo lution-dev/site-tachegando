@@ -335,3 +335,12 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .areas li{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;border-radius:14px;background:var(--creme);color:var(--petroleo);font-weight:800;font-size:.9rem;text-align:center}
 .areas svg{color:var(--tomate)}
 @media(max-width:900px){.inst-grade{grid-template-columns:1fr}.inst-c .topo-c{min-height:0}}
+
+/* cartões de público: sem barra colorida no topo, ícone em círculo e respiro acima do título */
+.caminhos{padding-top:clamp(64px,8vw,104px);padding-bottom:clamp(56px,7vw,96px)}
+.pub,.pub.p2,.pub.p3{border:1px solid rgba(41,37,45,.1);gap:14px;padding:28px 26px 26px}
+.pub .ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--tomate)}
+.pub.p2 .ic{background:var(--petroleo)}
+.pub.p3 .ic{background:var(--amarelo)}
+.pub .ic img{width:34px;height:34px}
+.pub h3{margin-top:4px}
