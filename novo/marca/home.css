@@ -376,3 +376,9 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .final h2{color:var(--creme)}
 .final p{color:#FFF0E4}
 .final .eyebrow{display:block;color:var(--amarelo)}
+
+/* Como funciona: caixa do comprador clara, para separar dos dois públicos */
+.como .lado.p{background:var(--creme);border-color:var(--creme);color:var(--grafite)}
+.como .lado.p h3{color:var(--petroleo)}
+.como .lado.p .tag{background:var(--petroleo);color:var(--creme)}
+.como .lado.p li::before{background:var(--tomate);color:var(--creme)}
