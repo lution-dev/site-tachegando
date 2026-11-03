@@ -382,3 +382,25 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .como .lado.p h3{color:var(--petroleo)}
 .como .lado.p .tag{background:var(--petroleo);color:var(--creme)}
 .como .lado.p li::before{background:var(--tomate);color:var(--creme)}
+
+/* carrossel: rolagem contínua automática, fotos sem corte */
+.carrossel{--ch:clamp(210px,24vw,300px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.car-topo{-webkit-mask-image:none}
+.car-pista{display:flex;width:max-content;gap:0;padding:6px 0 10px;overflow:visible;scroll-snap-type:none;margin:0}
+.car-pista li{flex:none;width:auto;margin-right:16px}
+.car-pista figure{border-radius:22px}
+.car-pista img{height:var(--ch);width:auto;max-width:none;aspect-ratio:auto;object-fit:cover;display:block}
+.car-pista li:nth-child(n) img{object-position:50% 50%}
+.car-pista.auto{animation:car-corre var(--dur,80s) linear infinite;animation-play-state:paused;will-change:transform}
+.car-pista.auto.rodando{animation-play-state:running}
+.car-pista.auto:hover,.car-pista.auto:focus-within,.carrossel.pausado .car-pista.auto{animation-play-state:paused}
+@keyframes car-corre{to{transform:translateX(-50%)}}
+.car-pausa{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--petroleo);background:transparent;color:var(--petroleo);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.car-pausa:hover{background:var(--petroleo);color:var(--creme)}
+.car-pausa svg{width:16px;height:16px}
+.car-pausa .i-play,.car-pausa[aria-pressed="true"] .i-pausa{display:none}
+.car-pausa[aria-pressed="true"] .i-play{display:block}
+.car-pausa[hidden]{display:none}
+/* sem JS ou com movimento reduzido: fica parado e dá pra arrastar */
+@media(prefers-reduced-motion:reduce){.carrossel{overflow-x:auto;scrollbar-width:none;-webkit-mask-image:none;mask-image:none}.carrossel::-webkit-scrollbar{display:none}.car-pista{padding-left:var(--gut);padding-right:var(--gut)}.car-pausa{display:none}}
+@media(max-width:700px){.car-pista li{margin-right:12px}.car-pista figure{border-radius:18px}}

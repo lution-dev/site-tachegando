@@ -23,22 +23,22 @@
     document.querySelectorAll(".rev").forEach(function (x) { io.observe(x); });
   } else document.querySelectorAll(".rev").forEach(function (x) { x.classList.add("on"); });
 
-  // carrossel de vendedores
-  var pista = document.querySelector(".car-pista");
-  if (pista) {
-    var bs = document.querySelectorAll(".car-b"), itens = Array.prototype.slice.call(pista.querySelectorAll("li")), cont = document.querySelector(".car-n");
-    function atual() { var x = pista.scrollLeft + 4, i = 0, base = itens[0].offsetLeft; itens.forEach(function (li, k) { if (li.offsetLeft - base <= x) i = k; }); return i; }
-    function atualiza() {
-      var i = atual(), fim = pista.scrollLeft >= pista.scrollWidth - pista.clientWidth - 2;
-      if (fim) i = itens.length - 1;
-      cont.textContent = (i + 1) + " de " + itens.length; bs[0].disabled = pista.scrollLeft <= 2; bs[1].disabled = fim;
+  // carrossel de vendedores: rolagem contínua, só roda enquanto está visível
+  var pista = document.querySelector(".car-pista"), car = document.querySelector(".carrossel");
+  if (pista && car) {
+    var reduz = matchMedia("(prefers-reduced-motion:reduce)").matches, pausa = car.querySelector(".car-pausa");
+    if (reduz) { if (pausa) pausa.hidden = true; }
+    else {
+      Array.prototype.slice.call(pista.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); Array.prototype.forEach.call(c.querySelectorAll("img"), function (i) { i.alt = ""; }); pista.appendChild(c); });
+      function mede() { pista.style.setProperty("--dur", Math.max(30, Math.round(pista.scrollWidth / 2 / 45)) + "s"); }
+      pista.classList.add("auto"); mede(); window.addEventListener("load", mede); window.addEventListener("resize", mede);
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { pista.classList.toggle("rodando", es[0].isIntersecting); }, { threshold: 0.05 }).observe(car);
+      else pista.classList.add("rodando");
+      if (pausa) pausa.addEventListener("click", function () {
+        var p = pausa.getAttribute("aria-pressed") !== "true";
+        pausa.setAttribute("aria-pressed", String(p)); car.classList.toggle("pausado", p);
+        pausa.setAttribute("aria-label", p ? "Retomar a rolagem automática das fotos" : "Pausar a rolagem automática das fotos");
+      });
     }
-    function move(d) {
-      var i = Math.max(0, Math.min(itens.length - 1, atual() + d)), reduz = matchMedia("(prefers-reduced-motion:reduce)").matches;
-      pista.scrollTo({ left: itens[i].offsetLeft - itens[0].offsetLeft, behavior: reduz ? "auto" : "smooth" });
-    }
-    bs.forEach(function (b) { b.addEventListener("click", function () { move(Number(b.dataset.dir)); }); });
-    pista.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { e.preventDefault(); move(1); } if (e.key === "ArrowLeft") { e.preventDefault(); move(-1); } });
-    pista.addEventListener("scroll", atualiza, { passive: true }); window.addEventListener("resize", atualiza); atualiza();
   }
 })();
