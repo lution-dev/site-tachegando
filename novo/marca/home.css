@@ -344,3 +344,9 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .pub.p3 .ic{background:var(--amarelo)}
 .pub .ic img{width:34px;height:34px}
 .pub h3{margin-top:4px}
+
+/* foto da picape: aparece inteira em qualquer tela (sem cortar a cabeça do vendedor) */
+.faixa-foto{height:auto;overflow:visible;background:none;padding:clamp(56px,7vw,96px) var(--gut) 0}
+.faixa-foto img{display:block;width:100%;max-width:1320px;height:auto;aspect-ratio:1800/750;margin:0 auto;border-radius:28px;object-fit:cover;object-position:50% 50%}
+@media(max-width:900px){.faixa-foto img{aspect-ratio:4/3;object-position:74% 50%;border-radius:20px}}
+@media(max-width:700px){.faixa-foto{padding-top:56px}.faixa-foto img{height:auto}}
