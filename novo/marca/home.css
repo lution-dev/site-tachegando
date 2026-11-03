@@ -276,3 +276,62 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .parceira .card-par img{width:min(78%,300px);height:auto}
 @media(max-width:900px){.parceira .wrap{grid-template-columns:1fr}.parceira .card-par{aspect-ratio:auto;padding:28px 20px}}
 @media(max-width:900px){.grade .f1 img{object-position:50% 0}.parceira .card-par{padding:22px 20px}.parceira .card-par img{width:min(56%,190px)}}
+
+/* ===== landing v3 (copy do doc "Landing Page—Tá Chegando App") ===== */
+.hero .eyebrow{color:var(--amarelo);margin-bottom:18px}
+.hero h1{max-width:12em}
+.oquee .rev:first-child h2{margin-top:0}
+.oquee .eyebrow,.solucao .eyebrow,.caminhos .eyebrow,.como .eyebrow,.final .eyebrow{color:var(--tomate)}
+.final .eyebrow{color:var(--amarelo)}
+.oquee .l2{margin-top:2px}
+/* categorias */
+.solucao{padding-bottom:clamp(48px,6vw,80px)}
+.solucao .topo{max-width:44em;margin-bottom:32px}
+.cats{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.cats li{padding:9px 18px;border-radius:99px;background:var(--amarelo);color:var(--grafite);font-weight:800;font-size:1rem}
+.cats li:last-child{background:transparent;border:2px solid var(--petroleo);color:var(--petroleo)}
+/* carrossel */
+.carrossel{overflow:hidden}
+.car-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.car-topo h3{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--petroleo)}
+.car-ctl{display:flex;gap:10px;flex:none}
+.car-b{width:48px;height:48px;border-radius:50%;border:2px solid var(--petroleo);background:transparent;color:var(--petroleo);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.car-b:hover{background:var(--petroleo);color:var(--creme)}
+.car-b svg{width:22px;height:22px}
+.car-b[disabled]{opacity:.35;cursor:default;background:transparent;color:var(--petroleo)}
+.car-pista{list-style:none;margin:0;padding:6px var(--gut) 14px;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--gut);scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.car-pista li{flex:none;width:min(320px,74vw);scroll-snap-align:start}
+.car-pista figure{margin:0}
+.car-pista img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;background:var(--creme-2)}
+.car-pista li:nth-child(5) img,.car-pista li:nth-child(6) img,.car-pista li:nth-child(8) img{object-position:50% 40%}
+.car-pista figcaption{margin-top:10px;font-weight:700;font-size:1rem;color:var(--grafite);line-height:1.3}
+.car-pista figcaption span{display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tomate-esc);margin-bottom:2px}
+.car-dica{margin-top:6px;font-size:.95rem;color:#5F5A63}
+@media(min-width:1280px){.car-pista{padding-left:calc((100vw - var(--max))/2);scroll-padding-left:calc((100vw - var(--max))/2)}}
+/* para quem é */
+.caminhos{padding-top:clamp(40px,5vw,72px)}
+.rotas .d i{display:block;font:700 .8rem/1 var(--f);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--tomate-esc);margin-bottom:6px}
+/* como funciona */
+.como .lead{margin-top:12px}
+.lado .tag{align-self:flex-start;font:700 .8rem/1 var(--f);letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:99px;background:rgba(255,247,239,.2)}
+.lado.p .tag{background:var(--creme-2);color:var(--petroleo)}
+.lados{align-items:stretch}
+/* institucional */
+.inst{background:var(--creme)}
+.inst-topo{max-width:40em;margin-bottom:36px}
+.inst-grade{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.inst-c{padding:clamp(26px,3.4vw,44px);border-radius:28px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.inst-c h3{font-size:clamp(1.8rem,3vw,2.4rem);color:var(--petroleo)}
+.inst-c .eyebrow{margin-bottom:0}
+.inst-c .btn{margin-top:auto}
+.inst-c.av{background:var(--creme-2)}
+.inst-c.av .eyebrow{color:var(--tomate-esc)}
+.inst-c .nome{font-weight:800;color:var(--petroleo)}
+.inst-c .logo-av{width:min(60%,200px);height:auto;background:#fff;border-radius:18px;padding:14px 18px}
+.inst-c.ra{background:var(--amarelo)}
+.inst-c.ra .eyebrow{color:var(--petroleo)}
+.areas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.areas li{padding:8px 16px;border-radius:99px;background:var(--petroleo);color:var(--creme);font-weight:700;font-size:.95rem}
+@media(max-width:900px){.inst-grade{grid-template-columns:1fr}}
+@media(max-width:700px){.car-topo{align-items:center}.car-b{width:44px;height:44px}}
+.final .eyebrow{display:block}

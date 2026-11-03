@@ -22,4 +22,20 @@
     }, { threshold: 0.12 });
     document.querySelectorAll(".rev").forEach(function (x) { io.observe(x); });
   } else document.querySelectorAll(".rev").forEach(function (x) { x.classList.add("on"); });
+
+  // carrossel de vendedores
+  var pista = document.querySelector(".car-pista");
+  if (pista) {
+    var bs = document.querySelectorAll(".car-b");
+    function passo() { var li = pista.querySelector("li"); return li ? li.getBoundingClientRect().width + 18 : 300; }
+    function atualiza() {
+      var max = pista.scrollWidth - pista.clientWidth - 2;
+      bs[0].disabled = pista.scrollLeft <= 2; bs[1].disabled = pista.scrollLeft >= max;
+    }
+    bs.forEach(function (b) { b.addEventListener("click", function () {
+      var reduz = matchMedia("(prefers-reduced-motion:reduce)").matches;
+      pista.scrollBy({ left: Number(b.dataset.dir) * passo(), behavior: reduz ? "auto" : "smooth" });
+    }); });
+    pista.addEventListener("scroll", atualiza, { passive: true }); window.addEventListener("resize", atualiza); atualiza();
+  }
 })();
