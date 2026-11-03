@@ -19,8 +19,8 @@ const PAGE=(bg,logo,txt,size,toldo,acc,sim)=>`<body style="background:${bg}">${R
 <div style="position:absolute;right:76px;top:430px;z-index:2">${PIN('0','0',40,acc)}</div>${TOLDO(toldo)}</body>`;
 const V={
  'og.png':PAGE('#BB4938','creme','Quem vende circula. Quem procura descobre.',76,'#F0B34F','#F0B34F'),
- 'og-vendedores.png':PAGE('#BB4938','creme','Você já está na rua. Agora deixe que encontrem você.',66,'#F0B34F','#F0B34F'),
- 'og-consumidores.png':PAGE('#173F3C','creme','O vendedor que você procura pode estar passando por aí.',64,'#F0B34F','#F0B34F'),
+ 'og-vendedores.png':PAGE('#BB4938','creme','Você já está na rua. Agora o cliente vê você chegando.',60,'#F0B34F','#F0B34F'),
+ 'og-consumidores.png':PAGE('#173F3C','creme','Não é delivery. É quem vende na rua, chegando na sua.',60,'#F0B34F','#F0B34F'),
  'og-rede-de-apoio.png':PAGE('#173F3C','creme','Sua empresa pode ajudar quem vende na rua.',68,'#BB4938','#F0B34F'),
  'og-contato.png':PAGE('#BB4938','creme','Fale com a gente.',70,'#F0B34F','#F0B34F'),
  'og-avaasp.png':PAGE('#173F3C','creme','A AVAASP é nossa parceira.',72,'#F0B34F','#F0B34F')};
