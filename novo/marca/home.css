@@ -413,3 +413,16 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .pub .ic img{width:34px;height:34px}
 .pub h3{margin-top:4px}
 footer.rod nav{max-width:34em}
+
+/* faixa de categorias: volta a correr sozinha (como na versão anterior) e fica compacta */
+.faixa.faixa-cat2{padding:18px 0;margin:0 0 40px}
+.faixa-cat2 .trilho{font-size:clamp(1.3rem,2.2vw,1.75rem);gap:34px;animation-duration:50s}
+.faixa-cat2 .trilho span{gap:34px}
+/* celular: menos vazio entre as seções */
+@media(max-width:700px){
+  .sec{padding:44px 0}
+  .oquee{padding-bottom:12px}
+  .solucao{padding-top:32px;padding-bottom:36px}
+  .faixa.faixa-cat2{margin-bottom:28px}
+  .caminhos{padding-top:44px;padding-bottom:44px}
+}
