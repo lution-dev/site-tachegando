@@ -425,3 +425,9 @@ footer.rod nav{max-width:34em}
   .solucao{padding-top:32px;padding-bottom:36px}
   .caminhos{padding-top:44px;padding-bottom:44px}
 }
+/* Seção do problema: fundo próprio, para separar da seção seguinte, e chamada para ação */
+.oquee{background:var(--creme-2);padding-bottom:clamp(56px,7vw,96px)}
+.oquee .btn{margin-top:26px}
+.oquee .foto-prob img{box-shadow:0 22px 40px -22px rgba(41,37,45,.45)}
+.solucao{padding-top:clamp(56px,7vw,96px)}
+@media(max-width:700px){.oquee{padding-bottom:40px}.solucao{padding-top:40px}.oquee .btn{margin-top:20px}}
