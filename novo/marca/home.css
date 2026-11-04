@@ -278,9 +278,9 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 @media(max-width:900px){.grade .f1 img{object-position:50% 0}.parceira .card-par{padding:22px 20px}.parceira .card-par img{width:min(56%,190px)}}
 
 /* ===== landing v3 (copy do doc "Landing Page—Tá Chegando App"; conceito visual da prévia, no design system do site) ===== */
-.pilula{display:inline-block;margin-bottom:20px;padding:8px 14px;border-radius:99px;background:rgba(255,247,239,.16);font:800 .74rem/1 var(--f);letter-spacing:.13em;text-transform:uppercase}
+.pilula{display:inline-block;margin-bottom:20px;padding:8px 14px;border-radius:99px;background:rgba(41,37,45,.28);font:800 .74rem/1 var(--f);letter-spacing:.13em;text-transform:uppercase}
 .hero h1{max-width:12em}
-.hero h1 .am-t{color:var(--amarelo)}
+.hero h1 .am-t{color:var(--creme);text-decoration:underline;text-decoration-color:var(--amarelo);text-decoration-thickness:.08em;text-underline-offset:.14em;text-decoration-skip-ink:none}
 .eyebrow{color:var(--tomate)}
 /* grafismos discretos na abertura */
 .cena .anel{position:absolute;right:-12%;top:-8%;width:78%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(255,247,239,.35);pointer-events:none}
@@ -375,7 +375,7 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .final::before{content:"";position:absolute;left:-150px;top:-150px;width:340px;height:340px;border-radius:50%;border:56px solid rgba(255,247,239,.09)}
 .final h2{color:var(--creme)}
 .final p{color:#FFF0E4}
-.final .eyebrow{display:block;color:var(--amarelo)}
+.final .eyebrow{display:block;color:var(--creme)}
 
 /* Como funciona: caixa do comprador clara, para separar dos dois públicos */
 .como .lado.p{background:var(--creme);border-color:var(--creme);color:var(--grafite)}
