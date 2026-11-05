@@ -52,7 +52,7 @@
 .mosaico figcaption{border-radius:var(--r-pilula);padding:5px 14px;font-weight:800}
 
 /* ---- menu do celular: tela cheia com vidro (opção A) ---- */
-@media(max-width:900px){
+@media(max-width:1000px){
   header.top .logo,header.top .menu-btn{position:relative;z-index:62}
   header.top .menu-btn{display:flex;background:var(--vidro-bg);border:1.5px solid var(--vidro-borda);box-shadow:var(--vidro-sombra);-webkit-backdrop-filter:blur(var(--vidro-blur));backdrop-filter:blur(var(--vidro-blur))}
   header.top nav{
@@ -76,7 +76,7 @@
   header.top nav .btn.ln + .btn{margin-top:10px}
   html.menu-aberto,html.menu-aberto body{overflow:hidden}
 }
-@media(min-width:901px){header.top nav a small{display:none}}
+@media(min-width:1001px){header.top nav a small{display:none}}
 @media(prefers-reduced-transparency:reduce){
   .hero .selo,.hero .menu-btn,.hero .caminho:not(.v),.hero .passos-h div,.vidro,.vidro-escuro,.mosaico figcaption{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(23,63,60,.82)}
   header.top nav{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(23,63,60,.97)}
@@ -171,7 +171,7 @@
 
 /* ---- barra fixa: transparente no topo, vidro compacto ao rolar ---- */
 :root{--hdr:66px}
-@media(min-width:901px) and (max-width:1019px){:root{--hdr:80px}}
+
 header.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:padding .25s ease}
 header.top::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .25s ease;
   background:rgba(23,63,60,.72);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);
@@ -183,7 +183,7 @@ header.top .logo img{transition:height .25s ease}
 header.top.rolou .logo img{height:34px}
 .hero{padding-top:var(--hdr)}
 body.legal header.top,body.pg header.top{position:fixed;background:transparent}
-@media(max-width:900px){header.top{position:fixed}}
+@media(max-width:1000px){header.top{position:fixed}}
 @media(prefers-reduced-motion:reduce){header.top,header.top::before,header.top .logo img{transition:none}}
 @media(prefers-reduced-transparency:reduce){header.top::before{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--azul-esc)}}
 body.legal{margin-top:0;font-size:18px;color:var(--texto)}
@@ -219,7 +219,7 @@ header.top nav .btn.ln:hover{background:rgba(23,63,60,.08)}
 header.top nav .btn.or{background:var(--tomate);color:#FFF7EF}
 header.top .menu-btn,.hero header.top .menu-btn,.hero.foto-clara header.top .menu-btn,.hero .menu-btn{width:48px;height:48px;border-radius:50%;background:var(--petroleo);border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 header.top .menu-btn span{background:#FFF7EF}
-@media(max-width:900px){
+@media(max-width:1000px){
   header.top{left:16px;right:16px;padding:8px 8px 8px 18px}
   header.top nav{background:var(--petroleo);-webkit-backdrop-filter:none;backdrop-filter:none;padding-top:104px}
   header.top nav a:not(.btn){color:#FFF7EF;min-height:0;padding:16px 0;border-radius:0;display:flex!important}
@@ -286,21 +286,21 @@ header.top{left:max(var(--gut),calc((100vw - 1180px)/2));right:max(var(--gut),ca
 header.top.rolou{padding-top:6px;padding-bottom:6px}
 header.top .logo img,header.top.rolou .logo img{height:38px;width:auto}
 header.top nav .btn.sm,header.top nav .btn{min-height:44px;padding:0 20px;font-weight:700;font-size:.95rem}
-@media(max-width:900px){
+@media(max-width:1000px){
   header.top{left:var(--gut);right:var(--gut);padding:8px 8px 8px 18px}
   header.top.rolou{padding-top:8px;padding-bottom:8px}
   header.top .logo img,header.top.rolou .logo img{height:32px}
   header.top nav a:not(.btn){font:800 2rem/1.1 var(--fh);padding:14px 0;border-bottom:1px solid rgba(255,247,239,.2);flex-direction:column;align-items:flex-start;gap:2px}
   header.top nav a:not(.btn) small{font:700 .9rem var(--f);color:var(--amarelo)}
-  header.top nav{padding:104px 26px max(26px,env(safe-area-inset-bottom))}
+  header.top nav{padding:104px calc(var(--gut) + 18px) max(26px,env(safe-area-inset-bottom))}
 }
 header.top nav{gap:6px}
 body.legal header.top,body.pg header.top{padding:10px 12px 10px 22px}
 body.legal header.top.rolou,body.pg header.top.rolou{padding-top:6px;padding-bottom:6px}
-@media(max-width:900px){body.legal header.top,body.pg header.top{padding:8px 8px 8px 18px}body.legal header.top.rolou,body.pg header.top.rolou{padding-top:8px;padding-bottom:8px}}
+@media(max-width:1000px){body.legal header.top,body.pg header.top{padding:8px 8px 8px 18px}body.legal header.top.rolou,body.pg header.top.rolou{padding-top:8px;padding-bottom:8px}}
 header.top nav .btn{display:inline-flex;align-items:center;justify-content:center;line-height:1.2}
-@media(max-width:900px){header.top nav{gap:0}}
-@media(max-width:900px){header.top.rolou,body.legal header.top.rolou,body.pg header.top.rolou{padding-top:6px;padding-bottom:6px}}
+@media(max-width:1000px){header.top nav{gap:0}}
+@media(max-width:1000px){header.top.rolou,body.legal header.top.rolou,body.pg header.top.rolou{padding-top:6px;padding-bottom:6px}}
 /* Privacidade e Termos: a faixa de título começa no topo, por trás da barra */
 body.legal .doc-topo{padding-top:calc(var(--hdr,92px) + 12px + clamp(28px,4vw,56px))}
 body.legal header.top,body.pg header.top{background:rgba(255,247,239,.96)}
@@ -363,3 +363,12 @@ footer.rod .rod-par img{height:24px;width:auto;opacity:.85}
 .transp2 .col h3{color:var(--petroleo)}
 .transp2 .faz li::before{color:#2C6A55}
 .transp2 .nao li::before{color:#A33D2E}
+/* Navbar: nunca quebra linha e se compacta antes de faltar espaço */
+header.top .logo,header.top .menu-btn{flex:0 0 auto}
+header.top nav{flex:0 1 auto;min-width:0}
+header.top nav a,header.top nav .btn{white-space:nowrap}
+@media(min-width:1001px) and (max-width:1300px){
+  header.top nav{gap:0}
+  header.top nav a:not(.btn){padding:0 10px;font-size:.95rem}
+  header.top nav .btn,.hero header.top nav .btn{margin-left:4px;padding-left:14px;padding-right:14px;font-size:.9rem}
+}

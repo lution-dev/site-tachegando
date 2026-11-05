@@ -30,7 +30,7 @@
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && b.getAttribute("aria-expanded") === "true") { define(false); b.focus(); } });
     n.addEventListener("click", function (e) { if (e.target.closest("a")) define(false); });
-    matchMedia("(min-width:901px)").addEventListener("change", function (m) { if (m.matches) define(false); });
+    matchMedia("(min-width:1001px)").addEventListener("change", function (m) { if (m.matches) define(false); });
   }
   // decoração leve das seções (pins e rota), só anima quando aparece na tela
   var PIN = '<svg viewBox="-22 -24 44 56" aria-hidden="true" focusable="false"><path d="M0 -22C-13 -22 -22 -13 -22 -2C-22 12 0 30 0 30C0 30 22 12 22 -2C22 -13 13 -22 0 -22ZM0 -9a7 7 0 110 14 7 7 0 010-14Z" fill="currentColor" fill-rule="evenodd"/></svg>';
