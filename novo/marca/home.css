@@ -61,7 +61,7 @@ header.topo.rolou .topo-in{padding-top:6px;padding-bottom:6px;box-shadow:0 8px 2
 .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-@media(max-width:1140px){
+@media(max-width:1000px){
   .menu-btn{display:block}
   .topo-in{padding:8px 8px 8px 18px}
   .topo nav{display:none;position:fixed;inset:0;z-index:60;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:104px calc(var(--gut) + 18px) max(26px,env(safe-area-inset-bottom));background:var(--petroleo);overflow-y:auto}
@@ -78,7 +78,7 @@ header.topo.rolou .topo-in{padding-top:6px;padding-bottom:6px;box-shadow:0 8px 2
   html.menu-aberto .menu-btn{background:var(--creme)}
   html.menu-aberto .menu-btn span{background:var(--petroleo)}
 }
-@media(min-width:1141px){.topo nav a small{display:none}}
+@media(min-width:1001px){.topo nav a small{display:none}}
 
 /* abertura */
 .hero{position:relative;background:var(--tomate);color:var(--creme);padding:calc(var(--hdr) + 44px) 0 80px;overflow:hidden}
@@ -435,7 +435,7 @@ footer.rod nav{max-width:34em}
 .marca,.menu-btn{flex:0 0 auto}
 .topo nav{flex:0 1 auto;min-width:0}
 .topo nav a,.topo nav .btn{white-space:nowrap}
-@media(min-width:1141px){
+@media(min-width:1001px) and (max-width:1300px){
   .topo nav{gap:0}
   .topo nav a:not(.btn){padding:0 11px;font-size:.95rem}
   .topo nav .btn{margin-left:4px;padding-left:14px;padding-right:14px;font-size:.9rem}
