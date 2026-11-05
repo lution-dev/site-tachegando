@@ -5,7 +5,7 @@
 Situação: o aplicativo ainda não foi lançado nas lojas e não há data definida. O site está no ar e recebe contatos para avisar do lançamento. Criado pela Argo Apps, empresa do Grupo Neo Argo (CNPJ 66.543.238/0001-71).
 
 ## O que é e o que não é
-- É: um mapa de quem está circulando perto, com o botão "Me avise quando chegar" para o consumidor, e uma ferramenta de rota para o vendedor.
+- É: um mapa de quem está circulando perto, com a possibilidade de solicitar uma parada ao vendedor, que decide se atende, e uma ferramenta de rota para o vendedor.
 - Não é: serviço de entrega (delivery). O vendedor segue vendendo na rua, do jeito dele.
 - Não garante que o vendedor vai passar, nem que vai vender. A localização e a disponibilidade dos vendedores podem variar.
 
@@ -17,10 +17,10 @@ Situação: o aplicativo ainda não foi lançado nas lojas e não há data defin
 
 ## Para quem procura
 - Gratuito para o consumidor.
-- Vê no mapa quem está circulando perto, filtra por categoria (comida, hortifruti, bebidas, doces) e toca em "Me avise quando chegar".
+- Vê no mapa quem está circulando perto, filtra por categoria (comida, hortifruti, bebidas, doces) acompanha a aproximação e solicita uma parada. O vendedor decide se pode atender.
 
 ## Rede de Apoio
-- Iniciativa para empresas (oficina mecânica, seguros, autopeças e borracharia, contabilidade, orientação financeira e crédito, assessoria jurídica, design e comunicação e outras áreas) que queiram ajudar quem trabalha na rua.
+- Iniciativa para empresas (jurídico, contabilidade, marketing, gestão e RH, oficina mecânica, seguros e outras áreas) que queiram ajudar quem trabalha na rua.
 - Nesta fase só entram empresas verificadas pela equipe (CNPJ e site ou rede social). Autônomos e cadastro aberto ficam de fora. Não há promessa de pagamento ou retorno.
 
 ## Parceria
