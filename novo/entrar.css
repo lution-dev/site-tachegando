@@ -81,3 +81,15 @@ input[aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(179,38,30,.25)}
   .auth .form{align-items:flex-start}
 }
 @media(prefers-reduced-motion:reduce){input,.tipos span,.tabs2 button{transition:none}}
+
+/* Google como opção principal; e-mail e senha como secundária */
+.btn.google{width:100%;min-height:54px;margin-top:4px;gap:12px;background:#131314;color:#fff;border:1.5px solid #131314;font-size:1.05rem;font-weight:800}
+.btn.google:hover{background:#2A2A2C}
+.btn.google .g{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff}
+.btn.google:focus-visible{outline-offset:3px}
+#f .ou{display:flex;align-items:center;gap:14px;margin:22px 0 6px;color:var(--suave);font-size:.88rem;font-weight:700}
+#f .ou::before,#f .ou::after{content:"";flex:1;height:1px;background:#D8E0D9}
+.btn.sec{background:#fff;color:var(--petroleo,#173F3C);border:2px solid var(--petroleo,#173F3C)}
+.btn.sec:hover{background:#F3EEE6}
+#bloco-tipo:not([hidden])+.btn.google{margin-top:20px}
+#f>.btn.google:first-of-type{margin-top:18px}

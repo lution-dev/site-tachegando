@@ -14,7 +14,8 @@
     document.getElementById("bloco-tipo").hidden = !c;
     document.getElementById("legal").hidden = !c;
     document.getElementById("demo-box").hidden = c;
-    btn.textContent = c ? "Criar conta" : "Entrar";
+    btn.textContent = c ? "Criar conta com e-mail" : "Entrar com e-mail";
+    document.getElementById("google-tx").textContent = c ? "Criar conta com o Google" : "Entrar com o Google";
     f.senha.autocomplete = c ? "new-password" : "current-password";
     f.email.value = c ? TC.emailNovo() : TC.demo.vendedor.email; f.senha.value = "demo123";
     TCForm.limpaTudo(f); msg.textContent = "";
@@ -37,6 +38,14 @@
       var d = TC.demo[b.dataset.demo]; TCForm.enviando(b, true, "Entrando…");
       vai(TC.entrar(d.email, d.senha)).catch(function () { TCForm.enviando(b, false); msg.textContent = "Não deu certo agora. Tente de novo daqui a pouco."; });
     });
+  });
+
+  // Google: no protótipo só simula. Para valer, ligar ao login do Google no Supabase do app.
+  var g = document.getElementById("google");
+  g.addEventListener("click", function () {
+    msg.textContent = ""; TCForm.enviando(g, true, criar ? "Criando conta…" : "Entrando…");
+    var p = criar ? TC.criarConta(TC.emailNovo(), "google-" + Date.now(), f.tipo.value) : TC.entrar(TC.demo.vendedor.email, TC.demo.vendedor.senha);
+    vai(p).catch(function () { TCForm.enviando(g, false); msg.textContent = "Não deu certo agora. Tente de novo daqui a pouco."; });
   });
 
   f.addEventListener("submit", function (e) {
