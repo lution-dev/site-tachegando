@@ -392,3 +392,5 @@ body.painel.sem-menu .pn-main{padding-bottom:40px}
 .pn-pronto p{margin:0;color:var(--sup);max-width:34em}
 .pn-pronto .pn-info{margin:6px 0 8px}
 @media(max-width:700px){.pn-etapa span{display:inline}.pn-pronto .btn{width:100%}.pn-pronto .pn-info{grid-template-columns:1fr}}
+/* "Meu cadastro" não é aba do menu: só aparece como tela, antes de concluir ou ao tocar em "Editar cadastro" */
+.pn-item[data-v="perfil"],.pn-tabs [data-v="perfil"]{display:none!important}
