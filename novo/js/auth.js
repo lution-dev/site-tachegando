@@ -17,7 +17,7 @@
     btn.textContent = c ? "Criar conta com e-mail" : "Entrar com e-mail";
     document.getElementById("google-tx").textContent = c ? "Criar conta com o Google" : "Entrar com o Google";
     f.senha.autocomplete = c ? "new-password" : "current-password";
-    f.email.value = c ? "" : TC.demo.vendedor.email; f.senha.value = c ? "" : "demo123";
+    f.email.value = c ? TC.emailNovo() : TC.demo.vendedor.email; f.senha.value = "demo123"; // PROTÓTIPO: já preenchido
     TCForm.limpaTudo(f); msg.textContent = "";
   }
   tEntrar.onclick = function () { modo(false); };

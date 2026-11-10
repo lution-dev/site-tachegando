@@ -99,7 +99,7 @@
 
   function cadastro(editando) {
     var rasc = rascunho();
-    var p = JSON.parse(JSON.stringify(user.perfil || rasc || {})), i = (!user.perfil && rasc && rasc._i) || 0; delete p._i;
+    var p = JSON.parse(JSON.stringify(user.perfil || rasc || TC.perfilExemplo(user.tipo))), i = (!user.perfil && rasc && rasc._i) || 0; delete p._i;
     function pinta() {
       var ultimo = i === PASSOS.length - 1;
       var pins = PASSOS.map(function (x, k) { return '<li class="' + (k < i ? "on" : k === i ? "at" : "") + '"' + (k === i ? ' aria-current="step"' : "") + '><i>' + (k < i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>' : (k + 1)) + '</i><span>' + x.t + '</span></li>'; }).join("");

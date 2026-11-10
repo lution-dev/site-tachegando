@@ -18,9 +18,9 @@ window.TC = (function () {
       perfil: { nome: "Lima Contabilidade Ltda", cnpj: "11.222.333/0001-81", site: "www.limacontabilidade.com.br", responsavel: "Ana Lima", areas: ["Contabilidade", "Gestão e RH"], apoio: "Podemos ajudar vendedores a organizar as contas do mês e a entender as obrigações do dia a dia.", cidade: "Recife", telefone: "(81) 98888-7777", status: "em_verificacao" }
     }
   };
-  var EXEMPLO = { // pré-preenchimento do cadastro de contas novas
-    vendedor: DEMO.vendedor.perfil,
-    apoio: DEMO.apoio.perfil
+  var EXEMPLO = { // PROTÓTIPO: pré-preenchimento do cadastro de contas novas (remover junto com as contas DEMO)
+    vendedor: { nome: "João Silva", negocio: "Frutas do João", telefone: "(11) 99999-9999", vende: ["Frutas e verduras", "Ovos"], meio: "Bicicleta", cidade: "São Paulo", rota: "Mooca de manhã", bairros: "Mooca, Tatuapé, Belém", dias: ["Seg", "Qua", "Sex", "Sáb"], distancia: "Normal" },
+    apoio: { nome: "Silva Contabilidade", cnpj: "11.222.333/0001-81", site: "www.silvacontabilidade.com.br", responsavel: "Ana Lima", telefone: "(11) 98888-7777", cidade: "São Paulo", areas: ["Contabilidade", "Gestão e RH"], apoio: "Podemos ajudar vendedores a organizar as contas do mês e a entender as obrigações do dia a dia." }
   };
 
   function read(k, d) { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } }
