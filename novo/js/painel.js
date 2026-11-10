@@ -5,8 +5,8 @@
   var ehVend = user.tipo === "vendedor";
   var CH_RASC = "tc_rascunho_" + user.email;
   function cartaoUsuario() {
-    var n = (user.perfil && user.perfil.nome) || "Sua conta";
-    var ini = n.split(" ").filter(Boolean).slice(0, 2).map(function (x) { return x.charAt(0); }).join("").toUpperCase() || "TC";
+    var temNome = !!(user.perfil && user.perfil.nome), n = temNome ? user.perfil.nome : "Sua conta";
+    var ini = temNome ? n.split(" ").filter(Boolean).slice(0, 2).map(function (x) { return x.charAt(0); }).join("").toUpperCase() : (user.email || "?").charAt(0).toUpperCase();
     document.getElementById("quem").innerHTML = '<span class="av" aria-hidden="true">' + esc(ini) + '</span><span class="tx"><b>' + esc(n) + '</b><span class="fn">' + (ehVend ? "Vendedor" : "Rede de Apoio") + '</span><span class="em">' + esc(user.email) + '</span></span>';
     document.getElementById("top-u").innerHTML = '<span class="av" aria-hidden="true">' + esc(ini) + '</span><span class="nm">' + esc(n) + '</span>';
   }
@@ -18,7 +18,7 @@
   var DIAS = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
   var AREAS = ["Jurídico", "Contabilidade", "Marketing", "Gestão e RH", "Oficina mecânica", "Seguros", "Outra"];
   var DIST = ["Perto", "Normal", "Mais longe"];
-  var DISTDICA = { "Perto": "Só avisa quem está bem perto de você.", "Normal": "Serve pra maioria das rotas.", "Mais longe": "Avisa também quem está um pouco mais longe." };
+  var DISTDICA = { "Perto": "Só recebe pedidos de quem está bem perto da rota.", "Normal": "Serve pra maioria das rotas.", "Mais longe": "Recebe também pedidos de quem está um pouco mais longe." };
   function cnpjOk(v) {
     var d = String(v).replace(/\D/g, ""); if (d.length !== 14 || /^(\d)\1+$/.test(d)) return false;
     function dv(n) { var s = 0, pos = n - 7; for (var i = n; i >= 1; i--) { s += d[n - i] * pos--; if (pos < 2) pos = 9; } var r = s % 11; return r < 2 ? 0 : 11 - r; }
@@ -39,25 +39,25 @@
   // cada validação devolve uma lista de [campo, mensagem]
   var PASSOS = ehVend ? [
     { t: "Seus dados", d: "Quem é você e como a gente chama o seu negócio.",
-      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name") + campo("negocio", "Nome do seu negócio", p.negocio, "placeholder=\"Ex.: Frutas do João\" autocomplete=off") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + '<p class="nota-m largo">Só usamos pra falar do seu cadastro.</p>'; },
+      h: function (p) { return campo("nome", "Seu nome", p.nome, "autocomplete=name placeholder=\"Ex.: João Silva\"") + campo("negocio", "Nome do seu negócio", p.negocio, "placeholder=\"Ex.: Frutas do João\" autocomplete=off") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(11) 99999-9999\"", "tel") + '<p class="nota-m largo">Seu nome e o do negócio aparecem no seu perfil. O telefone, só usamos pra falar do seu cadastro.</p>'; },
       l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.negocio = f.negocio.value.trim(); p.telefone = f.telefone.value.trim();
         if (!p.nome) e.push(["nome", "Falta o seu nome."]);
         if (!p.negocio) e.push(["negocio", "Qual o nome do seu negócio?"]);
-        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (13) 99999-9999."]);
+        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (11) 99999-9999."]);
         return e; } },
     { t: "O que você vende", d: "Isso ajuda quem procura a achar você.",
       h: function (p) { return grupo("O que você vende? Pode marcar mais de um.", opc("vende", VENDE, p.vende)) +
           '<div id="outro-w" class="gp"' + ((p.vende || []).indexOf("Outro") > -1 ? "" : " hidden") + '>' + campo("vendeOutro", "O que mais você vende?", p.vendeOutro, "", "text", true) + '</div>' +
-          grupo("Como você sai pra vender?", opc("meio", MEIO, p.meio ? [p.meio] : [], "radio")); },
+          grupo("Como você sai pra vender?", opc("meio", MEIO, p.meio ? [p.meio] : [], "radio")) + '<p class="nota-m largo">Isso aparece no seu perfil, pra quem procura saber o que você vende.</p>'; },
       l: function (f, p) { var e = []; p.vende = marcados(f, "vende"); p.meio = marcados(f, "meio")[0] || ""; p.vendeOutro = f.vendeOutro ? f.vendeOutro.value.trim() : "";
         if (!p.vende.length) e.push(["vende", "Marque o que você vende, nem que seja uma coisa só."]);
         if (p.vende.indexOf("Outro") > -1 && !p.vendeOutro) e.push(["vendeOutro", "Escreva o que mais você vende."]);
         if (!p.meio) e.push(["meio", "Marque como você sai pra vender."]);
         return e; } },
     { t: "Sua rota", d: "Por onde você passa, em que dias e quem a gente avisa.",
-      h: function (p) { return campo("rota", "Nome da rota", p.rota, "placeholder=\"Ex.: Centro\"") + campo("cidade", "Cidade", p.cidade, "autocomplete=address-level2") + campo("bairros", "Bairros onde você costuma passar", p.bairros, 'placeholder="Ex.: Centro, Vila Nova"', "text", true) +
+      h: function (p) { return campo("rota", "Como você chama essa rota?", p.rota, "placeholder=\"Ex.: Centro de manhã\"") + campo("cidade", "Cidade", p.cidade, "autocomplete=address-level2 placeholder=\"Ex.: São Paulo\"") + campo("bairros", "Bairros onde você costuma passar", p.bairros, 'placeholder="Ex.: Mooca, Tatuapé, Belém"', "text", true) +
           grupo("Em que dias você sai?", opc("dias", DIAS, p.dias), "dias") +
-          grupo("A que distância da rota o cliente é avisado?", opc("distancia", DIST, p.distancia ? [p.distancia] : ["Normal"], "radio") + '<p class="nota-m dica" id="dist-dica" aria-live="polite">' + (DISTDICA[p.distancia || "Normal"]) + '</p>', "dist"); },
+          grupo("Até que distância da rota você aceita pedidos de parada?", opc("distancia", DIST, p.distancia ? [p.distancia] : ["Normal"], "radio") + '<p class="nota-m dica" id="dist-dica" aria-live="polite">' + (DISTDICA[p.distancia || "Normal"]) + '</p>', "dist") + '<p class="nota-m largo">Quem está por perto vê quando e por onde você costuma passar. Você muda isso quando quiser.</p>'; },
       l: function (f, p) { var e = []; p.rota = f.rota.value.trim(); p.cidade = f.cidade.value.trim(); p.bairros = f.bairros.value.trim(); p.dias = marcados(f, "dias"); p.distancia = marcados(f, "distancia")[0] || "Normal";
         if (!p.rota) e.push(["rota", "Dê um nome pra rota. Pode ser o do bairro."]);
         if (!p.cidade) e.push(["cidade", "Falta a cidade."]);
@@ -65,26 +65,26 @@
         return e; } }
   ] : [
     { t: "Sua empresa", d: "O básico pra equipe conferir quem é a empresa.",
-      h: function (p) { return campo("nome", "Nome da empresa", p.nome, "autocomplete=organization") + campo("cnpj", "CNPJ", p.cnpj, "inputmode=numeric autocomplete=off placeholder=\"00.000.000/0000-00\"") + campo("site", "Site ou rede social da empresa", p.site, "placeholder=\"Ex.: www.suaempresa.com.br\"", "text", true) + '<p class="nota-m largo">Com esses dados, a equipe confere se a empresa existe e está funcionando.</p>'; },
+      h: function (p) { return campo("nome", "Nome da empresa", p.nome, "autocomplete=organization placeholder=\"Ex.: Silva Contabilidade\"") + campo("cnpj", "CNPJ", p.cnpj, "inputmode=numeric autocomplete=off placeholder=\"00.000.000/0000-00\"") + campo("site", "Site ou rede social da empresa", p.site, "placeholder=\"Ex.: www.suaempresa.com.br\"", "text", true) + '<p class="nota-m largo">Com esses dados, a equipe confere se a empresa existe e está funcionando.</p>'; },
       l: function (f, p) { var e = []; p.nome = f.nome.value.trim(); p.cnpj = f.cnpj.value.trim(); p.site = f.site.value.trim();
         if (!p.nome) e.push(["nome", "Falta o nome da empresa."]);
         if (!p.cnpj) e.push(["cnpj", "Falta o CNPJ."]); else if (!cnpjOk(p.cnpj)) e.push(["cnpj", "Esse CNPJ não bateu. Confira os 14 números."]);
         if (!p.site) e.push(["site", "Coloque o site ou a rede social da empresa. A equipe usa pra conferir."]);
         return e; } },
-    { t: "Contato da empresa", d: "Com quem a equipe pode falar.", h: function (p) { return campo("responsavel", "Nome do responsável", p.responsavel, "autocomplete=name") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(00) 00000-0000\"", "tel") + campo("cidade", "Cidade da empresa", p.cidade, "autocomplete=address-level2"); },
+    { t: "Contato da empresa", d: "Com quem a equipe pode falar.", h: function (p) { return campo("responsavel", "Nome do responsável", p.responsavel, "autocomplete=name placeholder=\"Ex.: Ana Lima\"") + campo("telefone", "Telefone com DDD", p.telefone, "autocomplete=tel inputmode=tel placeholder=\"(11) 99999-9999\"", "tel") + campo("cidade", "Cidade da empresa", p.cidade, "autocomplete=address-level2 placeholder=\"Ex.: São Paulo\"") + '<p class="nota-m largo">A equipe usa esse contato só pra falar sobre a candidatura.</p>'; },
       l: function (f, p) { var e = []; p.responsavel = f.responsavel.value.trim(); p.telefone = f.telefone.value.trim(); p.cidade = f.cidade.value.trim();
         if (!p.responsavel) e.push(["responsavel", "Falta o nome do responsável."]);
-        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (81) 99999-9999."]);
+        if (!p.telefone) e.push(["telefone", "Falta o telefone, com DDD."]); else if (!TCForm.telefone(p.telefone)) e.push(["telefone", "Esse telefone tá faltando número. Use o DDD e o número, tipo (11) 99999-9999."]);
         if (!p.cidade) e.push(["cidade", "Falta a cidade da empresa."]);
         return e; } },
-    { t: "Como a empresa apoia", d: "Em que a empresa pode ajudar quem vende na rua.", h: function (p) { return grupo("Em que áreas a empresa atua? Pode marcar mais de uma.", opc("areas", AREAS, p.areas)) + '<div class="cp largo"><label class="l" for="apoio">Em poucas palavras, como a empresa pode ajudar vendedores?</label><textarea id="apoio" name="apoio" rows="4">' + esc(p.apoio) + '</textarea></div>'; },
+    { t: "Como a empresa apoia", d: "Em que a empresa pode ajudar quem vende na rua.", h: function (p) { return grupo("Em que áreas a empresa atua? Pode marcar mais de uma.", opc("areas", AREAS, p.areas)) + '<div class="cp largo"><label class="l" for="apoio">Em poucas palavras, como a empresa pode ajudar vendedores? <span class="opc">(opcional)</span></label><textarea id="apoio" name="apoio" rows="4" placeholder="Ex.: Podemos ajudar a organizar as contas do mês.">' + esc(p.apoio) + '</textarea></div>'; },
       l: function (f, p) { p.areas = marcados(f, "areas"); p.apoio = f.apoio.value.trim(); return p.areas.length ? [] : [["areas", "Marque ao menos uma área."]]; } }
   ];
 
   function completo() { var p = user.perfil; return !!p && (ehVend ? p.vende && p.vende.length && p.cidade && p.negocio : p.areas && p.areas.length && p.telefone && p.cnpj); }
-  function rascunho() { try { return JSON.parse(sessionStorage.getItem(CH_RASC)); } catch (e) { return null; } }
-  function guarda(p, i) { try { sessionStorage.setItem(CH_RASC, JSON.stringify(Object.assign({}, p, { _i: i }))); } catch (e) {} }
-  function limpaRascunho() { try { sessionStorage.removeItem(CH_RASC); } catch (e) {} }
+  function rascunho() { try { return JSON.parse(localStorage.getItem(CH_RASC)); } catch (e) { return null; } }
+  function guarda(p, i) { try { localStorage.setItem(CH_RASC, JSON.stringify(Object.assign({}, p, { _i: i }))); } catch (e) {} }
+  function limpaRascunho() { try { localStorage.removeItem(CH_RASC); } catch (e) {} }
 
   function mostraErros(form, erros) {
     TCForm.limpaTudo(form); form.querySelectorAll(".erro-grupo").forEach(function (g) { g.remove(); });
@@ -98,17 +98,18 @@
   }
 
   function cadastro(editando) {
-    var rasc = rascunho(), exemplo = TC.perfilExemplo(user.tipo);
-    var p = JSON.parse(JSON.stringify(user.perfil || (rasc ? rasc : exemplo))), i = (!user.perfil && rasc && rasc._i) || 0; delete p._i;
+    var rasc = rascunho();
+    var p = JSON.parse(JSON.stringify(user.perfil || rasc || {})), i = (!user.perfil && rasc && rasc._i) || 0; delete p._i;
     function pinta() {
       var ultimo = i === PASSOS.length - 1;
       var pins = PASSOS.map(function (x, k) { return '<li class="' + (k < i ? "on" : k === i ? "at" : "") + '"' + (k === i ? ' aria-current="step"' : "") + '><i>' + (k < i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>' : (k + 1)) + '</i><span>' + x.t + '</span></li>'; }).join("");
-      el.innerHTML = '<div class="pn-cadw"><div class="pn-ph curto"><div class="tx"><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>Passo ' + (i + 1) + ' de ' + PASSOS.length + '. ' + PASSOS[i].d + '</p></div></div>' +
-        '<ol class="pn-passos" aria-label="Passos do cadastro">' + pins + '</ol>' +
+      var faixa = editando ? "" : '<div class="pn-temp" role="note"><b>O app Tá Chegando ainda não saiu.</b><span>Seu cadastro fica pronto agora. Quando o app for lançado, é só entrar com a mesma conta que você usou aqui.</span></div>';
+      el.innerHTML = '<div class="pn-cadw">' + faixa + '<div class="pn-ph curto"><div class="tx"><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>' + PASSOS[i].d + '</p></div></div>' +
+        '<p class="pn-etapa">Passo ' + (i + 1) + ' de ' + PASSOS.length + '<span> · ' + PASSOS[i].t + '</span></p><ol class="pn-passos" aria-label="Passos do cadastro">' + pins + '</ol>' +
         '<form id="pf" novalidate>' + PASSOS[i].h(p) +
         '<div class="nav-b">' + (i > 0 ? '<button type="button" class="btn ln-d" id="volta">Voltar</button>' : '<span></span>') +
         '<button class="btn or" type="submit" id="prox">' + (ultimo ? "Salvar cadastro" : "Continuar") + '</button></div></form></div>';
-      foco.focus({ preventScroll: true });
+      foco.focus({ preventScroll: true }); window.scrollTo(0, 0);
       var f = document.getElementById("pf");
       TCForm.ativaMascara(f); TCForm.limpaAoDigitar(f);
       var cj = f.querySelector("#cnpj"); if (cj) cj.classList.add("cnpj");
@@ -127,7 +128,7 @@
         if (!ultimo) { guarda(p, i + 1); i++; pinta(); return; }
         var b = document.getElementById("prox"); TCForm.enviando(b, true, "Salvando…");
         if (!ehVend && !p.status) p.status = "em_verificacao";
-        TC.salvarPerfil(p).then(function (u) { limpaRascunho(); user = u; ir("inicio"); })
+        TC.salvarPerfil(p).then(function (u) { limpaRascunho(); user = u; if (editando) ir("inicio"); else pronto(); })
           .catch(function () {
             TCForm.enviando(b, false);
             var ef = f.querySelector(".erro-form"); if (!ef) { ef = document.createElement("p"); ef.className = "erro-campo erro-form"; ef.setAttribute("role", "alert"); f.querySelector(".nav-b").insertAdjacentElement("beforebegin", ef); }
@@ -136,6 +137,21 @@
       };
     }
     pinta();
+  }
+  function pronto() {
+    cartaoUsuario();
+    var p = user.perfil || {};
+    var linhas = ehVend
+      ? [["Negócio", p.negocio], ["Vende", (p.vende || []).join(", ")], ["Rota", [p.rota, p.cidade].filter(Boolean).join(" · ")], ["Dias", (p.dias || []).join(", ")]]
+      : [["Empresa", p.nome], ["Áreas", (p.areas || []).join(", ")], ["Cidade", p.cidade], ["Situação", "Em verificação"]];
+    el.innerHTML = '<div class="pn-cadw"><div class="pn-pronto"><span class="ok" aria-hidden="true">' + CHECK.replace('width="14" height="14"', 'width="28" height="28"') + '</span>' +
+      '<h1>Pronto, seu cadastro está feito.</h1><p>' + (ehVend ? "Quando o app for lançado, é só entrar com a mesma conta que você usou aqui. A gente te avisa." : "Agora a nossa equipe confere a empresa. Depois a gente entra em contato.") + '</p>' +
+      '<dl class="pn-info">' + linhas.map(function (l) { return '<div><dt>' + l[0] + '</dt><dd>' + esc(l[1] || "-") + '</dd></div>'; }).join("") + '</dl>' +
+      '<button class="btn or" type="button" id="ir-painel">Ir para o painel</button></div></div>';
+    document.getElementById("top-t").textContent = "Cadastro concluído";
+    window.scrollTo(0, 0);
+    var b = document.getElementById("ir-painel"); b.onclick = function () { ir("inicio"); window.scrollTo(0, 0); };
+    foco.focus({ preventScroll: true });
   }
 
   var CHECK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
@@ -201,7 +217,7 @@
               : '<h2 class="big">Sua empresa está em verificação.</h2><p class="txt">Nossa equipe está conferindo se ela existe e está funcionando. Depois a gente entra em contato.</p>') +
       '<h3>O que falta</h3><ul class="pn-tl">' + passos + '</ul></article>';
     var info = ehVend
-      ? '<div><dt>Negócio</dt><dd>' + esc(p.negocio) + '</dd></div><div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Vai de</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Rota</dt><dd>' + esc(p.rota) + ' · ' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Avisar clientes</dt><dd>' + esc(p.distancia || "Normal") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
+      ? '<div><dt>Negócio</dt><dd>' + esc(p.negocio) + '</dd></div><div><dt>Vende</dt><dd>' + tags(vende) + '</dd></div><div><dt>Vai de</dt><dd>' + esc(p.meio) + '</dd></div><div><dt>Rota</dt><dd>' + esc(p.rota) + ' · ' + esc(p.cidade) + (p.bairros ? " · " + esc(p.bairros) : "") + '</dd></div><div><dt>Pedidos de parada</dt><dd>' + esc(p.distancia || "Normal") + '</dd></div><div><dt>Telefone</dt><dd>' + esc(p.telefone) + '</dd></div>'
       : '<div><dt>Empresa</dt><dd>' + esc(p.nome) + '</dd></div><div><dt>CNPJ</dt><dd>' + esc(p.cnpj) + '</dd></div><div><dt>Site ou rede</dt><dd>' + esc(p.site) + '</dd></div><div><dt>Responsável</dt><dd>' + esc(p.responsavel) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div><div><dt>Situação</dt><dd>Em verificação</dd></div>';
     var cad = '<article class="pn-cd cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit" type="button">Editar cadastro</button></article>';
     var indica = '<article class="pn-cd indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece uma empresa que poderia apoiar?") + '</h2><p>' + (ehVend ? "Manda o Tá Chegando pra ela dar uma olhada." : "Passe a Rede de Apoio pra ela. Quem é indicado passa pela mesma verificação.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';

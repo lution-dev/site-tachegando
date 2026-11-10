@@ -15,7 +15,7 @@ section{padding:clamp(64px,9vw,120px) 0}
 .lead{font-size:clamp(1.1rem,1.6vw,1.35rem);color:var(--suave);max-width:34em}
 .btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:800;text-decoration:none;border-radius:14px;padding:14px 24px;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
 .btn:hover{transform:translateY(-1px)}
-.btn.or{background:var(--laranja);color:#FFF7EF}.btn.or:hover{background:#C95A48}
+.btn.or{background:var(--laranja);color:#FFF7EF}.btn.or:hover{background:#A33D2E}
 .btn.ln{border-color:#fff;color:#fff}.btn.ln:hover{background:rgba(255,255,255,.14)}
 .btn.az{background:var(--azul);color:#fff}.btn.az:hover{background:#3A4863}
 .btn.sm{padding:9px 16px;font-size:.95rem}
@@ -38,7 +38,7 @@ header.top nav a:not(.btn){color:#fff;text-decoration:none;font-weight:700}
 .caminhos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px;max-width:820px}
 .caminho{display:block;text-decoration:none;color:#fff;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);border-radius:18px;padding:18px 18px 16px;transition:background .2s,transform .2s}
 .caminho:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
-.caminho.v{background:var(--laranja);border-color:var(--laranja);color:#FFF7EF}.caminho.v:hover{background:#C95A48}
+.caminho.v{background:var(--laranja);border-color:var(--laranja);color:#FFF7EF}.caminho.v:hover{background:#A33D2E}
 .caminho b{display:block;font-size:1.25rem;letter-spacing:-.01em}
 .caminho span{display:block;font-size:.92rem;line-height:1.35;margin-top:4px}
 .caminho em{display:block;margin-top:10px;font-style:normal;font-weight:800;font-size:.92rem}
