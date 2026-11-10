@@ -236,7 +236,8 @@
     cartaoUsuario();
     var atual = completo() ? v : "perfil";
     // antes de concluir o cadastro, só a aba Meu cadastro aparece
-    document.querySelectorAll('[data-v="inicio"],[data-v="metricas"]').forEach(function (b) { b.hidden = !completo(); });
+    // antes de concluir o cadastro, a tela de cadastro aparece sozinha, sem menu lateral nem abas
+    document.body.classList.toggle("sem-menu", !completo());
     document.getElementById("top-t").textContent = atual === "perfil" ? "Meu cadastro" : atual === "metricas" ? NOME_M : "Início";
     document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === atual) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     if (!completo()) { cadastro(false); return; }
