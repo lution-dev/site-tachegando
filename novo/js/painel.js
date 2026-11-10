@@ -12,6 +12,57 @@
   }
   function sair() { TC.sair(); location.href = "/"; }
   document.getElementById("sair").onclick = sair; document.getElementById("sair-m").onclick = sair;
+  if (user.tipo === "consumidor") { consumidorPainel(); return; }
+
+  // Consumidor: um passo de cadastro e uma tela de início, sem menu (PROTÓTIPO, sem dados reais)
+  function consumidorPainel() {
+    var BUSCA = ["Frutas e verduras", "Ovos", "Pão", "Doces", "Queijo", "Artesanato", "Flores", "Picolé", "Outro"];
+    var ok = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+    document.body.classList.add("sem-menu");
+    function completoC() { var q = user.perfil; return !!(q && q.nome && q.cidade); }
+    function tags(arr) { return '<span class="pn-tags">' + arr.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("") + "</span>"; }
+    function cadastroC(editando) {
+      var rasc = null, CH = "tc_rascunho_" + user.email;
+      try { rasc = JSON.parse(localStorage.getItem(CH)); } catch (e) {}
+      var p = JSON.parse(JSON.stringify(user.perfil || rasc || TC.perfilExemplo("consumidor")));
+      document.getElementById("top-t").textContent = "Meu cadastro";
+      el.innerHTML = '<div class="pn-cadw"><div class="pn-ph curto"><div class="tx"><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>Seus dados</h1><p>Só o básico, pra gente saber onde você está e o que você procura.</p></div></div>' +
+        '<form id="pf" novalidate>' + campo("nome", "Seu nome", p.nome, 'autocomplete=name placeholder="Ex.: Ana Souza"') + campo("cidade", "Cidade", p.cidade, 'autocomplete=address-level2 placeholder="Ex.: São Paulo"') +
+        campo("bairro", "Bairro", p.bairro, 'placeholder="Ex.: Mooca"', "text", true) + '<p class="nota-m largo">O bairro ajuda a mostrar vendedores que passam perto de você.</p>' +
+        grupo("O que você costuma procurar? Pode marcar mais de um.", opc("busca", BUSCA, p.busca)) +
+        '<div class="nav-b"><span></span><button class="btn or" type="submit" id="prox">' + (editando ? "Salvar" : "Criar meu cadastro") + '</button></div></form></div>';
+      window.scrollTo(0, 0); foco.focus({ preventScroll: true });
+      var f = document.getElementById("pf"); TCForm.limpaAoDigitar(f);
+      function le() { p.nome = f.nome.value.trim(); p.cidade = f.cidade.value.trim(); p.bairro = f.bairro.value.trim(); p.busca = marcados(f, "busca"); }
+      f.addEventListener("change", function () { le(); try { localStorage.setItem(CH, JSON.stringify(p)); } catch (e) {} });
+      f.onsubmit = function (e) {
+        e.preventDefault(); le(); var erros = [];
+        if (!p.nome) erros.push(["nome", "Falta o seu nome."]);
+        if (!p.cidade) erros.push(["cidade", "Falta a cidade."]);
+        if (erros.length) { mostraErros(f, erros); return; }
+        var b = document.getElementById("prox"); TCForm.enviando(b, true, "Salvando…");
+        TC.salvarPerfil(p).then(function (u) { try { localStorage.removeItem(CH); } catch (e) {} user = u; inicioC(); })
+          .catch(function () { TCForm.enviando(b, false); });
+      };
+    }
+    function inicioC() {
+      cartaoUsuario();
+      var p = user.perfil || {}, nome = esc((p.nome || "").split(" ")[0] || "por aqui");
+      var temp = '<div class="pn-temp" role="note"><b>Este painel é temporário.</b><span>O app Tá Chegando ainda não saiu. Seu cadastro já fica pronto: quando o app for lançado, é só entrar com a mesma conta que você usou aqui. A gente te avisa.</span></div>';
+      var ph = '<div class="pn-ph"><div class="tx"><span class="eyebrow">Painel de quem procura</span><h1>Oi, ' + nome + '</h1><p>Cadastro pronto. Quando o app sair, é nele que você encontra quem vende por perto.</p><div class="pn-chips"><span class="pn-chip"><span class="ok">' + ok + '</span>Cadastro completo</span><span class="pn-chip">' + esc(p.cidade) + '</span>' + (p.bairro ? '<span class="pn-chip">' + esc(p.bairro) + '</span>' : "") + '</div></div><div class="ac"><button class="btn ln-d" id="edit-top" type="button">Editar cadastro</button></div></div>';
+      var busca = '<article class="pn-cd rota"><h2>O que você procura</h2><p class="sub">Isso ajuda a mostrar quem vende o que você quer.</p>' + ((p.busca || []).length ? tags(p.busca) : '<p class="sub">Você ainda não marcou nada.</p>') + '</article>';
+      var stat = '<article class="pn-cd stat"><span class="soon">Em breve</span><h2 class="big">O app sai no lançamento oficial.</h2><p class="txt">Quando chegar a hora, a gente avisa você.</p><h3>O que falta</h3><ul class="pn-tl"><li class="ok"><span class="p">' + ok.replace('width="12" height="12"', 'width="14" height="14"') + '</span><div>Conta criada</div></li><li class="ok"><span class="p">' + ok.replace('width="12" height="12"', 'width="14" height="14"') + '</span><div>Cadastro completo</div></li><li class="prox"><span class="p"></span><div>Encontrar vendedores no app<small>No lançamento</small></div></li></ul></article>';
+      var info = '<div><dt>Nome</dt><dd>' + esc(p.nome) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Bairro</dt><dd>' + esc(p.bairro || "-") + '</dd></div><div><dt>Procura</dt><dd>' + esc((p.busca || []).join(", ") || "-") + '</dd></div>';
+      var cad = '<article class="pn-cd cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit" type="button">Editar cadastro</button></article>';
+      document.getElementById("top-t").textContent = "Início";
+      el.innerHTML = temp + ph + '<div class="pn-grid vend">' + busca + stat + cad + '</div>';
+      document.getElementById("edit").onclick = function () { cadastroC(true); };
+      document.getElementById("edit-top").onclick = function () { cadastroC(true); };
+      window.scrollTo(0, 0); foco.focus({ preventScroll: true });
+    }
+    cartaoUsuario();
+    if (completoC()) inicioC(); else cadastroC(false);
+  }
 
   var VENDE = ["Frutas e verduras", "Ovos", "Pão", "Doces", "Queijo", "Artesanato", "Flores", "Roupas", "Picolé", "Serviços", "Outro"];
   var MEIO = ["A pé", "Bicicleta", "Moto", "Carro ou caminhonete", "Carrinho", "Outro"];

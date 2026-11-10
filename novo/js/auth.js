@@ -22,7 +22,7 @@
   }
   tEntrar.onclick = function () { modo(false); };
   tCriar.onclick = function () { modo(true); };
-  if (q.get("tipo") === "apoio") f.querySelector('input[value="apoio"]').checked = true;
+  var tq = q.get("tipo"); f.querySelector('input[value="' + (tq === "apoio" || tq === "consumidor" ? tq : "vendedor") + '"]').checked = true;
   modo(criar);
 
   // teclado do celular aberto: mantém o campo e o botão principal à vista

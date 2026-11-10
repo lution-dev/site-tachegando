@@ -79,6 +79,8 @@
 @media(min-width:1001px){header.top nav a small{display:none}}
 @media(prefers-reduced-transparency:reduce){
   .hero .selo,.hero .menu-btn,.hero .caminho:not(.v),.hero .passos-h div,.vidro,.vidro-escuro,.mosaico figcaption{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(23,63,60,.82)}
+}
+@media(prefers-reduced-transparency:reduce) and (max-width:1000px){
   header.top nav{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(23,63,60,.97)}
 }
 
@@ -383,3 +385,6 @@ header.top nav a,header.top nav .btn{white-space:nowrap}
 main>section.split:not(.par-v){background:var(--creme-2)}
 main>section.galeria{background:var(--creme-2)}
 main>section.como-rede{background:var(--creme-2)}
+
+/* Desktop: o menu fica sobre a barra e nunca ganha fundo ou desfoque próprios (evita caixa escura com 'reduzir transparência') */
+@media(min-width:1001px){header.top nav{background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none}}
