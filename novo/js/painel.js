@@ -205,7 +205,8 @@
       : '<div><dt>Empresa</dt><dd>' + esc(p.nome) + '</dd></div><div><dt>CNPJ</dt><dd>' + esc(p.cnpj) + '</dd></div><div><dt>Site ou rede</dt><dd>' + esc(p.site) + '</dd></div><div><dt>Responsável</dt><dd>' + esc(p.responsavel) + '</dd></div><div><dt>Áreas</dt><dd>' + tags(p.areas || []) + '</dd></div><div><dt>Cidade</dt><dd>' + esc(p.cidade) + '</dd></div><div><dt>Contato</dt><dd>' + esc(p.telefone) + '</dd></div><div><dt>Situação</dt><dd>Em verificação</dd></div>';
     var cad = '<article class="pn-cd cad"><h2>Seu cadastro</h2><dl class="pn-info">' + info + '</dl><button class="btn az" id="edit" type="button">Editar cadastro</button></article>';
     var indica = '<article class="pn-cd indica"><div><h2>' + (ehVend ? "Conhece alguém que vende na rua?" : "Conhece uma empresa que poderia apoiar?") + '</h2><p>' + (ehVend ? "Manda o Tá Chegando pra ela dar uma olhada." : "Passe a Rede de Apoio pra ela. Quem é indicado passa pela mesma verificação.") + '</p></div><div class="pn-acoes"><button class="btn az" id="copia" type="button">Copiar link</button><a class="btn ln-d" id="zap" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a></div><p class="pn-ok" id="copia-ok" role="status" aria-live="polite"></p></article>';
-    el.innerHTML = ph + kpis + '<div class="pn-grid ' + (ehVend ? "vend" : "apoio") + '">' + (ehVend ? rota + stat : stat + rota) + cad + indica + '</div>';
+    var temp = '<div class="pn-temp" role="note"><b>Este painel é temporário.</b><span>O Tá Chegando ainda não foi lançado. Esta é uma versão de demonstração, e o seu cadastro fica salvo só neste navegador. Quando o app sair, a gente avisa você.</span></div>';
+    el.innerHTML = temp + ph + kpis + '<div class="pn-grid ' + (ehVend ? "vend" : "apoio") + '">' + (ehVend ? rota + stat : stat + rota) + cad + indica + '</div>';
     document.getElementById("edit").onclick = function () { ir("perfil"); };
     document.getElementById("edit-top").onclick = function () { ir("perfil"); window.scrollTo(0, 0); };
     colocaPins();
@@ -234,6 +235,8 @@
   function ir(v) {
     cartaoUsuario();
     var atual = completo() ? v : "perfil";
+    // antes de concluir o cadastro, só a aba Meu cadastro aparece
+    document.querySelectorAll('[data-v="inicio"],[data-v="metricas"]').forEach(function (b) { b.hidden = !completo(); });
     document.getElementById("top-t").textContent = atual === "perfil" ? "Meu cadastro" : atual === "metricas" ? NOME_M : "Início";
     document.querySelectorAll("[data-v]").forEach(function (b) { if (b.dataset.v === atual) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
     if (!completo()) { cadastro(false); return; }
