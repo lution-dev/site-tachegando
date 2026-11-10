@@ -103,8 +103,7 @@
     function pinta() {
       var ultimo = i === PASSOS.length - 1;
       var pins = PASSOS.map(function (x, k) { return '<li class="' + (k < i ? "on" : k === i ? "at" : "") + '"' + (k === i ? ' aria-current="step"' : "") + '><i>' + (k < i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>' : (k + 1)) + '</i><span>' + x.t + '</span></li>'; }).join("");
-      var faixa = editando ? "" : '<div class="pn-temp" role="note"><b>O app Tá Chegando ainda não saiu.</b><span>Seu cadastro fica pronto agora. Quando o app for lançado, é só entrar com a mesma conta que você usou aqui.</span></div>';
-      el.innerHTML = '<div class="pn-cadw">' + faixa + '<div class="pn-ph curto"><div class="tx"><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>' + PASSOS[i].d + '</p></div></div>' +
+      el.innerHTML = '<div class="pn-cadw"><div class="pn-ph curto"><div class="tx"><span class="eyebrow">' + (editando ? "Meu cadastro" : "Vamos começar") + '</span><h1>' + PASSOS[i].t + '</h1><p>' + PASSOS[i].d + '</p></div></div>' +
         '<p class="pn-etapa">Passo ' + (i + 1) + ' de ' + PASSOS.length + '<span> · ' + PASSOS[i].t + '</span></p><ol class="pn-passos" aria-label="Passos do cadastro">' + pins + '</ol>' +
         '<form id="pf" novalidate>' + PASSOS[i].h(p) +
         '<div class="nav-b">' + (i > 0 ? '<button type="button" class="btn ln-d" id="volta">Voltar</button>' : '<span></span>') +
